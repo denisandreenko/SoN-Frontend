@@ -11,14 +11,16 @@ body {
     overflow: hidden;
     width: 600px;
     margin: 0 auto;
-    height: 636px;                    /*need change*/
-    background: #FDD223;   
+    margin-top: 100px;
+    height: 350px;                    /*need change*/
+    background: #FDD223; 
+    border-radius: 50px;  
 }
 
 #content {
     overflow: hidden;
-    padding-top: 40px;
-    margin-top: 22%;
+    
+    margin-top: 10%;
 }
 
 h1 {
@@ -45,6 +47,7 @@ p {
     height: 25px;
     border: 1px solid #ccc;
     border-radius: 5px;
+    font-size: 20px;
 }
 
 input[type="submit"] {
@@ -80,6 +83,7 @@ input
     background: #f1f1f1 url(http://www.red-team-design.com/wp-content/uploads/2011/09/login-sprite.png) no-repeat;
     border: 1px solid #ccc;
     border-radius: 5px;
+    margin: 8px auto;
 }
 
 input[type="submit"]:hover {
