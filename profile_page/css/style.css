@@ -1,0 +1,113 @@
+@import url(reset.css);
+
+body {
+    
+    font: 14px/1.5 Arial, Verdana, sans-serif;
+    color: #353535;
+    text-align: center;
+}
+
+#wrapper {
+    overflow: hidden;
+    width: 60%;
+    margin: 0 auto;
+    height: 636px;                    /*need change*/
+    background: #FDD223;   
+}
+
+.main-menu {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    border: 1px solid #e5e5e5;
+}
+
+ul {
+    margin:0;
+    padding:0;
+    list-style:none;
+    background: green;
+}
+
+.main-menu li {
+    display: inline-block;
+    margin-right: -4px;
+    list-style:none;
+    width: 11%;
+}
+
+.main-menu li:nth-child(1) {
+    width:22%;
+
+}
+
+.main-menu li:nth-child(2) {
+    width:34%;
+}
+
+.main-menu li a {
+    display:block;
+    color:#FFFFFF;
+    
+    text-decoration:none;
+    padding:10px 15px;
+    margin-right:-5px;
+}
+
+ a:hover {
+    background: #eeeeee;
+}
+
+.vertical-menu {
+    overflow: hidden;
+    float: left;
+    width: 180px;
+    height: 636px;
+    background: yellow;
+}
+
+.vert-menu {
+    width: 180px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.vert-menu li {
+    background-color: brown;
+}
+
+.vert-menu a {
+    display: block;
+    margin-bottom: -1px;
+    padding: 8px 14px;
+    text-decoration: none;
+    color: #0088cc;
+    border: 1px solid #e5e5e5;
+}
+
+.place-icon {
+    margin: 10px;
+    float: left;
+    width: 25%;
+    background: orange;
+}
+
+.icon {
+    margin:10px;
+    padding: 80px 0;
+    border:1px solid black;
+}
+
+.edit {
+    margin:10px;
+    border:1px solid black;
+}
+
+.edit a {
+    display:block;
+    color: blue;
+    
+    text-decoration:none;
+    padding:10px 15px;
+}
