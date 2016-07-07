@@ -1,0 +1,62 @@
+@import url(reset.css);
+
+body {
+	background: url(../images/main_page.jpg);
+	font: 14px/1.5 Arial, Verdana, sans-serif;
+	color: #353535;
+	text-align: center;
+}
+
+#wrapper {
+    width: 960px;
+    margin: 0 auto;
+    background: #79554b;   
+}
+
+#content {
+    padding-top: 40px;
+}
+
+h1 {
+    font-size: 55px;
+    font-weight: bold;
+    line-height: 1.4;
+}
+
+.data {
+    overflow: hidden;
+    width: 500px;
+    margin: 0 auto;
+    background: #B18904;
+}
+
+.line {
+    overflow: hidden;
+    padding: 0 0;
+    margin: 15px;
+}
+
+.line span {
+    margin: 0;
+    padding: 0;
+    font-size:28px;
+    float: left;
+}
+
+.line input {
+    float: right;
+    background: #f1f1f1 url(http://www.red-team-design.com/wp-content/uploads/2011/09/login-sprite.png) no-repeat;
+    padding: 10px 15px 10px 30px;
+    width: 240px;
+    height: 25px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.datefield {
+    float: right;
+    width: 90px;
+    margin-left: 9px;
+    height: 35px;
+    margin-top: 4px;
+}
