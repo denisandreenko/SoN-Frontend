@@ -118,10 +118,11 @@ a:hover {
 .place-info .block .big-line {
     border:1px solid black;
     padding: 10px;
+    margin-bottom: 5px;
 }
 
 .place-info .block .pre-wrap {
-    margin:10px 5px 10px 20px;
+    margin:0px 5px 0px 20px;
     width: 15%;
     border:1px solid black;
     padding: 10px;
@@ -135,7 +136,7 @@ a:hover {
 }
 
 .place-info .block .wrap {
-    margin:10px 5px;
+    margin:0px 5px 0px 5px;
     width: 60%;
     border:1px solid black;
     padding: 10px;
