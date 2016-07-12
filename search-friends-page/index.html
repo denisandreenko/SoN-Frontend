@@ -4,7 +4,6 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<title>SoN-friends</title>
 		<link href="css/style.css" type="text/css" rel="stylesheet" />
-		<script src="scripts/tabs.js"></script>
 	</head>
 	<body>
 		<div id="wrapper">
@@ -31,24 +30,122 @@
         		</ul>
 
 				<div class="content-place">
-					<ul class="tab">
-					    <li><a href="#" class="tablinks" onclick="openCity(event, 'Search People')">Search People</a></li>
-					    <li><a href="#" class="tablinks" onclick="openCity(event, 'Search Groups')">Search Groups</a></li>
-					</ul>
-					
-					<div id="Search People" class="friend-place">
-						<div class="w3-top">
-							<h2>Andreenko Denis</h2>
+					<div class="masonry">
+    					<!-- Адаптивные блоки с содержанием -->
+
+						<div id="Search People" class="item">
+							<div class="w3-top">
+								<h2>Danik Sych</h2>
+							</div>
+							<div class="w3-prime">
+								<img src="images/p1.jpg">
+							</div>
+							<div class="w3-bottom">
+								<ul class="user-api">
+									<li><a href=""><img src="images/add_black.png"></a></li>
+									<li><a href=""><img src="images/block_black.png"></a></li>
+									<li><a href=""><img src="images/mail_black.png"></a></li>	
+								</ul>
+							</div>
 						</div>
-						<div class="w3-prime">
-							<img src="images/avatar.jpg">
+		
+						<div id="Search People" class="item">
+							<div class="w3-top">
+								<h2>Anton Poljakov</h2>
+							</div>
+							<div class="w3-prime">
+								<img src="images/p2.jpg">
+							</div>
+							<div class="w3-bottom">
+								<ul class="user-api">
+									<li><a href=""><img src="images/add_black.png"></a></li>
+									<li><a href=""><img src="images/block_black.png"></a></li>
+									<li><a href=""><img src="images/mail_black.png"></a></li>	
+								</ul>
+							</div>
 						</div>
-						<div class="w3-bottom">
-							<ul class="user-api">
-								<li><a href=""><img src="images/add_black.png"></a></li>
-								<li><a href=""><img src="images/block_black.png"></a></li>
-								<li><a href=""><img src="images/mail_black.png"></a></li>
+
+						<div id="Search People" class="item">
+							<div class="w3-top">
+								<h2>Ilja Stasykevich</h2>
+							</div>
+							<div class="w3-prime">
+								<img src="images/p3.jpg">
+							</div>
+							<div class="w3-bottom">
+								<ul class="user-api">
+									<li><a href=""><img src="images/add_black.png"></a></li>
+									<li><a href=""><img src="images/block_black.png"></a></li>
+									<li><a href=""><img src="images/mail_black.png"></a></li>	
+								</ul>
+							</div>
+						</div>
+
+						<div id="Search People" class="item">
+							<div class="w3-top">
+								<h2>Nadja Orlova</h2>
+							</div>
+							<div class="w3-prime">
+								<img src="images/p4.jpg">
+							</div>
+							<div class="w3-bottom">
+								<ul class="user-api">
+									<li><a href=""><img src="images/add_black.png"></a></li>
+									<li><a href=""><img src="images/block_black.png"></a></li>
+									<li><a href=""><img src="images/mail_black.png"></a></li>	
+								</ul>
+							</div>
+						</div>
+					  
+					</div>
+					    <!-- Конец контейнера с адаптивными блоками -->
+				
+					<div class="search-panel">
+						<!--Контейнер с поисковой панелью-->
+
+						<div class="line line-search">
+							<input type="text" name="search" placeholder="search">
+						</div>
+				
+						<div class="line line-sex">
+							<span>Sex</span>
+							<ul class="shift shift-sex">
+								<li><input type="radio" name="sex" value="man">male</li>
+								<li><input type="radio" name="sex" value="woman">female</li>
+								<li><input type="radio" name="sex" value="any sex">any sex</li>
 							</ul>
+						</div>
+
+						<div class="line line-city">
+							<span>City</span>
+							<div class="shift shift-city">
+								<select>
+									<option>City</option>
+									<option>Brest</option>
+									<option>Grodno</option>
+									<option>Gomel</option>
+								</select>
+							</div>
+						</div>
+
+						<div class="line line-age">
+							<span>Age</span>
+							<div class="shift shift-city">
+								<select class="age">
+									<option>from</option>
+									<option>14</option>
+									<option>15</option>
+									<option>16</option>
+								</select>
+								<span>-</span>
+								<select class="age">
+									<option>to</option>
+									<option>20</option>
+									<option>21</option>
+									<option>22</option>
+								</select>
+							</div>
+								
 						</div>
 					</div>
 
