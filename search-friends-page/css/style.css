@@ -70,7 +70,14 @@ a:hover {
     float: left;
     width: 78%;
     height: 636px;
-    background: #FFCC80;
+    background-color: #FFCC80;
+}
+
+.content-place .quantity {
+    background-color: #FF8A65;
+    padding: 8px 20px;
+    text-align: left;
+    font-size: 16px;
 }
 
 /* ------------- Контейнер с адаптивными блоками------------- */
@@ -89,7 +96,7 @@ a:hover {
 /* Элементы в виде плиток с содержанием */
 .item {
     display: inline-block;
-    background: #fff;
+    background-color: #fff;
     margin: 0 0 1.5em;
     width: 100%;
     box-sizing: border-box; /* Изменения алгоритма расчета ширины и высоты элемента.*/
@@ -99,7 +106,7 @@ a:hover {
 
 .w3-top {
     padding: 0px 10px;
-    background: orange;
+    background-color: orange;
     font-size: 20px;
 }
 
