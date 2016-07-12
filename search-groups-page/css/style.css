@@ -1,0 +1,177 @@
+@import url(reset.css);
+
+body {
+    
+    font: 14px/1.5 Arial, Verdana, sans-serif;
+    color: #353535;
+    text-align: center;
+}
+
+#wrapper {
+    overflow: hidden;
+    width: 60%;
+    margin: 0 auto;
+    height: 636px;                    /*need change*/
+    background: #FDD223;   
+}
+
+a:hover {
+    background: grey;
+}
+
+.top-menu {
+    border: 1px solid #e5e5e5;
+    background: green;
+}
+
+.top-menu li {
+    display: inline-block;
+    margin-right: -4px;
+    width: 11%;
+}
+
+.top-menu li:nth-child(1) {
+    width:22%;
+}
+
+.top-menu li:nth-child(2) {
+    width:34%;
+}
+
+.top-menu li a {
+    display:block;
+    color:#FFFFFF;
+    text-decoration:none;
+    padding:10px 15px;
+    margin-right:-5px;
+}
+
+.vert-menu {
+    float: left;
+    width: 180px;
+    height: 636px;
+    background: yellow;
+}
+
+.vert-menu li {
+    background-color: brown;
+}
+
+.vert-menu li a {
+    display: block;
+    margin-bottom: -1px;
+    padding: 8px 14px;
+    text-decoration: none;
+    color: #0088cc;
+    border: 1px solid #e5e5e5;
+}
+
+.content-place {
+    float: left;
+    width: 78%;
+    height: 636px;
+    background-color: #FFCC80;
+}
+
+.content-place .quantity {
+    background-color: #FF8A65;
+    padding: 8px 20px;
+    text-align: left;
+    font-size: 16px;
+}
+
+/* ------------- Контейнер с адаптивными блоками------------- */
+.masonry {
+    float: left;
+    width: 65%; 
+    margin: 1.5em 0;
+    padding: 0;
+    padding-left: 15px;
+    column-gap: 1.5em; /* Общее расстояние между колонками */
+    font-size: .85em;
+    -moz-column-gap: 1.5em; /* Расстояние между колонками для Firefox */
+    -webkit-column-gap: 1.5em; /* Расстояние между колонками  для Safari, Chrome и iOS */
+}
+ 
+/* Элементы в виде плиток с содержанием */
+.item {
+    display: inline-block;
+    background-color: #fff;
+    margin: 0 0 1.5em;
+    width: 100%;
+    box-sizing: border-box; /* Изменения алгоритма расчета ширины и высоты элемента.*/
+    -moz-box-sizing: border-box; /* Для Firefox */ 
+    -webkit-box-sizing: border-box; /* Для Safari, Chrome, iOS иAndroid */ 
+}
+
+.w3-top {
+    padding: 0px 10px;
+    background-color: orange;
+    font-size: 20px;
+}
+
+.w3-top span{
+    font-size: 13px;
+}
+
+.w3-prime {
+    background: blue;
+
+}
+
+.w3-prime img {
+    width: 100%;
+    height: 190px;
+}
+
+/* Медиа-запросы для различных размеров адаптивного макета */
+@media only screen and (min-width: 400px) {
+    .masonry {
+        -moz-column-count: 2;
+        -webkit-column-count: 2;
+        column-count: 2;
+    }
+}
+ 
+@media only screen and (min-width: 700px) {
+    .masonry {
+        -moz-column-count: 3;
+        -webkit-column-count: 3;
+        column-count: 3;
+    }
+}
+ 
+@media only screen and (min-width: 900px) {
+    .masonry {
+        -moz-column-count: 4;
+        -webkit-column-count: 4;
+        column-count: 4;
+    }
+}
+ 
+@media only screen and (min-width: 1100px) {
+    .masonry {
+        -moz-column-count: 2;
+        -webkit-column-count: 2;
+        column-count: 2;
+    }
+}
+ 
+@media only screen and (min-width: 1280px) {
+    .wrapper {
+        width: 1260px;
+    }
+}
+
+.search-panel {
+    float: right;
+    background: #FF6E40;
+    width: 30%;
+    height: 636px;
+}    
+
+.search-panel .line {
+    margin: 25px 40px 10px 10px;
+    text-align: left;
+    font-size: 16px;
+}
