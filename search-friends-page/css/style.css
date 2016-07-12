@@ -1,0 +1,156 @@
+@import url(reset.css);
+
+body {
+    
+    font: 14px/1.5 Arial, Verdana, sans-serif;
+    color: #353535;
+    text-align: center;
+}
+
+#wrapper {
+    overflow: hidden;
+    width: 60%;
+    margin: 0 auto;
+    height: 636px;                    /*need change*/
+    background: #FDD223;   
+}
+
+a:hover {
+    background: #eeeeee;
+}
+
+.top-menu {
+    border: 1px solid #e5e5e5;
+    background: green;
+}
+
+.top-menu li {
+    display: inline-block;
+    margin-right: -4px;
+    width: 11%;
+}
+
+.top-menu li:nth-child(1) {
+    width:22%;
+}
+
+.top-menu li:nth-child(2) {
+    width:34%;
+}
+
+.top-menu li a {
+    display:block;
+    color:#FFFFFF;
+    text-decoration:none;
+    padding:10px 15px;
+    margin-right:-5px;
+}
+
+.vert-menu {
+    float: left;
+    width: 180px;
+    height: 636px;
+    background: yellow;
+}
+
+.vert-menu li {
+    background-color: brown;
+}
+
+.vert-menu li a {
+    display: block;
+    margin-bottom: -1px;
+    padding: 8px 14px;
+    text-decoration: none;
+    color: #0088cc;
+    border: 1px solid #e5e5e5;
+}
+
+.content-place {
+    float: left;
+    margin: 10px;
+    width: 75%;
+    height: 570px;
+    background: red;
+}
+
+ul.tab {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+}
+
+/* Float the list items side by side */
+ul.tab li {
+    float: left;
+}
+
+/* Style the links inside the list items */
+ul.tab li a {
+    display: inline-block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    transition: 0.3s;
+    font-size: 17px;
+}
+
+/* Change background color of links on hover */
+ul.tab li a:hover {
+    background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+ul.tab li a:focus, .active {
+    background-color: #ccc;
+}
+
+
+.friend-place {
+    margin:10px;
+    width: 200px;
+    height: 250px;
+    background: orange;
+}
+
+.friend-place .w3-top {
+    padding: 0px 10px;
+    background: grey;
+    font-size: 22px;
+}
+
+.friend-place .w3-prime {
+    background: blue;
+
+}
+
+.friend-place .w3-prime img {
+    width: 100%;
+    height: 190px;
+}
+
+
+.user-api {
+    background: #455a64;
+}
+
+.user-api li {
+    display: inline-block;
+    width: 31%;
+}
+
+.user-api li a {
+    display:block;
+    color:#FFFFFF;
+    text-decoration:none;
+    padding:8px 8px;
+}
+
+.user-api li a img {
+    width: 30px;
+    height: 30px;
+}
