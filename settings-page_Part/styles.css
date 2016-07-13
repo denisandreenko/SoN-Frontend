@@ -1,13 +1,13 @@
 body{
+    max-height: 1000px;
     padding: 2%;
 }
 hr{
     border-style: dashed;
 }
-button{
-    width: 50%;
+.btnSave{
+    width: 36%;
 }
-
 .colored{
     border-radius: 25px;
     background-color: #F7F7F7;
@@ -20,8 +20,29 @@ button{
     padding-bottom: 10%;
 }
 .settings{
-    margin-left:40%;
+    margin-top: 2%;
+    margin-left:42%;
 }
-.inputs{
+.card{
+    margin-left: 20%;
+    max-width: 60%;
+}
 
+.header{
+    text-align:left;
+    overflow: hidden;
+}
+.cardContent{
+    padding: 2%;
+}
+.rightBtn{
+    margin: 0.5%;
+    float: right;
+}
+
+.headerBtn{
+    float:right;
+}
+.bannedPerson{
+    margin-bottom: 2%;
 }
