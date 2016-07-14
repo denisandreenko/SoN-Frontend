@@ -48,7 +48,7 @@ a:hover {
 
 .vert-menu {
     float: left;
-    width: 180px;
+    width: 22%;
     height: 636px;
     background: yellow;
 }
@@ -67,7 +67,7 @@ a:hover {
 }
 
 .content-place {
-    float: left;
+    float: right;
     width: 78%;
     height: 636px;
     background-color: #FFCC80;
@@ -105,7 +105,7 @@ a:hover {
 }
 
 .w3-top {
-    padding: 0px 10px;
+    padding: 0px 5px;
     background-color: orange;
     font-size: 20px;
 }
@@ -123,12 +123,12 @@ a:hover {
 
 .user-api {
     background: #FFFFFF;
-    height: 41px;
+    height: 30px;
 }
 
 .user-api li {
     display: inline-block;
-    width: 32%;
+    width: 32.3%;
 }
 
 .user-api li a {
@@ -136,14 +136,14 @@ a:hover {
     display:block;
     color:#FFFFFF;
     text-decoration:none;
-    padding:5px 5px;
+    padding:2.5px 5px;
 }
 
 .user-api li a img {
     display: block;
     margin: 0 auto !important;
-    width: 30px;
-    height: 30px;
+    width: 25px;
+    height: 25px;
     
 }
 
