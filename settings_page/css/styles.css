@@ -1,0 +1,222 @@
+@import url(reset.css);
+
+body {
+
+    font: 14px/1.5 Arial, Verdana, sans-serif;
+    color: #353535;
+    text-align: center;
+}
+
+#wrapper {
+    overflow: hidden;
+    width: 60%;
+    margin: 0 auto;
+    height: 636px;                    /*need change*/
+    background: #fff;
+}
+
+a:hover {
+    background: #eeeeee;
+}
+
+.top-menu {
+    border: 1px solid #e5e5e5;
+    background: green;
+}
+
+.top-menu li {
+    display: inline-block;
+    margin-right: -4px;
+    width: 11%;
+}
+
+.top-menu li:nth-child(1) {
+    width:22%;
+}
+
+.top-menu li:nth-child(2) {
+    width:34%;
+}
+
+.top-menu li a {
+    display:block;
+    color:#FFFFFF;
+    text-decoration:none;
+    padding:10px 15px;
+    margin-right:-5px;
+}
+
+.vert-menu {
+    float: left;
+    width: 180px;
+    height: 636px;
+    background: yellow;
+}
+
+.vert-menu li {
+    background-color: brown;
+}
+
+.vert-menu li a {
+    display: block;
+    margin-bottom: -1px;
+    padding: 8px 14px;
+    text-decoration: none;
+    color: #0088cc;
+    border: 1px solid #e5e5e5;
+}
+
+.place-redact {
+    margin-top: 1%;
+    margin-left: 0;
+    float: left;
+    width: 80%;
+    background: white;
+}
+
+.line {
+    overflow: hidden;
+    padding: 0 0;
+    margin: 15px;
+}
+
+.line span {
+    margin: 0;
+    padding: 0;
+    font-size:22px;
+    float: left;
+}
+
+.line input[type="text"], .line input[type="password"], .line input[type="email"]{
+    float: right;
+    background: #f1f1f1 url(http://www.red-team-design.com/wp-content/uploads/2011/09/login-sprite.png) no-repeat;
+    padding: 10px 15px 10px 25px;
+    width: 180px;
+    height: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.datefield {
+    float: right;
+    background: #f1f1f1 url(http://www.red-team-design.com/wp-content/uploads/2011/09/login-sprite.png) no-repeat;
+    width: 68px;
+    margin-left: 9px;
+    height: 30px;
+    margin-top: 4px;
+}
+
+.line input[type="radio"] {
+    float: right;
+    margin: 16px 35px 0 10px;
+}
+
+.line .sex {
+    float: right;
+    font-size: 18px;
+    margin-top: 8px;
+}
+
+input[type="submit"] {
+    background-color: #ffb94b;
+    border-radius: 3px;
+    border-style: solid;
+    border-color: #d69e31 #e3a037 #d5982d #e3a037;
+    height: 35px;
+    width: 130px;
+    font: bold 15px Arial, Helvetica;
+    color: #8f5a0a;
+}
+
+input[type="submit"]:hover {
+    background: grey;
+}
+hr{
+    border-style: dashed;
+}
+.btnSave{
+    width: 36%;
+}
+.colored{
+    border-radius: 25px;
+    background-color: #F7F7F7;
+}
+
+.Content{
+    padding-top: 7%;
+    padding-right: 15%;
+    padding-left: 15%;
+    padding-bottom: 10%;
+}
+.settings{
+    margin-top: 2%;
+    margin-left:42%;
+}
+.card{
+    margin-top: 5%;
+    margin-left: 0;
+    max-width: 0;
+}
+
+.header{
+    text-align:left;
+    overflow: hidden;
+}
+.cardContent{
+    padding: 2%;
+}
+.rightBtn{
+    margin: 0.5%;
+    float: right;
+}
+
+.headerBtn{
+    float:right;
+}
+.bannedPerson{
+    margin-bottom: 2%;
+}
+hr{
+    border-style: dashed;
+}
+.btnSave{
+    width: 36%;
+}
+.colored{
+    border-radius: 25px;
+    background-color: #F7F7F7;
+}
+
+.cardContent{
+    padding-top: 7%;
+    padding-right: 15%;
+    padding-left: 15%;
+    padding-bottom: 10%;
+}
+.settings{
+    margin-top: 2%;
+    margin-left: 0%;
+}
+.card{
+    margin-left: 20%;
+    max-width: 60%;
+}
+
+.header{
+    text-align:left;
+    overflow: hidden;
+}
+.cardContent{
+    padding: 2%;
+}
+.rightBtn{
+    margin: 0.5%;
+    float: right;
+}
+
+.headerBtn{
+    float:right;
+}
+.bannedPerson{
+    margin-bottom: 2%;
+}
