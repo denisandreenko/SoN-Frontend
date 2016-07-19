@@ -1,96 +1,139 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-		<title>SoN-profile</title>
-		<link href="css/style.css" type="text/css" rel="stylesheet" />
-	</head>
-	<body>
-		<div id="wrapper">
-			<div id="header">
-				<ul class="top-menu">
-					<li><a href="">SoN</a></li>
-					<li><input type="text" name="search"></li>
-		            <li><a href="">search</a></li>
-		            <li><a href="">help</a></li>
-		            <li><a href="">settings</a></li>
-		            <li><a href="">log out</a></li>
-        		</ul>
-			</div>
-			
-			<div id="content">
-				<ul class="vert-menu">
-					<li><a href="">Profile</a></li>
-		            <li><a href="">Wall</a></li>
-		            <li><a href="">Friends</a></li>
-		            <li><a href="">Messages</a></li>
-		            <li><a href="">Groups</a></li>
-		            <li><a href="">Audio</a></li>
-		            <li><a href="">Video</a></li>
-        		</ul>
+<!doctype html>
+<html lang="en" ng-app="testApp">
+<head>
+    <meta charset="utf-8">
+    <title>My HTML File</title>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css"/>
+    <script src="bower_components/angular/angular.js"></script>
+    <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<div class="wrapper" ng-controller="ProfileController">
+    <div id="header">
+        <ul class="top-menu">
+            <li><a href="">SoN</a></li>
+            <li><input type="text" name="search"></li>
+            <li><a href="">search</a></li>
+            <li><a href="">help</a></li>
+            <li><a href="">settings</a></li>
+            <li><a href="">log out</a></li>
+        </ul>
+    </div>
+    <div id="content">
+        <ul class="vert-menu">
+            <li><a href="">Profile</a></li>
+            <li><a href="">Wall</a></li>
+            <li><a href="">Friends</a></li>
+            <li><a href="">Messages</a></li>
+            <li><a href="">Groups</a></li>
+            <li><a href="">Audio</a></li>
+            <li><a href="">Video</a></li>
+        </ul>
 
-				<div class="place-icon">
-					<div class="icon">
-						<img src="">
-					</div>
+        <div class="place-icon">
+            <div class="icon">
+                <img src="{{userAvatar}}" width="100%" height="auto" >
+            </div>
 
-					<div class="edit">
-						<span><a href="">Edit Profile</a></span>
-					</div>
-				</div>
+            <div class="edit">
+                <span><a href="">Edit Profile</a></span>
+            </div>
+        </div>
 
-				<div class="place-info">
-					<div class="name">Andreenko Denis</div>
-					
-					<div class="block">
-						<div class="pre-wrap">
-							<div class="line">Birthday:</div>
-						</div>
+        <div class="place-info">
+            <div class="name">{{userName + userSubname}}</div>
 
-						<div class="wrap">
-							<div class="line line-city">1 Feb 1996</div>
-						</div>
-					</div>
-					
-					<div class="block">
-						<div class="big-line">Contact information</div>
+            <div class="block">
+                <div class="pre-wrap">
+                    <div class="line">Birthday:</div>
+                </div>
 
-						<div class="pre-wrap">
-							<span class="line">Mobile:</span>
-							<span class="line">Skype:</span>
-							<span class="line">Email:</span>
-						</div>
+                <div class="wrap">
+                    <div class="line line-city">{{userBirthday}}</div>
+                </div>
+            </div>
 
-						<div class="wrap">
-							<div class="line line-mobile">+375298218295</div>
-							<div class="line line-skype">andreenko.dn</div>
-							<div class="line line-email">andreenkodn@gmail.com</div>
-						</div>
-					</div>
+            <div class="block"  >
+                <div class="big-line">Contact information</div>
+                <div ng-repeat="contact in userContacts">
+                <div class="pre-wrap" >
+                    <span class="line">{{contact.type}}:</span>
+                </div>
 
-					<div class="block">
-						<div class="big-line">Location</div>
+                <div class="wrap">
+                    <div class="line line-mobile"> {{contact.value}}</div>
+                </div>
+                </div>
+            </div>
 
-						<div class="pre-wrap">
-							<div class="line">City:</div>
-						</div>
+            <div class="block">
+                <div class="big-line">Location</div>
 
-						<div class="wrap">
-							<div class="line line-city">grodno</div>
-						</div>
-					</div>
+                <div class="pre-wrap">
+                    <div class="line">City:</div>
+                </div>
 
-					<div class="block">
-						<div class="big-line">About me</div>
-						<div class="pre-wrap">
-							<div class="line line-about">I like frontend... and cofee!</div>
-						</div>
-					</div>
-				</div>
-			</div>
+                <div class="wrap">
+                    <div class="line line-city">{{userCity}}</div>
+                </div>
+            </div>
 
-			<div id="footer">
-			</div>
-		</div>
-	</body>
+            <div class="block">
+                <div class="big-line">About me</div>
+                <div class="pre-wrap">
+                    <div class="line line-about">{{userAbout}}</div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div id="footer">
+    </div>
+</div>
+<div class="wrapper" ng-controller="PostController">
+        <div ng-repeat="post in posts">
+            <div class="container w3-card-8">
+                <div class="postHeader">
+                    <img src="{{post.postOnwerImage}}" alt="avatar" width="40px"/>
+                    <span>{{post.postOwner}}</span>
+                </div>
+
+                <div class="postInfo">
+                    {{post.postText}}
+                    <img src="{{post.postImage}}" alt="postimg"/>
+                </div>
+
+                <div class="postFooter">
+                    <img src="{{post.likeImg}}" alt="like" width="25px"/>
+                    <span>{{post.likes}}</span>
+                    <img src="{{post.dislikeImg}}" alt="dislike" width="25px"/>
+                    <span>{{post.dislikes}}</span>
+                </div>
+            </div>
+        </div>
+</div>
+<!--<div ng-repeat="post in posts">
+    <div class="container w3-card-4">
+  <div class="postHeader">
+      <img src="{{post.postOnwerImage}}" alt="avatar" width="40px" />
+      <span>{{post.postOwner}}</span>
+  </div>
+
+  <div class="postInfo">
+      {{post.postText}}
+      <img src="{{post.postImage}}" alt="postimg" />
+  </div>
+
+  <div class="postFooter">
+      <img src="{{post.likeImg}}" alt="like" width="25px"/>
+      <span>{{post.likes}}</span>
+      <img src="{{post.dislikeImg}}" alt="dislike" width="25px"/>
+      <span>{{post.dislikes}}</span>
+  </div>
+</div>
+</div>-->
+<script type="text/javascript" src="js/controllers.js"></script>
+<script type="text/javascript" src="js/controller/profile-contrl.js"></script>
+</body>
 </html>
