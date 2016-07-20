@@ -234,14 +234,13 @@ a:hover {
 
 #content-registration .data {
     overflow: hidden;
-    width: 500px;
-    margin: 0 10%;
+    width: 100%;
 }
 
 #content-registration .line {
     overflow: hidden;
     padding: 0 0;
-    margin: 10px 15px;
+    margin: 10px 14% 10px 23%;
 }
 
 #content-registration .line span {
