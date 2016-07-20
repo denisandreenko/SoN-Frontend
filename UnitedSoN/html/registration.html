@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>SoN-registration</title>
+		<link href="../css/style.css" type="text/css" rel="stylesheet" />
+	</head>
+	<body>
+		<div id="wrapper">
+			<div id="content-registration">
+				<h1 id="signup">Sign Up</h1>
+				<form>
+					<div class="data">
+						<div class="line line-name">
+							<span>Name</span>
+							<input type="text" name="name" required>
+						</div>
+
+						<div class="line line-lastname">
+							<span>Last Name</span>
+							<input type="text" name="lastname" required>
+						</div>
+
+						<div class="line line-login">
+							<span>Login</span>
+							<input type="text" name="login" required>
+						</div>
+
+						<div class="line line-password">
+							<span>Password</span>
+							<input type="password" name="password" required>
+						</div>
+
+						<div class="line line-confirmpassword">
+							<span>Confirm Pass</span>
+							<input type="password" name="confirmpassword" required>
+						</div>
+
+						<div class="line line-email">
+							<span>Email</span>
+							<input type="email" name="email" required>
+						</div>
+
+						<div class="line line-sex">
+							<span>Sex</span>
+							<label>
+								<input type="radio" name="sex" value="man">
+	                			<span class="sex">Man</span>
+							</label>
+	                		<label>
+	                			<input type="radio" name="sex" value="woman" checked>
+	                			<span class="sex">Woman</span>
+	                		</label>
+						</div>
+
+						<div class="line line-birthday">
+							<span>Birthday</span>
+							<div class="date">
+								<select class="datefield datefield-day">
+									<option>Day</option>
+									<option>1</option>
+									<option>2</option>
+									<option>3</option>
+								</select>
+								<select class="datefield datefield-month">
+									<option>Month</option>
+									<option>Jan</option>
+									<option>Feb</option>
+									<option>Mar</option>
+								</select>
+								<select class="datefield datefield-year">
+									<option>Year</option>
+									<option>2016</option>
+									<option>2015</option>
+									<option>2014</option>
+								</select>
+							</div>
+						</div>
+					</div>
+					<input type="submit" name="signup" value="Send">
+				</form>
+			</div>
+		</div>
+	</body>
+</html>

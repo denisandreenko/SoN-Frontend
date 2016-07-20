@@ -170,10 +170,9 @@ a:hover {
 .place-info .block .pre-wrap {
     margin:0px 5px 0px 20px;
     width: 15%;
-    border:1px solid black;
     padding: 10px;
     float: left;
-    color: grey;
+    color: #332D13;
 }
 
 .place-info .block .pre-wrap:last-child {
@@ -184,7 +183,6 @@ a:hover {
 .place-info .block .wrap {
     margin:0px 5px 0px 5px;
     width: 60%;
-    border:1px solid black;
     padding: 10px;
     float: right;
     color:#332D13;
