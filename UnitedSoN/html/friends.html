@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="testApp">
+	<head>
+		<meta charset="utf-8">
+		<title>SoN-friends</title>
+	    <link rel="stylesheet" href="../css/style.css">
+	    <script src="../bower_components/angular/angular.js"></script>
+	    <script type="text/javascript" src="../script/app.js"></script>
+	    <script type="text/javascript" src="../script/controller/friend-controller.js"></script>
+	</head>
+	<body>
+		<div id="wrapper">
+			<div id="header">
+				<ul class="top-menu">
+					<li><a href="">SoN</a></li>
+					<li><input type="text" name="search"></li>
+		            <li><a href="">search</a></li>
+		            <li><a href="">help</a></li>
+		            <li><a href="">settings</a></li>
+		            <li><a href="">log out</a></li>
+        		</ul>
+			</div>
+			
+			<div id="content">
+				<ul class="vert-menu">
+					<li><a href="">Profile</a></li>
+		            <li><a href="">Wall</a></li>
+		            <li><a href="">Friends</a></li>
+		            <li><a href="">Messages</a></li>
+		            <li><a href="">Groups</a></li>
+		            <li><a href="">Audio</a></li>
+		            <li><a href="">Video</a></li>
+        		</ul>
+
+				<div class="friends-place" ng-controller="FriendController">
+					<div class="quantity">
+						<p>You have 4 friends</p>
+					</div>
+					
+					<div class="masonry-place">
+    					<!-- Адаптивные блоки с содержанием -->
+
+						<div id="Search People" class="item" ng-repeat="friend in friends">
+							<div class="top">
+								<h2>{{friend.name + " " + friend.subname}}</h2>
+							</div>
+							<div class="prime">
+								<img src="{{friend.avatarUrl}}">
+							</div>
+							<div class="bottom">
+								<ul class="user-api">
+									<li><a href=""><img src="../image/add_black.png"></a></li>
+									<li><a href=""><img src="../image/block_black.png"></a></li>
+									<li><a href=""><img src="../image/mail_black.png"></a></li>	
+								</ul>
+							</div>
+						</div>
+					</div>
+					    <!-- Конец контейнера с адаптивными блоками -->
+				
+					<div class="search-panel">
+						<!--Контейнер с поисковой панелью-->
+
+						<div class="line line-search">
+							<input type="text" name="search" placeholder="search">
+						</div>
+				
+						<div class="line line-sex">
+							<span>Sex</span>
+							<ul class="shift shift-sex">
+								<li><input type="radio" name="sex" value="man">male</li>
+								<li><input type="radio" name="sex" value="woman">female</li>
+								<li><input type="radio" name="sex" value="any sex">any sex</li>
+							</ul>
+						</div>
+
+						<div class="line line-city">
+							<span>City</span>
+							<div class="shift shift-city">
+								<select>
+									<option>City</option>
+									<option>Brest</option>
+									<option>Grodno</option>
+									<option>Gomel</option>
+								</select>
+							</div>
+						</div>
+
+						<div class="line line-age">
+							<span>Age</span>
+							<div class="shift shift-city">
+								<select class="age">
+									<option>from</option>
+									<option>14</option>
+									<option>15</option>
+									<option>16</option>
+								</select>
+								<span>-</span>
+								<select class="age">
+									<option>to</option>
+									<option>20</option>
+									<option>21</option>
+									<option>22</option>
+								</select>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

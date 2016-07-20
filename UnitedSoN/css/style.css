@@ -1,4 +1,4 @@
-/*--------------------------------Common CSS---------------------------------------*/
+/*----------------------------------------------------------------------Common CSS-----------------------------------------------------------------------------*/
 
 @import url(reset.css);
 
@@ -16,8 +16,8 @@ a:hover {
     overflow: hidden;
     width: 60%;
     margin: 0 auto;
-    height: auto;                    /*need change*/
-    background: #C2EBDC;   
+    height: auto;                    
+    background: #C2EBDC;          /*bad-#C2EBDC     no-bad-#8062CB*/        
 }
 
 #header .top-menu {
@@ -70,7 +70,7 @@ a:hover {
     color: #FFFFFF;
 }
 
-/*------------------------------------HOME----------------------------------------------------*/
+/*--------------------------------------------------------------------------HOME--------------------------------------------------------------------------------*/
 
 
 
@@ -217,8 +217,10 @@ a:hover {
      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5) inset;        
 }
 
-/*-------------------------------------REGISTRATION----------------------------------------------------------------------*/
 
+
+
+/*---------------------------------------------------------------------------REGISTRATION----------------------------------------------------------------------*/
 
 
 #content-registration {
@@ -346,8 +348,107 @@ i#content-registration nput[type="submit"]:hover {
 
 
 
-/*-------------------------------PROFILE---------------------------------------------*/
 
+/*---------------------------------------------------------------------FORGOT_PASSWORD---------------------------------------------------------------------------*/
+
+
+#content-forgot {
+    overflow: hidden;
+    margin: 23.6% auto;
+}
+
+#content-forgot h1 {
+    font-size: 40px;
+    font-weight: bold;
+    line-height: 1.4;
+}
+
+#content-forgot p {
+    font-size: 20px;
+    line-height: 1.4;
+}
+
+#content-forgot .line {
+    overflow: hidden;
+    padding: 0 0;
+    margin: 15px;
+}
+
+#content-forgot .line input[type="email"] {
+    background: #f1f1f1 url(http://www.red-team-design.com/wp-content/uploads/2011/09/login-sprite.png) no-repeat;
+    padding: 10px 15px 10px 30px;
+    width: 240px;
+    height: 25px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 20px;
+}
+
+#content-forgot input[type="submit"] {
+    background-color: #ffb94b;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#fddb6f), to(#ffb94b));
+    background-image: -webkit-linear-gradient(top, #fddb6f, #ffb94b);
+    background-image: -moz-linear-gradient(top, #fddb6f, #ffb94b);
+    background-image: -ms-linear-gradient(top, #fddb6f, #ffb94b);
+    background-image: -o-linear-gradient(top, #fddb6f, #ffb94b);
+    background-image: linear-gradient(top, #fddb6f, #ffb94b);
+    
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    
+    text-shadow: 0 1px 0 rgba(255,255,255,0.5);
+    
+    border-width: 1px;
+    border-style: solid;
+    border-color: #d69e31 #e3a037 #d5982d #e3a037;
+
+    height: 35px;
+    margin:10px auto;
+    padding: 0;
+    width: 130px;
+    cursor: pointer;
+    font: bold 15px Arial, Helvetica;
+    color: #8f5a0a;
+}
+
+#content-forgot input
+{
+    background: #f1f1f1 url(http://www.red-team-design.com/wp-content/uploads/2011/09/login-sprite.png) no-repeat;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 8px auto;
+}
+
+#content-forgot input[type="submit"]:hover {
+    background-color: #fddb6f;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#ffb94b), to(#fddb6f));
+    background-image: -webkit-linear-gradient(top, #ffb94b, #fddb6f);
+    background-image: -moz-linear-gradient(top, #ffb94b, #fddb6f);
+    background-image: -ms-linear-gradient(top, #ffb94b, #fddb6f);
+    background-image: -o-linear-gradient(top, #ffb94b, #fddb6f);
+    background-image: linear-gradient(top, #ffb94b, #fddb6f);
+}
+
+#content-forgot input[type="submit"]:active {
+    outline: none;
+    -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5) inset;
+    -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5) inset;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5) inset;  
+}
+
+#content-forgot input:focus
+{
+    background-color: #fff;
+    border-color: #e8c291;
+    outline: none;
+    box-shadow: 0 0 0 1px #e8c291 inset;
+}
+
+
+
+
+/*--------------------------------------------------------------------------------PROFILE------------------------------------------------------------------------*/
 
 
 .place-icon {
@@ -461,3 +562,158 @@ i#content-registration nput[type="submit"]:hover {
 .place-post .post-container .post-info .replies {
     float: right;
 }
+
+
+
+
+/*--------------------------------------------------------------------------------FRIENDS------------------------------------------------------------------------*/
+
+
+.friends-place {
+    float: right;
+    width: 77%;
+    height: auto;
+}
+
+.friends-place .quantity {
+    background-color: #7DD493;
+    padding: 8px 20px;
+    text-align: left;
+    font-size: 16px;
+    color: #FFFFFF;
+}
+
+/* ------------- Контейнер с адаптивными блоками------------- */
+.friends-place .masonry-place {
+    overflow: hidden;
+    background-color: #C2EBDC;
+    float: left;
+    width: 67%; 
+    padding: 1.5em 0;
+    padding-left: 10px;
+    padding-right: 8px;
+    column-gap: 1.5em; /* Общее расстояние между колонками */
+    font-size: .85em;
+    -moz-column-gap: 1.5em; /* Расстояние между колонками для Firefox */
+    -webkit-column-gap: 1.5em; /* Расстояние между колонками  для Safari, Chrome и iOS */
+}
+ 
+/* Элементы в виде плиток с содержанием */
+.friends-place .item {
+    display: inline-block;
+    background-color: #fff;
+    margin: 0 0 1.2em;
+    width: 100%;
+    box-sizing: border-box; /* Изменения алгоритма расчета ширины и высоты элемента.*/
+    -moz-box-sizing: border-box; /* Для Firefox */ 
+    -webkit-box-sizing: border-box; /* Для Safari, Chrome, iOS иAndroid */ 
+}
+
+.friends-place .top {
+    padding: 0px 5px;
+    background-color: #2E878A;
+    font-size: 17px;
+    color: #FFFFFF;
+}
+
+.friends-place .prime {
+    height: 200px;
+}
+
+.friends-place .prime img {
+    width: 100%;
+    height: 200px;
+}
+
+
+.friends-place .user-api {
+    height: 30px;
+}
+
+.friends-place .user-api li {
+    display: inline-block;
+    width: 32.3%;
+}
+
+.friends-place .user-api li a {
+    display:block;
+    padding:2.5px 5px;
+}
+
+.friends-place .user-api li a img {
+    display: block;
+    margin: 0 auto !important;
+    width: 25px;
+    height: 25px;
+    
+}
+
+.friends-place .search-panel {
+    float: right;
+    background: #8062CB;
+    width: 30%;
+    height: 636px;
+    color: #FFFFFF;
+}    
+
+.friends-place .search-panel .line {
+    margin: 25px 40px 10px 10px;
+    text-align: left;
+    font-size: 16px;
+}
+
+.friends-place .search-panel .line .shift {
+    margin-top:5px;
+    margin-left: 10px;
+}
+
+.friends-place .search-panel .line select {
+    width: 100%;
+}
+
+.friends-place .search-panel .line .age {
+    width: 53px;
+}
+
+/* Медиа-запросы для различных размеров адаптивного макета */
+@media only screen and (min-width: 400px) {
+    .masonry-place {
+        -moz-column-count: 2;
+        -webkit-column-count: 2;
+        column-count: 2;
+    }
+}
+ 
+@media only screen and (min-width: 700px) {
+    .masonry-place {
+        -moz-column-count: 3;
+        -webkit-column-count: 3;
+        column-count: 3;
+    }
+}
+ 
+@media only screen and (min-width: 900px) {
+    .masonry-place {
+        -moz-column-count: 4;
+        -webkit-column-count: 4;
+        column-count: 4;
+    }
+}
+ 
+@media only screen and (min-width: 1100px) {
+    .masonry-place {
+        -moz-column-count: 2;
+        -webkit-column-count: 2;
+        column-count: 2;
+    }
+}
+ 
+@media only screen and (min-width: 1280px) {
+    .wrapper-place {
+        width: 1260px;
+    }
+}
+
+
+
+
