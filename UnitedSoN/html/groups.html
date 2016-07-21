@@ -38,14 +38,14 @@
 					</div>
 
 					<div class="search-group">
-						<input type="text" name="search-group" placeholder="search">
+						<input type="text" name="search-group" placeholder="search" ng-model="searchGroups">
 						<div class="create-community"><a href="">create community</a></div>
 					</div>
 					
 					<div class="masonry-group">
     					<!-- Адаптивные блоки с содержанием -->
 
-						<div class="item" ng-repeat="group in groups">
+						<div class="item" ng-repeat="group in groups | filter: searchGroups">
 							<div class="top">
 								<h2>{{group.name}}</h2>
 								<span>{{group.folowers}} folowers</span>

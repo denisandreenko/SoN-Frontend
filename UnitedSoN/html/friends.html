@@ -40,7 +40,7 @@
 					<div class="masonry-place">
     					<!-- Адаптивные блоки с содержанием -->
 
-						<div id="Search People" class="item" ng-repeat="friend in friends">
+						<div id="Search People" class="item" ng-repeat="friend in friends | filter: searchFriend">
 							<div class="top">
 								<h2>{{friend.name + " " + friend.subname}}</h2>
 							</div>
@@ -62,7 +62,7 @@
 						<!--Контейнер с поисковой панелью-->
 
 						<div class="line line-search">
-							<input type="text" name="search" placeholder="search">
+							<input type="text" name="search" placeholder="search" ng-model="searchFriend">
 						</div>
 				
 						<div class="line line-sex">
