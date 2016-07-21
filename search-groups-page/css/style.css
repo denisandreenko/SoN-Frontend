@@ -66,21 +66,21 @@ a:hover {
     border: 1px solid #e5e5e5;
 }
 
-.content-place {
+.group-place {
     float: right;
     width: 78%;
     height: ;
     background-color: #FFCC80;
 }
 
-.content-place .quantity {
+.group-place .quantity {
     background-color: #FF8A65;
     padding: 8px 20px;
     text-align: left;
     font-size: 16px;
 }
 
-.content-place .search-group {
+.group-place .search-group {
     background-color: #f36c60;
     padding: 8px 20px;
     text-align: left;
@@ -88,14 +88,14 @@ a:hover {
     overflow: hidden;
 }
 
-.content-place .search-group .create-community {
+.group-place .search-group .create-community {
     font-size: 14px;
     float: right;
     background-color: #7b1fa2;
     border-radius: 5px;
 }
 
-.content-place .search-group .create-community a {
+.group-place .search-group .create-community a {
     padding: 1px 5px;
     display: block;
     color: #ffffff;

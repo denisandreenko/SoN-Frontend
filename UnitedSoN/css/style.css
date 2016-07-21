@@ -9,7 +9,11 @@ body {
 }
 
 a:hover {
-    background: #eeeeee;
+    background-color: #eeeeee;
+}
+
+input[type="submit"]:hover {
+    background-color: #eeeeee;
 }
 
 #wrapper {
@@ -17,11 +21,11 @@ a:hover {
     width: 60%;
     margin: 0 auto;
     height: auto;                    
-    background: #C2EBDC;          /*bad-#C2EBDC     no-bad-#8062CB*/        
+    background-color: #8062CB;          /*bad-#C2EBDC     no-bad-#8062CB*/        
 }
 
 #header .top-menu {
-    background: #5BA0C8;
+    background-color: #5BA0C8;
 }
 
 #header .top-menu li {
@@ -45,9 +49,8 @@ a:hover {
 }
 
 #header .top-menu input {
-    padding-left: 5%; 
     width: 80%;
-    height: 23px;
+    padding: 3px 5px;
 }
 
 .vert-menu {
@@ -566,6 +569,145 @@ i#content-registration nput[type="submit"]:hover {
 
 
 
+/*--------------------------------------------------------------------------------EDIT_PROFILE------------------------------------------------------------------------------------------*/
+
+.place-redact {
+    float: right;
+    width: 77%;
+    height: auto;
+    background-color: #C2EBDC;
+    padding: 20px 0px;
+    overflow: hidden;
+}
+
+.place-redact .line {
+    overflow: hidden;
+    padding: 0 0;
+    margin: 2.5% 17%;
+}
+
+.place-redact .line span {
+    margin: 0;
+    padding: 0;
+    font-size:22px;
+    float: left;
+}
+
+.place-redact .line input[type="text"], .line input[type="password"], .line input[type="email"]{
+    float: right;
+    background: #f1f1f1 url(http://www.red-team-design.com/wp-content/uploads/2011/09/login-sprite.png) no-repeat;
+    padding: 10px 15px 10px 25px;
+    width: 180px;
+    height: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.place-redact .datefield {
+    float: right;
+    background: #f1f1f1 url(http://www.red-team-design.com/wp-content/uploads/2011/09/login-sprite.png) no-repeat;
+    width: 68px;
+    margin-left: 9px;
+    height: 30px;
+    margin-top: 4px;
+}
+
+.place-redact .line input[type="radio"] {
+    float: right;
+    margin: 16px 35px 0 10px;
+}
+
+.place-redact .line .sex {
+    float: right;
+    font-size: 18px;
+    margin-top: 8px;
+}
+
+.place-redact input[type="submit"] {
+    background-color: #ffb94b;
+    border-radius: 3px;
+    border-style: solid;
+    border-color: #d69e31 #e3a037 #d5982d #e3a037;
+    height: 35px;
+    width: 130px;
+    font: bold 15px Arial, Helvetica;
+    color: #8f5a0a;
+    margin: 2% auto;
+}
+
+
+
+
+/*--------------------------------------------------------------------------------CREATE_GROUP-------------------------------------------------------------------------------------------*/
+
+
+.place-create-group {
+    float: right;
+    width: 77%;
+    height: auto;
+    background-color: #C2EBDC;
+    padding: 20px 0px;
+    overflow: hidden;
+    padding: 132px 0;
+}
+
+.place-create-group .line {
+    overflow: hidden;
+    padding: 0 0;
+    margin: 2.5% 17%;
+}
+
+.place-create-group .line span {
+    margin: 0;
+    padding: 0;
+    font-size:22px;
+    float: left;
+}
+
+.place-create-group .line input[type="text"], textarea{
+    float: right;
+    background: #f1f1f1 url(http://www.red-team-design.com/wp-content/uploads/2011/09/login-sprite.png) no-repeat;
+    padding: 10px 15px 10px 25px;
+    width: 180px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.place-create-group .datefield {
+    float: right;
+    background: #f1f1f1 url(http://www.red-team-design.com/wp-content/uploads/2011/09/login-sprite.png) no-repeat;
+    width: 68px;
+    margin-left: 9px;
+    height: 30px;
+    margin-top: 4px;
+}
+
+.place-create-group .line input[type="radio"] {
+    float: right;
+    margin: 16px 35px 0 10px;
+}
+
+.place-create-group .line .sex {
+    float: right;
+    font-size: 16px;
+    margin-top: 8px;
+}
+
+.place-create-group input[type="submit"] {
+    margin-top: 20px;
+    background-color: #ffb94b;
+    border-radius: 3px;
+    border-style: solid;
+    border-color: #d69e31 #e3a037 #d5982d #e3a037;
+    height: 35px;
+    width: 130px;
+    font: bold 15px Arial, Helvetica;
+    color: #8f5a0a;
+}
+
+
+
+
 /*--------------------------------------------------------------------------------FRIENDS------------------------------------------------------------------------*/
 
 
@@ -621,6 +763,7 @@ i#content-registration nput[type="submit"]:hover {
 }
 
 .friends-place .prime img {
+    display: block;
     width: 100%;
     height: 200px;
 }
@@ -717,3 +860,174 @@ i#content-registration nput[type="submit"]:hover {
 
 
 
+/*--------------------------------------------------------------------------GROUPS------------------------------------------------------------------------------*/
+
+
+.group-place {
+    float: right;
+    width: 77%;
+    height: auto;
+    background-color: #C2EBDC;
+}
+
+.group-place .quantity {
+    background-color: #7DD493;
+    padding: 8px 20px;
+    text-align: left;
+    font-size: 16px;
+    color: #FFFFFF;
+}
+
+.group-place .search-group {
+    background-color: #B8D98C;
+    padding: 8px 20px;
+    text-align: left;
+    font-size: 16px;
+    overflow: hidden;
+}
+
+.group-place .search-group input {
+    width: 40%;
+    padding: 3px 5px;
+}
+
+.group-place .search-group .create-community {
+    font-size: 14px;
+    float: right;
+    background-color: #2E538A;
+    border-radius: 5px;
+}
+
+.group-place .search-group .create-community a {
+    display: block;
+    padding: 1px 5px;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+/* ------------- Контейнер с адаптивными блоками------------- */
+.group-place .masonry-group {
+    float: left;
+    width: 95%; 
+    margin: 1.5em 0;
+    padding: 0;
+    padding-left: 15px;
+    column-gap: 1em; /* Общее расстояние между колонками */
+    font-size: .85em;
+    -moz-column-gap: 1em; /* Расстояние между колонками для Firefox */
+    -webkit-column-gap: 1em; /* Расстояние между колонками  для Safari, Chrome и iOS */
+}
+ 
+/* Элементы в виде плиток с содержанием */
+.group-place .item {
+    display: inline-block;
+    background-color: #fff;
+    margin: 0 0 1.5em;
+    width: 100%;
+    box-sizing: border-box; /* Изменения алгоритма расчета ширины и высоты элемента.*/
+    -moz-box-sizing: border-box; /* Для Firefox */ 
+    -webkit-box-sizing: border-box; /* Для Safari, Chrome, iOS иAndroid */ 
+}
+
+.group-place .top {
+    padding: 2px 5px;
+    background-color: #2E878A;
+    font-size: 20px;
+    color: #FFFFFF;
+    line-height: 1;
+}
+
+.group-place .top span{
+    font-size: 13px;
+}
+
+.group-place .prime img {
+    display: block;
+    width: 100%;
+    height: 190px;
+}
+
+/* Медиа-запросы для различных размеров адаптивного макета */
+@media only screen and (min-width: 400px) {
+    .masonry-group {
+        -moz-column-count: 3;
+        -webkit-column-count: 3;
+        column-count: 3;
+    }
+}
+ 
+@media only screen and (min-width: 700px) {
+    .masonry-group {
+        -moz-column-count: 3;
+        -webkit-column-count: 3;
+        column-count: 3;
+    }
+}
+ 
+@media only screen and (min-width: 900px) {
+    .masonry-group {
+        -moz-column-count: 4;
+        -webkit-column-count: 4;
+        column-count: 4;
+    }
+}
+ 
+@media only screen and (min-width: 1100px) {
+    .masonry-group {
+        -moz-column-count: 3;
+        -webkit-column-count: 3;
+        column-count: 3;
+    }
+}
+ 
+@media only screen and (min-width: 1280px) {
+    .wrapper {
+        width: 1260px;
+    }
+}
+
+
+
+
+/*-----------------------------------------------------------------------------------------AUDIO------------------------------------------------------------------------------------------*/
+
+
+.audio-place {
+    float: right;
+    width: 77%;
+    height: 595px;
+    background-color: #C2EBDC;
+}
+
+.audio-place .player {
+    margin: 10px 20px; 
+}
+
+.audio-place .player audio {
+    width: 100%;
+    height: 40px;
+}
+
+.audio-place ul {
+    float: left;
+    list-style: none;
+    height: auto;
+    margin: 2px 40px;
+    text-align: left;
+}
+
+.audio-place ul li {
+    width: 100%;
+    margin: 2% 0;
+
+}
+
+.audio-place ul li img {
+    display: block;
+    float: left;
+    margin-right: 4%;
+}
+
+.audio-place ul li span {
+    margin-right: 18.5%;
+}
