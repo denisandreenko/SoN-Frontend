@@ -1,0 +1,11 @@
+{
+  "name": "social-network",
+  "description": "Social Network",
+  "version": "1.0.0",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "angular": "~1.5.7",
+    "angular-ui-router": "0.3.1"
+  }
+}

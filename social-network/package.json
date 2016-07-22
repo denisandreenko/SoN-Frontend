@@ -1,0 +1,10 @@
+{
+  "name": "social-network",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Social Network",
+  "license": "MIT",
+  "devDependencies": {
+    "bower": "^1.7.7"
+  }
+}
