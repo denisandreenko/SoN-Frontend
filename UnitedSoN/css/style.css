@@ -944,7 +944,7 @@ i#content-registration nput[type="submit"]:hover {
 .group-place .prime img {
     display: block;
     width: 100%;
-    height: 190px;
+    height: auto;
 }
 
 /* Медиа-запросы для различных размеров адаптивного макета */
@@ -1031,3 +1031,135 @@ i#content-registration nput[type="submit"]:hover {
 .audio-place ul li span {
     margin-right: 18.5%;
 }
+
+
+
+
+/*------------------------------------------------------------------------------FACE-GROUP----------------------------------------------------------------------------------------------*/
+
+
+.group-place {
+    float: right;
+    width: 77%;
+    height: auto;
+    background-color: #C2EBDC;
+}
+
+.group-place .place-icon {
+    float: left;
+    margin: 10px 5px 10px 10px;
+    padding: 5px;
+    width: 33%;
+    background-color: #949ADB;
+}
+
+.group-place .place-icon .edit {
+    background-color: #6A7ECD;
+    border:1px solid #FFFFFF;
+}
+
+.group-place .place-icon .edit a {
+    display:block;
+    color: #FFFFFF;
+    text-decoration:none;
+    padding:10px 15px;
+}
+
+.group-place .place-info {
+    float: right;
+    margin: 10px 10px 10px 5px;
+    padding: 5px;
+    width: 62%;
+    text-align: left;
+    background-color: #949ADB;
+}
+
+.group-place .place-info .block {
+    padding: 10px;
+    border:1px solid #FFFFFF;
+    overflow: hidden;
+    color:#D5E0F1;
+    margin-bottom: 7px;
+    background-color: #6A7ECD;
+}
+
+.group-place .place-info .block:last-child {
+    margin-bottom: 0;
+}
+
+.group-place .place-info .name {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.group-place .place-info .block .big-line {
+    margin-bottom: 5px;
+    color: #BCB6E7;
+}
+
+.group-place .place-info .block .line {
+    padding: 3px;
+}
+
+.group-place .place-info .block .pre-line {
+    margin-left: 10%;
+    width: 15%;
+    float: left;
+}
+
+.group-place .place-info .block .pre-line:last-child {
+    width: 87%;
+}
+
+.group-place .place-info .block .post-line {
+    margin-left: 10%;
+    width: 60%;
+    float: left;
+}
+
+.group-place .place-post .post-container {
+    float: right;
+    margin-right: 3%;
+    margin-top: 3%;
+    max-width: 95%;
+    max-height: 30%;
+    overflow: hidden;
+    text-align: left;
+}
+
+.group-place .place-post .post-container .sender-face {
+    display: block;
+    width: 13%;
+    height: auto;
+    margin-left: 0;
+    float: left;
+}
+
+.group-place .place-post .post-container .post-info {
+    margin-left: 15%;
+}
+
+.group-place .place-post .post-container .post-info .sender-name {
+    font-size: 16px;
+    font-weight: bolder;
+}
+
+.group-place .place-post .post-container .post-info .post-text {
+
+}
+
+.group-place .place-post .post-container .post-info .post-media img {
+    width: 100%;
+    height: auto;
+}
+
+.group-place .place-post .post-container .post-info .replies {
+    float: right;
+}
+
+
+
+
+/*--------------------------------------------------------------------------------------CUSTOMS-------------------------------------------------------------------------------------- */
+
+
