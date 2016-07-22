@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('testApp').controller('FriendController', FriendController);
+angular.module('socialNetwork').controller('FriendController', FriendController);
 
 FriendController.$inject = ['$scope', '$http'];
 

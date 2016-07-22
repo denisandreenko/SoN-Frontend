@@ -21,7 +21,7 @@ function AudioController($scope, $http) {
         alert('PlayButton clicked');
     };
 };
-angular.module('testApp').filter('trusted', AudioFilter);
+angular.module('socialNetwork').filter('trusted', AudioFilter);
 
 AudioFilter.$inject = ['$sce'];
 

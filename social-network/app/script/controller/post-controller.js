@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('testApp').controller('PostController', PostController);
+angular.module('socialNetwork').controller('PostController', PostController);
 
 PostController.$inject = ['$scope', '$http'];
 

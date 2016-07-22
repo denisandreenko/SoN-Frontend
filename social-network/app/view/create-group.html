@@ -1,65 +1,30 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-		<title>SoN-create_group</title>
-		<link href="../css/style.css" type="text/css" rel="stylesheet" />
-	</head>
-	<body>
-		<div id="wrapper">
-			<div id="header">
-				<ul class="top-menu">
-					<li><a href="">SoN</a></li>
-					<li><input type="text" name="search" placeholder="search"></li>
-		            <li><a href="">search</a></li>
-		            <li><a href="">help</a></li>
-		            <li><a href="">settings</a></li>
-		            <li><a href="">log out</a></li>
-        		</ul>
-			</div>
-			
-			<div id="content">
-				<ul class="vert-menu">
-					<li><a href="">Profile</a></li>
-		            <li><a href="">Wall</a></li>
-		            <li><a href="">Friends</a></li>
-		            <li><a href="">Messages</a></li>
-		            <li><a href="">Groups</a></li>
-		            <li><a href="">Audio</a></li>
-		            <li><a href="">Video</a></li>
-        		</ul>
+<div class="place-create-group">
+    <div class="line line-name">
+        <span>Name</span>
+        <input type="text" name="name">
+    </div>
 
-				<div class="place-create-group">
-					<div class="line line-name">
-						<span>Name</span>
-						<input type="text" name="name">
-					</div>
+    <div class="line line-description">
+        <span>Description</span>
+        <textarea rows="3"></textarea>
+    </div>
 
-					<div class="line line-description">
-						<span>Description</span>
-						<textarea rows="3"></textarea>
-					</div>
+    <div class="line line-access">
+        <span>Access</span>
+        <label>
+            <input type="radio" name="access" value="public">
+            <span class="sex">public</span>
+        </label>
+        <label>
+            <input type="radio" name="access" value="private">
+            <span class="sex">private</span>
+        </label>
+    </div>
 
-					<div class="line line-access">
-						<span>Access</span>
-						<label>
-							<input type="radio" name="access" value="public">
-                			<span class="sex">public</span>
-						</label>
-                		<label>
-                			<input type="radio" name="access" value="private">
-                			<span class="sex">private</span>
-                		</label>
-					</div>
+    <div class="line line-web-site">
+        <span>Web-site</span>
+        <input type="text" name="web-site">
+    </div>
 
-					<div class="line line-web-site">
-						<span>Web-site</span>
-						<input type="text" name="web-site">
-					</div>
-
-					<input type="submit" name="edit" value="Create">
-				</div>
-			</div>
-		</div>
-	</body>
-</html>
+    <input type="submit" name="edit" value="Create">
+</div>

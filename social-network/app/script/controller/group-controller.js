@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('testApp').controller('GroupController', GroupController);
+angular.module('socialNetwork').controller('GroupController', GroupController);
 
 GroupController.$inject = ['$scope', '$http'];
 

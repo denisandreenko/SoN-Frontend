@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('testApp').controller('ProfileController', ProfileController);
+angular.module('socialNetwork').controller('ProfileController', ProfileController);
 
 ProfileController.$inject = ['$scope', '$http'];
 

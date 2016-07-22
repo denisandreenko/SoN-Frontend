@@ -1,109 +1,74 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-		<title>SoN-edit_profile</title>
-		<link href="../css/style.css" type="text/css" rel="stylesheet" />
-	</head>
-	<body>
-		<div id="wrapper">
-			<div id="header">
-				<ul class="top-menu">
-					<li><a href="">SoN</a></li>
-					<li><input type="text" name="search" placeholder="search"></li>
-		            <li><a href="">search</a></li>
-		            <li><a href="">help</a></li>
-		            <li><a href="">settings</a></li>
-		            <li><a href="">log out</a></li>
-        		</ul>
-			</div>
-			
-			<div id="content">
-				<ul class="vert-menu">
-					<li><a href="">Profile</a></li>
-		            <li><a href="">Wall</a></li>
-		            <li><a href="">Friends</a></li>
-		            <li><a href="">Messages</a></li>
-		            <li><a href="">Groups</a></li>
-		            <li><a href="">Audio</a></li>
-		            <li><a href="">Video</a></li>
-        		</ul>
+<div class="place-redact">
+    <div class="line line-name">
+        <span>Name</span>
+        <input type="text" name="name">
+    </div>
 
-				<div class="place-redact">
-					<div class="line line-name">
-						<span>Name</span>
-						<input type="text" name="name">
-					</div>
+    <div class="line line-lastname">
+        <span>Last Name</span>
+        <input type="text" name="lastname">
+    </div>
 
-					<div class="line line-lastname">
-						<span>Last Name</span>
-						<input type="text" name="lastname">
-					</div>
+    <div class="line line-sex">
+        <span>Sex</span>
+        <label>
+            <input type="radio" name="sex" value="man">
+            <span class="sex">Man</span>
+        </label>
+        <label>
+            <input type="radio" name="sex" value="woman">
+            <span class="sex">Woman</span>
+        </label>
+    </div>
 
-					<div class="line line-sex">
-						<span>Sex</span>
-						<label>
-							<input type="radio" name="sex" value="man">
-                			<span class="sex">Man</span>
-						</label>
-                		<label>
-                			<input type="radio" name="sex" value="woman">
-                			<span class="sex">Woman</span>
-                		</label>
-					</div>
+    <div class="line line-birthday">
+        <span>Birthday</span>
+        <div class="date">
+            <select class="datefield datefield-day">
+                <option>Day</option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+            </select>
+            <select class="datefield datefield-month">
+                <option>Month</option>
+                <option>Jan</option>
+                <option>Feb</option>
+                <option>Mar</option>
+            </select>
+            <select class="datefield datefield-year">
+                <option>Year</option>
+                <option>2016</option>
+                <option>2015</option>
+                <option>2014</option>
+            </select>
+        </div>
+    </div>
 
-					<div class="line line-birthday">
-						<span>Birthday</span>
-						<div class="date">
-							<select class="datefield datefield-day">
-								<option>Day</option>
-								<option>1</option>
-								<option>2</option>
-								<option>3</option>
-							</select>
-							<select class="datefield datefield-month">
-								<option>Month</option>
-								<option>Jan</option>
-								<option>Feb</option>
-								<option>Mar</option>
-							</select>
-							<select class="datefield datefield-year">
-								<option>Year</option>
-								<option>2016</option>
-								<option>2015</option>
-								<option>2014</option>
-							</select>
-						</div>
-					</div>
+    <div class="line line-city">
+        <span>City</span>
+        <input type="text" name="city">
+    </div>
 
-					<div class="line line-city">
-						<span>City</span>
-						<input type="text" name="city">
-					</div>		
+    <div class="line line-mobile-number">
+        <span>Mobile number</span>
+        <input type="text" name="mobile-number">
+    </div>
 
-					<div class="line line-mobile-number">
-						<span>Mobile number</span>
-						<input type="text" name="mobile-number">
-					</div>
+    <div class="line line-skype">
+        <span>Skype</span>
+        <input type="text" name="skype">
+    </div>
 
-					<div class="line line-skype">
-						<span>Skype</span>
-						<input type="text" name="skype">
-					</div>
+    <div class="line line-city">
+        <span>Email</span>
+        <input type="email" name="city">
+    </div>
 
-					<div class="line line-city">
-						<span>Email</span>
-						<input type="email" name="city">
-					</div>
+    <div class="line line-about">
+        <span>About me</span>
+        <input type="text" name="about">
+    </div>
 
-					<div class="line line-about">
-						<span>About me</span>
-						<input type="text" name="about">
-					</div>
-
-					<input type="submit" name="edit" value="Edit">
-				</div>
-			</div>
-		</div>
-	</body>
-</html>
+    <input type="submit" name="edit" value="Edit">
+</div>
