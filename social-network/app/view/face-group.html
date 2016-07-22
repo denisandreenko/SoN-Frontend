@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en" ng-app="testApp">
+    <head>
+        <meta charset="utf-8">
+        <title>SoN-face-group</title>
+        <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.css"/>
+        <script src="../bower_components/angular/angular.js"></script>
+        <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+        <link rel="stylesheet" href="../css/style.css">
+        <script type="text/javascript" src="../script/app.js"></script>
+        <script type="text/javascript" src="../script/controller/profile-controller.js"></script>
+        <script type="text/javascript" src="../script/controller/post-controller.js"></script>
+    </head>
+    <body>
+        <div id="wrapper">
+            <div id="header">
+                <ul class="top-menu">
+                    <li><a href="">SoN</a></li>
+                    <li><input type="text" name="search" placeholder="search"></li>
+                    <li><a href="">search</a></li>
+                    <li><a href="">help</a></li>
+                    <li><a href="">settings</a></li>
+                    <li><a href="">log out</a></li>
+                </ul>
+            </div>
+            <div id="content" ng-controller="ProfileController">
+                <ul class="vert-menu">
+                    <li><a href="">Profile</a></li>
+                    <li><a href="">Wall</a></li>
+                    <li><a href="">Friends</a></li>
+                    <li><a href="">Messages</a></li>
+                    <li><a href="">Groups</a></li>
+                    <li><a href="">Audio</a></li>
+                    <li><a href="">Video</a></li>
+                </ul>
+                
+                <div class="group-place">
+                    <div class="place-icon">
+                        <div class="icon">
+                            <img src="{{userAvatar}}" width="100%" height="auto" >
+                        </div>
+
+                        <div class="edit">
+                            <span><a href="">Join the Group</a></span>
+                        </div>
+                    </div>
+
+                    <div class="place-info">
+                        <div class="block name">{{userName + userSubname}}</div>
+
+                        <div class="block">
+                            <div class="big-line">About Group</div>
+                                <div class="line pre-line">{{userAbout}}</div>
+                        </div>
+                    </div>
+
+                    <div class="place-post" ng-controller="PostController">
+                        <div ng-repeat="post in posts" class="post-container">
+                            <img class="sender-face" src="{{post.postOnwerImage}}"/>
+                            <div class="post-info">
+                                <div class="sender-name">
+                                    <h3>{{post.postOwner}}</h3>
+                                </div>
+
+                                <div class="post-text">
+                                    <p>{{post.postText}}</p>
+                                </div>
+
+                                <div class="post-media">
+                                    <img src="{{post.postImage}}">
+                                </div>
+
+                                <div class="replies">
+                                    <img src="{{post.likeImg}}" alt="like" width="25px"/>
+                                    <span>{{post.likes}}</span>
+                                    <img src="{{post.dislikeImg}}" alt="dislike" width="25px"/>
+                                    <span>{{post.dislikes}}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>  
+                </div>       
+            </div>
+        </div>
+    </body>
+</html>

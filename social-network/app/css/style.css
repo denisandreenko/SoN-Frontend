@@ -1,0 +1,1165 @@
+/*----------------------------------------------------------------------Common CSS-----------------------------------------------------------------------------*/
+
+@import url(reset.css);
+
+body {
+	font: 14px/1.5 Arial, Verdana, sans-serif;
+	color: #353535;
+	text-align: center;
+}
+
+a:hover {
+    background-color: #eeeeee;
+}
+
+input[type="submit"]:hover {
+    background-color: #eeeeee;
+}
+
+#wrapper {
+    overflow: hidden;
+    width: 60%;
+    margin: 0 auto;
+    height: auto;                    
+    background-color: #8062CB;          /*bad-#C2EBDC     no-bad-#8062CB*/        
+}
+
+#header .top-menu {
+    background-color: #5BA0C8;
+}
+
+#header .top-menu li {
+    display: inline-block;
+    width: 11%;
+}
+
+#header .top-menu li:nth-child(1) {
+    width:23.4%;
+}
+
+#header .top-menu li:nth-child(2) {
+    width:30%;
+}
+
+#header .top-menu li a {
+    display:block;
+    color:#FFFFFF;
+    text-decoration:none;
+    padding:10px 15px;
+}
+
+#header .top-menu input {
+    width: 80%;
+    padding: 3px 5px;
+}
+
+.vert-menu {
+    float: left;
+    list-style: none;
+    width: 23%;
+    height: auto;
+}
+
+.vert-menu li {
+    background-color: #8062CB;
+    border-bottom: 1px solid #FFFFFF;
+}
+
+.vert-menu li a {
+    display: block;
+    margin-bottom: -1px;
+    padding: 8px 14px;
+    text-decoration: none;
+    color: #FFFFFF;
+}
+
+/*--------------------------------------------------------------------------HOME--------------------------------------------------------------------------------*/
+
+
+
+#content-home #autorization-form
+{
+    background-color: #fff;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#eee));
+    background-image: -webkit-linear-gradient(top, #fff, #eee);
+    background-image: -moz-linear-gradient(top, #fff, #eee);
+    background-image: -ms-linear-gradient(top, #fff, #eee);
+    background-image: -o-linear-gradient(top, #fff, #eee);
+    background-image: linear-gradient(top, #fff, #eee);  
+    width: 350px;
+    height: 235px;
+    padding: 20px;
+    border-radius: 3px;  
+    position: absolute;
+    top: 10%;
+    left: 35.5%;
+    z-index: 0;
+}
+
+#content-home #autorization-form:before
+{
+    content: '';
+    position: absolute;
+    z-index: -1;
+    border: 1px dashed #ccc;
+    top: 5px;
+    bottom: 5px;
+    left: 5px;
+    right: 5px;
+}
+
+#content-home #autorization-form h1
+{
+    text-shadow: 0 1px 0 rgba(255, 255, 255, .7), 0px 2px 0 rgba(0, 0, 0, .5);
+    text-transform: uppercase;
+    text-align: center;
+    color: #666;
+    margin: 0 0 30px 0;
+    letter-spacing: 4px;
+    font: normal 26px/1 Verdana, Helvetica;
+    position: relative;
+}
+
+#content-home #autorization-form fieldset
+{
+    border: 0;
+    padding: 0;
+    margin: 0;
+}
+
+#content-home #autorization-form #inputs input
+{
+    background: #f1f1f1 url(http://www.red-team-design.com/wp-content/uploads/2011/09/login-sprite.png) no-repeat;
+    padding: 15px 15px 15px 30px;
+    margin: 0 0 10px 0;
+    width: 240px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#content-home #autorization-form #username
+{
+    background-position: 5px -2px !important;
+}
+
+#content-home #autorization-form #password
+{
+    background-position: 5px -52px !important;
+}
+
+#content-home #autorization-form #inputs input:focus
+{
+    background-color: #fff;
+    border-color: #e8c291;
+    outline: none;
+    box-shadow: 0 0 0 1px #e8c291 inset;
+}
+
+#content-home #autorization-form #enter, 
+#content-home #autorization-form #registration
+{
+    background-color: #ffb94b;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#fddb6f), to(#ffb94b));
+    background-image: -webkit-linear-gradient(top, #fddb6f, #ffb94b);
+    background-image: -moz-linear-gradient(top, #fddb6f, #ffb94b);
+    background-image: -ms-linear-gradient(top, #fddb6f, #ffb94b);
+    background-image: -o-linear-gradient(top, #fddb6f, #ffb94b);
+    background-image: linear-gradient(top, #fddb6f, #ffb94b);
+    
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    
+    text-shadow: 0 1px 0 rgba(255,255,255,0.5);
+    
+    border-width: 1px;
+    border-style: solid;
+    border-color: #d69e31 #e3a037 #d5982d #e3a037;
+
+    height: 35px;
+    margin-bottom: 4px;
+    padding: 0;
+    width: 130px;
+    cursor: pointer;
+    font: bold 15px Arial, Helvetica;
+    color: #8f5a0a;
+}
+
+#content-home #autorization-form #enter
+{   
+    float: left;
+    margin-left: 32px;
+}
+
+#content-home #autorization-form #registration
+{
+    float: right;
+    margin-right: 31px; 
+}
+
+#content-home #autorization-form #enter:hover,
+#content-home #autorization-form #enter:focus,
+#content-home #autorization-form #registration:hover,
+#content-home #autorization-form #registration:focus
+{       
+    background-color: #fddb6f;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#ffb94b), to(#fddb6f));
+    background-image: -webkit-linear-gradient(top, #ffb94b, #fddb6f);
+    background-image: -moz-linear-gradient(top, #ffb94b, #fddb6f);
+    background-image: -ms-linear-gradient(top, #ffb94b, #fddb6f);
+    background-image: -o-linear-gradient(top, #ffb94b, #fddb6f);
+    background-image: linear-gradient(top, #ffb94b, #fddb6f);
+}   
+
+#content-home #autorization-form #enter:active,
+#content-home #autorization-form #registration:active
+{       
+    outline: none;
+     -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5) inset;
+     -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5) inset;
+     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5) inset;        
+}
+
+
+
+
+/*---------------------------------------------------------------------------REGISTRATION----------------------------------------------------------------------*/
+
+
+#content-registration {
+    overflow: hidden;
+    padding-top: 40px;
+}
+
+#content-registration h1 {
+    font-size: 55px;
+    font-weight: bold;
+    line-height: 1.4;
+}
+
+#content-registration .data {
+    overflow: hidden;
+    width: 100%;
+}
+
+#content-registration .line {
+    overflow: hidden;
+    padding: 0 0;
+    margin: 10px 14% 10px 23%;
+}
+
+#content-registration .line span {
+    margin: 0;
+    padding: 0;
+    font-size:28px;
+    float: left;
+}
+
+#content-registration .line input {
+    font-size: 20px;
+}
+
+#content-registration .line input[type="text"], 
+#content-registration .line input[type="password"], 
+#content-registration .line input[type="email"]{
+    float: right;
+    background: #f1f1f1 url(http://www.red-team-design.com/wp-content/uploads/2011/09/login-sprite.png) no-repeat;
+    padding: 10px 15px 10px 30px;
+    width: 240px;
+    height: 25px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#content-registration .datefield {
+    float: right;
+    background: #f1f1f1 url(http://www.red-team-design.com/wp-content/uploads/2011/09/login-sprite.png) no-repeat;
+    width: 90px;
+    margin-left: 9px;
+    height: 35px;
+    margin-top: 4px;
+}
+#content-registration .line .sex {
+    float: right;
+    font-size: 18px;
+    margin-top: 8px;
+}
+#content-registration .line input[type="radio"] {
+    float: right;
+    margin: 16px 60px 0 10px;
+}
+
+#content-registration input[type="submit"] {
+    background-color: #ffb94b;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#fddb6f), to(#ffb94b));
+    background-image: -webkit-linear-gradient(top, #fddb6f, #ffb94b);
+    background-image: -moz-linear-gradient(top, #fddb6f, #ffb94b);
+    background-image: -ms-linear-gradient(top, #fddb6f, #ffb94b);
+    background-image: -o-linear-gradient(top, #fddb6f, #ffb94b);
+    background-image: linear-gradient(top, #fddb6f, #ffb94b);
+    
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    
+    text-shadow: 0 1px 0 rgba(255,255,255,0.5);
+    
+    border-width: 1px;
+    border-style: solid;
+    border-color: #d69e31 #e3a037 #d5982d #e3a037;
+
+    height: 35px;
+    margin:10px auto;
+    padding: 0;
+    width: 130px;
+    cursor: pointer;
+    font: bold 15px Arial, Helvetica;
+    color: #8f5a0a;
+}
+
+#content-registration input
+{
+    background: #f1f1f1 url(http://www.red-team-design.com/wp-content/uploads/2011/09/login-sprite.png) no-repeat;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+i#content-registration nput[type="submit"]:hover {
+    background-color: #fddb6f;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#ffb94b), to(#fddb6f));
+    background-image: -webkit-linear-gradient(top, #ffb94b, #fddb6f);
+    background-image: -moz-linear-gradient(top, #ffb94b, #fddb6f);
+    background-image: -ms-linear-gradient(top, #ffb94b, #fddb6f);
+    background-image: -o-linear-gradient(top, #ffb94b, #fddb6f);
+    background-image: linear-gradient(top, #ffb94b, #fddb6f);
+}
+
+#content-registration input[type="submit"]:active {
+    outline: none;
+    -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5) inset;
+    -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5) inset;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5) inset;  
+}
+
+#content-registration input:focus
+{
+    background-color: #fff;
+    border-color: #e8c291;
+    outline: none;
+    box-shadow: 0 0 0 1px #e8c291 inset;
+}
+
+
+
+
+/*---------------------------------------------------------------------FORGOT_PASSWORD---------------------------------------------------------------------------*/
+
+
+#content-forgot {
+    overflow: hidden;
+    margin: 23.6% auto;
+}
+
+#content-forgot h1 {
+    font-size: 40px;
+    font-weight: bold;
+    line-height: 1.4;
+}
+
+#content-forgot p {
+    font-size: 20px;
+    line-height: 1.4;
+}
+
+#content-forgot .line {
+    overflow: hidden;
+    padding: 0 0;
+    margin: 15px;
+}
+
+#content-forgot .line input[type="email"] {
+    background: #f1f1f1 url(http://www.red-team-design.com/wp-content/uploads/2011/09/login-sprite.png) no-repeat;
+    padding: 10px 15px 10px 30px;
+    width: 240px;
+    height: 25px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 20px;
+}
+
+#content-forgot input[type="submit"] {
+    background-color: #ffb94b;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#fddb6f), to(#ffb94b));
+    background-image: -webkit-linear-gradient(top, #fddb6f, #ffb94b);
+    background-image: -moz-linear-gradient(top, #fddb6f, #ffb94b);
+    background-image: -ms-linear-gradient(top, #fddb6f, #ffb94b);
+    background-image: -o-linear-gradient(top, #fddb6f, #ffb94b);
+    background-image: linear-gradient(top, #fddb6f, #ffb94b);
+    
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    
+    text-shadow: 0 1px 0 rgba(255,255,255,0.5);
+    
+    border-width: 1px;
+    border-style: solid;
+    border-color: #d69e31 #e3a037 #d5982d #e3a037;
+
+    height: 35px;
+    margin:10px auto;
+    padding: 0;
+    width: 130px;
+    cursor: pointer;
+    font: bold 15px Arial, Helvetica;
+    color: #8f5a0a;
+}
+
+#content-forgot input
+{
+    background: #f1f1f1 url(http://www.red-team-design.com/wp-content/uploads/2011/09/login-sprite.png) no-repeat;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 8px auto;
+}
+
+#content-forgot input[type="submit"]:hover {
+    background-color: #fddb6f;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#ffb94b), to(#fddb6f));
+    background-image: -webkit-linear-gradient(top, #ffb94b, #fddb6f);
+    background-image: -moz-linear-gradient(top, #ffb94b, #fddb6f);
+    background-image: -ms-linear-gradient(top, #ffb94b, #fddb6f);
+    background-image: -o-linear-gradient(top, #ffb94b, #fddb6f);
+    background-image: linear-gradient(top, #ffb94b, #fddb6f);
+}
+
+#content-forgot input[type="submit"]:active {
+    outline: none;
+    -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5) inset;
+    -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5) inset;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5) inset;  
+}
+
+#content-forgot input:focus
+{
+    background-color: #fff;
+    border-color: #e8c291;
+    outline: none;
+    box-shadow: 0 0 0 1px #e8c291 inset;
+}
+
+
+
+
+/*--------------------------------------------------------------------------------PROFILE------------------------------------------------------------------------*/
+
+
+.place-icon {
+    float: left;
+    margin: 10px;
+    padding: 5px;
+    width: 25%;
+    background-color: #949ADB;
+}
+
+.place-icon .edit {
+    background-color: #6A7ECD;
+    border:1px solid #FFFFFF;
+}
+
+.place-icon .edit a {
+    display:block;
+    color: #FFFFFF;
+    text-decoration:none;
+    padding:10px 15px;
+}
+
+.place-info {
+    float: left;
+    margin: 10px;
+    padding: 5px;
+    width: 45%;
+    text-align: left;
+    background-color: #949ADB;
+}
+
+.place-info .block {
+    padding: 10px;
+    border:1px solid #FFFFFF;
+    overflow: hidden;
+    color:#D5E0F1;
+    margin-bottom: 7px;
+    background-color: #6A7ECD;
+}
+
+.place-info .block:last-child {
+    margin-bottom: 0;
+}
+
+.place-info .name {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.place-info .block .big-line {
+    margin-bottom: 5px;
+    color: #BCB6E7;
+}
+
+.place-info .block .line {
+    padding: 3px;
+}
+
+.place-info .block .pre-line {
+    margin-left: 10%;
+    width: 15%;
+    float: left;
+}
+
+.place-info .block .pre-line:last-child {
+    width: 87%;
+}
+
+.place-info .block .post-line {
+    margin-left: 10%;
+    width: 60%;
+    float: left;
+}
+
+.place-post .post-container {
+    float: right;
+    margin-right: 3%;
+    margin-top: 3%;
+    max-width: 70%;
+    max-height: 30%;
+    overflow: hidden;
+    text-align: left;
+}
+
+.place-post .post-container .sender-face {
+    display: block;
+    width: 13%;
+    height: auto;
+    margin-left: 0;
+    float: left;
+}
+
+.place-post .post-container .post-info {
+    margin-left: 15%;
+}
+
+.place-post .post-container .post-info .sender-name {
+    font-size: 16px;
+    font-weight: bolder;
+}
+
+.place-post .post-container .post-info .post-text {
+
+}
+
+.place-post .post-container .post-info .post-media img {
+    width: 100%;
+    height: auto;
+}
+
+.place-post .post-container .post-info .replies {
+    float: right;
+}
+
+
+
+
+/*--------------------------------------------------------------------------------EDIT_PROFILE------------------------------------------------------------------------------------------*/
+
+.place-redact {
+    float: right;
+    width: 77%;
+    height: auto;
+    background-color: #C2EBDC;
+    padding: 20px 0px;
+    overflow: hidden;
+}
+
+.place-redact .line {
+    overflow: hidden;
+    padding: 0 0;
+    margin: 2.5% 17%;
+}
+
+.place-redact .line span {
+    margin: 0;
+    padding: 0;
+    font-size:22px;
+    float: left;
+}
+
+.place-redact .line input[type="text"], .line input[type="password"], .line input[type="email"]{
+    float: right;
+    background: #f1f1f1 url(http://www.red-team-design.com/wp-content/uploads/2011/09/login-sprite.png) no-repeat;
+    padding: 10px 15px 10px 25px;
+    width: 180px;
+    height: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.place-redact .datefield {
+    float: right;
+    background: #f1f1f1 url(http://www.red-team-design.com/wp-content/uploads/2011/09/login-sprite.png) no-repeat;
+    width: 68px;
+    margin-left: 9px;
+    height: 30px;
+    margin-top: 4px;
+}
+
+.place-redact .line input[type="radio"] {
+    float: right;
+    margin: 16px 35px 0 10px;
+}
+
+.place-redact .line .sex {
+    float: right;
+    font-size: 18px;
+    margin-top: 8px;
+}
+
+.place-redact input[type="submit"] {
+    background-color: #ffb94b;
+    border-radius: 3px;
+    border-style: solid;
+    border-color: #d69e31 #e3a037 #d5982d #e3a037;
+    height: 35px;
+    width: 130px;
+    font: bold 15px Arial, Helvetica;
+    color: #8f5a0a;
+    margin: 2% auto;
+}
+
+
+
+
+/*--------------------------------------------------------------------------------CREATE_GROUP-------------------------------------------------------------------------------------------*/
+
+
+.place-create-group {
+    float: right;
+    width: 77%;
+    height: auto;
+    background-color: #C2EBDC;
+    padding: 20px 0px;
+    overflow: hidden;
+    padding: 132px 0;
+}
+
+.place-create-group .line {
+    overflow: hidden;
+    padding: 0 0;
+    margin: 2.5% 17%;
+}
+
+.place-create-group .line span {
+    margin: 0;
+    padding: 0;
+    font-size:22px;
+    float: left;
+}
+
+.place-create-group .line input[type="text"], textarea{
+    float: right;
+    background: #f1f1f1 url(http://www.red-team-design.com/wp-content/uploads/2011/09/login-sprite.png) no-repeat;
+    padding: 10px 15px 10px 25px;
+    width: 180px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.place-create-group .datefield {
+    float: right;
+    background: #f1f1f1 url(http://www.red-team-design.com/wp-content/uploads/2011/09/login-sprite.png) no-repeat;
+    width: 68px;
+    margin-left: 9px;
+    height: 30px;
+    margin-top: 4px;
+}
+
+.place-create-group .line input[type="radio"] {
+    float: right;
+    margin: 16px 35px 0 10px;
+}
+
+.place-create-group .line .sex {
+    float: right;
+    font-size: 16px;
+    margin-top: 8px;
+}
+
+.place-create-group input[type="submit"] {
+    margin-top: 20px;
+    background-color: #ffb94b;
+    border-radius: 3px;
+    border-style: solid;
+    border-color: #d69e31 #e3a037 #d5982d #e3a037;
+    height: 35px;
+    width: 130px;
+    font: bold 15px Arial, Helvetica;
+    color: #8f5a0a;
+}
+
+
+
+
+/*--------------------------------------------------------------------------------FRIENDS------------------------------------------------------------------------*/
+
+
+.friends-place {
+    float: right;
+    width: 77%;
+    height: auto;
+}
+
+.friends-place .quantity {
+    background-color: #7DD493;
+    padding: 8px 20px;
+    text-align: left;
+    font-size: 16px;
+    color: #FFFFFF;
+}
+
+/* ------------- Контейнер с адаптивными блоками------------- */
+.friends-place .masonry-place {
+    overflow: hidden;
+    background-color: #C2EBDC;
+    float: left;
+    width: 67%; 
+    padding: 1.5em 0;
+    padding-left: 10px;
+    padding-right: 8px;
+    column-gap: 1.5em; /* Общее расстояние между колонками */
+    font-size: .85em;
+    -moz-column-gap: 1.5em; /* Расстояние между колонками для Firefox */
+    -webkit-column-gap: 1.5em; /* Расстояние между колонками  для Safari, Chrome и iOS */
+}
+ 
+/* Элементы в виде плиток с содержанием */
+.friends-place .item {
+    display: inline-block;
+    background-color: #fff;
+    margin: 0 0 1.2em;
+    width: 100%;
+    box-sizing: border-box; /* Изменения алгоритма расчета ширины и высоты элемента.*/
+    -moz-box-sizing: border-box; /* Для Firefox */ 
+    -webkit-box-sizing: border-box; /* Для Safari, Chrome, iOS иAndroid */ 
+}
+
+.friends-place .top {
+    padding: 0px 5px;
+    background-color: #2E878A;
+    font-size: 17px;
+    color: #FFFFFF;
+}
+
+.friends-place .prime {
+    height: 200px;
+}
+
+.friends-place .prime img {
+    display: block;
+    width: 100%;
+    height: 200px;
+}
+
+
+.friends-place .user-api {
+    height: 30px;
+}
+
+.friends-place .user-api li {
+    display: inline-block;
+    width: 32.3%;
+}
+
+.friends-place .user-api li a {
+    display:block;
+    padding:2.5px 5px;
+}
+
+.friends-place .user-api li a img {
+    display: block;
+    margin: 0 auto !important;
+    width: 25px;
+    height: 25px;
+    
+}
+
+.friends-place .search-panel {
+    float: right;
+    background: #8062CB;
+    width: 30%;
+    height: 636px;
+    color: #FFFFFF;
+}    
+
+.friends-place .search-panel .line {
+    margin: 25px 40px 10px 10px;
+    text-align: left;
+    font-size: 16px;
+}
+
+.friends-place .search-panel .line .shift {
+    margin-top:5px;
+    margin-left: 10px;
+}
+
+.friends-place .search-panel .line select {
+    width: 100%;
+}
+
+.friends-place .search-panel .line .age {
+    width: 53px;
+}
+
+/* Медиа-запросы для различных размеров адаптивного макета */
+@media only screen and (min-width: 400px) {
+    .masonry-place {
+        -moz-column-count: 2;
+        -webkit-column-count: 2;
+        column-count: 2;
+    }
+}
+ 
+@media only screen and (min-width: 700px) {
+    .masonry-place {
+        -moz-column-count: 3;
+        -webkit-column-count: 3;
+        column-count: 3;
+    }
+}
+ 
+@media only screen and (min-width: 900px) {
+    .masonry-place {
+        -moz-column-count: 4;
+        -webkit-column-count: 4;
+        column-count: 4;
+    }
+}
+ 
+@media only screen and (min-width: 1100px) {
+    .masonry-place {
+        -moz-column-count: 2;
+        -webkit-column-count: 2;
+        column-count: 2;
+    }
+}
+ 
+@media only screen and (min-width: 1280px) {
+    .wrapper-place {
+        width: 1260px;
+    }
+}
+
+
+
+
+/*--------------------------------------------------------------------------GROUPS------------------------------------------------------------------------------*/
+
+
+.group-place {
+    float: right;
+    width: 77%;
+    height: auto;
+    background-color: #C2EBDC;
+}
+
+.group-place .quantity {
+    background-color: #7DD493;
+    padding: 8px 20px;
+    text-align: left;
+    font-size: 16px;
+    color: #FFFFFF;
+}
+
+.group-place .search-group {
+    background-color: #B8D98C;
+    padding: 8px 20px;
+    text-align: left;
+    font-size: 16px;
+    overflow: hidden;
+}
+
+.group-place .search-group input {
+    width: 40%;
+    padding: 3px 5px;
+}
+
+.group-place .search-group .create-community {
+    font-size: 14px;
+    float: right;
+    background-color: #2E538A;
+    border-radius: 5px;
+}
+
+.group-place .search-group .create-community a {
+    display: block;
+    padding: 1px 5px;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+/* ------------- Контейнер с адаптивными блоками------------- */
+.group-place .masonry-group {
+    float: left;
+    width: 95%; 
+    margin: 1.5em 0;
+    padding: 0;
+    padding-left: 15px;
+    column-gap: 1em; /* Общее расстояние между колонками */
+    font-size: .85em;
+    -moz-column-gap: 1em; /* Расстояние между колонками для Firefox */
+    -webkit-column-gap: 1em; /* Расстояние между колонками  для Safari, Chrome и iOS */
+}
+ 
+/* Элементы в виде плиток с содержанием */
+.group-place .item {
+    display: inline-block;
+    background-color: #fff;
+    margin: 0 0 1.5em;
+    width: 100%;
+    box-sizing: border-box; /* Изменения алгоритма расчета ширины и высоты элемента.*/
+    -moz-box-sizing: border-box; /* Для Firefox */ 
+    -webkit-box-sizing: border-box; /* Для Safari, Chrome, iOS иAndroid */ 
+}
+
+.group-place .top {
+    padding: 2px 5px;
+    background-color: #2E878A;
+    font-size: 20px;
+    color: #FFFFFF;
+    line-height: 1;
+}
+
+.group-place .top span{
+    font-size: 13px;
+}
+
+.group-place .prime img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+/* Медиа-запросы для различных размеров адаптивного макета */
+@media only screen and (min-width: 400px) {
+    .masonry-group {
+        -moz-column-count: 3;
+        -webkit-column-count: 3;
+        column-count: 3;
+    }
+}
+ 
+@media only screen and (min-width: 700px) {
+    .masonry-group {
+        -moz-column-count: 3;
+        -webkit-column-count: 3;
+        column-count: 3;
+    }
+}
+ 
+@media only screen and (min-width: 900px) {
+    .masonry-group {
+        -moz-column-count: 4;
+        -webkit-column-count: 4;
+        column-count: 4;
+    }
+}
+ 
+@media only screen and (min-width: 1100px) {
+    .masonry-group {
+        -moz-column-count: 3;
+        -webkit-column-count: 3;
+        column-count: 3;
+    }
+}
+ 
+@media only screen and (min-width: 1280px) {
+    .wrapper {
+        width: 1260px;
+    }
+}
+
+
+
+
+/*-----------------------------------------------------------------------------------------AUDIO------------------------------------------------------------------------------------------*/
+
+
+.audio-place {
+    float: right;
+    width: 77%;
+    height: 595px;
+    background-color: #C2EBDC;
+}
+
+.audio-place .player {
+    margin: 10px 20px; 
+}
+
+.audio-place .player audio {
+    width: 100%;
+    height: 40px;
+}
+
+.audio-place ul {
+    float: left;
+    list-style: none;
+    height: auto;
+    margin: 2px 40px;
+    text-align: left;
+}
+
+.audio-place ul li {
+    width: 100%;
+    margin: 2% 0;
+
+}
+
+.audio-place ul li img {
+    display: block;
+    float: left;
+    margin-right: 4%;
+}
+
+.audio-place ul li span {
+    margin-right: 18.5%;
+}
+
+
+
+
+/*------------------------------------------------------------------------------FACE-GROUP----------------------------------------------------------------------------------------------*/
+
+
+.group-place {
+    float: right;
+    width: 77%;
+    height: auto;
+    background-color: #C2EBDC;
+}
+
+.group-place .place-icon {
+    float: left;
+    margin: 10px 5px 10px 10px;
+    padding: 5px;
+    width: 33%;
+    background-color: #949ADB;
+}
+
+.group-place .place-icon .edit {
+    background-color: #6A7ECD;
+    border:1px solid #FFFFFF;
+}
+
+.group-place .place-icon .edit a {
+    display:block;
+    color: #FFFFFF;
+    text-decoration:none;
+    padding:10px 15px;
+}
+
+.group-place .place-info {
+    float: right;
+    margin: 10px 10px 10px 5px;
+    padding: 5px;
+    width: 62%;
+    text-align: left;
+    background-color: #949ADB;
+}
+
+.group-place .place-info .block {
+    padding: 10px;
+    border:1px solid #FFFFFF;
+    overflow: hidden;
+    color:#D5E0F1;
+    margin-bottom: 7px;
+    background-color: #6A7ECD;
+}
+
+.group-place .place-info .block:last-child {
+    margin-bottom: 0;
+}
+
+.group-place .place-info .name {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.group-place .place-info .block .big-line {
+    margin-bottom: 5px;
+    color: #BCB6E7;
+}
+
+.group-place .place-info .block .line {
+    padding: 3px;
+}
+
+.group-place .place-info .block .pre-line {
+    margin-left: 10%;
+    width: 15%;
+    float: left;
+}
+
+.group-place .place-info .block .pre-line:last-child {
+    width: 87%;
+}
+
+.group-place .place-info .block .post-line {
+    margin-left: 10%;
+    width: 60%;
+    float: left;
+}
+
+.group-place .place-post .post-container {
+    float: right;
+    margin-right: 3%;
+    margin-top: 3%;
+    max-width: 95%;
+    max-height: 30%;
+    overflow: hidden;
+    text-align: left;
+}
+
+.group-place .place-post .post-container .sender-face {
+    display: block;
+    width: 13%;
+    height: auto;
+    margin-left: 0;
+    float: left;
+}
+
+.group-place .place-post .post-container .post-info {
+    margin-left: 15%;
+}
+
+.group-place .place-post .post-container .post-info .sender-name {
+    font-size: 16px;
+    font-weight: bolder;
+}
+
+.group-place .place-post .post-container .post-info .post-text {
+
+}
+
+.group-place .place-post .post-container .post-info .post-media img {
+    width: 100%;
+    height: auto;
+}
+
+.group-place .place-post .post-container .post-info .replies {
+    float: right;
+}
+
+
+
+
+/*--------------------------------------------------------------------------------------CUSTOMS-------------------------------------------------------------------------------------- */
+
+

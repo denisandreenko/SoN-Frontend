@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en" ng-app="testApp">
+    <head>
+        <meta charset="utf-8">
+        <title>SoN-audio</title>
+        <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.css"/>
+        <link rel="stylesheet" href="../http://www.w3schools.com/lib/w3.css">
+        <link rel="stylesheet" href="../css/style.css">
+        <script src="../bower_components/angular/angular.js"></script>
+        <script type="text/javascript" src="../script/app.js"></script>
+        <script type="text/javascript" src="../script/controller/audio-controller.js"></script>
+    </head>
+    <body>
+        <div id="wrapper" ng-controller="AudioController">
+            <div id="header">
+                <ul class="top-menu">
+                    <li><a href="">SoN</a></li>
+                    <li><input type="text" name="search" placeholder="search"></li>
+                    <li><a href="">search</a></li>
+                    <li><a href="">help</a></li>
+                    <li><a href="">settings</a></li>
+                    <li><a href="">log out</a></li>
+                </ul>
+            </div>
+            <div id="content">
+                <ul class="vert-menu">
+                    <li><a href="">Profile</a></li>
+                    <li><a href="">Wall</a></li>
+                    <li><a href="">Friends</a></li>
+                    <li><a href="">Messages</a></li>
+                    <li><a href="">Groups</a></li>
+                    <li><a href="">Audio</a></li>
+                    <li><a href="">Video</a></li>
+                </ul>
+                <div class="audio-place" >
+                    <div class="player">
+                        <audio controls preload="auto">
+                        </audio>
+                    </div>
+                    <ul>
+                        <li ng-repeat="audio in audios">
+                            <img src="{{playIconUrl}}" alt="play" width="3%" ng-click="alert('PlayButton clicked')">
+                            <span>{{audio.audioName}}</span>
+                            <span id="audiotime">{{audio.audioTime}}</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
