@@ -38,4 +38,8 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             url: '/audio',
             templateUrl: 'view/audio.html'
         })
+        .state('menu.video',{
+            url: '/video',
+            templateUrl: 'view/video.html'
+        })
 });
