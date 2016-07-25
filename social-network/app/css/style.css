@@ -21,7 +21,7 @@ input[type="submit"]:hover {
     width: 60%;
     margin: 0 auto;
     height: auto;                    
-    background-color: #8062CB;          /*bad-#C2EBDC     no-bad-#8062CB*/        
+    background-color: #8062CB;          /*bad-#C2EBDC     no-bad-#8062CB*/       
 }
 
 #header .top-menu {
@@ -72,6 +72,28 @@ input[type="submit"]:hover {
     text-decoration: none;
     color: #FFFFFF;
 }
+
+.group-place {
+    float: right;
+    width: 77%;
+    height: auto;
+    background-color: #C2EBDC;
+}
+
+.content-place {
+	float: right;
+    width: 77%;
+    
+    background-color: #C2EBDC;
+    overflow: hidden;
+    position: relative;
+}
+
+/*html, body, body .ng-scope, #wrapper {
+    height: 100%;
+}*/
+
+
 
 /*--------------------------------------------------------------------------HOME--------------------------------------------------------------------------------*/
 
@@ -458,7 +480,7 @@ i#content-registration nput[type="submit"]:hover {
     float: left;
     margin: 10px;
     padding: 5px;
-    width: 25%;
+    width: 30%;
     background-color: #949ADB;
 }
 
@@ -478,7 +500,7 @@ i#content-registration nput[type="submit"]:hover {
     float: left;
     margin: 10px;
     padding: 5px;
-    width: 45%;
+    width: 60%;
     text-align: left;
     background-color: #949ADB;
 }
@@ -528,12 +550,12 @@ i#content-registration nput[type="submit"]:hover {
 
 .place-post .post-container {
     float: right;
-    margin-right: 3%;
+    margin-left: 4%;
     margin-top: 3%;
-    max-width: 70%;
+    max-width: 90%;
     max-height: 30%;
     overflow: hidden;
-    text-align: left;
+    float: left;
 }
 
 .place-post .post-container .sender-face {
@@ -571,29 +593,25 @@ i#content-registration nput[type="submit"]:hover {
 
 /*--------------------------------------------------------------------------------EDIT_PROFILE------------------------------------------------------------------------------------------*/
 
-.place-redact {
-    float: right;
-    width: 77%;
-    height: auto;
-    background-color: #C2EBDC;
-    padding: 20px 0px;
-    overflow: hidden;
-}
 
-.place-redact .line {
+#edit-profile .line {
     overflow: hidden;
     padding: 0 0;
     margin: 2.5% 17%;
 }
 
-.place-redact .line span {
+#edit-profile .line:first-child {
+    margin-top: 6%;
+}
+
+#edit-profile .line span {
     margin: 0;
     padding: 0;
     font-size:22px;
     float: left;
 }
 
-.place-redact .line input[type="text"], .line input[type="password"], .line input[type="email"]{
+#edit-profile .line input[type="text"], .line input[type="password"], .line input[type="email"]{
     float: right;
     background: #f1f1f1 url(http://www.red-team-design.com/wp-content/uploads/2011/09/login-sprite.png) no-repeat;
     padding: 10px 15px 10px 25px;
@@ -603,7 +621,7 @@ i#content-registration nput[type="submit"]:hover {
     border-radius: 5px;
 }
 
-.place-redact .datefield {
+#edit-profile .datefield {
     float: right;
     background: #f1f1f1 url(http://www.red-team-design.com/wp-content/uploads/2011/09/login-sprite.png) no-repeat;
     width: 68px;
@@ -612,18 +630,18 @@ i#content-registration nput[type="submit"]:hover {
     margin-top: 4px;
 }
 
-.place-redact .line input[type="radio"] {
+#edit-profile .line input[type="radio"] {
     float: right;
     margin: 16px 35px 0 10px;
 }
 
-.place-redact .line .sex {
+#edit-profile .line .sex {
     float: right;
     font-size: 18px;
     margin-top: 8px;
 }
 
-.place-redact input[type="submit"] {
+#edit-profile input[type="submit"] {
     background-color: #ffb94b;
     border-radius: 3px;
     border-style: solid;
@@ -632,7 +650,7 @@ i#content-registration nput[type="submit"]:hover {
     width: 130px;
     font: bold 15px Arial, Helvetica;
     color: #8f5a0a;
-    margin: 2% auto;
+    margin: 2% auto 5% auto;
 }
 
 
@@ -641,30 +659,25 @@ i#content-registration nput[type="submit"]:hover {
 /*--------------------------------------------------------------------------------CREATE_GROUP-------------------------------------------------------------------------------------------*/
 
 
-.place-create-group {
-    float: right;
-    width: 77%;
-    height: auto;
-    background-color: #C2EBDC;
-    padding: 20px 0px;
-    overflow: hidden;
-    padding: 132px 0;
-}
 
-.place-create-group .line {
+#create-group .line {
     overflow: hidden;
     padding: 0 0;
     margin: 2.5% 17%;
 }
 
-.place-create-group .line span {
+#create-group .line:first-child {
+    margin-top: 22%;
+}
+
+#create-group .line span {
     margin: 0;
     padding: 0;
     font-size:22px;
     float: left;
 }
 
-.place-create-group .line input[type="text"], textarea{
+#create-group .line input[type="text"], textarea{
     float: right;
     background: #f1f1f1 url(http://www.red-team-design.com/wp-content/uploads/2011/09/login-sprite.png) no-repeat;
     padding: 10px 15px 10px 25px;
@@ -673,7 +686,7 @@ i#content-registration nput[type="submit"]:hover {
     border-radius: 5px;
 }
 
-.place-create-group .datefield {
+#create-group .datefield {
     float: right;
     background: #f1f1f1 url(http://www.red-team-design.com/wp-content/uploads/2011/09/login-sprite.png) no-repeat;
     width: 68px;
@@ -682,19 +695,19 @@ i#content-registration nput[type="submit"]:hover {
     margin-top: 4px;
 }
 
-.place-create-group .line input[type="radio"] {
+#create-group .line input[type="radio"] {
     float: right;
     margin: 16px 35px 0 10px;
 }
 
-.place-create-group .line .sex {
+#create-group .line .sex {
     float: right;
     font-size: 16px;
     margin-top: 8px;
 }
 
-.place-create-group input[type="submit"] {
-    margin-top: 20px;
+#create-group input[type="submit"] {
+    margin: 5% auto 21.5% auto;
     background-color: #ffb94b;
     border-radius: 3px;
     border-style: solid;
@@ -711,13 +724,7 @@ i#content-registration nput[type="submit"]:hover {
 /*--------------------------------------------------------------------------------FRIENDS------------------------------------------------------------------------*/
 
 
-.friends-place {
-    float: right;
-    width: 77%;
-    height: auto;
-}
-
-.friends-place .quantity {
+#friends .quantity {
     background-color: #7DD493;
     padding: 8px 20px;
     text-align: left;
@@ -726,7 +733,7 @@ i#content-registration nput[type="submit"]:hover {
 }
 
 /* ------------- Контейнер с адаптивными блоками------------- */
-.friends-place .masonry-place {
+#friends .masonry-place {
     overflow: hidden;
     background-color: #C2EBDC;
     float: left;
@@ -741,7 +748,7 @@ i#content-registration nput[type="submit"]:hover {
 }
  
 /* Элементы в виде плиток с содержанием */
-.friends-place .item {
+#friends .item {
     display: inline-block;
     background-color: #fff;
     margin: 0 0 1.2em;
@@ -751,39 +758,39 @@ i#content-registration nput[type="submit"]:hover {
     -webkit-box-sizing: border-box; /* Для Safari, Chrome, iOS иAndroid */ 
 }
 
-.friends-place .top {
+#friends .top {
     padding: 0px 5px;
     background-color: #2E878A;
     font-size: 17px;
     color: #FFFFFF;
 }
 
-.friends-place .prime {
+#friends .prime {
     height: 200px;
 }
 
-.friends-place .prime img {
+#friends .prime img {
     display: block;
     width: 100%;
     height: 200px;
 }
 
 
-.friends-place .user-api {
+#friends .user-api {
     height: 30px;
 }
 
-.friends-place .user-api li {
+#friends .user-api li {
     display: inline-block;
     width: 32.3%;
 }
 
-.friends-place .user-api li a {
+#friends .user-api li a {
     display:block;
     padding:2.5px 5px;
 }
 
-.friends-place .user-api li a img {
+#friends .user-api li a img {
     display: block;
     margin: 0 auto !important;
     width: 25px;
@@ -791,30 +798,31 @@ i#content-registration nput[type="submit"]:hover {
     
 }
 
-.friends-place .search-panel {
-    float: right;
+#friends .search-panel {
+	position: absolute;
+	right: 0;	
     background: #8062CB;
     width: 30%;
-    height: 636px;
+    height: 100%;
     color: #FFFFFF;
 }    
 
-.friends-place .search-panel .line {
+#friends .search-panel .line {
     margin: 25px 40px 10px 10px;
     text-align: left;
     font-size: 16px;
 }
 
-.friends-place .search-panel .line .shift {
+#friends .search-panel .line .shift {
     margin-top:5px;
     margin-left: 10px;
 }
 
-.friends-place .search-panel .line select {
+#friends .search-panel .line select {
     width: 100%;
 }
 
-.friends-place .search-panel .line .age {
+#friends .search-panel .line .age {
     width: 53px;
 }
 
@@ -863,14 +871,7 @@ i#content-registration nput[type="submit"]:hover {
 /*--------------------------------------------------------------------------GROUPS------------------------------------------------------------------------------*/
 
 
-.group-place {
-    float: right;
-    width: 77%;
-    height: auto;
-    background-color: #C2EBDC;
-}
-
-.group-place .quantity {
+#groups .quantity {
     background-color: #7DD493;
     padding: 8px 20px;
     text-align: left;
@@ -878,7 +879,7 @@ i#content-registration nput[type="submit"]:hover {
     color: #FFFFFF;
 }
 
-.group-place .search-group {
+#groups .search-group {
     background-color: #B8D98C;
     padding: 8px 20px;
     text-align: left;
@@ -886,19 +887,19 @@ i#content-registration nput[type="submit"]:hover {
     overflow: hidden;
 }
 
-.group-place .search-group input {
+#groups .search-group input {
     width: 40%;
     padding: 3px 5px;
 }
 
-.group-place .search-group .create-community {
+#groups .search-group .create-community {
     font-size: 14px;
     float: right;
     background-color: #2E538A;
     border-radius: 5px;
 }
 
-.group-place .search-group .create-community a {
+#groups .search-group .create-community a {
     display: block;
     padding: 1px 5px;
     color: #ffffff;
@@ -906,7 +907,7 @@ i#content-registration nput[type="submit"]:hover {
 }
 
 /* ------------- Контейнер с адаптивными блоками------------- */
-.group-place .masonry-group {
+#groups .masonry-group {
     float: left;
     width: 95%; 
     margin: 1.5em 0;
@@ -919,7 +920,7 @@ i#content-registration nput[type="submit"]:hover {
 }
  
 /* Элементы в виде плиток с содержанием */
-.group-place .item {
+#groups .item {
     display: inline-block;
     background-color: #fff;
     margin: 0 0 1.5em;
@@ -929,7 +930,7 @@ i#content-registration nput[type="submit"]:hover {
     -webkit-box-sizing: border-box; /* Для Safari, Chrome, iOS иAndroid */ 
 }
 
-.group-place .top {
+#groups .top {
     padding: 2px 5px;
     background-color: #2E878A;
     font-size: 20px;
@@ -937,11 +938,11 @@ i#content-registration nput[type="submit"]:hover {
     line-height: 1;
 }
 
-.group-place .top span{
+#groups .top span{
     font-size: 13px;
 }
 
-.group-place .prime img {
+#groups .prime img {
     display: block;
     width: 100%;
     height: auto;
@@ -992,23 +993,17 @@ i#content-registration nput[type="submit"]:hover {
 /*-----------------------------------------------------------------------------------------AUDIO------------------------------------------------------------------------------------------*/
 
 
-.audio-place {
-    float: right;
-    width: 77%;
-    height: 595px;
-    background-color: #C2EBDC;
-}
 
-.audio-place .player {
+#audio .player {
     margin: 10px 20px; 
 }
 
-.audio-place .player audio {
+#audio .player audio {
     width: 100%;
     height: 40px;
 }
 
-.audio-place ul {
+#audio ul {
     float: left;
     list-style: none;
     height: auto;
@@ -1016,36 +1011,32 @@ i#content-registration nput[type="submit"]:hover {
     text-align: left;
 }
 
-.audio-place ul li {
+#audio ul li {
     width: 100%;
     margin: 2% 0;
 
 }
 
-.audio-place ul li img {
+#audio ul li img {
     display: block;
     float: left;
     margin-right: 4%;
 }
 
-.audio-place ul li span {
+#audio ul li span {
     margin-right: 18.5%;
 }
 
-
+#audio ul li:last-child {
+	margin-bottom: 72%;
+}
 
 
 /*------------------------------------------------------------------------------FACE-GROUP----------------------------------------------------------------------------------------------*/
 
 
-.group-place {
-    float: right;
-    width: 77%;
-    height: auto;
-    background-color: #C2EBDC;
-}
 
-.group-place .place-icon {
+#face-group .place-icon {
     float: left;
     margin: 10px 5px 10px 10px;
     padding: 5px;
@@ -1053,28 +1044,28 @@ i#content-registration nput[type="submit"]:hover {
     background-color: #949ADB;
 }
 
-.group-place .place-icon .edit {
+#face-group .place-icon .edit {
     background-color: #6A7ECD;
     border:1px solid #FFFFFF;
 }
 
-.group-place .place-icon .edit a {
+#face-group .place-icon .edit a {
     display:block;
     color: #FFFFFF;
     text-decoration:none;
     padding:10px 15px;
 }
 
-.group-place .place-info {
+#face-group .place-info {
     float: right;
     margin: 10px 10px 10px 5px;
     padding: 5px;
-    width: 62%;
+    width: 58%;
     text-align: left;
     background-color: #949ADB;
 }
 
-.group-place .place-info .block {
+#face-group .place-info .block {
     padding: 10px;
     border:1px solid #FFFFFF;
     overflow: hidden;
@@ -1083,41 +1074,41 @@ i#content-registration nput[type="submit"]:hover {
     background-color: #6A7ECD;
 }
 
-.group-place .place-info .block:last-child {
+#face-group .place-info .block:last-child {
     margin-bottom: 0;
 }
 
-.group-place .place-info .name {
+#face-group .place-info .name {
     font-size: 18px;
     font-weight: bold;
 }
 
-.group-place .place-info .block .big-line {
+#face-group .place-info .block .big-line {
     margin-bottom: 5px;
     color: #BCB6E7;
 }
 
-.group-place .place-info .block .line {
+#face-group .place-info .block .line {
     padding: 3px;
 }
 
-.group-place .place-info .block .pre-line {
+#face-group .place-info .block .pre-line {
     margin-left: 10%;
     width: 15%;
     float: left;
 }
 
-.group-place .place-info .block .pre-line:last-child {
+#face-group .place-info .block .pre-line:last-child {
     width: 87%;
 }
 
-.group-place .place-info .block .post-line {
+#face-group .place-info .block .post-line {
     margin-left: 10%;
     width: 60%;
     float: left;
 }
 
-.group-place .place-post .post-container {
+#face-group .place-post .post-container {
     float: right;
     margin-right: 3%;
     margin-top: 3%;
@@ -1127,7 +1118,7 @@ i#content-registration nput[type="submit"]:hover {
     text-align: left;
 }
 
-.group-place .place-post .post-container .sender-face {
+#face-group .place-post .post-container .sender-face {
     display: block;
     width: 13%;
     height: auto;
@@ -1135,25 +1126,25 @@ i#content-registration nput[type="submit"]:hover {
     float: left;
 }
 
-.group-place .place-post .post-container .post-info {
+#face-group .place-post .post-container .post-info {
     margin-left: 15%;
 }
 
-.group-place .place-post .post-container .post-info .sender-name {
+#face-group .place-post .post-container .post-info .sender-name {
     font-size: 16px;
     font-weight: bolder;
 }
 
-.group-place .place-post .post-container .post-info .post-text {
+#face-group .place-post .post-container .post-info .post-text {
 
 }
 
-.group-place .place-post .post-container .post-info .post-media img {
+#face-group .place-post .post-container .post-info .post-media img {
     width: 100%;
     height: auto;
 }
 
-.group-place .place-post .post-container .post-info .replies {
+#face-group .place-post .post-container .post-info .replies {
     float: right;
 }
 

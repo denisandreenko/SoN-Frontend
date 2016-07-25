@@ -1,11 +1,11 @@
-<div class="group-place" ng-controller="GroupController">
+<div id="groups" ng-controller="GroupController">
     <div class="quantity">
         <p>You are a member of 4 communities</p>
     </div>
 
     <div class="search-group">
         <input type="text" name="search-group" placeholder="search" ng-model="searchGroups">
-        <div class="create-community"><a href="">create community</a></div>
+        <div class="create-community"><a ui-sref="menu.create-group">create community</a></div>
     </div>
 
     <div class="masonry-group">
