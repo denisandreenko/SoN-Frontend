@@ -1,7 +1,7 @@
-<div id="face-group">
+<div id="face-group" data-ng-controller="FaceGroupController">
     <div class="place-icon">
         <div class="icon">
-            <img src="{{userAvatar}}" width="100%" height="auto">
+            <img src="{{groupImg}}" width="100%" height="auto">
         </div>
 
         <div class="edit">
@@ -10,11 +10,11 @@
     </div>
 
     <div class="place-info">
-        <div class="block name">{{userName + userSubname}}</div>
+        <div class="block name">{{groupName}}</div>
 
         <div class="block">
             <div class="big-line">About Group</div>
-            <div class="line pre-line">{{userAbout}}</div>
+            <div class="line pre-line">{{groupAbout}}</div>
         </div>
     </div>
 
