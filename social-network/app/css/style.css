@@ -9,7 +9,7 @@ body {
 }
 
 a:hover {
-    background-color: #eeeeee;
+    background-color: black;
 }
 
 input[type="submit"]:hover {
@@ -87,11 +87,9 @@ input[type="submit"]:hover {
     background-color: #C2EBDC;
     overflow: hidden;
     position: relative;
+    min-height:93.5vh;
 }
 
-/*html, body, body .ng-scope, #wrapper {
-    height: 100%;
-}*/
 
 
 
@@ -1028,9 +1026,9 @@ i#content-registration nput[type="submit"]:hover {
     margin-right: 18.5%;
 }
 
-#audio ul li:last-child {
+/*#audio ul li:last-child {
 	margin-bottom: 72%;
-}
+}*/
 
 
 

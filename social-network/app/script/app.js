@@ -42,4 +42,14 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             url: '/video',
             templateUrl: 'view/video.html'
         })
+
+
+        .state('menu.friend', {
+            url: '/users/:userIdentifier',
+            templateUrl: "view/profile.html",
+        })  
+        .state('menu.group', {
+            url: '/groups/:groupIdentifier',
+            templateUrl: "view/face-group.html",
+        })  
 });
