@@ -7,11 +7,9 @@
                 <input id="password" type="password" placeholder="Пароль" required>
             </fieldset>
             <fieldset id="actions">
-                <input type="submit" id="enter" value="ВОЙТИ">
-                <a href="">
-                    <input type="button" id="registration" value="РЕГИСТРАЦИЯ">
-                </a>
-                <a href="" id="forgot">Забыли пароль?</a>
+                <input type="submit" id="enter" value="ВОЙТИ" ui-sref="menu.profile">
+                <input type="button" id="registration" value="РЕГИСТРАЦИЯ" ui-sref="registration">
+                <a ui-sref="forgot_pass" id="forgot">Забыли пароль?</a>
             </fieldset>
         </form>
     </div>

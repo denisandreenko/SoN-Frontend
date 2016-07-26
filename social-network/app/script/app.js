@@ -42,6 +42,22 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             url: '/video',
             templateUrl: 'view/video.html'
         })
+        .state('menu.settings',{
+            url: '/settings',
+            templateUrl: 'view/settings.html'
+        })
+        .state('home',{
+            url: '/SoN',
+            templateUrl: 'view/home.html'
+        })
+        .state('registration',{
+            url: '/SoN/registration',
+            templateUrl: 'view/registration.html'
+        })
+        .state('forgot_pass',{
+            url: '/SoN/forgot_pass',
+            templateUrl: 'view/forgot_pass.html'
+        })
 
 
         .state('menu.friend', {

@@ -21,7 +21,8 @@ input[type="submit"]:hover {
     width: 60%;
     margin: 0 auto;
     height: auto;                    
-    background-color: #8062CB;          /*bad-#C2EBDC     no-bad-#8062CB*/       
+    background-color: #8062CB;          /*bad-#C2EBDC     no-bad-#8062CB*/   
+    min-height:100vh;    
 }
 
 #header .top-menu {
@@ -399,6 +400,7 @@ i#content-registration nput[type="submit"]:hover {
 
 #content-forgot .line input[type="email"] {
     background: #f1f1f1 url(http://www.red-team-design.com/wp-content/uploads/2011/09/login-sprite.png) no-repeat;
+    margin-right: 30%;
     padding: 10px 15px 10px 30px;
     width: 240px;
     height: 25px;
