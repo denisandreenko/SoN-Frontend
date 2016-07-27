@@ -8,25 +8,52 @@ function RegController($scope, $http) {
 
     $scope.master = {};
 
+    $scope.name = "";
+    $scope.lastName = "";
+    $scope.password = "";
+    $scope.login = "";
+    $scope.sex = "";
+    $scope.dirthDay = "";
+    $scope.email = "";
+
+
     $scope.update = function (user) {
-        $scope.master = angular.copy(user);
+        if (user.pass != undefined && user.pass == user.confirmPass) {
+            $scope.name = angular.copy(user.name);
+            $scope.lastName = angular.copy(user.lastName);
+            $scope.password = angular.copy(user.pass);
+            $scope.login = angular.copy(user.login);
+            $scope.sex = angular.copy(user.sex);
+            $scope.dirthDay = "02/02/1990"; //angular.copy(user.Day) + '/' + angular.copy(user.Month) + '/' + angular.copy(user.Year);
+            $scope.email = angular.copy(user.email);
 
-        var req = {
-            method: 'POST',
-            url: 'http://private-bc396-authorisation.apiary-mock.com/oauth/token',
-            headers: {
-                'Content-Type': undefined
-            },
-            data: $scope.master
-        };
+            $scope.master = {
+                "name": $scope.name,
+                "lastName": $scope.lastName,
+                "pass": $scope.password,
+                "login": $scope.login,
+                "sex": $scope.sex,
+                "birthDay": $scope.dirthDay,
+                "email": $scope.email
+            };
+
+            var req = {
+                method: 'POST',
+                url: 'https://sjc2016vs3.fwd.wf/users',
+                headers: {
+                    'Content-Type': undefined
+                },
+                data: $scope.master
+            };
 
 
-        $http(req).success(success);
+            $http(req).success(success).error(error);
+        }
         function success(data) {
-            alert('' + data.message);
+            alert('' + data);
         };
-
+        function error(data) {
+            alert('' + data)
+        }
     };
-
-
 };
