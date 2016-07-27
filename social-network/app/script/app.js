@@ -1,6 +1,6 @@
 'use strict';
 
-var app = angular.module('socialNetwork', ['ui.router']);
+var app = angular.module('socialNetwork', ['ui.router']); /*, 'ngMessages', 'ngMaterial', 'material.svgAssetsCache'*/
 
 app.config(function ($stateProvider, $urlRouterProvider) {
    $urlRouterProvider.otherwise('/id/profile');
@@ -42,10 +42,6 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             url: '/video',
             templateUrl: 'view/video.html'
         })
-        .state('menu.settings',{
-            url: '/settings',
-            templateUrl: 'view/settings.html'
-        })
         .state('home',{
             url: '/SoN',
             templateUrl: 'view/home.html'
@@ -58,8 +54,18 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             url: '/SoN/forgot_pass',
             templateUrl: 'view/forgot_pass.html'
         })
-
-
+        .state('menu.settings',{
+            url: '/settings',
+            templateUrl: 'view/settings.html'
+        })
+        .state('menu.settings.black-list',{
+        url: '/black-list',
+        templateUrl: 'view/black-list.html'
+         })
+        .state('menu.settings.change_pass',{
+            url: '/change_pass',
+            templateUrl: 'view/change_pass.html'
+        })
         .state('menu.friend', {
             url: '/users/:userIdentifier',
             templateUrl: "view/profile.html",

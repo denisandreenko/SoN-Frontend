@@ -31,7 +31,7 @@ input[type="submit"]:hover {
 
 #header .top-menu li {
     display: inline-block;
-    width: 11%;
+    width: 14.8%;
 }
 
 #header .top-menu li:nth-child(1) {
@@ -400,7 +400,6 @@ i#content-registration nput[type="submit"]:hover {
 
 #content-forgot .line input[type="email"] {
     background: #f1f1f1 url(http://www.red-team-design.com/wp-content/uploads/2011/09/login-sprite.png) no-repeat;
-    margin-right: 30%;
     padding: 10px 15px 10px 30px;
     width: 240px;
     height: 25px;
@@ -1283,6 +1282,113 @@ i#content-registration nput[type="submit"]:hover {
 
 
 
-/*--------------------------------------------------------------------------------------CUSTOMS-------------------------------------------------------------------------------------- */
+/*--------------------------------------------------------------------------------------SETTINGS-------------------------------------------------------------------------------------- */
 
 
+#settings {
+    width: 100%; 
+    background-color: #7DD493;
+    overflow: hidden;
+}
+
+#settings .tab {
+    float: left;
+    display: inline-block;
+    font-size: 16px;
+}
+
+#settings .tab a {
+    padding: 6px 15px;
+    display: block;
+    text-decoration: none;
+    color: #FFFFFF;
+}
+
+#black-list .ban-panel {
+    padding: 6px 15px;
+    width: 95%; 
+    background-color: #B8D98C;
+    overflow: hidden;
+}
+
+#black-list .ban-panel input[type="text"] {
+    float: left;
+    padding-left: 5px; 
+    height: 20px;
+    width: 190px;
+}
+
+#black-list .ban-panel input[type="submit"] {
+    float: right;
+    background-color: #2E538A;
+    color: #FFFFFF;
+}
+
+#black-list .ban-list .user {
+    overflow: hidden;
+    width: 95%;
+    padding: 6px 15px;
+    background-color: yellow;
+    border-bottom: 1px solid black;
+}
+
+#black-list .ban-list .user .user-info {
+     float: left;
+}
+
+#black-list .ban-list .user .user-info .avatar{
+    float: left;
+    width: 25px;
+    height: 25px;
+}
+
+#black-list .ban-list .user .user-info .name {
+    float: left;
+    margin-left: 10px;
+    font-size: 16px;
+}
+
+#black-list .ban-list .user input {
+    float: right;
+}
+
+#change_pass {
+    margin: 10% 100px 0px 100px;
+    text-align: left;
+    font-size:23px;
+}
+
+#change_pass .line {
+    font-size: 16px;
+    margin: 20px auto;
+    overflow: hidden;
+}
+
+#change_pass .line span {
+    margin: 0;
+    padding: 0;
+    font-size:22px;
+    float: left;
+}
+
+#change_pass input[type="text"] {
+    float: right;
+    background: #f1f1f1 url(http://www.red-team-design.com/wp-content/uploads/2011/09/login-sprite.png) no-repeat;
+    padding: 10px 15px 10px 25px;
+    width: 180px;
+    height: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#change_pass input[type="submit"] {
+    background-color: #ffb94b;
+    border-radius: 3px;
+    border-style: solid;
+    border-color: #d69e31 #e3a037 #d5982d #e3a037;
+    height: 35px;
+    width: 130px;
+    font: bold 15px Arial, Helvetica;
+    color: #8f5a0a;
+    margin: 2% auto 5% 30%;
+}
