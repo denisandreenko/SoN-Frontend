@@ -1,74 +1,76 @@
 <div id="edit-profile">
-    <div class="line line-name">
-        <span>Name</span>
-        <input type="text" name="name">
-    </div>
-
-    <div class="line line-lastname">
-        <span>Last Name</span>
-        <input type="text" name="lastname">
-    </div>
-
-    <div class="line line-sex">
-        <span>Sex</span>
-        <label>
-            <input type="radio" name="sex" value="man">
-            <span class="sex">Man</span>
-        </label>
-        <label>
-            <input type="radio" name="sex" value="woman">
-            <span class="sex">Woman</span>
-        </label>
-    </div>
-
-    <div class="line line-birthday">
-        <span>Birthday</span>
-        <div class="date">
-            <select class="datefield datefield-day">
-                <option>Day</option>
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-            </select>
-            <select class="datefield datefield-month">
-                <option>Month</option>
-                <option>Jan</option>
-                <option>Feb</option>
-                <option>Mar</option>
-            </select>
-            <select class="datefield datefield-year">
-                <option>Year</option>
-                <option>2016</option>
-                <option>2015</option>
-                <option>2014</option>
-            </select>
+    <form>
+        <div class="line line-name">
+            <span>Name</span>
+            <input type="text" name="name" ng-model="user.name">
         </div>
-    </div>
 
-    <div class="line line-city">
-        <span>City</span>
-        <input type="text" name="city">
-    </div>
+        <div class="line line-lastname">
+            <span>Last Name</span>
+            <input type="text" name="lastname" ng-model="user.lastName">
+        </div>
 
-    <div class="line line-mobile-number">
-        <span>Mobile number</span>
-        <input type="text" name="mobile-number">
-    </div>
+        <div class="line line-sex">
+            <span>Sex</span>
+            <label>
+                <input type="radio" name="sex" value="man" ng-model="user.sex">
+                <span class="sex">Man</span>
+            </label>
+            <label>
+                <input type="radio" name="sex" value="woman" ng-model="user.sex">
+                <span class="sex">Woman</span>
+            </label>
+        </div>
 
-    <div class="line line-skype">
-        <span>Skype</span>
-        <input type="text" name="skype">
-    </div>
+       <!-- <div class="line line-birthday">
+            <span>Birthday</span>
+            <div class="date">
+                <select class="datefield datefield-day">
+                    <option>Day</option>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                </select>
+                <select class="datefield datefield-month">
+                    <option>Month</option>
+                    <option>Jan</option>
+                    <option>Feb</option>
+                    <option>Mar</option>
+                </select>
+                <select class="datefield datefield-year">
+                    <option>Year</option>
+                    <option>2016</option>
+                    <option>2015</option>
+                    <option>2014</option>
+                </select>
+            </div>
+        </div>-->
 
-    <div class="line line-city">
-        <span>Email</span>
-        <input type="email" name="city">
-    </div>
+        <div class="line line-city">
+            <span>City</span>
+            <input type="text" name="city" ng-model="user.city">
+        </div>
 
-    <div class="line line-about">
-        <span>About me</span>
-        <input type="text" name="about">
-    </div>
+        <div class="line line-mobile-number">
+            <span>Mobile number</span>
+            <input type="text" name="mobile-number" ng-model="user.mobile">
+        </div>
 
-    <input type="submit" name="edit" value="Edit">
+        <div class="line line-skype">
+            <span>Skype</span>
+            <input type="text" name="skype" ng-model="user.skype">
+        </div>
+
+        <div class="line line-city">
+            <span>Email</span>
+            <input type="email" name="city" ng-model="user.email">
+        </div>
+
+        <div class="line line-about">
+            <span>About me</span>
+            <input type="text" name="about" ng-model="user.about">
+        </div>
+
+        <input type="submit" name="edit" value="Edit" ng-click="update(user)">
+    </form>
 </div>
