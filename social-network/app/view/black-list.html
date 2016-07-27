@@ -1,42 +1,15 @@
-<div id="black-list">
+<div id="black-list" ng-controller="BlackListController">
     <div class="ban-panel">
         <input type="text" placeholder="id to ban"/>
         <input type="submit" value="add to ban list"/>
     </div>
     <div class="ban-list">
-        <div class="user">
+        <div class="user"  ng-repeat="user in users">
             <div class="user-info">
                 <div class="avatar">
-                    <img src="#">
+                    <img src="{{user.img}}">
                 </div>
-                <span class="name">Banana Curdibrina</span>
-            </div>
-            <input type="submit" value="unban"/>
-        </div>
-        <div class="user">
-            <div class="user-info">
-                <div class="avatar">
-                    <img src="#">
-                </div>
-                <span class="name">Banana Curdibrina</span>
-            </div>
-            <input type="submit" value="unban"/>
-        </div>
-        <div class="user">
-            <div class="user-info">
-                <div class="avatar">
-                    <img src="#">
-                </div>
-                <span class="name">Banana Curdibrina</span>
-            </div>
-            <input type="submit" value="unban"/>
-        </div>
-        <div class="user">
-            <div class="user-info">
-                <div class="avatar">
-                    <img src="#">
-                </div>
-                <span class="name">Banana Curdibrina</span>
+                <span class="name">{{user.Fname + " " + user.Lname}}</span>
             </div>
             <input type="submit" value="unban"/>
         </div>

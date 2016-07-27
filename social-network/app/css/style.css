@@ -1342,6 +1342,11 @@ i#content-registration nput[type="submit"]:hover {
     height: 25px;
 }
 
+#black-list .ban-list .user .user-info .avatar img {
+    width: 100%;
+    height: 100%;
+}
+
 #black-list .ban-list .user .user-info .name {
     float: left;
     margin-left: 10px;
