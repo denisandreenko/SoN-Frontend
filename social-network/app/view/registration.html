@@ -1,36 +1,36 @@
 <div id="wrapper">
-    <div id="content-registration">
+    <div id="content-registration" ng-controller="RegController">
         <h1 id="signup">Sign Up</h1>
         <form>
             <div class="data">
                 <div class="line line-name">
                     <span>Name</span>
-                    <input type="text" name="name" required>
+                    <input type="text" name="name" required ng-model="user.name">
                 </div>
 
                 <div class="line line-lastname">
                     <span>Last Name</span>
-                    <input type="text" name="lastname" required>
+                    <input type="text" name="lastname" required ng-model="user.lastName">
                 </div>
 
                 <div class="line line-login">
                     <span>Login</span>
-                    <input type="text" name="login" required>
+                    <input type="text" name="login" required ng-model="user.login">
                 </div>
 
                 <div class="line line-password">
                     <span>Password</span>
-                    <input type="password" name="password" required>
+                    <input type="password" name="password" required ng-model="user.pass">
                 </div>
 
                 <div class="line line-confirmpassword">
                     <span>Confirm Pass</span>
-                    <input type="password" name="confirmpassword" required>
+                    <input type="password" name="confirmpassword" required ng-model="user.passConfirm">
                 </div>
 
                 <div class="line line-email">
                     <span>Email</span>
-                    <input type="email" name="email" required>
+                    <input type="email" name="email" required ng-model="user.email">
                 </div>
 
                 <div class="line line-sex">
@@ -69,7 +69,9 @@
                     </div>
                 </div>
             </div>
-            <input type="submit" name="signup" value="Send">
+            <input type="submit" name="signup" value="Send" ng-click="update(user)">
         </form>
+        <hr>{{user | json}}
+        <hr>{{master | json}}
     </div>
 </div>
