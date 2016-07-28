@@ -266,7 +266,7 @@ input[type="submit"]:hover {
 #content-registration .line {
     overflow: hidden;
     padding: 0 0;
-    margin: 10px 14% 10px 23%;
+    margin: 10px 16% 10px 28%;
 }
 
 #content-registration .line span {
@@ -276,8 +276,15 @@ input[type="submit"]:hover {
     float: left;
 }
 
+#content-registration .line p {
+    float: right;
+    color: red;
+    font-size: 16px;
+    display: block;
+}
+
 #content-registration .line input {
-    font-size: 20px;
+    font-size: 16px;
 }
 
 #content-registration .line input[type="text"], 
@@ -285,8 +292,8 @@ input[type="submit"]:hover {
 #content-registration .line input[type="email"]{
     float: right;
     background: #f1f1f1 url(http://www.red-team-design.com/wp-content/uploads/2011/09/login-sprite.png) no-repeat;
-    padding: 10px 15px 10px 30px;
-    width: 240px;
+    padding: 6px 10px 6px 25px;
+    width: 220px;
     height: 25px;
     border: 1px solid #ccc;
     border-radius: 5px;
@@ -295,7 +302,7 @@ input[type="submit"]:hover {
 #content-registration .datefield {
     float: right;
     background: #f1f1f1 url(http://www.red-team-design.com/wp-content/uploads/2011/09/login-sprite.png) no-repeat;
-    width: 90px;
+    width: 80px;
     margin-left: 9px;
     height: 35px;
     margin-top: 4px;
@@ -307,7 +314,7 @@ input[type="submit"]:hover {
 }
 #content-registration .line input[type="radio"] {
     float: right;
-    margin: 16px 60px 0 10px;
+    margin: 16px 40px 0 10px;
 }
 
 #content-registration input[type="submit"] {
@@ -345,7 +352,7 @@ input[type="submit"]:hover {
     border-radius: 5px;
 }
 
-i#content-registration nput[type="submit"]:hover {
+i#content-registration input[type="submit"]:hover {
     background-color: #fddb6f;
     background-image: -webkit-gradient(linear, left top, left bottom, from(#ffb94b), to(#fddb6f));
     background-image: -webkit-linear-gradient(top, #ffb94b, #fddb6f);
@@ -370,7 +377,24 @@ i#content-registration nput[type="submit"]:hover {
     box-shadow: 0 0 0 1px #e8c291 inset;
 }
 
+/*Валидация пароля*/
 
+.ng-invalid {
+    border-color: red;
+    outline-color: red;
+}
+
+.ng-valid {
+    border-color: green;
+    outline-color: green;
+}
+
+.messages {
+    font-size: smaller;
+    padding-top: 5px;
+    padding-bottom: 10px;
+    color: red;
+}
 
 
 /*---------------------------------------------------------------------FORGOT_PASSWORD---------------------------------------------------------------------------*/
