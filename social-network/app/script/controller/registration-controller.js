@@ -50,6 +50,9 @@ function RegController($scope, $http) {
             var req = {
                 method: 'POST',
                 url: 'https://sjc2016vs3.fwd.wf/users',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
                 data: $scope.master
             };
 
