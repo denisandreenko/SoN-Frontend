@@ -54,9 +54,9 @@
                 </div>
 
                 <div class="replies">
-                    <img src="{{post.likeImg}}" alt="like" width="25px"/>
+                    <img src="{{post.likeImg}}" alt="like" width="25px" ng-click='increaseLike($index)'/>
                     <span>{{post.likes}}</span>
-                    <img src="{{post.dislikeImg}}" alt="dislike" width="25px"/>
+                    <img src="{{post.dislikeImg}}" alt="dislike" width="25px" ng-click='increaseDisLike($index)'/>
                     <span>{{post.dislikes}}</span>
                 </div>
             </div>

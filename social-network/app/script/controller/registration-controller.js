@@ -49,7 +49,7 @@ function RegController($scope, $http) {
 
             var req = {
                 method: 'POST',
-                url: 'https://sjc2016vs3.fwd.wf/users',
+                url: 'https://sjc2016vs3.fwd.wf/users',//'http://private-bc396-authorisation.apiary-mock.com/oauth/token',//
                 headers: {
                     'Content-Type': 'application/json'
                 },
@@ -57,15 +57,15 @@ function RegController($scope, $http) {
             };
 
 
-            $http(req).success(success);
+            $http(req).success(success).error(error);
             alert('Confirm password is correct.')
         }
         else alert('Confirm password is not correct.');
         function success(data) {
-            alert('' + data);
+            alert('' + data.message);
         };
         function error(data) {
-            alert('' + data)
+            alert('' + data.message)
         }
     };
 

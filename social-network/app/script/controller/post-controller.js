@@ -2,18 +2,23 @@
 
 angular.module('socialNetwork').controller('PostController', PostController);
 
-PostController.$inject = ['$scope', '$http'];
+PostController.$inject = ['$scope', 'NetworkService'];
 
-function PostController($scope, $http) {
+function PostController($scope, NetworkService) {
 
-	$scope.posts = [];
+    $scope.posts = [];
 
-	$http.get('http://www.mocky.io/v2/578e18f50f00006f19aebc38').success(success);
+    $scope.increaseLike = function (index) {
+        $scope.posts[index].likes++;
+    };
+    $scope.increaseDisLike = function (index) {
+        $scope.posts[index].dislikes++;
+    };
 
-	function success(data, status, headers, config){
-		if(status == 200)
-		{
-			$scope.posts = data;
-		}
-	};
-};
+    var promise = NetworkService.getPost(1, 0, 2).promise;
+
+    promise.then(function (responce) {
+        var data = responce.getData();
+        $scope.posts = data;
+    })
+}
