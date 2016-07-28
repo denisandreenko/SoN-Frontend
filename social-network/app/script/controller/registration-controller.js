@@ -24,30 +24,37 @@ function RegController($scope, $http) {
             $scope.password = angular.copy(user.pass);
             $scope.login = angular.copy(user.login);
             $scope.sex = angular.copy(user.sex);
-            $scope.dirthDay = "02/02/1990"; //angular.copy(user.Day) + '/' + angular.copy(user.Month) + '/' + angular.copy(user.Year);
+            $scope.dirthDay = moment(angular.copy(user.birthDate)).format('DD/MM/YYYY');
             $scope.email = angular.copy(user.email);
 
-            $scope.master = {
-                "name": $scope.name,
-                "lastName": $scope.lastName,
-                "pass": $scope.password,
-                "login": $scope.login,
-                "sex": $scope.sex,
-                "birthDay": $scope.dirthDay,
-                "email": $scope.email
+            $scope.master= {
+                "name": "nam1eha",
+                "lastName": "lname1a",
+                "login": "login1faka",
+                "password": "password1a",
+                "email": "email@email.com",
+                "sex": "1",
+                "bday": "20/02/1994"
             };
+
+            // $scope.master = {
+            //     "name": $scope.name,
+            //     "lastName": $scope.lastName,
+            //     "password": $scope.password,
+            //     "login": $scope.login,
+            //     "sex": $scope.sex,
+            //     "birthDay": $scope.dirthDay,
+            //     "email": $scope.email
+            // };
 
             var req = {
                 method: 'POST',
                 url: 'https://sjc2016vs3.fwd.wf/users',
-                headers: {
-                    'Content-Type': undefined
-                },
                 data: $scope.master
             };
 
 
-            $http(req).success(success).error(error);
+            $http(req).success(success);
             alert('Confirm password is correct.')
         }
         else alert('Confirm password is not correct.');
@@ -58,4 +65,14 @@ function RegController($scope, $http) {
             alert('' + data)
         }
     };
+
+    $scope.myDate = new Date();
+    $scope.minDate = new Date(
+        $scope.myDate.getFullYear() - 80,
+        $scope.myDate.getMonth(),
+        $scope.myDate.getDate());
+    $scope.maxDate = new Date(
+        $scope.myDate.getFullYear(),
+        $scope.myDate.getMonth(),
+        $scope.myDate.getDate());
 };

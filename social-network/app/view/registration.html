@@ -66,11 +66,11 @@
                     <label>
                         <span>Sex</span>
                         <label>
-                            <input type="radio" name="sex" value="man" ng-model="user.sex">
+                            <input type="radio" name="sex" value="1" ng-model="user.sex">
                             <span class="sex">Man</span>
                         </label>
                         <label>
-                            <input type="radio" name="sex" value="woman" ng-model="user.sex" checked>
+                            <input type="radio" name="sex" value="0" ng-model="user.sex" checked>
                             <span class="sex">Woman</span>
                         </label>
                     </label>
@@ -78,28 +78,31 @@
 
                 <div class="line line-birthday">
                     <span>Birthday</span>
-                    <div class="date">
-                        <select class="datefield datefield-day">
-                            <option>Day</option>
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                        </select>
-                        <select class="datefield datefield-month">
-                            <option>Month</option>
-                            <option>Jan</option>
-                            <option>Feb</option>
-                            <option>Mar</option>
-                        </select>
-                        <select class="datefield datefield-year">
-                            <option>Year</option>
-                            <option>2016</option>
-                            <option>2015</option>
-                            <option>2014</option>
-                        </select>
+                    <md-input-container flex-gt-md="30">
+                        <input time="false" date="true" mdc-datetime-picker="" type="text" placeholder="Birth Date"
+                               ng-model="user.birthDate" min-date="minDate" max-date="maxDate" class="md-input" format="DD/MM/YYYY">
+                    </md-input-container>
+                    <!--<div class="date">-->
+                        <!--<select class="datefield datefield-day">-->
+                            <!--<option>Day</option>-->
+                            <!--<option>1</option>-->
+                            <!--<option>2</option>-->
+                            <!--<option>3</option>-->
+                        <!--</select>-->
+                        <!--<select class="datefield datefield-month">-->
+                            <!--<option>Month</option>-->
+                            <!--<option>Jan</option>-->
+                            <!--<option>Feb</option>-->
+                            <!--<option>Mar</option>-->
+                        <!--</select>-->
+                        <!--<select class="datefield datefield-year">-->
+                            <!--<option>Year</option>-->
+                            <!--<option>2016</option>-->
+                            <!--<option>2015</option>-->
+                            <!--<option>2014</option>-->
+                        <!--</select>-->
                     </div>
                 </div>
-            </div>
             <input type="submit" name="signup" value="Send" ng-click="update(user)">
         </form>
     </div>
