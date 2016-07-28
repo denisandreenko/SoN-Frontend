@@ -85,8 +85,13 @@ function NetworkService($http, $q, $log, Constant, ResponseFactory) {
     function _postRegister(data){
 
         var url = Constant.APIBaseUrl;
-
+        var params = {};
         return _post(url, data,Constant.AuthType.NONE, params);
+    }
+    function _getProfile(userId) {
+        var url = 'http://www.mocky.io/v2/578e33a20f0000ce00e9a041';
+        var params = {};
+        return _get(url, Constant.AuthType.NONE, params);
     }
     function _getPost(userId, offset, limit) {
 
@@ -102,6 +107,7 @@ function NetworkService($http, $q, $log, Constant, ResponseFactory) {
 
     return {
         getPost: _getPost,
-        postReg : _postRegister
+        postReg : _postRegister,
+        getProfileInfo : _getProfile
     }
 }

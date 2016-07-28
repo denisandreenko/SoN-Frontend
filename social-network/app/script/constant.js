@@ -6,7 +6,7 @@
 
 angular.module('socialNetwork')
     .constant('Constant', {
-        APIBaseUrl: 'https://sjc2016vs3.fwd.wf/users', //http://www.mocky.io/v2/578e18f50f00006f19aebc38',// 'https://sjc2016vs3.fwd.wf/',
+        APIBaseUrl: 'http://www.mocky.io/v2/578e33a20f0000ce00e9a041', //http://www.mocky.io/v2/578e18f50f00006f19aebc38',// 'https://sjc2016vs3.fwd.wf/',
         TradeTypes: {
             Buy: 'BUY',
             Sell: 'SELL'

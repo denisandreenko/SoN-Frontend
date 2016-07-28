@@ -2,9 +2,9 @@
 
 angular.module('socialNetwork').controller('RegController', RegController);
 
-RegController.$inject = ['$scope', '$http'];
+RegController.$inject = ['$scope', 'NetworkService'];
 
-function RegController($scope, $http) {
+function RegController($scope, NetworkService) {
 
     $scope.master = {};
 
@@ -27,7 +27,7 @@ function RegController($scope, $http) {
             $scope.dirthDay = moment(angular.copy(user.birthDate)).format('DD/MM/YYYY');
             $scope.email = angular.copy(user.email);
 
-            $scope.master= {
+            $scope.master = {
                 "name": $scope.name,
                 "lastName": $scope.lastName,
                 "login": $scope.login,
@@ -36,11 +36,11 @@ function RegController($scope, $http) {
                 "sex": $scope.sex,
                 "bday": $scope.dirthDay
             };
-            var promise = NetworkService.postReg(master).promise;
+            var promise = NetworkService.postReg($scope.master).promise;
 
             promise.then(function (responce) {
-                var data = responce.getData();
-                alert('' + data.statusType);
+               var data = responce.getData();
+               alert('' + data.statusType);
             })
         }
     };

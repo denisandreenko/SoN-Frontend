@@ -2,30 +2,27 @@
 
 angular.module('socialNetwork').controller('ProfileController', ProfileController);
 
-ProfileController.$inject = ['$scope', '$http'];
+ProfileController.$inject = ['$scope', 'NetworkService'];
 
-function ProfileController($scope, $http) {
+function ProfileController($scope, NetworkService) {
 
-	$scope.userName = "";
-	$scope.userSubname = "";
-	$scope.userBirthday = "";
-	$scope.userAvatar = "";
-	$scope.userContacts = [];
-	$scope.userCity = "";
-	$scope.userAbout = "";
+    $scope.userName = "";
+    $scope.userSubname = "";
+    $scope.userBirthday = "";
+    $scope.userAvatar = "";
+    $scope.userContacts = [];
+    $scope.userCity = "";
+    $scope.userAbout = "";
 
-	$http.get('http://www.mocky.io/v2/578e33a20f0000ce00e9a041').success(success);
+    var promise = NetworkService.getProfileInfo(1).promise;
 
-	function success(data, status, headers, config){
-		if(status == 200)
-		{
-			$scope.userName = data.userName;
-			$scope.userSubname = data.userSubname;
-			$scope.userBirthday = data.userBirthday;
-			$scope.userAvatar = data.userAvatar;
-			$scope.userContacts = data.userContacts;
-			$scope.userCity = data.userCity;
-			$scope.userAbout = data.userAbout;
-		}
-	};
+    promise.then(function (responce) {
+        $scope.userName = responce.data.userName;
+        $scope.userSubname = responce.data.userSubname;
+        $scope.userBirthday = responce.data.userBirthday;
+        $scope.userAvatar = responce.data.userAvatar;
+        $scope.userContacts = responce.data.userContacts;
+        $scope.userCity = responce.data.userCity;
+        $scope.userAbout = responce.data.userAbout;
+    });
 };
