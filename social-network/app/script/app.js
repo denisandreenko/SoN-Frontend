@@ -1,11 +1,15 @@
 'use strict';
 
-var app = angular.module('socialNetwork', ['ui.router']); /*, 'ngMessages', 'ngMaterial', 'material.svgAssetsCache'*/
+var app = angular.module('socialNetwork', ['ui.router', 'ngMessages']); /*, 'ngMessages', 'ngMaterial', 'material.svgAssetsCache'*/
 
 app.config(function ($stateProvider, $urlRouterProvider) {
-   $urlRouterProvider.otherwise('/id/profile');
+   $urlRouterProvider.otherwise('/test');
 
     $stateProvider
+        .state('test', {
+            url: '/test',
+            templateUrl: 'view/test.html'
+        })
         .state('menu', {
             url: '/id',
             templateUrl: 'view/menu.html'

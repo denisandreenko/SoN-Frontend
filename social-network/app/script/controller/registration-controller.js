@@ -48,7 +48,9 @@ function RegController($scope, $http) {
 
 
             $http(req).success(success).error(error);
+            alert('Confirm password is correct.')
         }
+        else alert('Confirm password is not correct.');
         function success(data) {
             alert('' + data);
         };
