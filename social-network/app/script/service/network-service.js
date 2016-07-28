@@ -95,7 +95,7 @@ function NetworkService($http, $q, $log, Constant, ResponseFactory) {
     }
     function _getPost(userId, offset, limit) {
 
-        var url = Constant.APIBaseUrl; //+ "/posts";
+        var url = 'http://www.mocky.io/v2/578e18f50f00006f19aebc38'; //+ "/posts";
 
         var params = {
             "userId": userId,
