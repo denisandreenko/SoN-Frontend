@@ -4,11 +4,7 @@ var app = angular.module('socialNetwork', ['ui.router', 'ngMessages', 'ngMateria
 /*, 'ngMessages', 'ngMaterial', 'material.svgAssetsCache'*/
 
 app.config(function ($stateProvider, $urlRouterProvider) {
-<<<<<<< Updated upstream
    $urlRouterProvider.otherwise('/id/profile');
-=======
-    $urlRouterProvider.otherwise('/SoN/registration');
->>>>>>> Stashed changes
 
     $stateProvider
         .state('test', {
