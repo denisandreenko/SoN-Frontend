@@ -28,44 +28,20 @@ function RegController($scope, $http) {
             $scope.email = angular.copy(user.email);
 
             $scope.master= {
-                "name": "nam1eha",
-                "lastName": "lname1a",
-                "login": "login1faka",
-                "password": "password1a",
-                "email": "email@email.com",
-                "sex": "1",
-                "bday": "20/02/1994"
+                "name": $scope.name,
+                "lastName": $scope.lastName,
+                "login": $scope.login,
+                "password": $scope.password,
+                "email": $scope.email,
+                "sex": $scope.sex,
+                "bday": $scope.dirthDay
             };
+            var promise = NetworkService.postReg(master).promise;
 
-            // $scope.master = {
-            //     "name": $scope.name,
-            //     "lastName": $scope.lastName,
-            //     "password": $scope.password,
-            //     "login": $scope.login,
-            //     "sex": $scope.sex,
-            //     "birthDay": $scope.dirthDay,
-            //     "email": $scope.email
-            // };
-
-            var req = {
-                method: 'POST',
-                url: 'https://sjc2016vs3.fwd.wf/users',//'http://private-bc396-authorisation.apiary-mock.com/oauth/token',//
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                data: $scope.master
-            };
-
-
-            $http(req).success(success).error(error);
-            alert('Confirm password is correct.')
-        }
-        else alert('Confirm password is not correct.');
-        function success(data) {
-            alert('' + data.message);
-        };
-        function error(data) {
-            alert('' + data.message)
+            promise.then(function (responce) {
+                var data = responce.getData();
+                alert('' + data.statusType);
+            })
         }
     };
 
