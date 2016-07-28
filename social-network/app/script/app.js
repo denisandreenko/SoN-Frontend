@@ -3,7 +3,7 @@
 var app = angular.module('socialNetwork', ['ui.router', 'ngMessages']); /*, 'ngMessages', 'ngMaterial', 'material.svgAssetsCache'*/
 
 app.config(function ($stateProvider, $urlRouterProvider) {
-   $urlRouterProvider.otherwise('/test');
+   $urlRouterProvider.otherwise('/id/profile');
 
     $stateProvider
         .state('test', {
