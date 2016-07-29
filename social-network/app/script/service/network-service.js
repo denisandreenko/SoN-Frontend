@@ -69,7 +69,9 @@ function NetworkService($http, $q, $log, Constant, ResponseFactory) {
 
         switch (authType) {
             case Constant.AuthType.NONE:
-                return {};
+                return {
+                    'Content-Type': 'application/json'
+                };
             case Constant.AuthType.BASIC:
                 return {
                     'Authorization': 'Basic ' + Constant.Auth.clientHash,
@@ -84,7 +86,7 @@ function NetworkService($http, $q, $log, Constant, ResponseFactory) {
 
     function _postRegister(data){
 
-        var url = Constant.APIBaseUrl;
+        var url = "https://sjc2016vs3.fwd.wf/users";//Constant.APIBaseUrl;
         var params = {};
         return _post(url, data,Constant.AuthType.NONE, params);
     }
@@ -95,12 +97,12 @@ function NetworkService($http, $q, $log, Constant, ResponseFactory) {
     }
     function _getPost(userId, offset, limit) {
 
-        var url = 'http://www.mocky.io/v2/578e18f50f00006f19aebc38'; //+ "/posts";
+        var url = 'http://www.mocky.io/v2/579b2d941100003919cb7701';//'http://www.mocky.io/v2/579b2b6d110000fb18cb76fc'; //+ "/posts";
 
         var params = {
-            "userId": userId,
-            "offset": offset,
-            "limit": limit
+            // "userId": userId,
+            // "offset": offset,
+            // "limit": limit
         };
         return _get(url, Constant.AuthType.NONE, params);
     }

@@ -7,6 +7,8 @@ PostController.$inject = ['$scope', 'NetworkService'];
 function PostController($scope, NetworkService) {
 
     $scope.posts = [];
+    $scope.likeImg = "";
+    $scope.dislikeImg = "";
 
     $scope.increaseLike = function (index) {
         $scope.posts[index].likes++;
@@ -19,6 +21,8 @@ function PostController($scope, NetworkService) {
 
     promise.then(function (responce) {
         var data = responce.getData();
-        $scope.posts = data;
+        $scope.likeImg = data.likeImg;
+        $scope.dislikeImg = data.dislikeImg;
+        $scope.posts = data.data;
     })
 }
