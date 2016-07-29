@@ -1,10 +1,10 @@
 'use strict';
 
-var app = angular.module('socialNetwork', ['ui.router', 'ngMessages', 'ngMaterialDatePicker', 'ngMaterial']);
+var app = angular.module('socialNetwork', ['ui.router', 'ngMessages', 'ngMaterialDatePicker', 'ngMaterial', 'ngFileUpload']);
 /*, 'ngMessages', 'ngMaterial', 'material.svgAssetsCache'*/
 
 app.config(function ($stateProvider, $urlRouterProvider) {
-   $urlRouterProvider.otherwise('/id/profile');
+   $urlRouterProvider.otherwise('/test');
 
     $stateProvider
         .state('test', {

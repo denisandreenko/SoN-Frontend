@@ -2,9 +2,10 @@
 
 angular.module('socialNetwork').controller('RegController', RegController);
 
-RegController.$inject = ['$scope', 'NetworkService'];
+RegController.$inject = ['$scope', 'NetworkService', '$location'];
 
-function RegController($scope, NetworkService) {
+function RegController($scope, NetworkService, $location) {
+
 
     $scope.master = {};
 
@@ -36,11 +37,15 @@ function RegController($scope, NetworkService) {
                 "sex": $scope.sex,
                 "bday": $scope.dirthDay
             };
-            var promise = NetworkService.postReg($scope.master).promise;
+            var promise = NetworkService.post($scope.master, '/user').promise;
 
             promise.then(function (responce) {
                var data = responce.getData();
-               alert('' + data.statusType);
+                if(data.status == 200)
+                {
+                    $location.path = '/id/profile';
+                    alert('' + data.statusType);
+                }
             })
         }
     };

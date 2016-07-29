@@ -9,6 +9,9 @@ NetworkService.$inject = ['$http', '$q', '$log', 'Constant', 'ResponseFactory'];
 
 function NetworkService($http, $q, $log, Constant, ResponseFactory) {
 
+    $http.defaults.useXDomain = true;
+    delete $http.defaults.headers.common['X-Requested-With'];
+
     function _get(url, authType, params) {
 
         var deferred = $q.defer();
@@ -70,7 +73,7 @@ function NetworkService($http, $q, $log, Constant, ResponseFactory) {
         switch (authType) {
             case Constant.AuthType.NONE:
                 return {
-                    'Content-Type': 'application/json'
+                    // 'Content-Type': 'application/json'
                 };
             case Constant.AuthType.BASIC:
                 return {
@@ -84,9 +87,9 @@ function NetworkService($http, $q, $log, Constant, ResponseFactory) {
         }
     }
 
-    function _postRegister(data){
+    function _postingData(data, additionalUrl){
 
-        var url = "https://sjc2016vs3.fwd.wf/users";//Constant.APIBaseUrl;
+        var url = Constant.APIBaseUrl + additionalUrl;//Constant.APIBaseUrl;
         var params = {};
         return _post(url, data,Constant.AuthType.NONE, params);
     }
@@ -109,7 +112,7 @@ function NetworkService($http, $q, $log, Constant, ResponseFactory) {
 
     return {
         getPost: _getPost,
-        postReg : _postRegister,
+        post : _postingData,
         getProfileInfo : _getProfile
     }
 }

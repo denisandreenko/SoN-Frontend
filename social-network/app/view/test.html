@@ -1,4 +1,16 @@
-<md-input-container flex-gt-md="30" ng-controller="RegController">
-    <input time="false" date="true" mdc-datetime-picker="" type="text" id="date" placeholder="Birth Date"
-           ng-model="birthDate" min-date="minDate" max-date="maxDate" class="md-input" format="DD/MM/YYYY">
-</md-input-container>
+<form ng-controller="TestController" name="form">
+    Select file here:<br>
+    <md-input-container>
+        <label>FileName</label>
+        <input type="text" data-ng-model="fileName" required md-maxlength="50">
+    </md-input-container><br>
+    <md-button class="md-raised md-warn" data-ngf-select data-ng-model="file" data-name="file" data-ngf-pattern=""
+         data-ngf-accept="" data-ngf-max-size="1MB" data-ngf-min-height="100"
+         data-ngf-resize="{width: 300, height: 100}">Select</md-button>
+    <br>
+    Multiple files
+    Drop files: <div data-ngf-drop data-ng-model="files" class="drop-box">Drop</div>
+    <md-button class="md-raised" type="submit" data-ng-click="submit()">Upload</md-button>
+</form>
+
+<audio data-ngf-src="{{file}}"></audio>
