@@ -11,10 +11,10 @@ function PostController($scope, NetworkService) {
     $scope.dislikeImg = "";
 
     $scope.increaseLike = function (index) {
-        $scope.posts[index].likes++;
+        $scope.posts[index].like++;
     };
     $scope.increaseDisLike = function (index) {
-        $scope.posts[index].dislikes++;
+        $scope.posts[index].dislike++;
     };
 
     var promise = NetworkService.getPost(1, 0, 2).promise;

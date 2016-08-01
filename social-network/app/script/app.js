@@ -4,7 +4,7 @@ var app = angular.module('socialNetwork', ['ui.router', 'ngMessages', 'ngMateria
 /*, 'ngMessages', 'ngMaterial', 'material.svgAssetsCache'*/
 
 app.config(function ($stateProvider, $urlRouterProvider) {
-   $urlRouterProvider.otherwise('/SoN/registration');
+   $urlRouterProvider.otherwise('/id/profile');
 
     $stateProvider
         .state('test', {
@@ -73,10 +73,10 @@ app.config(function ($stateProvider, $urlRouterProvider) {
         })
         .state('menu.friend', {
             url: '/users/:userIdentifier',
-            templateUrl: "view/profile.html",
+            templateUrl: "view/profile.html"
         })
         .state('menu.group', {
             url: '/groups/:groupIdentifier',
-            templateUrl: "view/face-group.html",
+            templateUrl: "view/face-group.html"
         })
 });
