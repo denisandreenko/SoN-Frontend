@@ -1,7 +1,7 @@
 <div id="wrapper" >
-    <div id="content-registration">
+    <div id="content-registration" ng-controller="RegController">
         <h1 id="signup">Sign Up</h1>
-        <form name="registrationForm" ng-controller="RegController">
+        <form name="registrationForm" ng-submit="update(user)">
             <div class="data">
                 <div class="line line-name">
                     <label>
@@ -85,7 +85,10 @@
                     </md-input-container>
                     </div>
                 </div>
-            <input type="submit" name="signup" value="Send" ng-click="update(user)">
+            <md-input-container>
+                <input type="submit" value="Send">
+            </md-input-container>
+            <!--<input type="submit" name="signup" value="Send">-->
         </form>
     </div>
 </div>

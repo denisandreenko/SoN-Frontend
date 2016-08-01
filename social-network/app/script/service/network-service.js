@@ -5,9 +5,9 @@
 
 angular.module('socialNetwork').service('NetworkService', NetworkService);
 
-NetworkService.$inject = ['$http', '$q', '$log', 'Constant', 'ResponseFactory'];
+NetworkService.$inject = ['$http', '$q', '$log', 'Constant', 'ResponseFactory', '$mdToast'];
 
-function NetworkService($http, $q, $log, Constant, ResponseFactory) {
+function NetworkService($http, $q, $log, Constant, ResponseFactory, $mdToast) {
 
     $http.defaults.useXDomain = true;
     delete $http.defaults.headers.common['X-Requested-With'];
@@ -28,6 +28,13 @@ function NetworkService($http, $q, $log, Constant, ResponseFactory) {
         }).success(function (data) {
             deferred.resolve(ResponseFactory.buildResponse(data));
         }).error(function (xhr, status) {
+            Constant.ToastMsg = "Server error, " + xhr;
+            $mdToast.show({
+                hideDelay: 3000,
+                position: 'top right',
+                controller: 'ToastController',
+                templateUrl: 'view/reg-toast.html'
+            });
             $log.error('[NetworkService] ' + url + ': Error request');
             deferred.reject(status);
         });
@@ -58,6 +65,13 @@ function NetworkService($http, $q, $log, Constant, ResponseFactory) {
         $http(req).success(function (data) {
             deferred.resolve(ResponseFactory.buildResponse(data));
         }).error(function (xhr, status) {
+            Constant.ToastMsg = "Server error, " + xhr;
+            $mdToast.show({
+                hideDelay: 3000,
+                position: 'top right',
+                controller: 'ToastController',
+                templateUrl: 'view/reg-toast.html'
+            });
             $log.error('[NetworkService] ' + url + ': Error request');
             deferred.reject(status);
         });
