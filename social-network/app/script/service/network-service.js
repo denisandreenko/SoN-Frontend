@@ -112,6 +112,11 @@ function NetworkService($http, $q, $log, Constant, ResponseFactory, $mdToast) {
         var params = {};
         return _get(url, Constant.AuthType.NONE, params);
     }
+    function  _getAudiolist(urlIn, userId) {
+        var url = urlIn;
+        var params = {};
+        return _get(url, Constant.AuthType.NONE, params);
+    }
     function _getPost(userId, offset, limit) {
 
         var url = 'http://www.mocky.io/v2/579b2d941100003919cb7701';//'http://www.mocky.io/v2/579b2b6d110000fb18cb76fc'; //+ "/posts";
@@ -127,6 +132,7 @@ function NetworkService($http, $q, $log, Constant, ResponseFactory, $mdToast) {
     return {
         getPost: _getPost,
         post : _postingData,
-        getProfileInfo : _getProfile
+        getProfileInfo : _getProfile,
+        getAudioList : _getAudiolist
     }
 }

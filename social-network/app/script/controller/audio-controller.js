@@ -2,24 +2,28 @@
 
 angular.module('socialNetwork').controller('AudioController', AudioController);
 
-AudioController.$inject = ['$scope', '$http'];
+AudioController.$inject = ['$scope', 'NetworkService', $sce];
 
-function AudioController($scope, $http) {
+function AudioController($scope, NetworkService, $sce) {
 
+    $scope.source = "";
     $scope.audios = [];
     $scope.code = "";
     $scope.playIconUrl = "";
 
-    $http.get('http://www.mocky.io/v2/578f6a2b0f00002018e9a1d7').success(success);
+    var promise = NetworkService.getAudioList('http://www.mocky.io/v2/57a07a130f0000be160f65af', 123).promise;
 
-    function success(data, status, headers, config) {
+    promise.then(function (responce) {
+        var data = responce.getData();
+
         $scope.audios = data.audios;
         $scope.playIconUrl = data.playIcon;
         $scope.code = data.code;
-    };
-    function doPlay() {
-        alert('PlayButton clicked');
-    };
+    });
+
+    $scope.setPlayingTrack = function (index) {
+        $scope.source = $sce.trustAsResourceUrl($scope.audios[index].audioUrl);
+    }
 };
 angular.module('socialNetwork').filter('trusted', AudioFilter);
 

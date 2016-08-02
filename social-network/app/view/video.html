@@ -1,10 +1,8 @@
    <div id="video" ng-controller="VideoController">
+       <video data-ng-src="{{source}}" controls preload="auto"></video>
       <div class="masonry-group">
           <!-- Адаптивные блоки с содержанием -->
-         <!-- <iframe width="420" height="315"
-            src="https://www.youtube.com/embed/XGSy3_Czz8k">
-          </iframe>-->
-          <div class="item" ng-repeat="item in video">
+          <div class="item" ng-repeat="item in video" data-ng-click="setPlayingTrack($index)">
             <div class="prime">
                 <img src="{{item.preView}}"/>
             </div>
@@ -15,28 +13,3 @@
       </div>
       <!-- Конец контейнера с адаптивными блоками -->
   </div>
-
-
-
-
-
-    <!--<script src="script/video.js"></script>
-    <figure id="video_player">
-      <div id="video_container">
-      <video controls poster="http://thenewcode.com/assets/images/vid-glacier.jpg">
-        <source src="http://thenewcode.com/assets/videos/glacier.mp4" type="video/mp4">
-        <source src="http://thenewcode.com/assets/videos/glacier.webm" type="video/webm">
-    </video>
-    </div>
-    <figcaption>
-      <a href="http://thenewcode.com/assets/videos/glacier.mp4" class="currentvid">
-        <img src="http://thenewcode.com/assets/images/vid-glacier.jpg" alt="Athabasca Glacier">
-      </a>
-      <a href="http://thenewcode.com/assets/videos/lake.mp4">
-        <img src="http://thenewcode.com/assets/images/vid-lake.jpg" alt="Athabasca Lake">
-      </a>
-      <a href="http://thenewcode.com/assets/videos/mountain.mp4">
-        <img src="http://thenewcode.com/assets/images/vid-mountain.jpg" alt="Mountain">
-      </a>
-    </figcaption>
-    </figure>*/

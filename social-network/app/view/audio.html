@@ -1,11 +1,10 @@
 <div id="audio" ng-controller="AudioController">
     <div class="player">
-        <audio data-ng-src="{{source}}" controls preload="auto">
-        </audio>
+        <audio data-ng-src="{{source}}" controls preload="auto"></audio>
     </div>
     <ul>
         <li ng-repeat="audio in audios">
-            <img src="{{playIconUrl}}" alt="play" width="3%" ng-click="alert('PlayButton clicked')">
+            <img src="{{playIconUrl}}" alt="play" width="3%" ng-click="setPlayingTrack($index)">
             <span>{{audio.audioName}}</span>
             <span id="audiotime">{{audio.audioTime}}</span>
         </li>
