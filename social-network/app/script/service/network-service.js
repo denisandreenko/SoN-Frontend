@@ -1,6 +1,3 @@
-/**
- * Copyright (c) 2016. Stock Tycoon LLC.  All rights reserved.  http://www.stocktycoon.io.
- */
 'use strict';
 
 angular.module('socialNetwork').service('NetworkService', NetworkService);
@@ -87,12 +84,12 @@ function NetworkService($http, $q, $log, Constant, ResponseFactory, $mdToast) {
         switch (authType) {
             case Constant.AuthType.NONE:
                 return {
-                    // 'Content-Type': 'application/json'
+                    'Content-Type': 'application/json'
                 };
             case Constant.AuthType.BASIC:
                 return {
                     'Authorization': 'Basic ' + Constant.Auth.clientHash,
-                    'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8'
+                    //'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8'
                 };
             // case Constant.AuthType.OAUTH:
             //     return {
@@ -105,7 +102,7 @@ function NetworkService($http, $q, $log, Constant, ResponseFactory, $mdToast) {
 
         var url = Constant.APIBaseUrl + additionalUrl;//Constant.APIBaseUrl;
         var params = {};
-        return _post(url, data,Constant.AuthType.NONE, params);
+        return _post(url, data,Constant.AuthType.BASIC, params);
     }
     function _getProfile(userId) {
         var url = 'http://www.mocky.io/v2/578e33a20f0000ce00e9a041';

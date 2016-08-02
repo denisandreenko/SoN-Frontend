@@ -1,13 +1,9 @@
-/**
- * Copyright (c) 2016. Stock Tycoon LLC.  All rights reserved.  http://www.stocktycoon.io.
- */
-
 'use strict';
 
 angular.module('socialNetwork')
     .constant('Constant', {
         ToastMsg: '',
-        APIBaseUrl: 'https://sjc2016vs3.fwd.wf', //http://www.mocky.io/v2/578e18f50f00006f19aebc38',// 'https://sjc2016vs3.fwd.wf/',
+        APIBaseUrl: 'https://sjc2016vs4.fwd.wf', //http://www.mocky.io/v2/578e18f50f00006f19aebc38',// 'https://sjc2016vs3.fwd.wf/',
         TradeTypes: {
             Buy: 'BUY',
             Sell: 'SELL'

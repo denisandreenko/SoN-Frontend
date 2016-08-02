@@ -2,7 +2,7 @@
 
 angular.module('socialNetwork').controller('AudioController', AudioController);
 
-AudioController.$inject = ['$scope', 'NetworkService', $sce];
+AudioController.$inject = ['$scope', 'NetworkService', '$sce'];
 
 function AudioController($scope, NetworkService, $sce) {
 
