@@ -1,23 +1,53 @@
 <div id="wrapper">
     <div id="header">
+
+        <!--<div class="logo">
+            <a ui-sref="menu.profile">
+                <img src="image/logo.png">
+            </a>
+        </div>-->
+        
+       <form action="#" id="search" class="clearfix">
+            <input type="text" placeholder="Search"/>
+            <input type="submit" value="Find"/>
+        </form>
+
         <ul class="top-menu">
-            <li><a ui-sref="menu.profile">SoN</a></li>
-            <li><input type="text" placeholder="search"></li>
-            <li></li>
             <li><a ui-sref="menu.settings.change_pass">settings</a></li>
             <li><a ui-sref="home">log out</a></li>
         </ul>
     </div>
+
     <div id="content">
+        
         <ul class="vert-menu">
             <li><a ui-sref="menu.profile">Profile</a></li>
-            <li><a ui-sref="menu.face-group">Face-group</a></li>
             <li><a ui-sref="menu.friends">Friends</a></li>
-            <li><a href="">Messages</a></li>
+            <li><a ui-sref="menu.messages">Messages</a></li>
             <li><a ui-sref="menu.groups">Groups</a></li>
             <li><a ui-sref="menu.audio">Audio</a></li>
             <li><a ui-sref="menu.video">Video</a></li>
         </ul>
+        
+        <div class="vert-menu-unvis">
+            <input type="checkbox" id="hmt" class="hidden-menu-ticker">
+            <label class="btn-menu" for="hmt">
+                <span class="first"></span>
+                <span class="second"></span>
+                <span class="third"></span>
+            </label>
+            <ul class="vert-menu-mobile">
+                <li><a ui-sref="menu.profile">Profile</a></li>
+                <li><a ui-sref="menu.friends">Friends</a></li>
+                <li><a ui-sref="menu.messages">Messages</a></li>
+                <li><a ui-sref="menu.groups">Groups</a></li>
+                <li><a ui-sref="menu.audio">Audio</a></li>
+                <li><a ui-sref="menu.video">Video</a></li>
+                <li class="hidden"><a ui-sref="menu.settings.change_pass">settings</a></li>
+                <li class="hidden"><a ui-sref="home">log out</a></li> 
+            </ul>
+        </div>  
+
         <div class="content-place">
             <div data-ui-view></div>
         </div>

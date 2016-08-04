@@ -1,0 +1,20 @@
+<div id="messages" ng-controller="PostController">
+	<div class="search-message">
+
+	    <input type="text" name="search" placeholder="search" ng-model="searchFriend">
+	    <a href="#">Write your message</a>
+
+	</div>
+
+	<div class="place-info">
+
+		<div class="dialog-block">
+            <div class="sender-photo">
+            	<img src="{{post.postOnwerImage}}">
+            </div>
+
+            <div class="sender-name">{{userName + userSubname}}</div>
+        </div>
+
+	</div>
+</div>
