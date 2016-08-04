@@ -5,7 +5,31 @@
 
     <div class="search-group">
         <input type="text" name="search-group" placeholder="search" ng-model="searchGroups">
-        <div class="create-community"><a ui-sref="menu.create-group">create community</a></div>
+
+        <label class="btn-groups" for="hmd">
+            <div class="create-community">create community</div>
+        </label>
+    </div>
+
+    <input type="checkbox" id="hmd" class="hidden-create-group">
+
+    <div id="create-group">
+        <div class="line line-name">
+            <span>Name</span>
+            <input type="text" name="name">
+        </div>
+
+        <div class="line line-description">
+            <span>Description</span>
+            <textarea rows="3"></textarea>
+        </div>
+
+        <div class="line line-avatar">
+            <span>Avatar</span>
+            <input type="text" name="avatar">
+        </div>
+
+        <input type="submit" name="edit" value="Create">
     </div>
 
     <div class="masonry-group">
