@@ -8,7 +8,7 @@ function NetworkService($http, $q, $log, Constant, ResponseFactory, $mdToast) {
 
     $http.defaults.useXDomain = true;
     delete $http.defaults.headers.common['X-Requested-With'];
-
+    $http.withCredentials = true;
     function _get(url, authType, params) {
 
         var deferred = $q.defer();
@@ -88,7 +88,8 @@ function NetworkService($http, $q, $log, Constant, ResponseFactory, $mdToast) {
                 };
             case Constant.AuthType.BASIC:
                 return {
-                    'Authorization': 'Basic ' + Constant.Auth.clientHash,
+                    'Authorization': 'Basic cGFzc3dvcmRDbGllbnQ6MG00NWJ4cDRyMg==',
+                    'Content-Type': 'application/x-www-form-urlencoded'
                     //'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8'
                 };
             // case Constant.AuthType.OAUTH:
@@ -98,22 +99,33 @@ function NetworkService($http, $q, $log, Constant, ResponseFactory, $mdToast) {
         }
     }
 
-    function _postingData(data, additionalUrl){
+    function _createPoster(data, additionalUrl) {
+        var url = Constant.APIBaseUrl + additionalUrl;
+        var params = {
+            'Access_Token': Constant.AuthToken
+        };
+        return _post(url, data, Constant.AuthType.BASIC, params);
+    }
+
+    function _postingData(data, additionalUrl) {
 
         var url = Constant.APIBaseUrl + additionalUrl;//Constant.APIBaseUrl;
         var params = {};
-        return _post(url, data,Constant.AuthType.BASIC, params);
+        return _post(url, data, Constant.AuthType.BASIC, params);
     }
+
     function _getProfile(userId) {
         var url = 'http://www.mocky.io/v2/578e33a20f0000ce00e9a041';
         var params = {};
         return _get(url, Constant.AuthType.NONE, params);
     }
-    function  _getAudiolist(urlIn, userId) {
+
+    function _getAudiolist(urlIn, userId) {
         var url = urlIn;
         var params = {};
         return _get(url, Constant.AuthType.NONE, params);
     }
+
     function _getPost(userId, offset, limit) {
 
         var url = 'http://www.mocky.io/v2/579b2d941100003919cb7701';//'http://www.mocky.io/v2/579b2b6d110000fb18cb76fc'; //+ "/posts";
@@ -128,8 +140,9 @@ function NetworkService($http, $q, $log, Constant, ResponseFactory, $mdToast) {
 
     return {
         getPost: _getPost,
-        post : _postingData,
-        getProfileInfo : _getProfile,
-        getAudioList : _getAudiolist
+        post: _postingData,
+        createPoster: _createPoster,
+        getProfileInfo: _getProfile,
+        getAudioList: _getAudiolist
     }
 }

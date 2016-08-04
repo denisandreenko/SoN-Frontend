@@ -10,8 +10,9 @@ function AudioController($scope, NetworkService, $sce) {
     $scope.audios = [];
     $scope.code = "";
     $scope.playIconUrl = "";
+    $scope.lastIdPlayed = -1;
 
-    var promise = NetworkService.getAudioList('http://www.mocky.io/v2/57a07a130f0000be160f65af', 123).promise;
+    var promise = NetworkService.getAudioList('http://www.mocky.io/v2/57a321083b00004010903427', 123).promise;
 
     promise.then(function (responce) {
         var data = responce.getData();
@@ -22,6 +23,10 @@ function AudioController($scope, NetworkService, $sce) {
     });
 
     $scope.setPlayingTrack = function (index) {
+        if($scope.lastIdPlayed != -1){
+            $scope.playIconUrl = $scope.audios.pauseIcon;
+        }
+        $scope.lastIdPlayed = index;
         $scope.source = $sce.trustAsResourceUrl($scope.audios[index].audioUrl);
     }
 };

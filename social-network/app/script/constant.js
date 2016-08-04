@@ -2,27 +2,11 @@
 
 angular.module('socialNetwork')
     .constant('Constant', {
+        AuthToken: '',
         ToastMsg: '',
         APIBaseUrl: 'https://sjc2016vs4.fwd.wf', //http://www.mocky.io/v2/578e18f50f00006f19aebc38',// 'https://sjc2016vs3.fwd.wf/',
-        TradeTypes: {
-            Buy: 'BUY',
-            Sell: 'SELL'
-        },
-        Events: {
-            EVENT_UPDATE_ACCOUNT: 'stocktycoon.event.update.account',
-            EVENT_UNAUTHORIZED: 'stocktycoon.event.unauthorized.exception',
-            EVENT_UPDATE_TYCOON_LIST: 'stocktycoon.event.update.tycoon.list',
-            EVENT_ACCOUNT_UPDATED: 'stocktycoon.event.account.updated',
-            EVENT_UPDATE_NOTIFICATION: 'stocktycoon.event.update.notification',
-            EVENT_UPDATE_NOT_READ_NOTIFICATION_COUNT: 'stocktycoon.event.update.not.read.notification.count',
-            EVENT_LOTS_UPDATED: 'stocktycoon.event.update.lots',
-            EVENT_LOAD_STOCK_INFORMATION: 'stocktycoon.event.load.stock.information'
-        },
         Auth: {
-            clientHash: "cGFzc3dvcmRDbGllbnQ6MG00NWJ4cDRyMg==",
-            clientId: 'passwordClient',
-            authTokenLocalStorageKey: "auth_token",
-            accountIdLocalStorageKey: "account_id"
+            clientHash: "cGFzc3dvcmRDbGllbnQ6MG00NWJ4cDRyMg=="
         },
         AuthType: {
             NONE: 'None',
