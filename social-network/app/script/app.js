@@ -1,7 +1,6 @@
 'use strict';
 
 var app = angular.module('socialNetwork', ['ui.router', 'ngMessages', 'ngMaterialDatePicker', 'ngMaterial', 'ngFileUpload']);
-/*, 'ngMessages', 'ngMaterial', 'material.svgAssetsCache'*/
 
 app.config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
 

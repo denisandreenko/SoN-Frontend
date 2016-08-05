@@ -115,7 +115,7 @@ function NetworkService($http, $q, $log, Constant, ResponseFactory, $mdToast) {
     }
 
     function _getProfile(userId) {
-        var url = 'http://www.mocky.io/v2/578e33a20f0000ce00e9a041';
+        var url = 'http://www.mocky.io/v2/578e33a20f0000ce00e9a041';//Constant.APIBaseUrl + '/users/1';
         var params = {};
         return _get(url, Constant.AuthType.NONE, params);
     }
