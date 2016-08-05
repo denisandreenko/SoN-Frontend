@@ -3,8 +3,9 @@
 var app = angular.module('socialNetwork', ['ui.router', 'ngMessages', 'ngMaterialDatePicker', 'ngMaterial', 'ngFileUpload']);
 /*, 'ngMessages', 'ngMaterial', 'material.svgAssetsCache'*/
 
-app.config(function ($stateProvider, $urlRouterProvider) {
-   $urlRouterProvider.otherwise('/');
+app.config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
+
+   $urlRouterProvider.otherwise('/profile');
 
     $stateProvider
         .state('test', {
@@ -15,7 +16,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             templateUrl: 'view/menu.html'
         })
         .state('menu.profile', {
-            url: '/',
+            url: '/profile',
             templateUrl: 'view/profile.html'
         })
         .state('menu.friends', {
@@ -81,5 +82,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
         .state('menu.group', {
             url: '/groups/:groupIdentifier',
             templateUrl: "view/face-group.html"
-        })
+        });
+
+    $locationProvider.html5Mode(false);
 });
