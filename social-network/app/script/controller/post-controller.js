@@ -11,7 +11,7 @@ function PostController($scope, NetworkService) {
     $scope.dislikeImg = "";
 
     $scope.increaseLike = function (index) {
-        $scope.posts[index].like++;
+        $scope.posts[index].like++; //TODO likes/dislikes with serverside work.
     };
     $scope.increaseDisLike = function (index) {
         $scope.posts[index].dislike++;
@@ -26,3 +26,12 @@ function PostController($scope, NetworkService) {
         $scope.posts = data.data;
     })
 }
+
+angular.module('socialNetwork').directive('postsAddition', postsAddition);
+
+function postsAddition() {
+    return{
+        replace: true,
+        templateUrl: 'view/posts.html'
+    };
+};

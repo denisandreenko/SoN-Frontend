@@ -1,0 +1,25 @@
+<div class="place-post" data-ng-controller="PostController">
+    <div data-ng-repeat="post in posts" class="post-container">
+        <img class="sender-face" data-ng-src="{{post.owner.avatar}}"/>
+        <div class="post-info">
+            <div class="sender-name">
+                <h3>{{post.owner.name + post.owner.lastName}}</h3>
+            </div>
+
+            <div class="post-text">
+                <p>{{post.text}}</p>
+            </div>
+
+            <div class="post-media">
+                <img src="{{post.image}}">
+            </div>
+
+            <div class="replies">
+                <img data-ng-src="{{likeImg}}" alt="like" width="25px" data-ng-click='increaseLike($index)'/>
+                <span>{{post.like}}</span>
+                <img data-ng-src="{{dislikeImg}}" alt="dislike" width="25px" data-ng-click='increaseDisLike($index)'/>
+                <span>{{post.dislike}}</span>
+            </div>
+        </div>
+    </div>
+</div>
