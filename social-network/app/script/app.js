@@ -1,10 +1,10 @@
 'use strict';
 
-var app = angular.module('socialNetwork', ['ngMedia', 'ui.router', 'ngMessages', 'ngMaterialDatePicker', 'ngMaterial', 'ngFileUpload']);
+var app = angular.module('socialNetwork', ['ui.router', 'ngMessages', 'ngMaterialDatePicker', 'ngMaterial', 'ngFileUpload']);
 
 app.config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
 
-   $urlRouterProvider.otherwise('/test');
+   $urlRouterProvider.otherwise('/profile');
 
     $stateProvider
         .state('test', {
@@ -25,6 +25,10 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
         .state('menu.groups', {
             url: '/groups',
             templateUrl: 'view/groups.html'
+        })
+        .state('menu.peoples', {
+            url: '/peoples',
+            templateUrl: 'view/peoples.html'
         })
         .state('menu.messages', {
             url: '/messages',
