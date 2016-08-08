@@ -61,19 +61,22 @@ input[type="submit"]:hover {
 
 #header .logo{
     float: left;
+    width: 60px;
+    height: 30px;
+    margin: 5px 0px 5px 5%;
 }
 
 #header .logo img{
-    width: 60px;
-    height: 30px;
-    margin: 5px 0 0 40px;
+    display: block;
+    width: 100%;
+    height: 100%;
 }
 
 #header #search {
     width: 35%;
     padding-top: 4px;
     float: left;
-    margin-left: 15%;
+    margin-left: 10%;
 }
 
 #header #search input {
@@ -92,6 +95,7 @@ input[type="submit"]:hover {
 #header #search input[type="submit"] {
     width: 22%;
     cursor: pointer;
+    border-radius: 5px;
 }
 
 #header .top-menu {
@@ -682,7 +686,7 @@ input[type="submit"]:hover {
     border-radius: 5px;
 }
 
-i#content-registration input[type="submit"]:hover {
+#content-registration input[type="submit"]:hover {
     background-color: #fddb6f;
     background-image: -webkit-gradient(linear, left top, left bottom, from(#ffb94b), to(#fddb6f));
     background-image: -webkit-linear-gradient(top, #ffb94b, #fddb6f);
@@ -1062,44 +1066,49 @@ i#content-registration input[type="submit"]:hover {
 /*-----------------------------------------------------------------------------------------AUDIO------------------------------------------------------------------------------------------*/
 
 
-
 #audio .player {
-    margin: 10px 20px; 
+    overflow: hidden;
 }
 
 #audio .player audio {
     width: 100%;
-    height: 40px;
+    margin-top: 10px;
 }
 
-#audio ul {
-    float: left;
-    list-style: none;
-    height: auto;
+#audio-list .item {
+    overflow: hidden;
     width: 100%;
-    margin: 2px 40px;
-    text-align: left;
+    padding: 7px 15px;
+    background-color: #E4F1F6;
+    border-bottom: 1px solid #2F5B8E;
+    border-top-right-radius: 5px; 
+    border-bottom-right-radius: 5px; 
 }
 
-#audio ul li {
-    width: 100%;
-    margin: 2% 0;
-
-}
-
-#audio ul li img {
-    display: block;
+#audio-list .item .play-audio {
     float: left;
-    margin-right: 4%;
+    margin-left: 5%;
+    width: 15px;
+    height: 15px;
 }
 
-#audio ul li span {
-    margin-right: 18.5%;
+#audio-list .item .play-audio img{
+    width: 100%;
+    height: 100%;
+    vertical-align: middle;
 }
 
-/*#audio ul li:last-child {
-	margin-bottom: 72%;
-}*/
+#audio-list .item .name {
+    float: left;
+    margin-left: 5%;
+    font-size: 16px;
+}
+
+#audio-list .item .audiotime {
+    float: right;
+    margin-right: 5%;
+    font-size: 16px;
+}
 
 
 
@@ -1107,7 +1116,18 @@ i#content-registration input[type="submit"]:hover {
 /*----------------------------------------------------------------------------------------VIDEO-----------------------------------------------------------------------------------------*/
 
 
+#video {
+    overflow: hidden;
+    padding-top: 15px;
+}
 
+#video .videoPlayer {
+    width: 80%;
+}
+
+#video video {
+    width: 85%;
+}
 
 #video .masonry-group {
     float: left;
@@ -1373,35 +1393,40 @@ i#content-registration input[type="submit"]:hover {
 }
 
 #change_pass {
-    margin: 10% 100px 0px 100px;
     text-align: left;
-    font-size:23px;
-}
-
-#change_pass .line {
-    font-size: 16px;
-    margin: 20px auto;
+    font-size:22px;
+    width: 65%;
+    margin: 10px 5% 0 15%;
     overflow: hidden;
 }
 
+#change_pass .line {
+    overflow: hidden;
+    margin: 20px 0;
+}
+
 #change_pass .line span {
+    display: block;
     margin: 0;
     padding: 0;
-    font-size:22px;
     float: left;
+    overflow: hidden;
 }
 
 #change_pass input[type="text"] {
+    display: block;
     float: right;
+    font-size: 17px;
     background: #f1f1f1 url(http://www.red-team-design.com/wp-content/uploads/2011/09/login-sprite.png) no-repeat;
-    padding: 10px 15px 10px 25px;
-    width: 180px;
-    height: 16px;
+    padding: 5px 15px 5px 15px;
+    height: 35px;
     border: 1px solid #ccc;
     border-radius: 5px;
+    width: 50%;
 }
 
 #change_pass input[type="submit"] {
+    display: block;
     background-color: #ffb94b;
     border-radius: 3px;
     border-style: solid;
@@ -1410,7 +1435,7 @@ i#content-registration input[type="submit"]:hover {
     width: 130px;
     font: bold 15px Arial, Helvetica;
     color: #8f5a0a;
-    margin: 2% auto 5% 30%;
+    margin: 30px auto;
 }
 
 
@@ -1425,6 +1450,23 @@ i#content-registration input[type="submit"]:hover {
     font-size: 16px;
     color: #FFFFFF;
     border-radius: 0 5px 0 0;
+}
+
+#friends .search-friend {
+    background-color: #B8D98C;
+    padding: 8px 20px;
+    text-align: left;
+    font-size: 16px;
+    overflow: hidden;
+    border-radius: 0 5px 5px 0;
+    display: none;  
+}
+
+#friends .search-friend input {
+    width: 40%;
+    padding: 3px 5px;
+    border: none;
+    height: 30px;
 }
 
 /* ------------- Контейнер с адаптивными блоками------------- */
@@ -1552,7 +1594,7 @@ i#content-registration input[type="submit"]:hover {
     #header #search {
         position: relative;
         padding-top: 0;
-        margin: 9px 0px 9px 15%;
+        margin: 8px 0px 8px 3%;
         min-width: 180px;
     }
 
@@ -1593,6 +1635,22 @@ i#content-registration input[type="submit"]:hover {
         min-width: 165px;
     }
 
+    #groups .quantity {
+        border-radius: 5px 5px 5px 5px;
+    }
+
+    #groups .search-group {
+        border-radius: 5px 5px 5px 5px;
+    }
+
+    #friends .quantity {
+        border-radius: 5px 5px 5px 5px;
+    }
+
+    #friends .search-friend {
+        border-radius: 5px 5px 5px 5px;
+    }
+
     #groups .item .prime img {
         height: 240px;
     }
@@ -1623,12 +1681,36 @@ i#content-registration input[type="submit"]:hover {
         display: none;
     }
 
+    #groups #create-group {
+        display: none;
+    }
+
     #groups .search-group input {
         width: 50%;
     }
+
+    #friends .search-friend {
+        display: block;
+        padding: 7px 20px;
+        font-size: 15px;
+    }
+
+    #friends .search-friend input {
+        width: 50%;
+    }
+
+    #change_pass {
+        font-size:20px;
+        width: 75%;
+    }
+
 }
 
 @media (max-width: 480px) {
+
+    #header .logo {
+        display: none;
+    }
 
     #header .top-menu {
         display: none;
@@ -1659,6 +1741,15 @@ i#content-registration input[type="submit"]:hover {
         height: 160px;
     }
 
+    #groups .quantity {
+        font-size: 16px;
+        padding: 8px 10px;
+    }
+
+    #groups .search-group {
+        padding: 8px 10px;
+    }
+
     #groups .item .prime img {
         height: 160px;
     }
@@ -1685,6 +1776,36 @@ i#content-registration input[type="submit"]:hover {
 
     #groups .search-group input {
         width: 65%;
+    }
+
+     #friends .search-friend {
+        display: block;
+        padding: 6px 18px;
+        font-size: 14px;
+    }
+
+    #friends .search-friend input {
+        width: 65%;
+    }
+
+    #change_pass {
+        font-size: 18px;
+        width: 65%;
+        margin: 10px auto 10px auto;
+    }
+
+    #change_pass .line {
+        margin: 0;
+    }
+
+    #change_pass .line span {
+        margin: 15px 0 5px 0;
+    }
+
+    #change_pass input[type="text"] {
+        float: left;
+        width: 100%;
+        overflow: hidden;
     }
 }
 
