@@ -39,7 +39,7 @@ function RegController($scope, NetworkService, $state, $mdToast, Constant) {
                 "bday": $scope.dirthDay
             };
 
-            var promise = NetworkService.post($scope.master, '/users').promise;
+            var promise = NetworkService.registration($scope.master, '/users').promise;
 
             promise.then(function (responce) {
                 var data = responce.getData();

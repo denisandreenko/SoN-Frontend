@@ -32,9 +32,7 @@ angular.module('socialNetwork').directive('postsAddition', postsAddition);
 function postsAddition() {
     return{
         replace: true,
-        scope : {
-            poster: '='
-        },
+        scope : true,
         templateUrl: 'view/posts.html'
     };
 };

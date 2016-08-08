@@ -2,9 +2,9 @@
 
 angular.module('socialNetwork').controller('ProfileController', ProfileController);
 
-ProfileController.$inject = ['$scope', 'NetworkService'];
+ProfileController.$inject = ['$scope', 'NetworkService', 'Constant'];
 
-function ProfileController($scope, NetworkService) {
+function ProfileController($scope, NetworkService, Constant) {
 
     $scope.userName = "";
     $scope.userSubname = "";
@@ -14,7 +14,7 @@ function ProfileController($scope, NetworkService) {
     $scope.userCity = "";
     $scope.userAbout = "";
 
-    var promise = NetworkService.getProfileInfo(1).promise;
+    var promise = NetworkService.getMyProfile('/users/profile').promise;
 
     promise.then(function (responce) {
         $scope.userName = responce.data.userName;

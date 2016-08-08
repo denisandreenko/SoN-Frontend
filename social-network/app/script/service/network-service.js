@@ -62,7 +62,7 @@ function NetworkService($http, $q, $log, Constant, ResponseFactory, $mdToast) {
         $http(req).success(function (data) {
             deferred.resolve(ResponseFactory.buildResponse(data));
         }).error(function (xhr, status) {
-            Constant.ToastMsg = "Server error, " + xhr;
+            Constant.ToastMsg = "Server error...";
             $mdToast.show({
                 hideDelay: 3000,
                 position: 'top right',
@@ -86,11 +86,16 @@ function NetworkService($http, $q, $log, Constant, ResponseFactory, $mdToast) {
                 return {
                     'Content-Type': 'application/json'
                 };
-            case Constant.AuthType.BASIC:
+            case Constant.AuthType.AUTH:
                 return {
                     'Authorization': 'Basic cGFzc3dvcmRDbGllbnQ6MG00NWJ4cDRyMg==',
                     'Content-Type': 'application/x-www-form-urlencoded'
                     //'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8'
+                };
+            case Constant.AuthType.BASIC:
+                return {
+                    'Authorization': 'Basic cGFzc3dvcmRDbGllbnQ6MG00NWJ4cDRyMg==',
+                    'Content-Type': 'application/json'
                 };
             // case Constant.AuthType.OAUTH:
             //     return {
@@ -107,16 +112,30 @@ function NetworkService($http, $q, $log, Constant, ResponseFactory, $mdToast) {
         return _post(url, data, Constant.AuthType.BASIC, params);
     }
 
+    function _authorisation(data, additionalUrl) {
+        var url = Constant.APIBaseUrl + additionalUrl;
+        var params = {};
+        return _post(url, data, Constant.AuthType.AUTH, params);
+    }
     function _postingData(data, additionalUrl) {
-
         var url = Constant.APIBaseUrl + additionalUrl;//Constant.APIBaseUrl;
         var params = {};
         return _post(url, data, Constant.AuthType.BASIC, params);
     }
 
-    function _getProfile(userId) {
-        var url = 'http://www.mocky.io/v2/578e33a20f0000ce00e9a041';//Constant.APIBaseUrl + '/users/1';
-        var params = {};
+    function _getMyProfile(additionalUrl) {
+        var url = Constant.APIBaseUrl + additionalUrl;
+        var params = {
+            access_token: Constant.AuthToken
+        };
+        return _get(url, Constant.AuthType.NONE, params);
+    }
+
+    function _getProfileById(additionalUrl) {
+        var url = Constant.APIBaseUrl + additionalUrl;
+        var params = {
+            access_token: Constant.AuthToken
+        };
         return _get(url, Constant.AuthType.NONE, params);
     }
 
@@ -128,7 +147,7 @@ function NetworkService($http, $q, $log, Constant, ResponseFactory, $mdToast) {
 
     function _getPost(userId, offset, limit) {
 
-        var url = 'http://www.mocky.io/v2/579b2d941100003919cb7701';//'http://www.mocky.io/v2/579b2b6d110000fb18cb76fc'; //+ "/posts";
+        var url = 'http://www.mocky.io/v2/579b2d941100003919cb7701';
 
         var params = {
             // "userId": userId,
@@ -137,12 +156,20 @@ function NetworkService($http, $q, $log, Constant, ResponseFactory, $mdToast) {
         };
         return _get(url, Constant.AuthType.NONE, params);
     }
+    function _registration(data, additionalUrl) {
+        var url = Constant.APIBaseUrl + additionalUrl;
+        var params = {};
+        return _post(url, data, Constant.AuthType.BASIC, params);
+    }
 
     return {
         getPost: _getPost,
         post: _postingData,
         createPoster: _createPoster,
-        getProfileInfo: _getProfile,
-        getAudioList: _getAudiolist
+        getMyProfile: _getMyProfile,
+        getProfileById: _getProfileById,
+        getAudioList: _getAudiolist,
+        authorisation: _authorisation,
+        registration: _registration
     }
 }
