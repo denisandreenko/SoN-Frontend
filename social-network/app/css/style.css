@@ -1062,43 +1062,49 @@ i#content-registration input[type="submit"]:hover {
 /*-----------------------------------------------------------------------------------------AUDIO------------------------------------------------------------------------------------------*/
 
 
-
 #audio .player {
-    margin: 10px 20px; 
+    overflow: hidden;
 }
 
 #audio .player audio {
     width: 100%;
-    height: 40px;
+    margin-top: 10px;
 }
 
-#audio ul {
-    float: left;
-    list-style: none;
-    height: auto;
-    margin: 2px 40px;
-    text-align: left;
-}
-
-#audio ul li {
+#audio-list .item {
+    overflow: hidden;
     width: 100%;
-    margin: 2% 0;
-
+    padding: 7px 15px;
+    background-color: #E4F1F6;
+    border-bottom: 1px solid #2F5B8E;
+    border-top-right-radius: 5px; 
+    border-bottom-right-radius: 5px; 
 }
 
-#audio ul li img {
-    display: block;
+#audio-list .item .play-audio {
     float: left;
-    margin-right: 4%;
+    margin-left: 5%;
+    width: 15px;
+    height: 15px;
 }
 
-#audio ul li span {
-    margin-right: 18.5%;
+#audio-list .item .play-audio img{
+    width: 100%;
+    height: 100%;
+    vertical-align: middle;
 }
 
-/*#audio ul li:last-child {
-	margin-bottom: 72%;
-}*/
+#audio-list .item .name {
+    float: left;
+    margin-left: 5%;
+    font-size: 16px;
+}
+
+#audio-list .item .audiotime {
+    float: right;
+    margin-right: 5%;
+    font-size: 16px;
+}
 
 
 
@@ -1106,7 +1112,18 @@ i#content-registration input[type="submit"]:hover {
 /*----------------------------------------------------------------------------------------VIDEO-----------------------------------------------------------------------------------------*/
 
 
+#video {
+    overflow: hidden;
+    padding-top: 15px;
+}
 
+#video .videoPlayer {
+    width: 80%;
+}
+
+#video video {
+    width: 85%;
+}
 
 #video .masonry-group {
     float: left;
@@ -1426,6 +1443,23 @@ i#content-registration input[type="submit"]:hover {
     border-radius: 0 5px 0 0;
 }
 
+#friends .search-friend {
+    background-color: #B8D98C;
+    padding: 8px 20px;
+    text-align: left;
+    font-size: 16px;
+    overflow: hidden;
+    border-radius: 0 5px 5px 0;
+    display: none;
+}
+
+#friends .search-friend input {
+    width: 40%;
+    padding: 3px 5px;
+    border: none;
+    height: 30px;
+}
+
 /* ------------- Контейнер с адаптивными блоками------------- */
 #friends .masonry-place {
     overflow: hidden;
@@ -1622,7 +1656,21 @@ i#content-registration input[type="submit"]:hover {
         display: none;
     }
 
+    #groups #create-group {
+        display: none;
+    }
+
     #groups .search-group input {
+        width: 50%;
+    }
+
+    #friends .search-friend {
+        display: block;
+        padding: 7px 20px;
+        font-size: 15px;
+    }
+
+    #friends .search-friend input {
         width: 50%;
     }
 }
@@ -1683,6 +1731,16 @@ i#content-registration input[type="submit"]:hover {
     }
 
     #groups .search-group input {
+        width: 65%;
+    }
+
+     #friends .search-friend {
+        display: block;
+        padding: 6px 18px;
+        font-size: 14px;
+    }
+
+    #friends .search-friend input {
         width: 65%;
     }
 }

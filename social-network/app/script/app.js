@@ -26,6 +26,10 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
             url: '/groups',
             templateUrl: 'view/groups.html'
         })
+        .state('menu.peoples', {
+            url: '/peoples',
+            templateUrl: 'view/peoples.html'
+        })
         .state('menu.messages', {
             url: '/messages',
             templateUrl: 'view/messages.html'
