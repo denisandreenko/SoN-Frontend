@@ -10,7 +10,7 @@ function VideoController($scope, NetworkService, $sce) {
     $scope.code = "";
     $scope.source = "";
 //http://www.mocky.io/v2/5795f0dd2c000026157829e8 old (not working)
-    var promise = NetworkService.getAudioList('http://www.mocky.io/v2/57a082d30f00007b170f65d3', 123).promise;
+    var promise = NetworkService.getAudioList('http://www.mocky.io/v2/57a873c11100005b161d452d', 123).promise;
 
     promise.then(function (responce) {
         var data = responce.getData();
