@@ -5,7 +5,7 @@ angular.module('socialNetwork').controller('ChatController', ChatController);
 ChatController.$inject = ['$scope', 'ChatService', '$mdToast', '$state', 'Constant', '$websocket'];
 
 function ChatController($scope, ChatService, $mdToast, $state, Constant, $websocket) {
-    //if (Constant.AuthToken != "" && Constant.AuthToken != null && Constant.AuthToken != undefined) {
+    if (authFact.getAccessToken()) {
         var ws = $websocket.$new("wss://kkq-social.fwd.wf");
 
         ws.$on('$open', function () {
@@ -15,16 +15,14 @@ function ChatController($scope, ChatService, $mdToast, $state, Constant, $websoc
             .$on('incoming event', function (message) { // it listents for 'incoming event'
                 console.log('something incoming from the server: ' + message);
             });
-   // }
-    /*else {
+    } else {
         Constant.ToastMsg = "Not allowed, please authorise.";
         $mdToast.show({
             hideDelay: 3000,
             position: 'top right',
             controller: 'ToastController',
-            templateUrl: 'view/reg-toast.html'
+            templateUrl: 'view/toast.html'
         });
-        Constant.LastPage = 'test';
         $state.go('home');
-    }*/
+    }
 }

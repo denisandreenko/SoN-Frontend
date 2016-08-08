@@ -5,7 +5,7 @@ angular.module('socialNetwork').controller('VideoController', VideoController);
 VideoController.$inject = ['$scope', 'NetworkService', '$sce', '$state', '$mdToast', 'Constant'];
 
 function VideoController($scope, NetworkService, $sce, $state, $mdToast, Constant) {
-    if(Constant.AuthToken != "" && Constant.AuthToken != null && Constant.AuthToken != undefined) {
+    if (authFact.getAccessToken()) {
         $scope.video = [];
         $scope.code = "";
         $scope.source = "";
@@ -30,9 +30,8 @@ function VideoController($scope, NetworkService, $sce, $state, $mdToast, Constan
             hideDelay: 3000,
             position: 'top right',
             controller: 'ToastController',
-            templateUrl: 'view/reg-toast.html'
+            templateUrl: 'view/toast.html'
         });
-        Constant.LastPage = 'menu.video';
         $state.go('home');
     }
 };

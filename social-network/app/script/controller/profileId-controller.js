@@ -5,7 +5,7 @@ angular.module('socialNetwork').controller('ProfileController', ProfileControlle
 ProfileController.$inject = ['$scope', 'NetworkService', 'Constant', '$state', '$mdToast', 'authFact'];
 
 function ProfileController($scope, NetworkService, Constant, $state, $mdToast, authFact) {
-    if (authFact.getAccessToken) {
+    if (authFact.getAccessToken()) {
         $scope.userName = "";
         $scope.userSubname = "";
         $scope.userBirthday = "";
@@ -14,7 +14,7 @@ function ProfileController($scope, NetworkService, Constant, $state, $mdToast, a
         $scope.userCity = "";
         $scope.userAbout = "";
 
-        var promise = NetworkService.getMyProfile('/users/profile').promise;
+        var promise = NetworkService.getProfileById('/users/2').promise;
 
         promise.then(function (responce) {
             var data = responce.getData();

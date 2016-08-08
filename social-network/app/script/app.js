@@ -1,6 +1,6 @@
 'use strict';
 
-var app = angular.module('socialNetwork', ['ngMedia', 'ui.router', 'ngMessages', 'ngMaterialDatePicker', 'ngMaterial', 'ngFileUpload', 'ngWebsocket']);
+var app = angular.module('socialNetwork', ['ngCookies', 'ngMedia', 'ui.router', 'ngMessages', 'ngMaterialDatePicker', 'ngMaterial', 'ngFileUpload', 'ngWebsocket']);
 
 app.config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
 

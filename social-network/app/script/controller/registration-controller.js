@@ -48,7 +48,7 @@ function RegController($scope, NetworkService, $state, $mdToast, Constant) {
                         hideDelay: 3000,
                         position: 'top right',
                         controller: 'ToastController',
-                        templateUrl: 'view/reg-toast.html'
+                        templateUrl: 'view/toast.html'
                     });
                     $state.go("home");
                 }
@@ -60,7 +60,7 @@ function RegController($scope, NetworkService, $state, $mdToast, Constant) {
                 hideDelay: 3000,
                 position: 'top right',
                 controller: 'ToastController',
-                templateUrl: 'view/reg-toast.html'
+                templateUrl: 'view/toast.html'
             });
         }
     };

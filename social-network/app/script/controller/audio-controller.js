@@ -5,7 +5,7 @@ angular.module('socialNetwork').controller('AudioController', AudioController);
 AudioController.$inject = ['$scope', 'NetworkService', '$sce', '$state', '$mdToast', 'Constant'];
 
 function AudioController($scope, NetworkService, $sce, $state, $mdToast, Constant) {
-    if(Constant.AuthToken != "" && Constant.AuthToken != null && Constant.AuthToken != undefined) {
+    if (authFact.getAccessToken()) {
         $scope.source = "";
         $scope.playList = [];
         $scope.code = "";
@@ -42,9 +42,8 @@ function AudioController($scope, NetworkService, $sce, $state, $mdToast, Constan
             hideDelay: 3000,
             position: 'top right',
             controller: 'ToastController',
-            templateUrl: 'view/reg-toast.html'
+            templateUrl: 'view/toast.html'
         });
-        Constant.LastPage = 'menu.audio';
         $state.go('home');
     }
 };

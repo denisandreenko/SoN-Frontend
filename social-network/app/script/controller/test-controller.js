@@ -28,7 +28,7 @@ function TestController($scope, Upload, NetworkService, Constant, $mdToast) {
                 hideDelay: 3000,
                 position: 'top right',
                 controller: 'ToastController',
-                templateUrl: 'view/reg-toast.html'
+                templateUrl: 'view/toast.html'
             });
             console.log('Success ' + resp.config.data.file.name + ' uploaded. Response: ' + resp.data);
         }, function (resp) {
@@ -38,7 +38,7 @@ function TestController($scope, Upload, NetworkService, Constant, $mdToast) {
                 hideDelay: 3000,
                 position: 'top right',
                 controller: 'ToastController',
-                templateUrl: 'view/reg-toast.html'
+                templateUrl: 'view/toast.html'
             });
         }, function (evt) {
             var progressPercentage = parseInt(100.0 * evt.loaded / evt.total);

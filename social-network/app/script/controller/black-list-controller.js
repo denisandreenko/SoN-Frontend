@@ -5,9 +5,8 @@ angular.module('socialNetwork').controller('BlackListController', BlackListContr
 BlackListController.$inject = ['$scope', '$http', '$state', '$mdToast'];
 
 function BlackListController($scope, $http, $state, $mdToast) {
-    if(Constant.AuthToken != "" && Constant.AuthToken != null && Constant.AuthToken != undefined) {
+    if (authFact.getAccessToken()) {
         $scope.users = [];
-
         $scope.code = "";
 
         $http.get('http://www.mocky.io/v2/57975147260000a51217fac5').success($scope.success);
@@ -24,9 +23,8 @@ function BlackListController($scope, $http, $state, $mdToast) {
             hideDelay: 3000,
             position: 'top right',
             controller: 'ToastController',
-            templateUrl: 'view/reg-toast.html'
+            templateUrl: 'view/toast.html'
         });
-        Constant.LastPage = 'menu.profile';
         $state.go('home');
     }
 };

@@ -2,13 +2,14 @@
 
 angular.module('socialNetwork').service('NetworkService', NetworkService);
 
-NetworkService.$inject = ['$http', '$q', '$log', 'Constant', 'ResponseFactory', '$mdToast'];
+NetworkService.$inject = ['$http', '$q', '$log', 'Constant', 'ResponseFactory', '$mdToast', 'authFact'];
 
-function NetworkService($http, $q, $log, Constant, ResponseFactory, $mdToast) {
+function NetworkService($http, $q, $log, Constant, ResponseFactory, $mdToast, authFact) {
 
     $http.defaults.useXDomain = true;
+    $http.defaults.withCredentials = false;
     delete $http.defaults.headers.common['X-Requested-With'];
-    $http.withCredentials = true;
+
     function _get(url, authType, params) {
 
         var deferred = $q.defer();
@@ -30,7 +31,7 @@ function NetworkService($http, $q, $log, Constant, ResponseFactory, $mdToast) {
                 hideDelay: 3000,
                 position: 'top right',
                 controller: 'ToastController',
-                templateUrl: 'view/reg-toast.html'
+                templateUrl: 'view/toast.html'
             });
             $log.error('[NetworkService] ' + url + ': Error request');
             deferred.reject(status);
@@ -67,7 +68,7 @@ function NetworkService($http, $q, $log, Constant, ResponseFactory, $mdToast) {
                 hideDelay: 3000,
                 position: 'top right',
                 controller: 'ToastController',
-                templateUrl: 'view/reg-toast.html'
+                templateUrl: 'view/toast.html'
             });
             $log.error('[NetworkService] ' + url + ': Error request');
             deferred.reject(status);
@@ -126,7 +127,7 @@ function NetworkService($http, $q, $log, Constant, ResponseFactory, $mdToast) {
     function _getMyProfile(additionalUrl) {
         var url = Constant.APIBaseUrl + additionalUrl;
         var params = {
-            access_token: Constant.AuthToken
+            access_token: authFact.getAccessToken()
         };
         return _get(url, Constant.AuthType.NONE, params);
     }
@@ -134,7 +135,7 @@ function NetworkService($http, $q, $log, Constant, ResponseFactory, $mdToast) {
     function _getProfileById(additionalUrl) {
         var url = Constant.APIBaseUrl + additionalUrl;
         var params = {
-            access_token: Constant.AuthToken
+            access_token: authFact.getAccessToken()
         };
         return _get(url, Constant.AuthType.NONE, params);
     }
