@@ -2,12 +2,12 @@
        <video data-ng-src="{{source}}" controls preload="auto"></video>
       <div class="masonry-group">
           <!-- Адаптивные блоки с содержанием -->
-          <div class="item" ng-repeat="item in video" data-ng-click="setPlayingTrack($index)">
+          <div class="item" data-ng-repeat="item in video" data-ng-click="setPlayingTrack($index)">
             <div class="prime">
                 <img class="preview" src="{{item.preView}}"/>
             </div>
             <div class="bottom">
-                <span>{{item.name}}</span>
+                <span>{{item.name | limitTo:16 }}</span>
             </div> 
           </div>
       </div>
