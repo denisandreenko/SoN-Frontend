@@ -1,21 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f73ad51e-3299-4cfe-ad8e-ea3c8974c838" name="Default" comment="&#10;">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/css/chatStyle.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/script/controller/chat-controller.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/script/service/chat-service.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/index.html" afterPath="$PROJECT_DIR$/app/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/script/app.js" afterPath="$PROJECT_DIR$/app/script/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/script/constant.js" afterPath="$PROJECT_DIR$/app/script/constant.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/script/controller/post-controller.js" afterPath="$PROJECT_DIR$/app/script/controller/post-controller.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/script/service/network-service.js" afterPath="$PROJECT_DIR$/app/script/service/network-service.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/view/posts.html" afterPath="$PROJECT_DIR$/app/view/posts.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/view/profile.html" afterPath="$PROJECT_DIR$/app/view/profile.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/view/test.html" afterPath="$PROJECT_DIR$/app/view/test.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower.json" afterPath="$PROJECT_DIR$/bower.json" />
-    </list>
+    <list default="true" id="f73ad51e-3299-4cfe-ad8e-ea3c8974c838" name="Default" comment="&#10;" />
     <ignored path="social-network.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -67,8 +53,8 @@
       <file leaf-file-name="post-controller.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/script/controller/post-controller.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-91">
-              <caret line="16" column="38" selection-start-line="16" selection-start-column="38" selection-end-line="16" selection-end-column="38" />
+            <state relative-caret-position="232">
+              <caret line="35" column="23" selection-start-line="35" selection-start-column="23" selection-end-line="35" selection-end-column="23" />
               <folding />
             </state>
           </provider>
@@ -448,12 +434,12 @@
       <workItem from="1470132757232" duration="9536000" />
       <workItem from="1470296396798" duration="56000" />
       <workItem from="1470296564301" duration="16681000" />
-      <workItem from="1470392599249" duration="15640000" />
+      <workItem from="1470392599249" duration="15698000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="86514000" />
+    <option name="totallyTimeSpent" value="86572000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="886" extended-state="6" />
@@ -467,7 +453,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287483" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4085282" sideWeight="0.7287706" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4085282" sideWeight="0.7287706" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -845,8 +831,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/script/controller/post-controller.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-91">
-          <caret line="16" column="38" selection-start-line="16" selection-start-column="38" selection-end-line="16" selection-end-column="38" />
+        <state relative-caret-position="232">
+          <caret line="35" column="23" selection-start-line="35" selection-start-column="23" selection-end-line="35" selection-end-column="23" />
           <folding />
         </state>
       </provider>
