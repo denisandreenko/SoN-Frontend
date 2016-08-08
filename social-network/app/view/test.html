@@ -1,4 +1,20 @@
-<div data-ng-controller="ChatController" class="container">
+<div id="audio" data-ng-controller="AudioController">
+    <div class="player">
+        <span>Song name : {{currentSong}}</span>
+        <audio data-ng-src="{{source}}" controls data-ng-ended="onPlayEnd()" autoplay preload="auto"></audio>
+    </div>
+    <li data-ng-repeat="item in playList" data-ng-click="setPlayingTrack($index)" audio="item">
+        <play-list></play-list>
+    </li>
+</div>
+
+
+<hr>
+<hr>
+
+
+
+<!--<div data-ng-controller="ChatController" class="container">
     <form data-ng-submit="addMessage()" name="messageForm">
         <input type="text" placeholder="Compose a new message..." data-ng-model="message" />
         <div class="info">
@@ -14,7 +30,7 @@
     <hr/>
 </div>
 
-
+-->
 
 
 <form ng-controller="TestController" name="form">
