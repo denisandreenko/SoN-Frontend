@@ -17,6 +17,7 @@ function VideoController($scope, NetworkService, $sce) {
 
         $scope.video = data.video;
         $scope.code = data.code;
+        $scope.source = $sce.trustAsResourceUrl(data.video[0].url);
     });
 
     $scope.setPlayingTrack = function (index) {

@@ -51,7 +51,7 @@ function RegController($scope, NetworkService, $state, $mdToast, Constant) {
                         controller: 'ToastController',
                         templateUrl: 'view/reg-toast.html'
                     });
-                    $state.go("home");
+                    //$state.go("home");
                 }
             });
         }
