@@ -5,7 +5,6 @@ angular.module('socialNetwork').controller('RegController', RegController);
 RegController.$inject = ['$scope', 'NetworkService', '$state', '$mdToast', 'Constant'];
 
 function RegController($scope, NetworkService, $state, $mdToast, Constant) {
-
     $scope.toastMsg = "";
 
     $scope.master = {};
