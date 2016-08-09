@@ -19,6 +19,7 @@ function NetworkService($http, $q, $log, Constant, ResponseFactory, $mdToast, au
         };
 
         params = params || {};
+        params.access_token = authFact.getAccessToken();
 
         $http.get(url, {
             params: params,
@@ -52,6 +53,11 @@ function NetworkService($http, $q, $log, Constant, ResponseFactory, $mdToast, au
         };
 
         params = params || {};
+
+        if(authType != Constant.AuthType.REG) {
+            params.access_token = authFact.getAccessToken();
+        }
+
         var req = {
             method: 'POST',
             url: url,
@@ -59,6 +65,8 @@ function NetworkService($http, $q, $log, Constant, ResponseFactory, $mdToast, au
             headers: _getHeadersByAuthType(authType),
             data: data
         };
+
+
 
         $http(req).success(function (data) {
             deferred.resolve(ResponseFactory.buildResponse(data));
@@ -85,13 +93,18 @@ function NetworkService($http, $q, $log, Constant, ResponseFactory, $mdToast, au
         switch (authType) {
             case Constant.AuthType.NONE:
                 return {
-                    'Content-Type': 'application/json'
+                    'Content-Type':  'application/json'
                 };
             case Constant.AuthType.AUTH:
                 return {
                     'Authorization': 'Basic cGFzc3dvcmRDbGllbnQ6MG00NWJ4cDRyMg==',
                     'Content-Type': 'application/x-www-form-urlencoded'
                     //'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8'
+                };
+            case Constant.AuthType.REG:
+                return{
+                    //'Authorization': 'Basic cGFzc3dvcmRDbGllbnQ6MG00NWJ4cDRyMg==',
+                    'Content-Type': 'application/json'
                 };
             case Constant.AuthType.BASIC:
                 return {
@@ -118,6 +131,7 @@ function NetworkService($http, $q, $log, Constant, ResponseFactory, $mdToast, au
         var params = {};
         return _post(url, data, Constant.AuthType.AUTH, params);
     }
+
     function _postingData(data, additionalUrl) {
         var url = Constant.APIBaseUrl + additionalUrl;//Constant.APIBaseUrl;
         var params = {};
@@ -126,45 +140,56 @@ function NetworkService($http, $q, $log, Constant, ResponseFactory, $mdToast, au
 
     function _getMyProfile(additionalUrl) {
         var url = Constant.APIBaseUrl + additionalUrl;
-        var params = {
-            access_token: authFact.getAccessToken()
-        };
+        var params = {};
         return _get(url, Constant.AuthType.NONE, params);
     }
 
     function _getProfileById(additionalUrl) {
         var url = Constant.APIBaseUrl + additionalUrl;
-        var params = {
-            access_token: authFact.getAccessToken()
-        };
-        return _get(url, Constant.AuthType.NONE, params);
-    }
-
-    function _getAudiolist(urlIn, userId) {
-        var url = urlIn;
         var params = {};
         return _get(url, Constant.AuthType.NONE, params);
     }
 
-    function _getPost(userId, offset, limit) {
+    function _getAudiolist(additionalUrl, userId) {
+        var url = additionalUrl;
+        return _get(url, Constant.AuthType.NONE, params);
+    }
 
-        var url = 'http://www.mocky.io/v2/579b2d941100003919cb7701';
-
+    function _postImage(data, additionalUrl, name) {
+        var url = Constant.APIBaseUrl + additionalUrl;
         var params = {
-            // "userId": userId,
-            // "offset": offset,
-            // "limit": limit
+            name: name
+        };
+        return _post(url, data, Constant.AuthType.NONE, params);
+    }
+
+    function _getPost(additionalUrl, userId, offset, limit) {
+        var url = Constant.APIBaseUrl + additionalUrl;
+        var params = {
+            userId: userId,
+            offset: offset,
+            limit: limit
         };
         return _get(url, Constant.AuthType.NONE, params);
     }
+
     function _registration(data, additionalUrl) {
         var url = Constant.APIBaseUrl + additionalUrl;
         var params = {};
-        return _post(url, data, Constant.AuthType.BASIC, params);
+        return _post(url, data, Constant.AuthType.REG, params);
+    }
+
+    function _getFriends(additionalUrl, params) {
+        var url = Constant.APIBaseUrl + additionalUrl;
+        var authType = Constant.AuthType.BASIC;
+        var params = params;
+        return _get(url, authType, params);
     }
 
     return {
+        postImage: _postImage,
         getPost: _getPost,
+        getFriends: _getFriends,
         post: _postingData,
         createPoster: _createPoster,
         getMyProfile: _getMyProfile,

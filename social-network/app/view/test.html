@@ -1,19 +1,20 @@
-<link rel="stylesheet" href="css/chatStyle.css">
+<div>
+    <link rel="stylesheet" href="css/chatStyle.css">
 
-<div data-ng-controller="ChatController" class="container">
-    <form data-ng-submit="addMessage()" name="messageForm">
-        <input type="text" placeholder="Compose a new message..." data-ng-model="message" />
-        <div class="info">
-            <span class="count" data-ng-bind="max - message.length" data-ng-class="{danger: message.length > max}">140</span>
-            <button data-ng-disabled="message.length > max || message.length === 0">Send</button>
-        </div>
-    </form>
-    <hr />
-    <p ng-repeat="message in messages | orderBy:'time':true" class="message">
-        <time>{{message.time | date:'HH:mm'}}</time>
-        <span ng-class="{self: message.self}">{{message.message}}</span>
-    </p>
-    <hr/>
+    <div ng-controller="ChatCtrl" class="container">
+        <form ng-submit="addMessage()" name="messageForm">
+            <input type="text" placeholder="Compose a new message..." ng-model="message" />
+            <div class="info">
+                <span class="count" ng-bind="max - message.length" ng-class="{danger: message.length > max}">140</span>
+                <button ng-disabled="message.length > max || message.length === 0">Send</button>
+            </div>
+        </form>
+        <hr />
+        <p ng-repeat="message in messages | orderBy:'time':true" class="message">
+            <time>{{message.time | date:'HH:mm'}}</time>
+            <span ng-class="{self: message.self}">{{message.message}}</span>
+        </p>
+    </div>
 </div>
 
 

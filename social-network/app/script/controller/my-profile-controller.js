@@ -5,7 +5,7 @@ angular.module('socialNetwork').controller('ProfileController', ProfileControlle
 ProfileController.$inject = ['$scope', 'NetworkService', 'Constant', '$state', '$mdToast', 'authFact'];
 
 function ProfileController($scope, NetworkService, Constant, $state, $mdToast, authFact) {
-    if (authFact.getAccessToken) {
+    if (authFact.getAccessToken()) {
         $scope.userName = "";
         $scope.userSubname = "";
         $scope.userBirthday = "";
@@ -18,13 +18,14 @@ function ProfileController($scope, NetworkService, Constant, $state, $mdToast, a
 
         promise.then(function (responce) {
             var data = responce.getData();
-            $scope.userName = data.entity.name;
-            $scope.userSubname = data.entity.lastName;
-            $scope.userBirthday = data.entity.birthday;
+            $scope.userName = data.entity.name || 'Not set';
+            $scope.userSubname = data.entity.lastName || 'Not set';
+            $scope.userBirthday = data.entity.birthday || 'Not set';
             $scope.userAvatar = data.entity.avatar;
-            $scope.userContacts = data.entity.contactUser;
-            $scope.userCity = data.entity.city;
-            $scope.userAbout = data.entity.about;
+            $scope.userContacts = data.entity.contactUser || 'Not set';
+            $scope.userCity = data.entity.city || 'Not set';
+            $scope.userAbout = data.entity.about || 'Not set';
+            Constant.MyId = data.entity.id;
         });
     } else {
         Constant.ToastMsg = "Not allowed, please authorise.";

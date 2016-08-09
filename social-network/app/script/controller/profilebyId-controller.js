@@ -1,10 +1,10 @@
 'use strict';
 
-angular.module('socialNetwork').controller('ProfileController', ProfileController);
+angular.module('socialNetwork').controller('ProfileByIdController', ProfileByIdController);
 
-ProfileController.$inject = ['$scope', 'NetworkService', 'Constant', '$state', '$mdToast', 'authFact'];
+ProfileByIdController.$inject = ['$scope', 'NetworkService', 'Constant', '$state', '$mdToast', 'authFact'];
 
-function ProfileController($scope, NetworkService, Constant, $state, $mdToast, authFact) {
+function ProfileByIdController($scope, NetworkService, Constant, $state, $mdToast, authFact) {
     if (authFact.getAccessToken()) {
         $scope.userName = "";
         $scope.userSubname = "";
@@ -13,8 +13,9 @@ function ProfileController($scope, NetworkService, Constant, $state, $mdToast, a
         $scope.userContacts = [];
         $scope.userCity = "";
         $scope.userAbout = "";
-
-        var promise = NetworkService.getProfileById('/users/2').promise;
+        var userId = $state.params.userIdentifier;
+        //как передать сюда ID user из friends (личного профиля) ?
+        var promise = NetworkService.getProfileById('/users/' + userId).promise;
 
         promise.then(function (responce) {
             var data = responce.getData();

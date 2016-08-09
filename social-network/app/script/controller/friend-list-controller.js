@@ -1,14 +1,28 @@
 'use strict';
 
-angular.module('socialNetwork').controller('FriendController', FriendController);
+angular.module('socialNetwork').controller('FriendListController', FriendListController);
 
-FriendController.$inject = ['$scope', '$http'];
+FriendListController.$inject = ['$scope', 'NetworkService', 'authFact', 'Constant', '$state'];
 
-function FriendController($scope, $http) {
+function FriendListController($scope, NetworkService, authFact, Constant, $state) {
     if (authFact.getAccessToken()) {
         $scope.friends = [];
 
         $scope.code = "";
+
+        var params = {
+            userId: Constant.MyId,
+            offset: 0,
+            limit: 5
+        };
+
+        var promise = NetworkService.getFriends('/friends', params).promise;
+
+        promise.then(function (responce) {
+            var data = responce.getData();
+            $scope.friends = data.entity;
+        });
+
         //TODO friendRequest throu networkService
         // $http.get('http://www.mocky.io/v2/578f8e0326000017017ee3c4').success(success);
         //
@@ -28,4 +42,9 @@ function FriendController($scope, $http) {
         });
         $state.go('home');
     }
-};
+
+    $scope.gotoUserId = function (index) {
+        var userID = $scope.friends[index].idUser;
+        $state.go('menu.friend', {'userIdentifier': userID});
+    }
+}

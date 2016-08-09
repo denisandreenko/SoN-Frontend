@@ -1,11 +1,7 @@
-<div id="profile" data-ng-controller="ProfileController">
+<div id="profile" data-ng-controller="ProfileByIdController">
     <div class="place-icon">
         <div class="icon">
             <img src="{{userAvatar}}" width="100%" height="auto">
-        </div>
-
-        <div class="edit">
-            <span><a ui-sref="menu.edit-profile">Edit Profile</a></span>
         </div>
     </div>
 
@@ -21,17 +17,9 @@
 
         <div class="block">
             <div class="big-line">Contact information</div>
-            <div class="line" data-ng-show="userContacts.mobile">
-                <div class="pre-line">Mobile:</div>
-                <div class="post-line"> {{userContacts.mobile}}</div>
-            </div>
-            <div class="line" data-ng-show="userContacts.skype">
-                <div class="pre-line">Skype:</div>
-                <div class="post-line"> {{userContacts.skype}}</div>
-            </div>
-            <div class="line" data-ng-show="userContacts.email">
-                <div class="pre-line">Email:</div>
-                <div class="post-line"> {{userContacts.email}}</div>
+            <div class="line" ng-repeat="contact in userContacts">
+                <div class="pre-line">{{contact.type}}:</div>
+                <div class="post-line"> {{contact.value}}</div>
             </div>
         </div>
 
@@ -44,7 +32,7 @@
         </div>
 
         <div class="block">
-            <div class="big-line">About me:</div>
+            <div class="big-line">About me</div>
             <div class="line">
                 <div class="pre-line">{{userAbout}}</div>
             </div>
@@ -58,7 +46,7 @@
         <label for="file">Choose a file</label>
     </div>
 
-    <div class="place-post" data-ng-controller="MyPostController">
+    <div class="place-post" data-ng-controller="FriendPostController">
         <div class="post-container" data-ng-repeat="poster in posts">
             <img class="sender-face" data-ng-src="{{poster.owner.avatar}}"/>
             <div class="post-info">

@@ -2,9 +2,9 @@
 
 angular.module('socialNetwork').controller('TestController', TestController);
 
-TestController.inject = ['$scope', 'Upload', 'NetworkService', 'Constant', '$mdToast'];
+TestController.inject = ['$scope', 'Upload', 'Constant', '$mdToast', 'authFact'];
 
-function TestController($scope, Upload, NetworkService, Constant, $mdToast) {
+function TestController($scope, Upload, Constant, $mdToast, authFact) {
     $scope.upload = {};
 
     $scope.fileName = "";
@@ -18,11 +18,22 @@ function TestController($scope, Upload, NetworkService, Constant, $mdToast) {
 
     // upload on file select or drop
     $scope.upload = function (file) {
-        $scope.data = {file: file, 'name': $scope.fileName};
+
+        $scope.data = {
+            file: file
+        };
+        var token = authFact.getAccessToken();
+        $scope.params={
+            name: $scope.fileName,
+            access_token: token
+        };
+
         Upload.upload({
             url: Constant.APIBaseUrl + '/files',
-            data: $scope.data
+            data: $scope.data,
+            params: $scope.params
         }).then(function (resp) {
+            console.log(resp.data.entity);
             Constant.ToastMsg = "Upload seccess, id is: " + resp.data.entity;
             $mdToast.show({
                 hideDelay: 3000,

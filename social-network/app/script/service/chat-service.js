@@ -1,8 +1,10 @@
+'use strict';
+
 angular.module("socialNetwork").service("ChatService", ChatService);
 
-ChatService.$inject = ['$q', '$timeout', 'Constant'];
+ChatService.$inject = ['$q', '$timeout'];
 
-function ChatService($q, $timeout, Constant) {
+function ChatService($q, $timeout) {
 
     var service = {}, listener = $q.defer(), socket = {
         client: null,
@@ -10,7 +12,7 @@ function ChatService($q, $timeout, Constant) {
     }, messageIds = [];
 
     service.RECONNECT_TIMEOUT = 30000;
-    service.SOCKET_URL = Constant.APIBaseUrl + "/chat";
+    service.SOCKET_URL = "http://192.168.7.121:8080/chat"; // connect to local IP
     service.CHAT_TOPIC = "/topic/message";
     service.CHAT_BROKER = "/app/chat";
 
@@ -61,4 +63,4 @@ function ChatService($q, $timeout, Constant) {
 
     initialize();
     return service;
-};
+}

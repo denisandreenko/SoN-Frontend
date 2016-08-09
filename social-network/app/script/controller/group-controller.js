@@ -2,9 +2,9 @@
 
 angular.module('socialNetwork').controller('GroupController', GroupController);
 
-GroupController.$inject = ['$scope', '$http'];
+GroupController.$inject = ['$scope', 'authFact'];
 
-function GroupController($scope, $http) {
+function GroupController($scope, authFact) {
     if (authFact.getAccessToken()) {
         $scope.groups = [];
 

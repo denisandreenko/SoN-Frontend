@@ -4,7 +4,7 @@ var app = angular.module('socialNetwork', ['ngCookies', 'ngMedia', 'ui.router', 
 
 app.config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
 
-   $urlRouterProvider.otherwise('/profile');
+   $urlRouterProvider.otherwise('/test');
 
     $stateProvider
         .state('test', {
@@ -12,6 +12,7 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
             templateUrl: 'view/test.html'
         })
         .state('menu', {
+            abstract: true,
             templateUrl: 'view/menu.html'
         })
         .state('menu.profile', {
@@ -76,7 +77,11 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
         })
         .state('menu.friend', {
             url: '/users/:userIdentifier',
-            templateUrl: "view/profile.html"
+            templateUrl: "view/friendProfile.html"
+        })
+        .state('menu.test', {
+            url: '/users/:userIdentifier',
+            templateUrl: "view/friendProfile.html"
         })
         .state('menu.group', {
             url: '/groups/:groupIdentifier',

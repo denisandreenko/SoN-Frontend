@@ -1,10 +1,10 @@
 'use strict';
 
-angular.module('socialNetwork').controller('PostController', PostController);
+angular.module('socialNetwork').controller('MyPostController', MyPostController);
 
-PostController.$inject = ['$scope', 'NetworkService'];
+MyPostController.$inject = ['$scope', 'NetworkService', 'authFact', 'Constant', '$mdToast'];
 
-function PostController($scope, NetworkService) {
+function MyPostController($scope, NetworkService, authFact, Constant, $mdToast) {
     if (authFact.getAccessToken()) {
         $scope.posts = [];
         $scope.likeImg = "";
@@ -16,15 +16,13 @@ function PostController($scope, NetworkService) {
         $scope.increaseDisLike = function (index) {
             $scope.posts[index].dislike++;
         };
-
-        var promise = NetworkService.getPost(1, 0, 2).promise;
+        var id = Constant.MyId;
+        var promise = NetworkService.getPost('/users/posts', id, 0, 2).promise;
 
         promise.then(function (responce) {
             var data = responce.getData();
-            $scope.likeImg = data.likeImg;
-            $scope.dislikeImg = data.dislikeImg;
-            $scope.posts = data.data;
-        })
+            $scope.posts = data.entity;
+        });
     } else {
         Constant.ToastMsg = "Not allowed, please authorise.";
         $mdToast.show({

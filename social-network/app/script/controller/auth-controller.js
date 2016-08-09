@@ -16,7 +16,6 @@ function AuthController($scope, NetworkService, $state, authFact) {
         promise.then(function (response) {
             var data = response.getData();
             authFact.setAccessToken(data.access_token);
-
             $state.go('menu.profile');
         });
     }
