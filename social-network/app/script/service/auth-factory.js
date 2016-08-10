@@ -7,7 +7,7 @@ authFact.$inject = ['$cookies'];
 function authFact($cookies) {
     var authFact = {};
 
-    function _setUserId(accessToken) {
+    function _setUserId(id) {
         $cookies.put('userId', id);
     }
 

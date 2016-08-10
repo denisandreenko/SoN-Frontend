@@ -2,20 +2,21 @@
 
 angular.module('socialNetwork').service('PostCreationService', PostCreationService);
 
-PostCreationService.$inject = ['$scope', '$mdToast', 'NetworkService', 'Constant', 'authFact'];
+PostCreationService.$inject = ['$mdToast', 'NetworkService', 'Constant', 'authFact'];
 
-function PostCreationService($scope, $mdToast, NetworkService, Constant, authFact) {
+function PostCreationService($mdToast, NetworkService, Constant, authFact) {
+
     function _createPost() {
         var fileId = 11;
         var postText = "New fresh created post ! ALLILUIJA !!!";
 
         var master = {
-            userId: authFact.getId(),
+            udTo: authFact.getId(),
             fkImage: fileId,
             text: postText
         };
 
-        var promise = NetworkService.createPoster("/posts", $scope.master).promise;
+        var promise = NetworkService.createPoster("/posts", master).promise;
 
         promise.then(function (responce) {
             var data = responce.getData();
@@ -30,6 +31,6 @@ function PostCreationService($scope, $mdToast, NetworkService, Constant, authFac
         });
     }
     return{
-        createPost:_createPost
+        createPost: _createPost
     }
 }

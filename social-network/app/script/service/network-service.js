@@ -162,7 +162,7 @@ function NetworkService($http, $q, $log, Constant, ResponseFactory, $mdToast, au
         return _put(url, data, Constant.AuthType.NONE, params);
     }
 
-    function _createPoster(data, additionalUrl) {
+    function _createPoster(additionalUrl, data) {
         var url = Constant.APIBaseUrl + additionalUrl;
         var params = {};
         return _post(url, data, Constant.AuthType.BASIC, params);

@@ -2,7 +2,7 @@
 
 angular.module('socialNetwork').controller('ProfileController', ProfileController);
 
-ProfileController.$inject = ['$scope', 'NetworkService', 'Constant', 'authFact', PostCreationService];
+ProfileController.$inject = ['$scope', 'NetworkService', 'Constant', 'authFact', 'PostCreationService'];
 
 function ProfileController($scope, NetworkService, Constant, authFact, PostCreationService) {
     var promise = NetworkService.getMyProfile('/users/profile').promise;
@@ -20,7 +20,7 @@ function ProfileController($scope, NetworkService, Constant, authFact, PostCreat
         $scope.userAbout = data.entity.about || 'Not set';
     });
 
-    $scope.createPoster = function () {
-        PostCreationService.createPost();
+    $scope.PostIt = function () {
+        var k =  PostCreationService.createPost();
     }
 }
