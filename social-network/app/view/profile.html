@@ -52,7 +52,7 @@
     </div>
 
     <div class="add-post">
-        <textarea placeholder="Add post"></textarea>
+        <textarea data-ng-model="postText" placeholder="Add post"></textarea>
         <button data-ng-click="PostIt()">Send</button>
         <input type="file" name="file" id="file" class="inputfile">
         <label for="file">Choose a file</label>
@@ -70,7 +70,7 @@
                     <p>{{poster.text}}</p>
                 </div>
 
-                <div class="post-media">
+                <div class="post-media" >
                     <img data-ng-src="{{poster.image}}">
                 </div>
 

@@ -21,6 +21,7 @@ function ProfileController($scope, NetworkService, Constant, authFact, PostCreat
     });
 
     $scope.PostIt = function () {
-        var k =  PostCreationService.createPost();
+        var id = authFact.getId();
+        PostCreationService.createPostToUser(null, $scope.postText, id);
     }
 }
