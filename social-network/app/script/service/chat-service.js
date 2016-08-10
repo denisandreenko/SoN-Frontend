@@ -11,7 +11,7 @@ function ChatService($q, $timeout) {
         stomp: null
     }, messageIds = [];
 
-    service.RECONNECT_TIMEOUT = 30000;
+    service.RECONNECT_TIMEOUT = 3000;
     service.SOCKET_URL = "http://192.168.7.121:8080/chat"; // connect to local IP
     service.CHAT_TOPIC = "/topic/message";
     service.CHAT_BROKER = "/app/chat";

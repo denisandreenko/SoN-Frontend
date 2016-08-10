@@ -1,10 +1,10 @@
 'use strict';
 
-var app = angular.module('socialNetwork', ['ngCookies', 'ngMedia', 'ui.router', 'ngMessages', 'ngMaterialDatePicker', 'ngMaterial', 'ngFileUpload', 'ngWebsocket']);
+var app = angular.module('socialNetwork', ['ngImgCrop', 'ngCookies', 'ngMedia', 'ui.router', 'ngMessages', 'ngMaterialDatePicker', 'ngMaterial', 'ngFileUpload', 'ngWebsocket']);
 
 app.config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
 
-   $urlRouterProvider.otherwise('/test');
+   $urlRouterProvider.otherwise('/profile');
 
     $stateProvider
         .state('test', {

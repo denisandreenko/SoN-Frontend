@@ -9,6 +9,7 @@ angular.module('socialNetwork')
         Auth: {
             clientHash: "cGFzc3dvcmRDbGllbnQ6MG00NWJ4cDRyMg=="
         },
+        UploadedImgID: null,
         AuthType: {
             AUTH: 'Auth',
             REG: 'Reg',

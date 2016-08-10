@@ -44,6 +44,47 @@ function NetworkService($http, $q, $log, Constant, ResponseFactory, $mdToast, au
         };
     }
 
+    function _put(url, data, authType, params) {
+        authType = authType || Constant.AuthType.NONE;
+        var deferred = $q.defer();
+
+        var cancel = function () {
+            deferred.resolve();
+        };
+
+        params = params || {};
+
+        if (authType != Constant.AuthType.REG)
+            params.access_token = authFact.getAccessToken();
+
+        var req = {
+            method: 'PUT',
+            url: url,
+            params: params,
+            headers: _getHeadersByAuthType(authType),
+            data: data
+        };
+
+        $http(req).success(function (data) {
+            deferred.resolve(ResponseFactory.buildResponse(data));
+        }).error(function (xhr, status) {
+            Constant.ToastMsg = "Server error...";
+            $mdToast.show({
+                hideDelay: 3000,
+                position: 'top right',
+                controller: 'ToastController',
+                templateUrl: 'view/toast.html'
+            });
+            $log.error('[NetworkService] ' + url + ': Error request');
+            deferred.reject(status);
+        });
+
+        return {
+            promise: deferred.promise,
+            cancel: cancel
+        };
+    }
+
     function _post(url, data, authType, params) {
         authType = authType || Constant.AuthType.NONE;
         var deferred = $q.defer();
@@ -54,7 +95,7 @@ function NetworkService($http, $q, $log, Constant, ResponseFactory, $mdToast, au
 
         params = params || {};
 
-        if(authType != Constant.AuthType.REG) {
+        if (authType != Constant.AuthType.REG) {
             params.access_token = authFact.getAccessToken();
         }
 
@@ -65,7 +106,6 @@ function NetworkService($http, $q, $log, Constant, ResponseFactory, $mdToast, au
             headers: _getHeadersByAuthType(authType),
             data: data
         };
-
 
 
         $http(req).success(function (data) {
@@ -93,17 +133,15 @@ function NetworkService($http, $q, $log, Constant, ResponseFactory, $mdToast, au
         switch (authType) {
             case Constant.AuthType.NONE:
                 return {
-                    'Content-Type':  'application/json'
+                    'Content-Type': 'application/json'
                 };
             case Constant.AuthType.AUTH:
                 return {
                     'Authorization': 'Basic cGFzc3dvcmRDbGllbnQ6MG00NWJ4cDRyMg==',
                     'Content-Type': 'application/x-www-form-urlencoded'
-                    //'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8'
                 };
             case Constant.AuthType.REG:
-                return{
-                    //'Authorization': 'Basic cGFzc3dvcmRDbGllbnQ6MG00NWJ4cDRyMg==',
+                return {
                     'Content-Type': 'application/json'
                 };
             case Constant.AuthType.BASIC:
@@ -118,11 +156,15 @@ function NetworkService($http, $q, $log, Constant, ResponseFactory, $mdToast, au
         }
     }
 
+    function _editProfile(data, additionalUrl) {
+        var url = Constant.APIBaseUrl + additionalUrl;
+        var params = {};
+        return _put(url, data, Constant.AuthType.NONE, params);
+    }
+
     function _createPoster(data, additionalUrl) {
         var url = Constant.APIBaseUrl + additionalUrl;
-        var params = {
-            'Access_Token': Constant.AuthToken
-        };
+        var params = {};
         return _post(url, data, Constant.AuthType.BASIC, params);
     }
 
@@ -152,6 +194,7 @@ function NetworkService($http, $q, $log, Constant, ResponseFactory, $mdToast, au
 
     function _getAudiolist(additionalUrl, userId) {
         var url = additionalUrl;
+        var params = {};
         return _get(url, Constant.AuthType.NONE, params);
     }
 
@@ -187,6 +230,7 @@ function NetworkService($http, $q, $log, Constant, ResponseFactory, $mdToast, au
     }
 
     return {
+        editProfile: _editProfile,
         postImage: _postImage,
         getPost: _getPost,
         getFriends: _getFriends,

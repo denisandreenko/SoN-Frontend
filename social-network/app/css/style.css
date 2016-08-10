@@ -1058,8 +1058,44 @@ input[type="submit"]:hover {
     color: #8f5a0a;
     margin: 2% auto 5% auto;
 }
+/*-----------------------------------------------------------------------------------------FILE UPLOAD------------------------------------------------------------------------------------------*/
+.cropArea {
+    background: #E4E4E4;
+    overflow: hidden;
+    width:450px;
+    height:250px;
+}
+form .progress {
+    line-height: 15px;
+}
+.progress {
+    display: inline-block;
+    width: 100px;
+    border: 3px groove #CCC;
+}
+.progress div {
+    font-size: smaller;
+    background: orange;
+    width: 0;
+}
 
-
+/*
+.dialogdemoBasicUsage #popupContainer {
+    position: relative; }
+.dialogdemoBasicUsage .footer {
+    width: 100%;
+    text-align: center;
+    margin-left: 20px; }
+.dialogdemoBasicUsage .footer, .dialogdemoBasicUsage .footer > code {
+    font-size: 0.8em;
+    margin-top: 50px; }
+.dialogdemoBasicUsage button {
+    width: 200px; }
+.dialogdemoBasicUsage div#status {
+    color: #c60008; }
+.dialogdemoBasicUsage .dialog-demo-prerendered md-checkbox {
+    margin-bottom: 0; }
+*/
 
 
 

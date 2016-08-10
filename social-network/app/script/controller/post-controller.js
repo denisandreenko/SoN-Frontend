@@ -5,7 +5,7 @@ angular.module('socialNetwork').controller('MyPostController', MyPostController)
 MyPostController.$inject = ['$scope', 'NetworkService', 'authFact', 'Constant', '$mdToast'];
 
 function MyPostController($scope, NetworkService, authFact, Constant, $mdToast) {
-    if (authFact.getAccessToken()) {
+    /*if (authFact.getAccessToken()) {
         $scope.posts = [];
         $scope.likeImg = "";
         $scope.dislikeImg = "";
@@ -42,5 +42,5 @@ function postsAddition() {
         replace: true,
         scope: true,
         templateUrl: 'view/posts.html'
-    };
-};
+    };*/
+}

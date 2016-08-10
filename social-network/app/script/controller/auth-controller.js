@@ -9,6 +9,7 @@ function AuthController($scope, NetworkService, $state, authFact) {
     $scope.login = "";
 
     authFact.clearAccessToken();
+    authFact.clearId();
 
     $scope.sendData = function () {
         $scope.data = "client_id=passwordClient&" + "grant_type=password&" + "password=" + $scope.password + "&username=" + $scope.login;
