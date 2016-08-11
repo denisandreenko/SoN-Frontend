@@ -95,7 +95,7 @@ function NetworkService($http, $q, $log, Constant, ResponseFactory, $mdToast, au
 
         params = params || {};
 
-        if (authType != Constant.AuthType.REG) {
+        if (authType != Constant.AuthType.REG && authType != Constant.AuthType.AUTH) {
             params.access_token = authFact.getAccessToken();
         }
 

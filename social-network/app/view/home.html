@@ -1,16 +1,17 @@
 <div id="wrapper">
-    <div id="content-home">
-        <form id="autorization-form">
+    <div id="content-home" data-ng-controller="AuthController">
+        <form id="autorization-form" data-ng-submit="sendData()">
             <h1>Login</h1>
-            <fieldset id="inputs">
-                <input id="username" type="text" placeholder="Username" autofocus required>
-                <input id="password" type="password" placeholder="Password" required>
-            </fieldset>
-            <fieldset id="actions">
-                <div class="submit-enter"><input type="submit" id="enter" value="LOGIN" ui-sref="menu.profile"></div>
+            <div id="inputs">
+                <input id="username" type="text" data-ng-model="login" placeholder="Login" autofocus required>
+                <input id="password" type="password" data-ng-model="password" placeholder="Password" required>
+            </div>
+            <div id="actions">
+                <div class="submit-enter"></div>
                 <div class="button-registration"><input type="button" id="registration" value="NEW ACCOUNT" ui-sref="registration"></div>
-                <a ui-sref="forgot_pass" id="forgot">LOST PASSWORD?</a>
-            </fieldset>
+                <a ui-sref="forgot_pass" id="forgot">FORGOT PASSWORD?</a>
+                <input type="submit" id="enter" value="LOGIN">
+            </div>
         </form>
     </div>
 </div>

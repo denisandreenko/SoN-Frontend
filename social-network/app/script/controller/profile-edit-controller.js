@@ -8,7 +8,7 @@ function ProfileEditController($scope, NetworkService, Constant) {
     $scope.name = '';
     $scope.email = '';
     $scope.skype = '';
-    $scope.mobile = '';
+    $scope.mobile = 0;
     $scope.lastName = '';
     $scope.sex = 0;
     Constant.UploadedImgID = '';
@@ -47,7 +47,7 @@ function ProfileEditController($scope, NetworkService, Constant) {
         $scope.about = $scope.userAbout;
     }
 
-    $scope.sendData = function () {
+    $scope.editData = function () {
         $scope.data = {
             name: $scope.name,
             email: $scope.email,

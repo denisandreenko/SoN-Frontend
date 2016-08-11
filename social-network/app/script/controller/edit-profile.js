@@ -9,7 +9,7 @@ function RegController($scope, $http) {
         $scope.sex = "";
         $scope.birthDay = "";
         $scope.city = "";
-        $scope.mobile = "";
+        $scope.mobile = 0;
         $scope.skype = "";
         $scope.email = "";
         $scope.about = "";

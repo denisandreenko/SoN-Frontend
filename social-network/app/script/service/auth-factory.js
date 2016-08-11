@@ -24,7 +24,8 @@ function authFact($cookies) {
     }
 
     function _getAccessToken () {
-        return $cookies.get('accessToken');
+        var accessToken = $cookies.get('accessToken');
+        return accessToken;
     }
 
     function _clearAccessToken() {
