@@ -17,6 +17,7 @@ function PostCreationService($mdToast, NetworkService, Constant, authFact) {
 
         promise.then(function (responce) {
             var data = responce.getData();
+            Constant.UploadedImgID = null;
         });
     }
     return{

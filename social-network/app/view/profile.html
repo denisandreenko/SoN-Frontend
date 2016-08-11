@@ -55,7 +55,7 @@
         <textarea data-ng-model="postText" placeholder="Add post"></textarea>
         <button data-ng-click="PostIt()">Send</button>
         <input type="file" name="file" id="file" class="inputfile">
-        <label for="file">Choose a file</label>
+        <label data-ng-controller="FileUploadController" data-ng-click="showAdvanced($event)">Choose a file</label>
     </div>
 
     <div class="place-post" data-ng-controller="MyPostController">

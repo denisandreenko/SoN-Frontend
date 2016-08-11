@@ -6,7 +6,7 @@ ProfileController.$inject = ['$scope', 'NetworkService', 'Constant', 'authFact',
 
 function ProfileController($scope, NetworkService, Constant, authFact, PostCreationService) {
     var promise = NetworkService.getMyProfile('/users/profile').promise;
-
+    $scope.postText = '';
     promise.then(function (responce) {
         var data = responce.getData();
 
@@ -22,6 +22,9 @@ function ProfileController($scope, NetworkService, Constant, authFact, PostCreat
 
     $scope.PostIt = function () {
         var id = authFact.getId();
-        PostCreationService.createPostToUser(null, $scope.postText, id);
+        var postText = $scope.postText;
+        var imgURL = Constant.UploadedImgID;
+        PostCreationService.createPostToUser(imgURL || null, $scope.postText, id);
+        $scope.postText = "";
     }
 }
