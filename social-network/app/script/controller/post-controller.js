@@ -16,7 +16,7 @@ function MyPostController($scope, NetworkService, authFact, Constant, $mdToast) 
         $scope.posts[index].dislike++;
     };
     var id = authFact.getId();
-    var promise = NetworkService.getPost('/users/posts', id, 0, 13).promise;
+    var promise = NetworkService.getPost('/users/posts', id, 0, 14).promise;
 
     promise.then(function (responce) {
         var data = responce.getData();
