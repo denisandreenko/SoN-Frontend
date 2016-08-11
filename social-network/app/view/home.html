@@ -7,10 +7,13 @@
                 <input id="password" type="password" data-ng-model="password" placeholder="Password" required>
             </div>
             <div id="actions">
-                <div class="submit-enter"></div>
-                <div class="button-registration"><input type="button" id="registration" value="NEW ACCOUNT" ui-sref="registration"></div>
+                <!--<div class="submit-enter"></div>-->
+                <div class="button-registration"><input type="button" id="registration" value="NEW ACCOUNT"
+                                                        ui-sref="registration"></div>
                 <a ui-sref="forgot_pass" id="forgot">FORGOT PASSWORD?</a>
-                <input type="submit" id="enter" value="LOGIN">
+                <md-input-container>
+                    <input type="submit" id="enter" value="LOGIN">
+                </md-input-container>
             </div>
         </form>
     </div>

@@ -3,6 +3,7 @@
         <div class="icon">
             <img src="{{userAvatar}}" width="100%" height="auto">
         </div>
+
     </div>
 
     <div class="place-info">
@@ -46,8 +47,10 @@
         <label for="file">Choose a file</label>
     </div>
 
-    <div class="place-post" data-ng-controller="PostController">
-            <posts-addition  data-ng-repeat="post in posts" class="post-container" poster="post"></posts-addition>
+    <div class="place-post" data-ng-controller="PostsByIdController">
+        <div class="post-container">
+            <posts-addition data-ng-repeat="poster in posts"></posts-addition>
+        </div>
     </div>
 
 </div>

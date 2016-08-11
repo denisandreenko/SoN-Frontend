@@ -17,6 +17,10 @@
                 <div class="pre-line">Birthday:</div>
                 <div class="post-line">{{userBirthday}}</div>
             </div>
+            <div class="line">
+                <div class="pre-line">Sex:</div>
+                <div class="post-line">{{userSex}}</div>
+            </div>
         </div>
 
         <div class="block">
@@ -58,28 +62,10 @@
         <label data-ng-controller="FileUploadController" data-ng-click="showAdvanced($event)">Choose a file</label>
     </div>
 
-    <div class="place-post" data-ng-controller="MyPostController">
-        <div class="post-container" data-ng-repeat="poster in posts">
-            <img class="sender-face" data-ng-src="{{poster.owner.avatar}}"/>
-            <div class="post-info">
-                <div class="sender-name">
-                    <h3>{{poster.owner.name + ' ' + poster.owner.lastName}}</h3>
-                </div>
-
-                <div class="post-text">
-                    <p>{{poster.text}}</p>
-                </div>
-
-                <div class="post-media" >
-                    <img data-ng-src="{{poster.image}}">
-                </div>
-
-                <div class="replies">
-                    <img ng-src="" alt="like" width="25px" data-ng-click='increaseLike($index)'/>
-                    <span>{{poster.like}}</span>
-                    <img ng-src="" alt="dislike" width="25px" data-ng-click='increaseDisLike($index)'/>
-                    <span>{{poster.dislike}}</span>
-                </div>
+    <div data-ng-controller="MyPostController">
+        <div class="place-post">
+            <div data-ng-repeat="poster in posts" class="post-container">
+                <posts-addition></posts-addition>
             </div>
         </div>
     </div>

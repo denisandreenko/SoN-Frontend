@@ -29,11 +29,11 @@
         <div class="line line-sex">
             <span>Sex</span>
             <label>
-                <input type="radio" name="sex" value="1" ng-model="sex">
+                <input type="radio" name="sex" value=1 ng-model="sex">
                 <span class="sex">Man</span>
             </label>
             <label>
-                <input type="radio" name="sex" value="0" ng-model="sex">
+                <input type="radio" name="sex" value=0 ng-model="sex">
                 <span class="sex">Woman</span>
             </label>
         </div>
@@ -43,7 +43,7 @@
             <input data-time="false" data-date="true" mdc-datetime-picker="" type="text"
                    placeholder="Birth Date"
                    data-ng-model="birthdate" data-min-date="minDate" data-max-date="maxDate"
-                   class="md-input" data-format="DD/MM/YYYY"
+                   class="md-input"
                    data-ok-text="Confirm">
         </div>
 
@@ -57,10 +57,11 @@
 
         <div class="line line-mobile-number">
             <span>Mobile number</span>
-            <input type="text" name="mobile-number" ng-model="mobile" maxlength="20" ng-pattern="/^[1-9][0-9]*$/">
+            <input type="text" name="mobile-number" ng-model="mobile" maxlength="12" minlength="12" onkeypress='return event.charCode >= 48 && event.charCode <= 57'>
+            <!--<input type="text"    ng-pattern="/^[1-9][0-9]*$/">-->
 
-            <p ng-show="editProfileForm.mobile-number.$error.pattern && registrationForm.mobile-number.$pristine != true">
-                May contain only numbers</p>
+            <!--<p ng-show="editProfileForm.mobile-number.$error.minLength && registrationForm.mobile-number.$pristine != true">-->
+                <!--May contain only numbers</p>-->
         </div>
 
         <div class="line line-skype">

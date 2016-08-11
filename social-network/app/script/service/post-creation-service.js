@@ -2,9 +2,9 @@
 
 angular.module('socialNetwork').service('PostCreationService', PostCreationService);
 
-PostCreationService.$inject = ['$mdToast', 'NetworkService', 'Constant', 'authFact'];
+PostCreationService.$inject = ['NetworkService', 'Constant'];
 
-function PostCreationService($mdToast, NetworkService, Constant, authFact) {
+function PostCreationService(NetworkService, Constant) {
 
     function _createPostToUser(fileId, postText, userToID) {
         var master = {

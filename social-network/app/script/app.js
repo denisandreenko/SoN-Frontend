@@ -4,7 +4,7 @@ var app = angular.module('socialNetwork', ['ngImgCrop', 'ngCookies', 'ngMedia', 
 
 app.config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
 
-    $urlRouterProvider.otherwise('/authorisation');
+    $urlRouterProvider.otherwise('/profile');
 
     $stateProvider
         .state('test', {

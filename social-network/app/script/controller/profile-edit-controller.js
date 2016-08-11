@@ -2,9 +2,9 @@
 
 angular.module('socialNetwork').controller('ProfileEditController', ProfileEditController);
 
-ProfileEditController.$inject = ['$scope', 'NetworkService', 'Constant'];
+ProfileEditController.$inject = ['$scope', 'NetworkService', 'Constant', '$state'];
 
-function ProfileEditController($scope, NetworkService, Constant) {
+function ProfileEditController($scope, NetworkService, Constant, $state) {
     $scope.name = '';
     $scope.email = '';
     $scope.skype = '';
@@ -28,7 +28,7 @@ function ProfileEditController($scope, NetworkService, Constant) {
         $scope.userContacts = data.entity.contactUser || 'Not set';
         $scope.userCity = data.entity.city || 'Not set';
         $scope.userAbout = data.entity.about || 'Not set';
-        $scope.userSex = data.entity.sex || '0';
+        $scope.userSex = data.entity.sex;
 
         opo();
 
@@ -47,16 +47,16 @@ function ProfileEditController($scope, NetworkService, Constant) {
         $scope.about = $scope.userAbout;
     }
 
-    $scope.editData = function () {
+    $scope.sendData = function () {
         $scope.data = {
             name: $scope.name,
             email: $scope.email,
             skype: $scope.skype,
-            mobile: $scope.mobile,
+            mobile: $scope.mobile || 0,
             lastName: $scope.lastName,
-            sex: $scope.sex,
+            sex: parseInt($scope.sex),
             avatarId: Constant.UploadedImgID || null,
-            birthdate: $scope.birthdate,
+            birthdate: moment($scope.birthdate).format('L'),
             city: $scope.city,
             about: $scope.about
         };
@@ -66,6 +66,7 @@ function ProfileEditController($scope, NetworkService, Constant) {
         promise.then(function (response) {
             var data = response.getData();
             Constant.UploadedImgID = null;
+            $state.go('menu.profile');
         });
     }
 

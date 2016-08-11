@@ -1,8 +1,8 @@
 <div>
     <div class="close">
-        <img src="image/material/cancel.png">
+        <img src="image/material3/cancel.png">
     </div>
-    <img class="sender-face" data-ng-src="{{poster.owner.avatar}}"/>
+    <img class="sender-face" data-ng-src="{{poster.owner.avatar}}" data-ng-click="gotoSender($index)"/>
     <div class="post-info">
         <div class="sender-name">
             <h3>{{poster.owner.name + ' ' + poster.owner.lastName}}</h3>

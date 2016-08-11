@@ -2,39 +2,75 @@
 
 angular.module('socialNetwork').controller('ProfileByIdController', ProfileByIdController);
 
-ProfileByIdController.$inject = ['$scope', 'NetworkService', 'Constant', '$state', '$mdToast', 'authFact'];
+ProfileByIdController.$inject = ['$scope', 'NetworkService', 'Constant', '$state', 'PostCreationService', 'authFact'];
 
-function ProfileByIdController($scope, NetworkService, Constant, $state, $mdToast, authFact) {
-    if (authFact.getAccessToken()) {
-        $scope.userName = "";
-        $scope.userSubname = "";
-        $scope.userBirthday = "";
-        $scope.userAvatar = "";
-        $scope.userContacts = [];
-        $scope.userCity = "";
-        $scope.userAbout = "";
-        var userId = $state.params.userIdentifier;
-        //как передать сюда ID user из friends (личного профиля) ?
-        var promise = NetworkService.getProfileById('/users/' + userId).promise;
+function ProfileByIdController($scope, NetworkService, Constant, $state, PostCreationService, authFact) {
+    var userId = $state.params.userIdentifier;
+    $scope.postText = '';
 
-        promise.then(function (responce) {
-            var data = responce.getData();
-            $scope.userName = data.entity.name;
-            $scope.userSubname = data.entity.lastName;
-            $scope.userBirthday = data.entity.birthday;
-            $scope.userAvatar = data.entity.avatar;
-            $scope.userContacts = data.entity.contactUser;
-            $scope.userCity = data.entity.city;
-            $scope.userAbout = data.entity.about;
+    var promise = NetworkService.getProfileById('/users/' + userId).promise;
+
+    promise.then(function (responce) {
+        var data = responce.getData();
+
+        $scope.userName = data.entity.name || 'Not set';
+        $scope.userSubname = data.entity.lastName || 'Not set';
+        $scope.userBirthday = data.entity.birthday || 'Not set';
+        $scope.userAvatar = data.entity.avatar || null;
+        $scope.userContacts = data.entity.contactUser || 'Not set';
+        $scope.userCity = data.entity.city || 'Not set';
+        $scope.userAbout = data.entity.about || 'Not set';
+        $scope.userSex = data.entity.sex;
+        $scope.isFriend = data.entity.isFriend;
+    });
+
+    $scope.deleteFromFriends = function () {
+        var promise = NetworkService.deleteFromFriends(userId, '/friends').promise;
+
+        promise.then(function (response) {
+            var data = response.getData();
         });
-    } else {
-        Constant.ToastMsg = "Not allowed, please authorise.";
-        $mdToast.show({
-            hideDelay: 3000,
-            position: 'top right',
-            controller: 'ToastController',
-            templateUrl: 'view/toast.html'
+    };
+
+    $scope.addToFriends = function () {
+        var promise = NetworkService.addToFriends(userId, '/friends').promise;
+
+        promise.then(function (response) {
+            var data = response.getData();
         });
-        $state.go('home');
+    };
+
+    $scope.PostIt = function () {
+        var imgURL = Constant.UploadedImgID;
+        PostCreationService.createPostToUser(imgURL || null, $scope.postText, userId);
+        $scope.postText = "";
     }
-};
+}
+angular.module('socialNetwork').controller('PostsByIdController', PostsByIdController);
+
+PostsByIdController.$inject = ['$scope', 'NetworkService', 'authFact', '$state'];
+
+function PostsByIdController($scope, NetworkService, authFact, $state) {
+    $scope.posts = [];
+    $scope.likeImg = "";
+    $scope.dislikeImg = "";
+
+    $scope.increaseLike = function (index) {
+        $scope.posts[index].like++; //TODO likes/dislikes with serverside work.
+    };
+    $scope.increaseDisLike = function (index) {
+        $scope.posts[index].dislike++;
+    };
+    var id = $state.params.userIdentifier;
+    var promise = NetworkService.getPost('/users/posts', id, 0, 20).promise;
+
+    promise.then(function (responce) {
+        var data = responce.getData();
+        $scope.posts = data.entity;
+    });
+
+    $scope.gotoSender = function (index) {
+        var userID = $scope.posts[index].owner.id;
+        $state.go('menu.friend', {'userIdentifier': userID})
+    }
+}

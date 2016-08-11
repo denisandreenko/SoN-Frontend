@@ -18,11 +18,11 @@ function ProfileController($scope, NetworkService, Constant, authFact, PostCreat
         $scope.userContacts = data.entity.contactUser || 'Not set';
         $scope.userCity = data.entity.city || 'Not set';
         $scope.userAbout = data.entity.about || 'Not set';
+        $scope.userSex = data.entity.sex;
     });
 
     $scope.PostIt = function () {
         var id = authFact.getId();
-        var postText = $scope.postText;
         var imgURL = Constant.UploadedImgID;
         PostCreationService.createPostToUser(imgURL || null, $scope.postText, id);
         $scope.postText = "";

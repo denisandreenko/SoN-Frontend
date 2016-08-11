@@ -3,6 +3,12 @@
         <div class="icon">
             <img src="{{userAvatar}}" width="100%" height="auto">
         </div>
+        <div class="edit" data-ng-show="!isFriend">
+            <span><a data-ng-click="addToFriends()">Add to friends</a></span>
+        </div>
+        <div class="edit" data-ng-show="isFriend">
+            <span><a data-ng-click="deleteFromFriends()">Delete from friends</a></span>
+        </div>
     </div>
 
     <div class="place-info">
@@ -13,13 +19,25 @@
                 <div class="pre-line">Birthday:</div>
                 <div class="post-line">{{userBirthday}}</div>
             </div>
+            <div class="line">
+                <div class="pre-line">Sex:</div>
+                <div class="post-line">{{userSex}}</div>
+            </div>
         </div>
 
         <div class="block">
             <div class="big-line">Contact information</div>
-            <div class="line" ng-repeat="contact in userContacts">
-                <div class="pre-line">{{contact.type}}:</div>
-                <div class="post-line"> {{contact.value}}</div>
+            <div class="line" data-ng-show="userContacts.mobile">
+                <div class="pre-line">Mobile:</div>
+                <div class="post-line"> {{userContacts.mobile}}</div>
+            </div>
+            <div class="line" data-ng-show="userContacts.skype">
+                <div class="pre-line">Skype:</div>
+                <div class="post-line"> {{userContacts.skype}}</div>
+            </div>
+            <div class="line" data-ng-show="userContacts.email">
+                <div class="pre-line">Email:</div>
+                <div class="post-line"> {{userContacts.email}}</div>
             </div>
         </div>
 
@@ -32,7 +50,7 @@
         </div>
 
         <div class="block">
-            <div class="big-line">About me</div>
+            <div class="big-line">About me:</div>
             <div class="line">
                 <div class="pre-line">{{userAbout}}</div>
             </div>
@@ -40,35 +58,15 @@
     </div>
 
     <div class="add-post">
-        <textarea placeholder="Add post"></textarea>
-        <button>Send</button>
+        <textarea data-ng-model="postText" placeholder="Add post"></textarea>
+        <button data-ng-click="PostIt()">Send</button>
         <input type="file" name="file" id="file" class="inputfile">
-        <label for="file">Choose a file</label>
+        <label data-ng-controller="FileUploadController" data-ng-click="showAdvanced($event)">Choose a file</label>
     </div>
 
-    <div class="place-post" data-ng-controller="FriendPostController">
-        <div class="post-container" data-ng-repeat="poster in posts">
-            <img class="sender-face" data-ng-src="{{poster.owner.avatar}}"/>
-            <div class="post-info">
-                <div class="sender-name">
-                    <h3>{{poster.owner.name + ' ' + poster.owner.lastName}}</h3>
-                </div>
-
-                <div class="post-text">
-                    <p>{{poster.text}}</p>
-                </div>
-
-                <div class="post-media">
-                    <img data-ng-src="{{poster.image}}">
-                </div>
-
-                <div class="replies">
-                    <img ng-src="" alt="like" width="25px" data-ng-click='increaseLike($index)'/>
-                    <span>{{poster.like}}</span>
-                    <img ng-src="" alt="dislike" width="25px" data-ng-click='increaseDisLike($index)'/>
-                    <span>{{poster.dislike}}</span>
-                </div>
-            </div>
+    <div class="place-post" data-ng-controller="PostsByIdController">
+        <div data-ng-repeat="poster in posts" class="post-container">
+            <posts-addition></posts-addition>
         </div>
     </div>
 

@@ -127,6 +127,48 @@ function NetworkService($http, $q, $log, Constant, ResponseFactory, $mdToast, au
             cancel: cancel
         };
     }
+    function _delete(url, data, authType, params) {
+        authType = authType || Constant.AuthType.NONE;
+        var deferred = $q.defer();
+
+        var cancel = function () {
+            deferred.resolve();
+        };
+
+        params = params || {};
+
+        if (authType != Constant.AuthType.REG && authType != Constant.AuthType.AUTH) {
+            params.access_token = authFact.getAccessToken();
+        }
+
+        var req = {
+            method: 'DELETE',
+            url: url,
+            params: params,
+            headers: _getHeadersByAuthType(authType),
+            data: data
+        };
+
+
+        $http(req).success(function (data) {
+            deferred.resolve(ResponseFactory.buildResponse(data));
+        }).error(function (xhr, status) {
+            Constant.ToastMsg = "Server error...";
+            $mdToast.show({
+                hideDelay: 3000,
+                position: 'top right',
+                controller: 'ToastController',
+                templateUrl: 'view/toast.html'
+            });
+            $log.error('[NetworkService] ' + url + ': Error request');
+            deferred.reject(status);
+        });
+
+        return {
+            promise: deferred.promise,
+            cancel: cancel
+        };
+    }
 
     function _getHeadersByAuthType(authType) {
 
@@ -159,14 +201,31 @@ function NetworkService($http, $q, $log, Constant, ResponseFactory, $mdToast, au
     function _editProfile(data, additionalUrl) {
         var url = Constant.APIBaseUrl + additionalUrl;
         var params = {};
-        return _put(url, data, Constant.AuthType.NONE, params);
+        return _put(url, Constant.AuthType.NONE, params);
+    }
+    function _addToFriends(id, additionalUrl) {
+        var url = Constant.APIBaseUrl + additionalUrl;
+        var params = {
+            userId: id
+        };
+        var data = {};
+        return _post(url, data, Constant.AuthType.NONE, params);
     }
 
+    function _deleteFromFriends(id, additionalUrl) {
+        var url = Constant.APIBaseUrl + additionalUrl;
+        var params = {
+            userId: id
+        };
+        var data = {};
+        return _delete(url, data, Constant.AuthType.NONE, params);
+    }
     function _createPoster(additionalUrl, data) {
         var url = Constant.APIBaseUrl + additionalUrl;
         var params = {};
         return _post(url, data, Constant.AuthType.NONE, params);
     }
+
 
     function _authorisation(data, additionalUrl) {
         var url = Constant.APIBaseUrl + additionalUrl;
@@ -225,11 +284,20 @@ function NetworkService($http, $q, $log, Constant, ResponseFactory, $mdToast, au
     function _getFriends(additionalUrl, params) {
         var url = Constant.APIBaseUrl + additionalUrl;
         var authType = Constant.AuthType.BASIC;
-        var params = params;
         return _get(url, authType, params);
     }
 
+    function _getGroup(additionalUrl) {
+        var url = Constant.APIBaseUrl + additionalUrl;
+        var params = {};
+        return _get(url, Constant.AuthType.NONE, params);
+    }
+
+
     return {
+        getGroup: _getGroup,
+        deleteFromFriends: _deleteFromFriends,
+        addToFriends: _addToFriends,
         editProfile: _editProfile,
         postImage: _postImage,
         getPost: _getPost,

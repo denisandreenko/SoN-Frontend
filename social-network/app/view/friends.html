@@ -15,7 +15,7 @@
                 <h2>{{friend.name + " " + friend.lastName}}</h2>
             </div>
             <div class="prime">
-                <img src="{{friend.avatar}}" ui-sref="menu.friend">
+                <img src="{{friend.avatar}}" data-ng-click="gotoUserId($index)">
             </div>
             <div class="bottom">
                 <ul class="user-api">
