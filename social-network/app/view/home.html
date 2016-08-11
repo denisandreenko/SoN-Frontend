@@ -1,15 +1,15 @@
 <div id="wrapper">
-    <div id="content-home" data-ng-controller="AuthController">
-        <form id="autorization-form" data-ng-submit="sendData()">
-            <h1>Welome to SoN!</h1>
+    <div id="content-home">
+        <form id="autorization-form">
+            <h1>Login</h1>
             <fieldset id="inputs">
-                <input id="username" type="text" data-ng-model="login" placeholder="Логин" autofocus required>
-                <input id="password" type="password" data-ng-model="password" placeholder="Пароль" required>
+                <input id="username" type="text" placeholder="Username" autofocus required>
+                <input id="password" type="password" placeholder="Password" required>
             </fieldset>
             <fieldset id="actions">
-                <input type="submit" id="enter" value="ВОЙТИ"> <!--ui-sref="menu.profile"-->
-                <input type="button" id="registration" value="РЕГИСТРАЦИЯ" ui-sref="registration">
-                <a ui-sref="forgot_pass" id="forgot">Забыли пароль?</a>
+                <div class="submit-enter"><input type="submit" id="enter" value="LOGIN" ui-sref="menu.profile"></div>
+                <div class="button-registration"><input type="button" id="registration" value="NEW ACCOUNT" ui-sref="registration"></div>
+                <a ui-sref="forgot_pass" id="forgot">LOST PASSWORD?</a>
             </fieldset>
         </form>
     </div>

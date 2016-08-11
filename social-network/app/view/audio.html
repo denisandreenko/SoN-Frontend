@@ -3,12 +3,14 @@
         <span>Song name : {{currentSong}}</span>
         <audio data-ng-src="{{source}}" controls data-ng-ended="onPlayEnd()" autoplay preload="auto"></audio>
     </div>
-    <ul>
-        <li ng-repeat="audio in playList" data-ng-click="setPlayingTrack($index)">
-            <!--<img src="{{playIconUrl}}" alt="play" width="3%">-->
-            <span>{{audio.Name}}</span>
-            <span id="audiotime">{{audio.Time}}</span>
-        </li>
-        <hr>
-    </ul>
+
+    <div id="audio-list">
+        <div class="item"  ng-repeat="audio in playList">
+            <div class="play-audio">
+                <img src="{{playIconUrl}}" alt="play" ng-click="setPlayingTrack($index)">
+            </div>
+            <span class="name">{{audio.Name}}</span>
+            <span class="audiotime">{{audio.Time}}</span>
+        </div>
+    </div>
 </div>

@@ -1,20 +1,18 @@
-<div id="messages" ng-controller="MyPostController">
-	<div class="search-message">
-
-	    <input type="text" name="search" placeholder="search" ng-model="searchFriend">
-	    <a href="#">Write your message</a>
-
+<div id="messages-content" ng-controller="BlackListController">
+	<div class="control">
+		<div class="search">
+			<input type="text" placeholder="search" />
+		</div>
+		<div class="people">
+			<div class="person" ng-repeat="user in users">
+				<div class="avatar">
+                    <img src="{{user.img}}">
+                </div>
+                <span class="name">{{user.Fname + " " + user.Lname}}</span>
+			</div>
+		</div>
 	</div>
-
-	<div class="place-info">
-
-		<div class="dialog-block">
-            <div class="sender-photo">
-            	<img src="{{post.postOnwerImage}}">
-            </div>
-
-            <div class="sender-name">{{userName + userSubname}}</div>
-        </div>
-
+	<div class="dialog">
+		
 	</div>
 </div>

@@ -1,6 +1,6 @@
 'use strict';
 
-var app = angular.module('socialNetwork', ['ngImgCrop', 'ngCookies', 'ngMedia', 'ui.router', 'ngMessages', 'ngMaterialDatePicker', 'ngMaterial', 'ngFileUpload', 'ngWebsocket']);
+var app = angular.module('socialNetwork', ['ngMedia', 'ui.router', 'ngMessages', 'ngMaterialDatePicker', 'ngMaterial', 'ngFileUpload']);
 
 app.config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
 
@@ -12,7 +12,6 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
             templateUrl: 'view/test.html'
         })
         .state('menu', {
-            abstract: true,
             templateUrl: 'view/menu.html'
         })
         .state('menu.profile', {
@@ -26,6 +25,10 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
         .state('menu.groups', {
             url: '/groups',
             templateUrl: 'view/groups.html'
+        })
+        .state('menu.peoples', {
+            url: '/peoples',
+            templateUrl: 'view/peoples.html'
         })
         .state('menu.messages', {
             url: '/messages',
@@ -52,15 +55,15 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
             templateUrl: 'view/video.html'
         })
         .state('home', {
-            url: '/authorisation',
+            url: '/SoN',
             templateUrl: 'view/home.html'
         })
         .state('registration', {
-            url: '/registration',
+            url: '/SoN/registration',
             templateUrl: 'view/registration.html'
         })
         .state('forgot_pass', {
-            url: '/forgot_pass',
+            url: '/SoN/forgot_pass',
             templateUrl: 'view/forgot_pass.html'
         })
         .state('menu.settings', {
@@ -77,11 +80,7 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
         })
         .state('menu.friend', {
             url: '/users/:userIdentifier',
-            templateUrl: "view/friendProfile.html"
-        })
-        .state('menu.test', {
-            url: '/users/:userIdentifier',
-            templateUrl: "view/friendProfile.html"
+            templateUrl: "view/person_profile.html"
         })
         .state('menu.group', {
             url: '/groups/:groupIdentifier',
