@@ -2,9 +2,9 @@
 
 angular.module('socialNetwork').controller('MyPostController', MyPostController);
 
-MyPostController.$inject = ['$scope', 'NetworkService', 'authFact', '$state'];
+MyPostController.$inject = ['$scope', 'NetworkService', 'authFact', '$state', 'Constant'];
 
-function MyPostController($scope, NetworkService, authFact, $state) {
+function MyPostController($scope, NetworkService, authFact, $state, Constant) {
     $scope.posts = [];
     $scope.likeImg = "";
     $scope.dislikeImg = "";
@@ -22,14 +22,14 @@ function MyPostController($scope, NetworkService, authFact, $state) {
     promise.then(function (responce) {
         var data = responce.getData();
         $scope.posts = data.entity;
-        $scope.posts = posts.reverse();
+        // $scope.posts = posts.reverse();
     });
 
 
     $scope.gotoSender = function (index) {
         var userID = $scope.posts[index].owner.id;
         $state.go('menu.friend', {'userIdentifier': userID})
-    }
+    };
 
     $scope.DeletePost = function (index) {
         var id = $scope.posts[index].id;
@@ -41,6 +41,7 @@ function MyPostController($scope, NetworkService, authFact, $state) {
         })
     }
 }
+
 
 angular.module('socialNetwork').directive('postsAddition', postsAddition);
 

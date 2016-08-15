@@ -29,6 +29,7 @@ function ProfileByIdController($scope, NetworkService, Constant, $state, PostCre
 
         promise.then(function (response) {
             var data = response.getData();
+            $state.reload();
         });
     };
 
@@ -37,6 +38,7 @@ function ProfileByIdController($scope, NetworkService, Constant, $state, PostCre
 
         promise.then(function (response) {
             var data = response.getData();
+            $state.reload();
         });
     };
 
@@ -44,6 +46,7 @@ function ProfileByIdController($scope, NetworkService, Constant, $state, PostCre
         var imgURL = Constant.UploadedImgID;
         PostCreationService.createPostToUser(imgURL || null, $scope.postText, userId);
         $scope.postText = "";
+        $state.reload();
     }
 }
 angular.module('socialNetwork').controller('PostsByIdController', PostsByIdController);
@@ -72,5 +75,14 @@ function PostsByIdController($scope, NetworkService, authFact, $state) {
     $scope.gotoSender = function (index) {
         var userID = $scope.posts[index].owner.id;
         $state.go('menu.friend', {'userIdentifier': userID})
-    }
+    };
+    $scope.DeletePost = function (index) {
+        var id = $scope.posts[index].id;
+        var promise = NetworkService.deletePost(id, '/users/posts').promise;
+
+        promise.then(function (response) {
+            var data = response.getData();
+            $state.reload();
+        })
+    };
 }

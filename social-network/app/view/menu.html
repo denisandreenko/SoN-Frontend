@@ -7,9 +7,9 @@
             </a>
         </div>
         
-       <form action="#" id="search" class="clearfix">
-            <input type="text" placeholder="Search"/>
-            <input type="submit" value="Find" ui-sref="menu.peoples"/>
+       <form action="#" id="search" class="clearfix" data-ng-controller="MyMenuController" data-ng-submit="gotoSearch()">
+            <input type="text" placeholder="Search" data-ng-model="searchText"/>
+            <input type="submit" value="Find"/>
         </form>
 
         <ul class="top-menu">

@@ -19,9 +19,9 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
             url: '/profile',
             templateUrl: 'view/profile.html'
         })
-        .state('menu.peoples', {
-            url: '/peoples',
-            templateUrl: 'view/peoples.html'
+        .state('menu.search', {
+            url: '/search/:searchReq',
+            templateUrl: 'view/search.html'
         })
         .state('menu.friends', {
             url: '/friends',
@@ -80,10 +80,6 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
             templateUrl: 'view/change_pass.html'
         })
         .state('menu.friend', {
-            url: '/users/:userIdentifier',
-            templateUrl: "view/friendProfile.html"
-        })
-        .state('menu.test', {
             url: '/users/:userIdentifier',
             templateUrl: "view/friendProfile.html"
         })

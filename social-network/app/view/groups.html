@@ -1,8 +1,10 @@
-<div id="groups" ng-controller="GroupController">
-    <div class="quantity">
-        <p>You are a member of {{groups.length}} communities</p>
-    </div>
+<div id="groups" ng-controller="MyGroupController">
 
+    <div class="quantity">
+        <p data-ng-show="groups">There are no groups !</p>
+        <!--<p>You are a member of {{groups.length}} communities</p>-->
+    </div>
+    <div data-ng-show="!groups">
     <div class="search-group">
         <input type="text" name="search-group" placeholder="search" ng-model="searchGroups">
 
@@ -46,4 +48,6 @@
         </div>
     </div>
     <!-- Конец контейнера с адаптивными блоками -->
+    </div>
+
 </div>

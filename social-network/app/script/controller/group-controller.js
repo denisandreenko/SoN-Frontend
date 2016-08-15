@@ -1,31 +1,20 @@
 'use strict';
 
-angular.module('socialNetwork').controller('GroupController', GroupController);
+angular.module('socialNetwork').controller('MyGroupController', MyGroupController);
 
-GroupController.$inject = ['$scope', 'authFact'];
+MyGroupController.$inject = ['$scope', 'NetworkService', 'authFact'];
 
-function GroupController($scope, authFact) {
-    if (authFact.getAccessToken()) {
-        $scope.groups = [];
+function MyGroupController($scope, NetworkService, authFact) {
+    $scope.groups = [];
 
-        $scope.code = "";
-        //TODO groupRequest throu networkService
-        // $http.get('http://www.mocky.io/v2/5790be62260000a2177ee573').success(success);
-        //
-        // function success(data, status, headers, config) {
-        //     if (status == 200) {
-        //         $scope.groups = data.groups;
-        //         $scope.code = data.code;
-        //     }
-        // };
-    } else {
-        Constant.ToastMsg = "Not allowed, please authorise.";
-        $mdToast.show({
-            hideDelay: 3000,
-            position: 'top right',
-            controller: 'ToastController',
-            templateUrl: 'view/toast.html'
-        });
-        $state.go('home');
-    }
-};
+    $scope.code = "";
+
+    var userId = authFact.getId();
+
+    var promise = NetworkService.getGroups('/groups', 20, 0, userId).promise;
+
+    promise.then(function (response) {
+        var data = response.getData();
+        $scope.groups = data.entity;
+    });
+}
