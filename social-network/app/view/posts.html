@@ -1,5 +1,5 @@
 <div>
-    <div class="close">
+    <div class="close" data-ng-click="DeletePost($index)">
         <img src="image/material3/cancel.png">
     </div>
     <img class="sender-face" data-ng-src="{{poster.owner.avatar}}" data-ng-click="gotoSender($index)"/>

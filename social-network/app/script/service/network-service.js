@@ -212,6 +212,14 @@ function NetworkService($http, $q, $log, Constant, ResponseFactory, $mdToast, au
         return _post(url, data, Constant.AuthType.NONE, params);
     }
 
+    function _deletePost(id, additionalUrl) {
+        var url = Constant.APIBaseUrl + additionalUrl;
+        var params = {
+            postId: id
+        };
+        var data = {};
+        return _delete(url, data, Constant.AuthType.NONE, params);
+    }
     function _deleteFromFriends(id, additionalUrl) {
         var url = Constant.APIBaseUrl + additionalUrl;
         var params = {
@@ -308,6 +316,7 @@ function NetworkService($http, $q, $log, Constant, ResponseFactory, $mdToast, au
         getProfileById: _getProfileById,
         getAudioList: _getAudiolist,
         authorisation: _authorisation,
-        registration: _registration
+        registration: _registration,
+        deletePost: _deletePost
     }
 }

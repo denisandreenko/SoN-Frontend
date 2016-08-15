@@ -27,4 +27,6 @@ function ProfileController($scope, NetworkService, Constant, authFact, PostCreat
         PostCreationService.createPostToUser(imgURL || null, $scope.postText, id);
         $scope.postText = "";
     }
+
+
 }
