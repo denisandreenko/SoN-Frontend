@@ -1,24 +1,24 @@
-<div id="friends" ng-controller="FriendListController">
+<div id="friends" ng-controller="FriendController">
     <div class="quantity">
         <p>You have {{friends.length}} friends</p>
     </div>
 
-    <div class="search-friend">
+    <div class="filter">
         <input type="text" name="search-group" placeholder="search" ng-model="searchFriends">
     </div>
 
     <div class="masonry-place">
         <!-- Адаптивные блоки с содержанием -->
 
-        <div id="Search People" class="item" ng-repeat="friend in friends | filter: searchFriend" data-ng-click="gotoUserId($index)">
+        <div id="Search People" class="item" ng-repeat="friend in friends | filter: searchFriend">
             <div class="top">
-                <h2>{{friend.name + " " + friend.lastName}}</h2>
+                <h2>{{friend.name + " " + friend.subname}}</h2>
             </div>
             <div class="prime">
-                <img src="{{friend.avatar}}" data-ng-click="gotoUserId($index)">
+                <img src="{{friend.avatarUrl}}" ui-sref="menu.friend">
             </div>
             <div class="bottom">
-                <ul class="user-api">
+                <ul class="control-panel">
                     <li><a href=""><img src="image/delete2.png"></a></li>
                     <li><a href=""><img src="image/block_black.png"></a></li>
                     <li><a href=""><img src="image/mail_black.png"></a></li>
@@ -27,52 +27,4 @@
         </div>
     </div>
     <!-- Конец контейнера с адаптивными блоками -->
-
-    <div class="search-panel">
-        <!--Контейнер с поисковой панелью-->
-
-        <div class="line line-search">
-            <input type="text" name="search" placeholder="search" ng-model="searchFriend">
-        </div>
-
-        <div class="line line-sex">
-            <span>Sex</span>
-            <ul class="shift shift-sex">
-                <li><input type="radio" name="sex" value="man">male</li>
-                <li><input type="radio" name="sex" value="woman">female</li>
-                <li><input type="radio" name="sex" value="any sex">any sex</li>
-            </ul>
-        </div>
-
-        <div class="line line-city">
-            <span>City</span>
-            <div class="shift shift-city">
-                <select>
-                    <option>City</option>
-                    <option>Brest</option>
-                    <option>Grodno</option>
-                    <option>Gomel</option>
-                </select>
-            </div>
-        </div>
-
-        <div class="line line-age">
-            <span>Age</span>
-            <div class="shift shift-city">
-                <select class="age">
-                    <option>from</option>
-                    <option>14</option>
-                    <option>15</option>
-                    <option>16</option>
-                </select>
-                <span>-</span>
-                <select class="age">
-                    <option>to</option>
-                    <option>20</option>
-                    <option>21</option>
-                    <option>22</option>
-                </select>
-            </div>
-        </div>
-    </div>
 </div>

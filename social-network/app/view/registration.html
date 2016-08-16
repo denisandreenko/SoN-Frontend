@@ -1,7 +1,7 @@
 <div id="wrapper" >
-    <div id="content-registration" ng-controller="RegController">
+    <div id="content-registration">
         <h1 id="signup">Sign Up</h1>
-        <form name="registrationForm" ng-submit="update(user)">
+        <form name="registrationForm" ng-controller="RegController">
             <div class="data">
                 <div class="line line-name">
                     <label>
@@ -61,8 +61,8 @@
                         <p ng-show="registrationForm.email.$error.pattern && registrationForm.email.$pristine != true">You have incorrect input! Realy!</p>
                     </label>
                 </div>
-                
- 				<div class="line line-sex">
+
+                <!--<div class="line line-sex">
                     <label>
                         <span>Sex</span>
                         <label>
@@ -74,7 +74,7 @@
                             <span class="sex">Woman</span>
                         </label>
                     </label>
-                </div>
+                </div>-->
 
                 <div class="line line-birthday">
                     <span>Birthday</span>

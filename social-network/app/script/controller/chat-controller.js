@@ -1,4 +1,10 @@
-angular.module("socialNetwork").controller("ChatCtrl", function($scope, ChatService) {
+'use strict';
+
+angular.module('socialNetwork').controller('ChatController', ChatController);
+
+ChatController.$inject = ['$scope', 'ChatService'];
+
+function ChatController($scope, ChatService) {
     $scope.messages = [];
     $scope.message = "";
     $scope.max = 140;
@@ -11,4 +17,4 @@ angular.module("socialNetwork").controller("ChatCtrl", function($scope, ChatServ
     ChatService.receive().then(null, null, function(message) {
         $scope.messages.push(message);
     });
-});
+}

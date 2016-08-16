@@ -1,22 +1,22 @@
 RegController.$inject = ['$scope', '$http'];
 
 function RegController($scope, $http) {
-    if (authFact.getAccessToken()) {
-        $scope.master = {};
 
-        $scope.name = "";
-        $scope.lastName = "";
-        $scope.sex = "";
-        $scope.birthDay = "";
-        $scope.city = "";
-        $scope.mobile = 0;
-        $scope.skype = "";
-        $scope.email = "";
-        $scope.about = "";
+    $scope.master = {};
+
+    $scope.name = "";
+    $scope.lastName = "";
+    $scope.sex = "";
+    $scope.birthDay = "";
+    $scope.city = "";
+    $scope.mobile = "";
+    $scope.skype = "";
+    $scope.email = "";
+    $scope.about = "";
 
 
-        $scope.update = function (user) {
-
+    $scope.update = function (user) {
+        
             $scope.name = angular.copy(user.name);
             $scope.lastName = angular.copy(user.lastName);
             $scope.sex = angular.copy(user.sex);
@@ -50,21 +50,11 @@ function RegController($scope, $http) {
 
             $http(req).success(success).error(error);
 
-            function success(data) {
-                alert('' + data);
-            };
-            function error(data) {
-                alert('' + data)
-            }
+        function success(data) {
+            alert('' + data);
         };
-    } else {
-        Constant.ToastMsg = "Not allowed, please authorise.";
-        $mdToast.show({
-            hideDelay: 3000,
-            position: 'top right',
-            controller: 'ToastController',
-            templateUrl: 'view/toast.html'
-        });
-        $state.go('home');
-    }
+        function error(data) {
+            alert('' + data)
+        }
+    };
 };

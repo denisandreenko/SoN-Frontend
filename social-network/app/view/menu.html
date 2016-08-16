@@ -1,6 +1,8 @@
-<div id="wrapper">
-    <div id="header">
+<div id="wrapper" ng-controller="ScrollController">
 
+    <div class="absolute"><a id="top"></a></div>
+    
+    <div id="header">
         <div class="logo">
             <a ui-sref="menu.profile">
                 <img src="image/logo.png">
@@ -14,12 +16,11 @@
 
         <ul class="top-menu">
             <li><a ui-sref="menu.settings.change_pass">settings</a></li>
-            <li><a ui-sref="home" >log out</a></li>
+            <li><a ui-sref="home">log out</a></li>
         </ul>
     </div>
 
     <div id="content">
-        
         <ul class="vert-menu">
             <li><a ui-sref="menu.profile">Profile</a></li>
             <li><a ui-sref="menu.friends">Friends</a></li>
@@ -29,6 +30,7 @@
             <li><a ui-sref="menu.video">Video</a></li>
         </ul>
         
+
         <div class="vert-menu-unvis">
             <input type="checkbox" id="hmt" class="hidden-menu-ticker">
             <label class="btn-menu" for="hmt">
@@ -52,4 +54,6 @@
             <div data-ui-view></div>
         </div>
     </div>
+
+    <div class="anchor"><a ng-click="gotoTop()"><img src="image/arrows.png"/></a></div>
 </div>

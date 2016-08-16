@@ -5,7 +5,7 @@
         <!--<p>You are a member of {{groups.length}} communities</p>-->
     </div>
     <div data-ng-show="!groups">
-    <div class="search-group">
+    <div class="filter">
         <input type="text" name="search-group" placeholder="search" ng-model="searchGroups">
 
         <label class="btn-groups" for="hmd">
@@ -15,7 +15,7 @@
 
     <input type="checkbox" id="hmd" class="hidden-create-group">
 
-    <div id="create-group">
+    <div class="create-group">
         <div class="line line-name">
             <span>Name</span>
             <input type="text" name="name">
@@ -34,7 +34,7 @@
         <input type="submit" name="edit" value="Create">
     </div>
 
-    <div class="masonry-group">
+    <div class="masonry-place">
         <!-- Адаптивные блоки с содержанием -->
 
         <div class="item" ng-repeat="group in groups | filter: searchGroups">

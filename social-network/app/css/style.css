@@ -19,6 +19,25 @@ body {
     box-sizing: border-box;
 }
 
+.absolute {
+    position: absolute;
+    top: -50px;
+    left: 0;
+}
+
+.anchor {
+    position: fixed;
+    bottom: 10px;
+    left: 10px;
+}
+
+.anchor img {
+    display: block;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+}
+
 
 a:hover {
     background-color: #E8BEE9;
@@ -28,10 +47,6 @@ a:hover {
 input[type="submit"]:hover {
     background-color: #91A1E2;
     border-radius: 5px;
-}
-
-.mobile {
-    display: none;
 }
 
 #wrapper {
@@ -246,10 +261,10 @@ input[type="submit"]:hover {
 .vert-menu-mobile li:nth-child(8) a::before{
     content: url("../image/material/logout.png");
 }
-.hidden-menu-ticker {
+.vert-menu-unvis .hidden-menu-ticker {
   display: none;
 }
-.btn-menu {
+.vert-menu-unvis .btn-menu {
   color: #fff;
   padding: 5px;
   position: fixed;
@@ -268,7 +283,7 @@ input[type="submit"]:hover {
   transform: translateZ(0);
   backface-visibility: hidden;
 }
-.btn-menu span {
+.vert-menu-unvis .btn-menu span {
   display: block;
   height: 5px;
   background-color: #fff;
@@ -276,34 +291,29 @@ input[type="submit"]:hover {
   transition: all .1s linear .23s;
   position: relative;
 }
-.btn-menu span.first {
+.vert-menu-unvis .btn-menu span.first {
   margin-top: 0;
 }
 
-.hidden-menu-ticker:checked ~ .vert-menu-mobile {
+.vert-menu-unvis .hidden-menu-ticker:checked ~ .vert-menu-mobile {
   left: 0;
 }
-.hidden-menu-ticker:checked ~ .btn-menu span.first {
+.vert-menu-unvis .hidden-menu-ticker:checked ~ .btn-menu span.first {
   -webkit-transform: rotate(45deg);
   -moz-transform: rotate(-45deg);
   -o-transform: rotate(-45deg);
   transform: rotate(-45deg);
   top: 10px;
 }
-.hidden-menu-ticker:checked ~ .btn-menu span.second {
+.vert-menu-unvis .hidden-menu-ticker:checked ~ .btn-menu span.second {
   opacity: 0;
 }
-.hidden-menu-ticker:checked ~ .btn-menu span.third {
+.vert-menu-unvis .hidden-menu-ticker:checked ~ .btn-menu span.third {
   -webkit-transform: rotate(45deg);
   -moz-transform: rotate(45deg);
   -o-transform: rotate(45deg);
   transform: rotate(45deg);
   top: -10px;
-}
-
-.group-place {
-    height: auto;
-    background-color: white;
 }
 
 .content-place {
@@ -317,26 +327,18 @@ input[type="submit"]:hover {
 }
 
 
-
-
-
-
-/*--------------------------------------------------------------------------GROUPS------------------------------------------------------------------------------*/
-
-
-
-
-
-#groups .quantity {
+/* The number groups and friends of the user's */
+.quantity {
     background-color: #7DD493;
     padding: 8px 20px;
     text-align: left;
     font-size: 16px;
     color: #FFFFFF;
-    border-radius: 0 5px 5px 0;
+    border-radius: 0 5px 0 0;
 }
 
-#groups .search-group {
+/* Search/filter groups and friends */
+.filter {
     background-color: #B8D98C;
     padding: 8px 20px;
     text-align: left;
@@ -345,14 +347,109 @@ input[type="submit"]:hover {
     border-radius: 0 5px 5px 0;
 }
 
-#groups .search-group input {
+
+/* Сontainer with adaptive block */
+.masonry-place {
+    overflow: hidden;
+    float: left;
+    width: 98%; 
+    margin: 1.5em 0;
+    padding: 0 2%;
+    column-gap: 1em; /* Common size among columns */
+    font-size: .85em;
+    -moz-column-gap: 1em; /* Size among columns for Firefox */
+    -webkit-column-gap: 1em; /* Size among columns for Safari, Chrome and iOS */
+}
+
+.item {
+    display: inline-block;
+    background-color: #fff;
+    margin: 0 0 1.5em;
+    width: 100%;
+    box-sizing: border-box; /* Изменения алгоритма расчета ширины и высоты элемента.*/
+    -moz-box-sizing: border-box; /* For Firefox */ 
+    -webkit-box-sizing: border-box; /* For Safari, Chrome, iOS and Android */ 
+}
+
+
+
+/*--------------------------------------------------------------------------------FRIENDS------------------------------------------------------------------------*/
+
+
+
+#friends .filter {
+    display: none;  
+}
+
+#friends .filter input {
     width: 40%;
     padding: 3px 5px;
     border: none;
     height: 30px;
 }
 
-#groups .search-group .create-community {
+/* ------------- Сontainer with adaptive block ------------- */
+
+#friends .top {
+    padding: 2px 5px;
+    background-color: #2E878A;
+    font-size: 100%;
+    color: #FFFFFF;
+    line-height: 1;
+    white-space: nowrap;
+}
+
+#friends .prime img {
+    display: block;
+    width: 100%;
+    height: 200px;
+    cursor: pointer;
+}
+
+
+#friends .control-panel {
+    height: 30px;
+    border-bottom: 1px solid #91A1E2;
+}
+
+#friends .control-panel li {
+    display: inline-block;
+    width: 31%;
+}
+
+#friends .control-panel li a {
+    display:block;
+    padding:2.5px 5px;
+}
+
+#friends .control-panel li a img {
+    display: block;
+    margin: 0 auto !important;
+    width: 25px;
+    height: 25px;
+    
+}
+
+
+
+
+
+/*--------------------------------------------------------------------------GROUPS------------------------------------------------------------------------------*/
+
+
+
+#groups .quantity {
+    border-radius: 0 5px 5px 0;
+}
+
+#groups .filter input {
+    width: 40%;
+    padding: 3px 5px;
+    border: none;
+    height: 30px;
+}
+
+#groups .filter .create-community {
     font-size: 14px;
     float: right;
     background-color: #2E538A;
@@ -361,75 +458,60 @@ input[type="submit"]:hover {
     color: #FFFFFF;
     cursor: pointer;
 }
+
+#groups .filter .create-community:hover {
+    background-color: #91A1E2;
+    border-radius: 5px;
+}
     
-#groups .search-group .create-community a {
+#groups .filter .create-community a {
     display: block;
     padding: 5px 5px;
     color: #ffffff;
     text-decoration: none;
 }
 
-
-.hidden-create-group {
+#groups .hidden-create-group,
+#groups .create-group {
    display: none;
 }
 
-#create-group {
-    display: none;
+#groups .create-group .line-description textarea {
+    resize: none;
 }
 
-.hidden-create-group:checked ~ #create-group {
+#groups .hidden-create-group:checked ~ .create-group {
     display: block;
 }
 
-#create-group {
-    background-color: #E4F6F0;
-    overflow: hidden;
+#groups .create-group {
+    color: #0B8BB5;
 }
 
-#create-group .line {
+#groups .create-group .line {
     overflow: hidden;
     padding: 0 0;
     margin: 2.5% 25%;
 }
 
-#create-group .line span {
+#groups .create-group .line span {
     margin: 0;
     padding: 0;
     font-size:20px;
     float: left;
 }
 
-#create-group .line input[type="text"], textarea{
+#groups .create-group .line input[type="text"], textarea{
     float: right;
-    background: #f1f1f1;
+    background: #f1f1f1 url(http://www.red-team-design.com/wp-content/uploads/2011/09/login-sprite.png) no-repeat;
     padding: 10px 15px 10px 25px;
     width: 180px;
     border: 1px solid #ccc;
     border-radius: 5px;
-}
-
-#create-group .datefield {
-    float: right;
-    background: #f1f1f1;
-    width: 68px;
-    margin-left: 9px;
-    height: 30px;
-    margin-top: 4px;
-}
-
-#create-group .line input[type="radio"] {
-    float: right;
-    margin: 16px 35px 0 10px;
-}
-
-#create-group .line .sex {
-    float: right;
     font-size: 16px;
-    margin-top: 8px;
 }
 
-#create-group input[type="submit"] {
+#groups .create-group input[type="submit"] {
     margin: 3% auto;
     background-color: #ffb94b;
     border-radius: 3px;
@@ -444,28 +526,6 @@ input[type="submit"]:hover {
 
 
 /* ------------- Контейнер с адаптивными блоками------------- */
-#groups .masonry-group {
-    float: left;
-    width: 98%; 
-    margin: 1.5em 0;
-    padding: 0;
-    padding-left: 15px;
-    column-gap: 1em; /* Общее расстояние между колонками */
-    font-size: .85em;
-    -moz-column-gap: 1em; /* Расстояние между колонками для Firefox */
-    -webkit-column-gap: 1em; /* Расстояние между колонками  для Safari, Chrome и iOS */
-}
- 
-/* Элементы в виде плиток с содержанием */
-#groups .item {
-    display: inline-block;
-    background-color: #fff;
-    margin: 0 0 1.5em;
-    width: 100%;
-    box-sizing: border-box; /* Изменения алгоритма расчета ширины и высоты элемента.*/
-    -moz-box-sizing: border-box; /* Для Firefox */ 
-    -webkit-box-sizing: border-box; /* Для Safari, Chrome, iOS иAndroid */ 
-}
 
 #groups .top {
     padding: 2px 5px;
@@ -489,12 +549,147 @@ input[type="submit"]:hover {
 
 
 
+/*----------------------------------------------------------------------------------------VIDEO-----------------------------------------------------------------------------------------*/
+
+
+#video {
+    overflow: hidden;
+    padding-top: 15px;
+}
+
+#video .videoPlayer {
+    width: 80%;
+}
+
+#video video {
+    width: 85%;
+}
+
+ 
+/* Элементы в виде плиток с содержанием */
+
+#video .prime img {
+    display: block;
+    width: 100%;
+    height: 160px;
+    cursor: pointer;
+}
+
+#video .bottom {
+    padding: 5px 5px 5px 5px;
+    background-color: #2E878A;
+    color: #FFFFFF;
+    line-height: 1;
+}
+
+#video .bottom span{
+    font-size: 120%;
+}
+
+
+
+
+
+
+
 /*--------------------------------------------------------------------------HOME--------------------------------------------------------------------------------*/
 
 
 
-#content-home #autorization-form
-{
+/* Всплывающее окно */
+.popup-checkbox, .popup {
+  display: none;
+}
+
+.popup {
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
+
+.popup:before {
+  display: block;
+  content: ' ';
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: #000;
+  opacity: .5;
+}
+
+.popup-content {
+  width: 550px;
+  height: 300px;
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 20px;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.popup-shower {
+  color: #00f;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.popup-shower:hover {
+  color: #00a;
+  text-decoration: underline;
+}
+
+.popup-closer {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  color: #999;
+  font-size: 20px;
+  border: 1px solid #999;
+  display: block;
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+  text-align: center;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.popup-closer:hover {
+  background-color: #eee;
+}
+
+.popup-checkbox:checked + .popup {
+  opacity: 1;
+  display: block;
+}
+
+
+
+.popup-content h1 {
+    font-size: 16px;
+    color: orange;
+}
+/*_____*/
+
+
+
+
+#content-home .autorization-form {
     background-color: #fff;
     background-image: -ms-linear-gradient(top, #FFFFFF 0%, #91A1E2 40%);
     background-image: -moz-linear-gradient(top, #FFFFFF 0%, #91A1E2 40%);
@@ -511,8 +706,7 @@ input[type="submit"]:hover {
     z-index: 1;
 }
 
-#content-home #autorization-form:before
-{
+#content-home .autorization-form:before {
     content: '';
     position: absolute;
     z-index: -1;
@@ -523,8 +717,7 @@ input[type="submit"]:hover {
     right: 5px;
 }
 
-#content-home #autorization-form h1
-{
+#content-home .autorization-form h1 {
     text-shadow: 0 1px 0 rgba(255, 255, 255, .7), 0px 2px 0 rgba(0, 0, 0, .5);
     text-transform: uppercase;
     text-align: center;
@@ -535,17 +728,15 @@ input[type="submit"]:hover {
     position: relative;
 }
 
-#content-home #autorization-form fieldset
-{
+#content-home .autorization-form fieldset {
     border: 0;
     padding: 0;
     margin: 0 0 20px 0;
     overflow: hidden;
 }
 
-#content-home #autorization-form #inputs input
-{
-    background: #f1f1f1;
+#content-home .autorization-form #inputs input {
+    background: #f1f1f1 url(http://www.red-team-design.com/wp-content/uploads/2011/09/login-sprite.png) no-repeat;
     padding: 15px 15px 15px 30px;
     margin: 0 0 10px 0;
     width: 240px;
@@ -553,27 +744,23 @@ input[type="submit"]:hover {
     border-radius: 5px;
 }
 
-#content-home #autorization-form #username
-{
+#content-home .autorization-form #username {
     background-position: 5px -2px !important;
 }
 
-#content-home #autorization-form #password
-{
+#content-home .autorization-form #password {
     background-position: 5px -52px !important;
 }
 
-#content-home #autorization-form #inputs input:focus
-{
+#content-home .autorization-form #inputs input:focus {
     background-color: #fff;
     border-color: #e8c291;
     outline: none;
     box-shadow: 0 0 0 1px #e8c291 inset;
 }
 
-#content-home #autorization-form #enter, 
-#content-home #autorization-form #registration
-{
+#content-home .autorization-form #enter, 
+#content-home .autorization-form #registration {
     background-color: inherit;
     border: none;
     text-align: left;
@@ -586,25 +773,14 @@ input[type="submit"]:hover {
     color: black;
 }
 
-.submit-enter, .button-registration
-{
+.submit-enter, .button-registration {
     float: left;
     margin-left: 105px;
     position: relative;
 }
 
-#content-home #autorization-form #forgot
-{
-    text-decoration: none;
-    color: black;
-    font: 15px Arial, Helvetica;
-    float: left;
-    margin-left: 105px;
-    position: relative;
-    padding: 5px 0;
-}
-
-#content-home #autorization-form #actions .submit-enter:before, #content-home #autorization-form #actions .button-registration:before, #content-home #autorization-form #actions #forgot:before{
+#content-home .autorization-form #actions .submit-enter:before, 
+#content-home .autorization-form #actions .button-registration:before {
     width: 32px;
     height: 32px;
     content: url("../image/arrow.png");
@@ -614,28 +790,19 @@ input[type="submit"]:hover {
     display: block;
     z-index: 10;
 }
-#content-home #autorization-form #actions .button-registration:before{
+
+#content-home .autorization-form #actions .button-registration:before {
     top: -1px;
     content: url("../image/star.png");
 }
-#content-home #autorization-form #actions #forgot:before{
-    content: url("../image/question-mark.png");
-    top: -2px;
-}
 
-#content-home #autorization-form #enter:hover,
-#content-home #autorization-form #enter:focus,
-#content-home #autorization-form #registration:hover,
-#content-home #autorization-form #registration:focus,
-#content-home #autorization-form #forgot:hover,
-#content-home #autorization-form #forgot:focus
-{       
+#content-home .autorization-form #enter:hover,
+#content-home .autorization-form #registration:hover {       
     color: white;
 }   
 
-#content-home #autorization-form #enter:active,
-#content-home #autorization-form #registration:active
-{       
+#content-home .autorization-form #enter:active,
+#content-home .autorization-form #registration:active {       
     outline: none;
      -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5) inset;
      -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5) inset;
@@ -646,43 +813,38 @@ input[type="submit"]:hover {
 
 
 
-
 /*---------------------------------------------------------------------FORGOT_PASSWORD---------------------------------------------------------------------------*/
 
 
-#content-forgot {
-    overflow: hidden;
-    margin: 23.6% auto;
-}
-
-#content-forgot h1 {
-    font-size: 40px;
+#content-home .popup-content h1 {
+    font-size: 30px;
     font-weight: bold;
     line-height: 1.4;
+    margin-top: 10px;
 }
 
-#content-forgot p {
+#content-home .popup-content p {
     font-size: 20px;
     line-height: 1.4;
 }
 
-#content-forgot .line {
+#content-home .popup-content .line {
     overflow: hidden;
     padding: 0 0;
     margin: 15px;
 }
 
-#content-forgot .line input[type="email"] {
-    background: #f1f1f1;
-    padding: 10px 15px 10px 30px;
-    width: 240px;
-    height: 25px;
+#content-home .popup-content .line input[type="email"] {
+    background: #f1f1f1 url(http://www.red-team-design.com/wp-content/uploads/2011/09/login-sprite.png) no-repeat;
+    padding: 7px 15px 7px 15px;
+    width: 280px;
+    height: 40px;
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 20px;
 }
 
-#content-forgot input[type="submit"] {
+#content-home .popup-content input[type="submit"] {
     background-color: #ffb94b;
     background-image: -webkit-gradient(linear, left top, left bottom, from(#fddb6f), to(#ffb94b));
     background-image: -webkit-linear-gradient(top, #fddb6f, #ffb94b);
@@ -710,15 +872,15 @@ input[type="submit"]:hover {
     color: #8f5a0a;
 }
 
-#content-forgot input
+#content-home .popup-content input
 {
-    background: #f1f1f1;
+    background: #f1f1f1 url(http://www.red-team-design.com/wp-content/uploads/2011/09/login-sprite.png) no-repeat;
     border: 1px solid #ccc;
     border-radius: 5px;
     margin: 8px auto;
 }
 
-#content-forgot input[type="submit"]:hover {
+#content-home .popup-content input[type="submit"]:hover {
     background-color: #fddb6f;
     background-image: -webkit-gradient(linear, left top, left bottom, from(#ffb94b), to(#fddb6f));
     background-image: -webkit-linear-gradient(top, #ffb94b, #fddb6f);
@@ -728,20 +890,23 @@ input[type="submit"]:hover {
     background-image: linear-gradient(top, #ffb94b, #fddb6f);
 }
 
-#content-forgot input[type="submit"]:active {
+#content-home .popup-content input[type="submit"]:active {
     outline: none;
     -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5) inset;
     -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5) inset;
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5) inset;  
 }
 
-#content-forgot input:focus
+#content-home .popup-content input:focus
 {
     background-color: #fff;
     border-color: #e8c291;
     outline: none;
     box-shadow: 0 0 0 1px #e8c291 inset;
 }
+
+
+
 
 
 
@@ -761,7 +926,7 @@ input[type="submit"]:hover {
     margin-top: 10px;
 }
 
-#audio-list .item {
+#audio-list .track {
     overflow: hidden;
     width: 100%;
     padding: 7px 15px;
@@ -771,89 +936,29 @@ input[type="submit"]:hover {
     border-bottom-right-radius: 5px; 
 }
 
-#audio-list .item .play-audio {
+#audio-list .track .play-audio {
     float: left;
     margin-left: 2%;
     width: 15px;
     height: 15px;
 }
 
-#audio-list .item .play-audio img{
+#audio-list .track .play-audio img{
     width: 100%;
     height: 100%;
     vertical-align: middle;
 }
 
-#audio-list .item .name {
+#audio-list .track .name {
     float: left;
     margin-left: 5%;
     font-size: 16px;
 }
 
-#audio-list .item .audiotime {
+#audio-list .track .audiotime {
     float: right;
     margin-right: 5%;
     font-size: 16px;
-}
-
-
-
-
-/*----------------------------------------------------------------------------------------VIDEO-----------------------------------------------------------------------------------------*/
-
-
-#video {
-    overflow: hidden;
-    padding-top: 15px;
-}
-
-#video .videoPlayer {
-    width: 80%;
-}
-
-#video video {
-    width: 85%;
-}
-
-#video .masonry-video {
-    float: left;
-    width: 95%; 
-    margin: 1.5em 0;
-    padding: 0;
-    padding-left: 15px;
-    column-gap: 1em; /* Общее расстояние между колонками */
-    font-size: .85em;
-    -moz-column-gap: 1em; /* Расстояние между колонками для Firefox */
-    -webkit-column-gap: 1em; /* Расстояние между колонками  для Safari, Chrome и iOS */
-}
- 
-/* Элементы в виде плиток с содержанием */
-#video .item {
-    display: inline-block;
-    background-color: #fff;
-    margin: 0 0 1.5em;
-    width: 100%;
-    box-sizing: border-box; /* Изменения алгоритма расчета ширины и высоты элемента.*/
-    -moz-box-sizing: border-box; /* Для Firefox */ 
-    -webkit-box-sizing: border-box; /* Для Safari, Chrome, iOS иAndroid */ 
-}
-
-#video .prime img {
-    display: block;
-    width: 100%;
-    height: 160px;
-    cursor: pointer;
-}
-
-#video .bottom {
-    padding: 5px 5px 5px 5px;
-    background-color: #2E878A;
-    color: #FFFFFF;
-    line-height: 1;
-}
-
-#video .bottom span{
-    font-size: 120%;
 }
 
 
@@ -946,6 +1051,7 @@ input[type="submit"]:hover {
     color: black;
     border-radius: 3px;
     margin-bottom: 5px;
+    resize: none;
 }
 
 .add-post button{
@@ -956,7 +1062,7 @@ input[type="submit"]:hover {
     color: white;
     padding: 3px;
     float: left;
-    margin-left: 30px;
+    margin-left: 5%;
 }
 
 .add-post .inputfile {
@@ -971,7 +1077,7 @@ input[type="submit"]:hover {
     color: white;
     display: inline-block;
     float: right;
-    margin-right: 30px;
+    margin-right: 5%;
 }
 .inputfile:focus + label,
 .inputfile + label:hover {
@@ -980,8 +1086,6 @@ input[type="submit"]:hover {
 .inputfile + label {
     cursor: pointer; 
 }
-
-
 
 
 /*--------------------------------------------------------------------------------------SETTINGS-------------------------------------------------------------------------------------- */
@@ -1110,7 +1214,7 @@ input[type="submit"]:hover {
     display: block;
     float: right;
     font-size: 17px;
-    background: #f1f1f1;
+    background: #f1f1f1 url(http://www.red-team-design.com/wp-content/uploads/2011/09/login-sprite.png) no-repeat;
     padding: 5px 15px 5px 15px;
     height: 35px;
     border: 1px solid #ccc;
@@ -1133,139 +1237,6 @@ input[type="submit"]:hover {
 
 
 
-/*--------------------------------------------------------------------------------FRIENDS------------------------------------------------------------------------*/
-
-
-#friends .quantity {
-    background-color: #7DD493;
-    padding: 8px 20px;
-    text-align: left;
-    font-size: 16px;
-    color: #FFFFFF;
-    border-radius: 0 5px 0 0;
-}
-
-#friends .search-friend {
-    background-color: #B8D98C;
-    padding: 8px 20px;
-    text-align: left;
-    font-size: 16px;
-    overflow: hidden;
-    border-radius: 0 5px 5px 0;
-    display: none;  
-}
-
-#friends .search-friend input {
-    width: 40%;
-    padding: 3px 5px;
-    border: none;
-    height: 30px;
-}
-
-/* ------------- Контейнер с адаптивными блоками------------- */
-#friends .masonry-place {
-    overflow: hidden;
-    float: left;
-    width: 76%; 
-    margin: 1.5em 0;
-    padding: 0 2%;
-    column-gap: 1em; /* Общее расстояние между колонками */
-    font-size: .85em;
-    -moz-column-gap: 1em; /* Расстояние между колонками для Firefox */
-    -webkit-column-gap: 1em; /* Расстояние между колонками  для Safari, Chrome и iOS */
-}
- 
-/* Элементы в виде плиток с содержанием */
-#friends .item {
-    display: inline-block;
-    background-color: #fff;
-    margin: 0 0 1.5em;
-    width: 100%;
-    box-sizing: border-box; /* Изменения алгоритма расчета ширины и высоты элемента.*/
-    -moz-box-sizing: border-box; /* Для Firefox */ 
-    -webkit-box-sizing: border-box; /* Для Safari, Chrome, iOS иAndroid */ 
-}
-
-#friends .top {
-    padding: 2px 5px;
-    background-color: #2E878A;
-    font-size: 100%;
-    color: #FFFFFF;
-    line-height: 1;
-    white-space: nowrap;
-}
-
-#friends .prime img {
-    display: block;
-    width: 100%;
-    height: 200px;
-}
-
-
-#friends .user-api {
-    height: 30px;
-    border-bottom: 1px solid #91A1E2;
-}
-
-#friends .user-api li {
-    display: inline-block;
-    width: 31%;
-}
-
-#friends .user-api li a {
-    display:block;
-    padding:2.5px 5px;
-}
-
-#friends .user-api li a img {
-    display: block;
-    margin: 0 auto !important;
-    width: 25px;
-    height: 25px;
-    
-}
-
-#friends .search-panel {
-    position: absolute;
-    right: 0;   
-    background: #E4F6F0;
-    width: 24%;
-    height: 100%;
-    color: #91A1E2;
-    border-left: 1px solid #91A1E2;
-}    
-
-#friends .search-panel .line {
-    margin: 25px 10px 10px 10px;
-    text-align: left;
-    font-size: 16px;
-}
-
-#friends .search-panel .line-search input {
-    font-size: 15px;
-    width: 100%;
-    padding: 2px 10px;
-    border: 1px solid grey;
-}
-
-#friends .search-panel .line-sex input {
-    margin-right: 10px;
-    vertical-align: middle;
-}
-
-#friends .search-panel .line .shift {
-    margin-top:5px;
-    margin-left: 10px;
-}
-
-#friends .search-panel .line select {
-    width: 100%;
-    color: #91A1E2;
-}
-
-#friends .search-panel .line .age {
-    width: 53px;
-}
 
 
 
@@ -1320,7 +1291,7 @@ input[type="submit"]:hover {
 #content-registration .line input[type="password"], 
 #content-registration .line input[type="email"]{
     float: right;
-    background: #f1f1f1;
+    background: #f1f1f1 url(http://www.red-team-design.com/wp-content/uploads/2011/09/login-sprite.png) no-repeat;
     padding: 5px 10px 5px 25px;
     width: 220px;
     height: 30px;
@@ -1365,7 +1336,7 @@ input[type="submit"]:hover {
     display: block;
     float: right;
     font-size: 17px;
-    background: #f1f1f1;
+    background: #f1f1f1 url(http://www.red-team-design.com/wp-content/uploads/2011/09/login-sprite.png) no-repeat;
     padding: 5px 15px 5px 15px;
     height: 35px;
     border: 1px solid #ccc;
@@ -1431,10 +1402,11 @@ input[type="submit"]:hover {
     margin-top: 3%;
     width: 90%;
     max-height: 30%;
-    overflow: hidden;
     float: left;
     text-align: left;
     position: relative;
+    border: 1px solid orange;
+    border-radius: 5px;
 }
 
 .place-post .post-container .close {
@@ -1444,6 +1416,7 @@ input[type="submit"]:hover {
     top: 0;
     right: 0;
     margin-top:5px;
+    margin-right: 5px;
     width: 20px;
     height: 20px;
 }
@@ -1463,6 +1436,7 @@ input[type="submit"]:hover {
     height: auto;
     margin-left: 0;
     float: left;
+    border-radius: 50%;
 }
 
 .place-post .post-container .post-info {
@@ -1485,6 +1459,7 @@ input[type="submit"]:hover {
 
 .place-post .post-container .post-info .replies {
     float: right;
+    margin-right: 10px;
 }
 
 
@@ -1522,7 +1497,7 @@ input[type="submit"]:hover {
     display: block;
     float: right;
     font-size: 17px;
-    background: #f1f1f1;
+    background: #f1f1f1 url(http://www.red-team-design.com/wp-content/uploads/2011/09/login-sprite.png) no-repeat;
     padding: 5px 15px 5px 15px;
     height: 35px;
     border: 1px solid #ccc;
@@ -1532,7 +1507,7 @@ input[type="submit"]:hover {
 
 #edit-profile .datefield {
     float: right;
-    background: #f1f1f1;
+    background: #f1f1f1 url(http://www.red-team-design.com/wp-content/uploads/2011/09/login-sprite.png) no-repeat;
     width: 68px;
     margin-left: 9px;
     height: 30px;
@@ -1654,9 +1629,10 @@ input[type="submit"]:hover {
 
 #messages-content .control {
     width: 35%;
-    min-height: 100vh;
+    height: 100vh;
     float: left;
     border-right: 1px solid #2F5B8E; 
+    overflow: auto;
 }
 
 #messages-content .control .search {
@@ -1710,16 +1686,10 @@ input[type="submit"]:hover {
     column-count: 3;
 }
 
-.masonry-group {
-    -moz-column-count: 3;
-    -webkit-column-count: 3;
-    column-count: 3;
-}
-
-.masonry-video {
-    -moz-column-count: 3;
-    -webkit-column-count: 3;
-    column-count: 3;
+#friends .masonry-place {
+    -moz-column-count: 4;   
+    -webkit-column-count: 4;
+    column-count: 4;
 }
 
 @media (max-width: 768px) {
@@ -1772,20 +1742,34 @@ input[type="submit"]:hover {
         min-width: 165px;
     }
 
-    #groups .quantity {
+
+    /* filter panel */
+    .quantity,
+    .filter {
         border-radius: 5px 5px 5px 5px;
     }
 
-    #groups .search-group {
-        border-radius: 5px 5px 5px 5px;
+    #groups .filter input,
+    #friends .filter input {
+        width: 50%;
+        padding: 5px 15px;
+        font-size: 16px;
     }
 
-    #friends .quantity {
-        border-radius: 5px 5px 5px 5px;
+    #friends .filter {
+        display: block;
     }
 
-    #friends .search-friend {
-        border-radius: 5px 5px 5px 5px;
+    #groups .filter .create-community {
+        display: none;
+    }
+
+
+    /* friends and groups of the user's */
+    #friends .masonry-place {
+        -moz-column-count: 3;   
+        -webkit-column-count: 3;
+        column-count: 3;
     }
 
     #groups .item .prime img {
@@ -1803,35 +1787,14 @@ input[type="submit"]:hover {
     #video .item .prime img {
         height: 150px;
     }            
-
-    #friends .masonry-place {
-        width: 100%;
-    }
+    /*___*/
 
     #friends .search-panel {
         display: none;
     }
 
-    #groups .search-group .create-community {
-        display: none;
-    }
-
     #groups #create-group {
         display: none;
-    }
-
-    #groups .search-group input {
-        width: 50%;
-    }
-
-    #friends .search-friend {
-        display: block;
-        padding: 7px 20px;
-        font-size: 15px;
-    }
-
-    #friends .search-friend input {
-        width: 50%;
     }
 
     #change_pass {
@@ -1897,17 +1860,29 @@ input[type="submit"]:hover {
         margin-left: 15%;
     }
 
-    #friends .item .prime img{
-        height: 160px;
-    }
 
-    #groups .quantity {
+    /* filter panel */
+    .quantity,
+    .filter {
         font-size: 16px;
         padding: 8px 10px;
     }
 
-    #groups .search-group {
-        padding: 8px 10px;
+    #friends .filter input,
+    #groups .filter input {
+        width: 65%;
+        padding: 5px 10px;
+        font-size: 14px;
+    }
+
+    #friends .filter {
+        display: block;
+    }
+
+
+    /* friends and groups of the user's */
+    #friends .item .prime img{
+        height: 160px;
     }
 
     #groups .item .prime img {
@@ -1932,31 +1907,12 @@ input[type="submit"]:hover {
         column-count: 2;
     }
 
-    .masonry-group {
-        -moz-column-count: 2;
+    #friends .masonry-place {
+        -moz-column-count: 2;   
         -webkit-column-count: 2;
         column-count: 2;
     }
-
-    .masonry-video {
-        -moz-column-count: 2;
-        -webkit-column-count: 2;
-        column-count: 2;
-    }
-
-    #groups .search-group input {
-        width: 65%;
-    }
-
-     #friends .search-friend {
-        display: block;
-        padding: 6px 18px;
-        font-size: 14px;
-    }
-
-    #friends .search-friend input {
-        width: 65%;
-    }
+    /*____*/
 
     #edit-profile {
         font-size: 18px;
@@ -2042,11 +1998,3 @@ input[type="submit"]:hover {
         height: 15px;
     }
 }
-
-
-@media only screen and (min-width: 1280px) {
-    #wrapper {
-        width: 1260px;
-    }
-}
-
