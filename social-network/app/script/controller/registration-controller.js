@@ -5,7 +5,6 @@ angular.module('socialNetwork').controller('RegController', RegController);
 RegController.$inject = ['$scope', 'NetworkService', '$state', '$mdToast', 'Constant'];
 
 function RegController($scope, NetworkService, $state, $mdToast, Constant) {
-
     $scope.toastMsg = "";
 
     $scope.master = {};
@@ -49,7 +48,7 @@ function RegController($scope, NetworkService, $state, $mdToast, Constant) {
                         hideDelay: 3000,
                         position: 'top right',
                         controller: 'ToastController',
-                        templateUrl: 'view/reg-toast.html'
+                        templateUrl: 'view/toast.html'
                     });
                     $state.go("home");
                 }
@@ -61,7 +60,7 @@ function RegController($scope, NetworkService, $state, $mdToast, Constant) {
                 hideDelay: 3000,
                 position: 'top right',
                 controller: 'ToastController',
-                templateUrl: 'view/reg-toast.html'
+                templateUrl: 'view/toast.html'
             });
         }
     };
