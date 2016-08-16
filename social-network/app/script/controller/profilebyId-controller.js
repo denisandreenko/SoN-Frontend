@@ -25,7 +25,7 @@ function ProfileByIdController($scope, NetworkService, Constant, $state, PostCre
     });
 
     $scope.deleteFromFriends = function () {
-        var promise = NetworkService.deleteFromFriends(userId, '/friends').promise;
+        var promise = NetworkService.deleteFromFriendsns(userId, '/friends').promise;
 
         promise.then(function (response) {
             var data = response.getData();

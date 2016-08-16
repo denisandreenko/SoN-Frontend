@@ -45,4 +45,4 @@ function TestController($scope, Upload, NetworkService, Constant, $mdToast) {
             console.log('progress: ' + progressPercentage + '% ' + evt.config.data.file.name);
         });
     };
-};
+}

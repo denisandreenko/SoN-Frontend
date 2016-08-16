@@ -11,7 +11,7 @@ function AuthController($scope, NetworkService, $state, authFact) {
     authFact.clearAccessToken();
     authFact.clearId();
 
-    $scope.sendData = function () {
+    $scope.sendData0 = function () {
         $scope.data = "client_id=passwordClient&" + "grant_type=password&" + "password=" + $scope.password + "&username=" + $scope.login;
         var promise = NetworkService.authorisation($scope.data, "/oauth/token").promise;
         promise.then(function (response) {

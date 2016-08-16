@@ -1,33 +1,36 @@
-<div data-ng-controller="ChatController" class="container">
-    <form data-ng-submit="addMessage()" name="messageForm">
-        <input type="text" placeholder="Compose a new message..." data-ng-model="message" />
-        <div class="info">
-            <span class="count" data-ng-bind="max - message.length" data-ng-class="{danger: message.length > max}">140</span>
-            <button data-ng-disabled="message.length > max || message.length === 0">Send</button>
-        </div>
-    </form>
-    <hr />
-    <p ng-repeat="message in messages | orderBy:'time':true" class="message">
-        <time>{{message.time | date:'HH:mm'}}</time>
-        <span ng-class="{self: message.self}">{{message.message}}</span>
-    </p>
-    <hr/>
+<div>
+    <link rel="stylesheet" href="css/chatStyle.css">
+
+    <div ng-controller="Ctrl" class="container">
+        <form ng-submit="sendM()" name="messageForm">
+            <input type="text" placeholder="Compose a new message..." ng-model="message" />
+            <div class="info">
+                <span class="count" ng-bind="max - message.length" ng-class="{danger: message.length > max}">140</span>
+                <button ng-disabled="message.length > max || message.length === 0">Send</button>
+            </div>
+        </form>
+        <hr />
+        <p ng-repeat="message in messages | orderBy:'time':true" class="message">
+            <time>{{message.time | date:'HH:mm'}}</time>
+            <span ng-class="{self: message.self}">{{message}}</span>
+        </p>
+    </div>
 </div>
 
 
 
 
-<form ng-controller="TestController" name="form">
-    Select file here:<br>
-    <md-input-container>
-        <label>FileName</label>
-        <input type="text" data-ng-model="fileName" required md-maxlength="50">
-    </md-input-container><br>
-    <md-button class="md-raised md-warn" data-ngf-select data-ng-model="file" data-name="file" data-ngf-pattern=""
-         data-ngf-accept="" data-ngf-max-size="1MB" data-ngf-min-height="100"
-         data-ngf-resize="{width: 300, height: 100}">Select</md-button>
-    <br>
-    Multiple files
-    Drop files: <div data-ngf-drop data-ng-model="files" class="drop-box">Drop</div>
-    <md-button class="md-raised" type="submit" data-ng-click="submit()">Upload</md-button>
-</form>
+<!--<form ng-controller="FileUploadController" name="form">-->
+    <!--Select file here:<br>-->
+    <!--<md-input-container>-->
+        <!--<label>FileName</label>-->
+        <!--<input type="text" data-ng-model="fileName" required md-maxlength="50">-->
+    <!--</md-input-container><br>-->
+    <!--<md-button class="md-raised md-warn" data-ngf-select data-ng-model="file" data-name="file" data-ngf-pattern=""-->
+         <!--data-ngf-accept="" data-ngf-max-size="1MB" data-ngf-min-height="100"-->
+         <!--data-ngf-resize="{width: 300, height: 100}">Select</md-button>-->
+    <!--<br>-->
+    <!--Multiple files-->
+    <!--Drop files: <div data-ngf-drop data-ng-model="files" class="drop-box">Drop</div>-->
+    <!--<md-button class="md-raised" type="submit" data-ng-click="submit()">Upload</md-button>-->
+<!--</form>-->

@@ -13,7 +13,21 @@ function PostCreationService(NetworkService, Constant) {
             text: postText
         };
 
-        var promise = NetworkService.createPoster("/users/posts", master).promise;
+        var promise = NetworkService.createPosterToUser("/users/posts", master).promise;
+
+        promise.then(function (responce) {
+            var data = responce.getData();
+            Constant.UploadedImgID = null;
+        });
+    }
+    function _createPostToGroup(fileId, postText, groupToId) {
+        var master = {
+            idTo: groupToId,
+            fkImage: fileId,
+            text: postText
+        };
+
+        var promise = NetworkService.createPosterToGroup("/groups/posts", master).promise;
 
         promise.then(function (responce) {
             var data = responce.getData();
@@ -21,6 +35,7 @@ function PostCreationService(NetworkService, Constant) {
         });
     }
     return{
-        createPostToUser: _createPostToUser
+        createPostToUser: _createPostToUser,
+        createPostToGroup: _createPostToGroup
     }
 }

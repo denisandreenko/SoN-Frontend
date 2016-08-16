@@ -4,10 +4,10 @@
         <audio data-ng-src="{{source}}" controls data-ng-ended="onPlayEnd()" autoplay preload="auto"></audio>
     </div>
 
-    <div id="audio-list">
-        <div class="track"  ng-repeat="audio in playList">
+    <div id="audio-list" ng-repeat="audio in playList">
+        <div class="track" ng-click="setPlayingTrack($index)">
             <div class="play-audio">
-                <img src="{{playIconUrl}}" alt="play" ng-click="setPlayingTrack($index)">
+                <img src="{{playIconUrl}}" alt="play">
             </div>
             <span class="name">{{audio.Name}}</span>
             <span class="audiotime">{{audio.Time}}</span>

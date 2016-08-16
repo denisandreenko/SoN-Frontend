@@ -1,4 +1,4 @@
-<div id="friends" ng-controller="FriendController">
+<div id="friends" ng-controller="FriendListController">
     <div class="quantity">
         <p>You have {{friends.length}} friends</p>
     </div>
@@ -14,8 +14,8 @@
             <div class="top">
                 <h2>{{friend.name + " " + friend.subname}}</h2>
             </div>
-            <div class="prime">
-                <img src="{{friend.avatarUrl}}" ui-sref="menu.friend">
+            <div class="prime" data-ng-click="gotoUserId($index)">
+                <img src="{{friend.avatar}}">
             </div>
             <div class="bottom">
                 <ul class="control-panel">

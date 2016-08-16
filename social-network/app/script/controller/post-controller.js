@@ -17,7 +17,7 @@ function MyPostController($scope, NetworkService, authFact, $state, Constant) {
     };
 
     var id = authFact.getId();
-    var promise = NetworkService.getPost('/users/posts', id, 0, 20).promise;
+    var promise = NetworkService.getPost('/users/posts', id, 0, 40).promise;
 
     promise.then(function (responce) {
         var data = responce.getData();
@@ -38,6 +38,7 @@ function MyPostController($scope, NetworkService, authFact, $state, Constant) {
         promise.then(function (response) {
             var data = response.getData();
             var i = 0;
+            $state.reload();
         })
     }
 }
@@ -49,7 +50,6 @@ function postsAddition() {
     return {
         replace: true,
         scope: true,
-        controller: MyPostController,
         templateUrl: 'view/posts.html'
     };
 }

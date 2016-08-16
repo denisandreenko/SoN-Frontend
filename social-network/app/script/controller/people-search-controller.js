@@ -1,13 +1,13 @@
 'use strict';
 angular.module('socialNetwork').controller('PeopleSearch', PeopleSearch);
 
-PeopleSearch.$inject = ['$scope', 'NetworkService', '$state'];
+PeopleSearch.$inject = ['$scope', 'NetworkService', '$state', 'Constant'];
 
-function PeopleSearch($scope, NetworkService, $state) {
+function PeopleSearch($scope, NetworkService, $state, Constant) {
     $scope.people = [];
     // $scope.searchText = '';
 
-    var text = $state.params.searchReq;
+    var text = Constant.SearchReqText;
     var promise = NetworkService.searchTA(text, '/users/find', 20, 0).promise;
 
     promise.then(function (response) {

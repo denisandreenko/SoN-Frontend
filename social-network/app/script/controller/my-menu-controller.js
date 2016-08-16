@@ -2,13 +2,14 @@
 
 angular.module('socialNetwork').controller('MyMenuController', MyMenuController);
 
-MyMenuController.$inject = ['$state', '$scope'];
+MyMenuController.$inject = ['$state', '$scope', 'Constant'];
 
-function MyMenuController($state, $scope) {
+function MyMenuController($state, $scope, Constant) {
     $scope.searchText = '';
     $scope.gotoSearch = function () {
-        var text = $scope.searchText;
+        Constant.SearchReqText = $scope.searchText;
         $scope.searchText = '';
-        $state.go('menu.search', {'searchReq': text});
+        $state.current = ('menu.search');
+        //$state.go('menu.search');
     };
 }

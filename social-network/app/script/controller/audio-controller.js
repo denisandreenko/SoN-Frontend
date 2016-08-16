@@ -28,13 +28,14 @@ function AudioController($scope, NetworkService, $sce, $state, $mdToast, Constan
             else
                 $scope.setPlayingTrack(0)
         }
-    }
+    };
     $scope.setPlayingTrack = function (index) {
         $scope.lastIdPlayed = index;
         $scope.currentSong = $scope.playList[index].Name;
         $scope.source = $sce.trustAsResourceUrl($scope.playList[index].Url);
     }
-};
+}
+
 angular.module('socialNetwork').filter('trusted', AudioFilter);
 
 AudioFilter.$inject = ['$sce'];
@@ -43,19 +44,19 @@ function AudioFilter($sce) {
     return function (url) {
         return $sce.trustAsResourceUrl(url);
     };
-};
-
-angular.module('socialNetwork').directive('playList', playList);
-
-function playList() {
-    return {
-        replace: true,
-        scope: {
-            audio: '=',
-            // url: '@',
-            name: '@'
-            // playIcon: '@'
-        },
-        templateUrl: 'view/playlist.html'
-    };
 }
+
+// angular.module('socialNetwork').directive('playList', playList);
+//
+// function playList() {
+//     return {
+//         replace: true,
+//         scope: {
+//             audio: '=',
+//             // url: '@',
+//             name: '@'
+//             // playIcon: '@'
+//         },
+//         templateUrl: 'view/playlist.html'
+//     };
+// }

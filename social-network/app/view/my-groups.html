@@ -4,14 +4,14 @@
         <p data-ng-show="groups">There are no groups !</p>
         <!--<p>You are a member of {{groups.length}} communities</p>-->
     </div>
-    <div data-ng-show="!groups">
+    <!--<div data-ng-show="!groups">-->
     <div class="filter">
         <input type="text" name="search-group" placeholder="search" ng-model="searchGroups">
 
         <label class="btn-groups" for="hmd">
             <div class="create-community">create community</div>
         </label>
-    </div>
+    <!--</div>-->
 
     <input type="checkbox" id="hmd" class="hidden-create-group">
 
@@ -28,7 +28,12 @@
 
         <div class="line line-avatar">
             <span>Avatar</span>
-            <input type="text" name="avatar">
+            <div data-ng-controller="FileUploadController" class="dialog-demo-content" layout="row" layout-wrap
+                 layout-margin layout-align="center">
+                <md-button class="md-primary md-raised" ng-click="showAdvanced($event)">
+                    Choose avatar
+                </md-button>
+            </div>
         </div>
 
         <input type="submit" name="edit" value="Create">

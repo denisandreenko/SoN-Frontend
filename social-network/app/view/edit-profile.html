@@ -1,90 +1,92 @@
-<div id="edit-profile">
-    <form name="editProfileForm">
+<div id="edit-profile" data-ng-controller="ProfileEditController">
+    <form name="editProfileForm" data-ng-submit="sendData()">
         <div class="line">
+            <span>Avatar</span>
+            <div data-ng-controller="FileUploadController" class="dialog-demo-content" layout="row" layout-wrap
+                 layout-margin layout-align="center">
+                <md-button class="md-primary md-raised" ng-click="showAdvanced($event)">
+                    Choose avatar
+                </md-button>
+            </div>
+        </div>
+
+        <div class="line line-name">
             <span>Name</span>
-            <input type="text" name="name" ng-model="user.name" maxlength="20" ng-pattern="/^[A-Za-z]*$/">
+            <input type="text" name="name" ng-model="name" maxlength="20" ng-pattern="/^[A-Za-z]*$/">
 
-           <p ng-show="editProfileForm.name.$error.pattern && editProfileForm.name.$pristine != true">May contain only latin symbols</p>
+            <p ng-show="editProfileForm.name.$error.pattern && editProfileForm.name.$pristine != true">May contain only
+                latin symbols</p>
         </div>
 
-        <div class="line">
+        <div class="line line-lastname">
             <span>Last Name</span>
-            <input type="text" name="lastname" ng-model="user.lastName" maxlength="20" ng-pattern="/^[A-Za-z]*$/">
+            <input type="text" name="lastname" ng-model="lastName" maxlength="20" ng-pattern="/^[A-Za-z]*$/">
 
-            <p ng-show="editProfileForm.lastname.$error.pattern && editProfileForm.lastname.$pristine != true">May contain only latin symbols</p>
+            <p ng-show="editProfileForm.lastname.$error.pattern && editProfileForm.lastname.$pristine != true">May
+                contain only latin symbols</p>
         </div>
 
-        <div class="line">
+        <div class="line line-sex">
             <span>Sex</span>
-            <div class="sexes">
-                <label>
-                    <input type="radio" name="sex" value="man" ng-model="user.sex">
-                    <span class="sex">Man</span>
-                </label>
-                <label>
-                    <input type="radio" name="sex" value="woman" ng-model="user.sex">
-                    <span class="sex">Woman</span>
-                </label>
-            </div>
+            <label>
+                <input type="radio" name="sex" value=1 ng-model="sex">
+                <span class="sex">Man</span>
+            </label>
+            <label>
+                <input type="radio" name="sex" value=0 ng-model="sex">
+                <span class="sex">Woman</span>
+            </label>
         </div>
 
-        <!-- <div class="line line-birthday">
+        <div class="line line-birthday">
             <span>Birthday</span>
-            <div class="date">
-                <select class="datefield datefield-day">
-                    <option>Day</option>
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                </select>
-                <select class="datefield datefield-month">
-                    <option>Month</option>
-                    <option>Jan</option>
-                    <option>Feb</option>
-                    <option>Mar</option>
-                </select>
-                <select class="datefield datefield-year">
-                    <option>Year</option>
-                    <option>2016</option>
-                    <option>2015</option>
-                    <option>2014</option>
-                </select>
-            </div>
-        </div>-->
+            <input data-time="false" data-date="true" mdc-datetime-picker="" type="text"
+                   placeholder="Birth Date"
+                   data-ng-model="birthdate" data-min-date="minDate" data-max-date="maxDate"
+                   class="md-input"
+                   data-ok-text="Confirm">
+        </div>
 
-        <div class="line">
+        <div class="line line-city">
             <span>City</span>
-            <input type="text" name="city" ng-model="user.city" maxlength="20" ng-pattern="/^[A-Za-z]*$/">
+            <input type="text" name="city" ng-model="city" maxlength="20" ng-pattern="/^[A-Za-z]*$/">
 
-            <p ng-show="editProfileForm.city.$error.pattern && registrationForm.city.$pristine != true">May contain only latin symbols</p>
+            <p ng-show="editProfileForm.city.$error.pattern && registrationForm.city.$pristine != true">May contain only
+                latin symbols</p>
         </div>
 
-        <div class="line">
+        <div class="line line-mobile-number">
             <span>Mobile number</span>
-            <input type="text" name="mobile-number" ng-model="user.mobile" maxlength="20" ng-pattern="/^[1-9][0-9]*$/">
+            <input type="text" name="mobile-number" ng-model="mobile" maxlength="12" minlength="12" onkeypress='return event.charCode >= 48 && event.charCode <= 57'>
+            <!--<input type="text"    ng-pattern="/^[1-9][0-9]*$/">-->
 
-            <p ng-show="editProfileForm.mobile-number.$error.pattern && registrationForm.mobile-number.$pristine != true">May contain only numbers</p>
+            <!--<p ng-show="editProfileForm.mobile-number.$error.minLength && registrationForm.mobile-number.$pristine != true">-->
+            <!--May contain only numbers</p>-->
         </div>
 
-        <div class="line">
+        <div class="line line-skype">
             <span>Skype</span>
-            <input type="text" name="skype" ng-model="user.skype" maxlength="20" ng-pattern="/^[A-Za-z][A-Za-z0-9]*$/">
+            <input type="text" name="skype" ng-model="skype" maxlength="20" ng-pattern="/^[A-Za-z][A-Za-z0-9]*$/">
 
-            <p ng-show="editProfileForm.mobile-number.$error.pattern && registrationForm.mobile-number.$pristine != true">May contain only numbers</p>
+            <p ng-show="editProfileForm.mobile-number.$error.pattern && registrationForm.mobile-number.$pristine != true">
+                May contain only numbers</p>
         </div>
 
-        <div class="line">
+        <div class="line line-email">
             <span>Email</span>
-            <input type="email" name="email" ng-model="user.email">
+            <input type="email" name="email" ng-model="email">
 
-            <p ng-show="editProfileForm.mobile-number.$error.pattern && registrationForm.mobile-number.$pristine != true">May contain only numbers</p>
+            <p ng-show="editProfileForm.mobile-number.$error.pattern && registrationForm.mobile-number.$pristine != true">
+                May contain only numbers</p>
         </div>
 
-        <div class="line">
+        <div class="line line-about">
             <span>About me</span>
-            <input type="text" name="about" ng-model="user.about">
+            <input type="text" name="about" ng-model="about">
         </div>
 
-        <input type="submit" name="edit" value="Edit" ng-click="update(user)">
+        <md-input-container>
+            <input type="submit" value="Edit">
+        </md-input-container>
     </form>
 </div>

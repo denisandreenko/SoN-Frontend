@@ -1,10 +1,10 @@
 'use strict';
 
-var app = angular.module('socialNetwork', ['ngImgCrop', 'ngCookies', 'ngMedia', 'ui.router', 'ngMessages', 'ngMaterialDatePicker', 'ngMaterial', 'ngFileUpload', 'ngWebsocket']);
+var app = angular.module('socialNetwork', ['ngStomp', 'ngImgCrop', 'ngCookies', 'ngMedia', 'ui.router', 'ngMessages', 'ngMaterialDatePicker', 'ngMaterial', 'ngFileUpload']);
 
 app.config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
 
-    $urlRouterProvider.otherwise('/profile');
+    $urlRouterProvider.otherwise('/test');
 
     $stateProvider
         .state('test', {
@@ -20,7 +20,7 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
             templateUrl: 'view/profile.html'
         })
         .state('menu.search', {
-            url: '/search/:searchReq',
+            url: '/search',
             templateUrl: 'view/search.html'
         })
         .state('menu.friends', {
@@ -28,15 +28,15 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
             templateUrl: 'view/friends.html'
         })
         .state('menu.groups', {
-            url: '/groups',
-            templateUrl: 'view/groups.html'
+            url: '/my-groups',
+            templateUrl: 'view/my-groups.html'
         })
         .state('menu.messages', {
             url: '/messages',
             templateUrl: 'view/messages.html'
         })
         .state('menu.face-group', {
-            url: '/face-group',
+            url: '/face-group/:groupIdentifier',
             templateUrl: 'view/face-group.html'
         })
         .state('menu.edit-profile', {

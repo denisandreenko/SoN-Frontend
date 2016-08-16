@@ -261,7 +261,7 @@ function NetworkService($http, $q, $log, Constant, ResponseFactory, $mdToast, au
         var data = {};
         return _delete(url, data, Constant.AuthType.NONE, params);
     }
-    function _deleteFromFriends(id, additionalUrl) {
+    function _deleteFromFriendsns(id, additionalUrl) {
         var url = Constant.APIBaseUrl + additionalUrl;
         var params = {
             userId: id
@@ -269,7 +269,12 @@ function NetworkService($http, $q, $log, Constant, ResponseFactory, $mdToast, au
         var data = {};
         return _delete(url, data, Constant.AuthType.NONE, params);
     }
-    function _createPoster(additionalUrl, data) {
+    function _createPosterToUser(additionalUrl, data) {
+        var url = Constant.APIBaseUrl + additionalUrl;
+        var params = {};
+        return _post(url, data, Constant.AuthType.NONE, params);
+    }
+    function _createPosterToGroup(additionalUrl, data) {
         var url = Constant.APIBaseUrl + additionalUrl;
         var params = {};
         return _post(url, data, Constant.AuthType.NONE, params);
@@ -332,6 +337,15 @@ function NetworkService($http, $q, $log, Constant, ResponseFactory, $mdToast, au
         };
         return _get(url, Constant.AuthType.NONE, params);
     }
+    function _getGroupPost(additionalUrl, groupId, offset, limit) {
+        var url = Constant.APIBaseUrl + additionalUrl;
+        var params = {
+            groupId: groupId,
+            offset: offset,
+            limit: limit
+        };
+        return _get(url, Constant.AuthType.NONE, params);
+    }
 
     function _registration(data, additionalUrl) {
         var url = Constant.APIBaseUrl + additionalUrl;
@@ -366,14 +380,16 @@ function NetworkService($http, $q, $log, Constant, ResponseFactory, $mdToast, au
         leaveGroup: _leaveGroup,
         getGroups: _getGroups,
         getGroup: _getGroup,
-        deleteFromFriends: _deleteFromFriends,
+        deleteFromFriendsns: _deleteFromFriendsns,
         addToFriends: _addToFriends,
         editProfile: _editProfile,
         postImage: _postImage,
+        getGroupPost: _getGroupPost,
         getPost: _getPost,
         getFriends: _getFriends,
         post: _postingData,
-        createPoster: _createPoster,
+        createPosterToUser: _createPosterToUser,
+        createPosterToGroup: _createPosterToGroup,
         getMyProfile: _getMyProfile,
         getProfileById: _getProfileById,
         getAudioList: _getAudiolist,

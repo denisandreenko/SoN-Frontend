@@ -21,7 +21,14 @@
         </div>
     </div>
 
-    <div class="place-post" data-ng-controller="PostController">
-            <posts-addition  data-ng-repeat="post in posts" class="post-container" poster="post"></posts-addition>
+    <div class="add-post">
+        <textarea data-ng-model="postText" placeholder="Add post"></textarea>
+        <button data-ng-click="PostIt()">Send</button>
+        <input type="file" name="file" id="file" class="inputfile">
+        <label data-ng-controller="FileUploadController" data-ng-click="showAdvanced($event)">Choose a file</label>
+    </div>
+
+    <div class="place-post" data-ng-controller="PostGroupController">
+            <posts-addition  data-ng-repeat="poster in posts" class="post-container"></posts-addition>
     </div>
 </div>

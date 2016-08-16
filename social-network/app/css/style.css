@@ -503,7 +503,7 @@ input[type="submit"]:hover {
 
 #groups .create-group .line input[type="text"], textarea{
     float: right;
-    background: #f1f1f1 url(http://www.red-team-design.com/wp-content/uploads/2011/09/login-sprite.png) no-repeat;
+    background: #f1f1f1;
     padding: 10px 15px 10px 25px;
     width: 180px;
     border: 1px solid #ccc;
@@ -736,7 +736,7 @@ input[type="submit"]:hover {
 }
 
 #content-home .autorization-form #inputs input {
-    background: #f1f1f1 url(http://www.red-team-design.com/wp-content/uploads/2011/09/login-sprite.png) no-repeat;
+    background: #f1f1f1;
     padding: 15px 15px 15px 30px;
     margin: 0 0 10px 0;
     width: 240px;
@@ -835,7 +835,7 @@ input[type="submit"]:hover {
 }
 
 #content-home .popup-content .line input[type="email"] {
-    background: #f1f1f1 url(http://www.red-team-design.com/wp-content/uploads/2011/09/login-sprite.png) no-repeat;
+    background: #f1f1f1;
     padding: 7px 15px 7px 15px;
     width: 280px;
     height: 40px;
@@ -874,7 +874,7 @@ input[type="submit"]:hover {
 
 #content-home .popup-content input
 {
-    background: #f1f1f1 url(http://www.red-team-design.com/wp-content/uploads/2011/09/login-sprite.png) no-repeat;
+    background: #f1f1f1;
     border: 1px solid #ccc;
     border-radius: 5px;
     margin: 8px auto;
@@ -1214,7 +1214,7 @@ input[type="submit"]:hover {
     display: block;
     float: right;
     font-size: 17px;
-    background: #f1f1f1 url(http://www.red-team-design.com/wp-content/uploads/2011/09/login-sprite.png) no-repeat;
+    background: #f1f1f1;
     padding: 5px 15px 5px 15px;
     height: 35px;
     border: 1px solid #ccc;
@@ -1291,7 +1291,7 @@ input[type="submit"]:hover {
 #content-registration .line input[type="password"], 
 #content-registration .line input[type="email"]{
     float: right;
-    background: #f1f1f1 url(http://www.red-team-design.com/wp-content/uploads/2011/09/login-sprite.png) no-repeat;
+    background: #f1f1f1;
     padding: 5px 10px 5px 25px;
     width: 220px;
     height: 30px;
@@ -1336,7 +1336,7 @@ input[type="submit"]:hover {
     display: block;
     float: right;
     font-size: 17px;
-    background: #f1f1f1 url(http://www.red-team-design.com/wp-content/uploads/2011/09/login-sprite.png) no-repeat;
+    background: #f1f1f1;
     padding: 5px 15px 5px 15px;
     height: 35px;
     border: 1px solid #ccc;
@@ -1397,6 +1397,7 @@ input[type="submit"]:hover {
 
 
 .place-post .post-container {
+    padding: 2%;
     float: right;
     margin-left: 4%;
     margin-top: 3%;
@@ -1497,7 +1498,7 @@ input[type="submit"]:hover {
     display: block;
     float: right;
     font-size: 17px;
-    background: #f1f1f1 url(http://www.red-team-design.com/wp-content/uploads/2011/09/login-sprite.png) no-repeat;
+    background: #f1f1f1;
     padding: 5px 15px 5px 15px;
     height: 35px;
     border: 1px solid #ccc;
@@ -1507,7 +1508,7 @@ input[type="submit"]:hover {
 
 #edit-profile .datefield {
     float: right;
-    background: #f1f1f1 url(http://www.red-team-design.com/wp-content/uploads/2011/09/login-sprite.png) no-repeat;
+    background: #f1f1f1;
     width: 68px;
     margin-left: 9px;
     height: 30px;
