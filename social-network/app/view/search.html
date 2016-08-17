@@ -1,7 +1,4 @@
 <div id="friends" ng-controller="PeopleSearch">
- <!--    <div class="quantity">
-        <p>You have {{friends.length}} friends</p>
-    </div> -->
 
     <div class="filter">
         <input type="text" name="search-group" placeholder="search" ng-model="searchFriends">
@@ -10,7 +7,7 @@
     <div class="masonry-place">
         <!-- Адаптивные блоки с содержанием -->
 
-        <div id="Search People" class="item" ng-repeat="friend in people">
+        <div id="Search People" class="item md-whiteframe-4dp" ng-repeat="friend in people">
             <div class="top">
                 <h2>{{friend.name + " " + friend.subname}}</h2>
             </div>

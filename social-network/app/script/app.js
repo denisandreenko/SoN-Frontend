@@ -7,6 +7,10 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
     $urlRouterProvider.otherwise('/test');
 
     $stateProvider
+        .state('404', {
+            url: '/',
+            templateUrl: 'view/404.html'
+        })
         .state('test', {
             url: '/test',
             templateUrl: 'view/test.html'
@@ -20,7 +24,7 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
             templateUrl: 'view/profile.html'
         })
         .state('menu.search', {
-            url: '/search',
+            url: '/search:searchReq',
             templateUrl: 'view/search.html'
         })
         .state('menu.friends', {
@@ -57,7 +61,7 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
         })
         .state('home', {
             url: '/authorisation',
-            templateUrl: 'view/home.html'
+            templateUrl: 'view/authorisation.html'
         })
         .state('registration', {
             url: '/registration',

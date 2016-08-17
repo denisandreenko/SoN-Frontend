@@ -2,9 +2,9 @@
 
 angular.module('socialNetwork').controller('ProfileByIdController', ProfileByIdController);
 
-ProfileByIdController.$inject = ['$scope', 'NetworkService', 'Constant', '$state', 'PostCreationService', 'authFact'];
+ProfileByIdController.$inject = ['$scope', 'NetworkService', 'Constant', '$state', 'PostCreationService', 'authFact', 'NotifyService', '$timeout'];
 
-function ProfileByIdController($scope, NetworkService, Constant, $state, PostCreationService, authFact) {
+function ProfileByIdController($scope, NetworkService, Constant, $state, PostCreationService, authFact, NotifyService, $timeout) {
     var userId = $state.params.userIdentifier;
     $scope.postText = '';
 
@@ -22,6 +22,8 @@ function ProfileByIdController($scope, NetworkService, Constant, $state, PostCre
         $scope.userAbout = data.entity.about || 'Not set';
         $scope.userSex = data.entity.sex;
         $scope.isFriend = data.entity.isFriend;
+
+        $scope.refreshPosts();
     });
 
     $scope.deleteFromFriends = function () {
@@ -46,14 +48,20 @@ function ProfileByIdController($scope, NetworkService, Constant, $state, PostCre
         var imgURL = Constant.UploadedImgID;
         PostCreationService.createPostToUser(imgURL || null, $scope.postText, userId);
         $scope.postText = "";
-        $state.reload();
-    }
+        $timeout(function () {
+            $scope.refreshPosts();
+        }, 250);
+    };
+
+    $scope.refreshPosts = function () {
+        NotifyService.notify(Constant.Events.REFRESHIDPOSTS, 'refPosts');
+    };
 }
 angular.module('socialNetwork').controller('PostsByIdController', PostsByIdController);
 
-PostsByIdController.$inject = ['$scope', 'NetworkService', 'authFact', '$state'];
+PostsByIdController.$inject = ['$scope', 'NetworkService', 'authFact', '$state', 'NotifyService', 'Constant'];
 
-function PostsByIdController($scope, NetworkService, authFact, $state) {
+function PostsByIdController($scope, NetworkService, authFact, $state, NotifyService, Constant) {
     $scope.posts = [];
     $scope.likeImg = "";
     $scope.dislikeImg = "";
@@ -64,25 +72,35 @@ function PostsByIdController($scope, NetworkService, authFact, $state) {
     $scope.increaseDisLike = function (index) {
         $scope.posts[index].dislike++;
     };
-    var id = $state.params.userIdentifier;
-    var promise = NetworkService.getPost('/users/posts', id, 0, 20).promise;
-
-    promise.then(function (responce) {
-        var data = responce.getData();
-        $scope.posts = data.entity;
-    });
 
     $scope.gotoSender = function (index) {
         var userID = $scope.posts[index].owner.id;
         $state.go('menu.friend', {'userIdentifier': userID})
     };
+
     $scope.DeletePost = function (index) {
         var id = $scope.posts[index].id;
         var promise = NetworkService.deletePost(id, '/users/posts').promise;
 
         promise.then(function (response) {
             var data = response.getData();
-            $state.reload();
+            NotifyService.notify(Constant.Events.REFRESHIDPOSTS, 'refPosts');
         })
     };
+
+    var hendler = NotifyService.subscribe(Constant.Events.REFRESHIDPOSTS, callback);
+
+    function callback(event, data) {
+        var id = $state.params.userIdentifier;
+        var promise = NetworkService.getPost('/users/posts', id, 0, 40).promise;
+
+        promise.then(function (responce) {
+            var data = responce.getData();
+            $scope.posts = data.entity;
+        });
+    }
+
+    $scope.$on('destroy', function(){
+        hendler();
+    });
 }

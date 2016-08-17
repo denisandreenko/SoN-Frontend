@@ -1,12 +1,12 @@
-<div id="wrapper">
-    <div id="content-forgot">
-        <h1 id="signup">Change Password</h1>
-        <div class="line">
-            <p>Please input your email for password recovery</p>
-        </div>
-        <div class="line">
-            <input type="email" name="email">
-        </div>
-        <input type="submit" name="signup" value="Send">
+<md-container style="padding: 2%;" data-ng-controller="ForgotPassController">
+    <h1 style="font-size: 35px;">Change Password</h1>
+    <p style="font-size: 20px;">Please input your email for password recovery</p>
+    <div style="font-size: 15px; margin-top: 5%;">
+        <md-input class="md-whiteframe-2dp">
+            <input type="email" data-ng-model="email">
+        </md-input>
     </div>
-</div>
+    <md-button class="md-raised md-warn" data-ng-click="sendReq()">
+        Send
+    </md-button>
+</md-container>

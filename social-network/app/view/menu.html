@@ -9,9 +9,9 @@
             </a>
         </div>
         
-       <form action="#" id="search" class="clearfix" data-ng-controller="MyMenuController" data-ng-submit="gotoSearch()">
-            <input type="text" placeholder="Search" data-ng-model="searchText"/>
-            <input type="submit" value="Find"/>
+       <form action="#" id="search" class="clearfix" data-ng-controller="MyMenuController">
+            <input type="text" placeholder="Search" data-ng-model="searchText" data-ng-keyup="KeyPress()"/>
+            <input type="submit" value="Find" ui-sref="menu.search({searchReq: searchText})"/>
         </form>
 
         <ul class="top-menu">

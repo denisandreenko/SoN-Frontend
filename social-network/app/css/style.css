@@ -54,7 +54,7 @@ input[type="submit"]:hover {
     max-width: 900px;
     margin: 0 auto;
     height: auto;                    
-    background-color: white;          /*bad-white     no-bad-white*/   
+    background-color: #f7f3f8;          /*bad-white     no-bad-white*/
     min-height:100vh;  
     position: relative;  
 }
@@ -67,7 +67,7 @@ input[type="submit"]:hover {
     z-index: 1;
     overflow: hidden;
     max-width: 900px;
-    background-color: #91A1E2;
+    background-color: #f8773e;
     border-bottom-left-radius: 5px; 
     border-bottom-right-radius: 5px; 
     padding-left: 15px;
@@ -144,7 +144,7 @@ input[type="submit"]:hover {
 }
 
 .vert-menu li {
-    background-color: white;
+    background-color: #f7f3f8;
     border-bottom: 1px solid #FFFFFF;
     position: relative;
 }
@@ -317,7 +317,7 @@ input[type="submit"]:hover {
 }
 
 .content-place {
-    background-color: white;
+    background-color: #f7f3f8;
     overflow: hidden;
     position: relative;
     min-height:93.5vh;
@@ -691,12 +691,12 @@ input[type="submit"]:hover {
 
 #content-home .autorization-form {
     background-color: #fff;
-    background-image: -ms-linear-gradient(top, #FFFFFF 0%, #91A1E2 40%);
-    background-image: -moz-linear-gradient(top, #FFFFFF 0%, #91A1E2 40%);
-    background-image: -o-linear-gradient(top, #FFFFFF 0%, #91A1E2 40%);
-    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #FFFFFF), color-stop(40, #91A1E2));
-    background-image: -webkit-linear-gradient(top, #FFFFFF 0%, #91A1E2 40%);
-    background-image: linear-gradient(to bottom, #FFFFFF 0%, #91A1E2 40%);  
+    /*background-image: -ms-linear-gradient(top, #FFFFFF 0%, #91A1E2 40%);*/
+    /*background-image: -moz-linear-gradient(top, #FFFFFF 0%, #91A1E2 40%);*/
+    /*background-image: -o-linear-gradient(top, #FFFFFF 0%, #91A1E2 40%);*/
+    /*background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #FFFFFF), color-stop(40, #91A1E2));*/
+    /*background-image: -webkit-linear-gradient(top, #FFFFFF 0%, #91A1E2 40%);*/
+    /*background-image: linear-gradient(to bottom, #FFFFFF 0%, #91A1E2 40%);  */
     width: 350px;
     padding: 20px;
     border-radius: 3px;  
@@ -919,10 +919,12 @@ input[type="submit"]:hover {
 
 #audio .player {
     overflow: hidden;
+    padding: 2%;
+    margin-bottom: 10px;
 }
 
 #audio .player audio {
-    width: 100%;
+    width: 98%;
     margin-top: 10px;
 }
 
@@ -930,8 +932,9 @@ input[type="submit"]:hover {
     overflow: hidden;
     width: 100%;
     padding: 7px 15px;
-    background-color: #E4F1F6;
-    border-bottom: 1px solid #2F5B8E;
+    margin-bottom: 5px;
+    background-color: #fff;
+    /*border-bottom: 1px solid #2F5B8E;*/
     border-top-right-radius: 5px; 
     border-bottom-right-radius: 5px; 
 }
@@ -978,12 +981,12 @@ input[type="submit"]:hover {
     padding: 3px;
     width: 33%;
     min-width: 200px;
-    background-color: #949ADB;
+    background-color: #fff;
     border-radius: 5px;
 }
 
 .place-icon .edit {
-    background-color: #91A1E2;
+    background-color: rgba(255, 123, 39, 0.58);
     border:1px solid #FFFFFF;
     border-radius: 5px;
 }
@@ -1004,7 +1007,7 @@ input[type="submit"]:hover {
 
 .place-info .block {
     padding: 10px;
-    border: 3px solid #91A1E2;
+    /*border: 3px solid #91A1E2;*/
     border-radius: 5px;
     overflow: hidden;
     margin-bottom: 7px;
@@ -1038,7 +1041,7 @@ input[type="submit"]:hover {
 /*Add post*/
 .add-post{
     float: left;
-    background-color: #91A1E2;
+    background-color: #fff;
     padding: 8px 15px;
     margin: 0 5%;
     width: 89.8%;
@@ -1397,6 +1400,7 @@ input[type="submit"]:hover {
 
 
 .place-post .post-container {
+    background-color: #fff;
     padding: 2%;
     float: right;
     margin-left: 4%;
@@ -1406,7 +1410,7 @@ input[type="submit"]:hover {
     float: left;
     text-align: left;
     position: relative;
-    border: 1px solid orange;
+    /*border: 1px solid orange;*/
     border-radius: 5px;
 }
 

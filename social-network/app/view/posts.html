@@ -7,15 +7,12 @@
         <div class="sender-name">
             <h3>{{poster.owner.name + ' ' + poster.owner.lastName}}</h3>
         </div>
-
         <div class="post-text">
             <p>{{poster.text}}</p>
         </div>
-
         <div class="post-media">
             <img data-ng-src="{{poster.image}}">
         </div>
-
         <div class="replies">
             <img ng-src="{{likeImg}}" alt="like" width="25px" data-ng-click='increaseLike($index)'/>
             <span>{{poster.like}}</span>

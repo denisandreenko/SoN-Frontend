@@ -16,7 +16,7 @@ function NetworkService($http, $q, $log, Constant, ResponseFactory, $mdToast, au
     }
 
     function _get(url, authType, params) {
-        if(authorised) {
+        if (authorised) {
             var deferred = $q.defer();
 
             var cancel = function () {
@@ -24,7 +24,8 @@ function NetworkService($http, $q, $log, Constant, ResponseFactory, $mdToast, au
             };
 
             params = params || {};
-            params.access_token = authFact.getAccessToken();
+            if (authType != Constant.AuthType.REG)
+                params.access_token = authFact.getAccessToken();
 
             $http.get(url, {
                 params: params,
@@ -51,7 +52,7 @@ function NetworkService($http, $q, $log, Constant, ResponseFactory, $mdToast, au
     }
 
     function _put(url, data, authType, params) {
-        if(authorised) {
+        if (authorised) {
             authType = authType || Constant.AuthType.NONE;
             var deferred = $q.defer();
 
@@ -94,7 +95,7 @@ function NetworkService($http, $q, $log, Constant, ResponseFactory, $mdToast, au
     }
 
     function _post(url, data, authType, params) {
-        if(authorised || authType == Constant.AuthType.AUTH || authType == Constant.AuthType.REG) {
+        if (authorised || authType == Constant.AuthType.AUTH || authType == Constant.AuthType.REG) {
             authType = authType || Constant.AuthType.NONE;
             var deferred = $q.defer();
 
@@ -147,8 +148,9 @@ function NetworkService($http, $q, $log, Constant, ResponseFactory, $mdToast, au
             });
         }
     }
+
     function _delete(url, data, authType, params) {
-        if(authorised) {
+        if (authorised) {
             authType = authType || Constant.AuthType.NONE;
             var deferred = $q.defer();
 
@@ -244,6 +246,7 @@ function NetworkService($http, $q, $log, Constant, ResponseFactory, $mdToast, au
         var params = {};
         return _put(url, Constant.AuthType.NONE, params);
     }
+
     function _addToFriends(id, additionalUrl) {
         var url = Constant.APIBaseUrl + additionalUrl;
         var params = {
@@ -261,6 +264,7 @@ function NetworkService($http, $q, $log, Constant, ResponseFactory, $mdToast, au
         var data = {};
         return _delete(url, data, Constant.AuthType.NONE, params);
     }
+
     function _deleteFromFriendsns(id, additionalUrl) {
         var url = Constant.APIBaseUrl + additionalUrl;
         var params = {
@@ -269,16 +273,41 @@ function NetworkService($http, $q, $log, Constant, ResponseFactory, $mdToast, au
         var data = {};
         return _delete(url, data, Constant.AuthType.NONE, params);
     }
+
     function _createPosterToUser(additionalUrl, data) {
         var url = Constant.APIBaseUrl + additionalUrl;
         var params = {};
         return _post(url, data, Constant.AuthType.NONE, params);
     }
+
+    function _getBlackList(additionalUrl, userId, offset, limit) {
+        var url = Constant.APIBaseUrl + additionalUrl;
+        var params = {
+            userId: userId,
+            offset: offset,
+            limit: limit
+        };
+        return _get(url, Constant.AuthType.NONE, params);
+    }
+
+    function _deleteFromBlackList(params, additionalUrl) {
+        var url = Constant.APIBaseUrl + additionalUrl;
+        var data = {};
+        return _delete(url, data, Constant.AuthType.NONE, params);
+    }
+
+    function _addToBlackList(params, additionalUrl) {
+        var url = Constant.APIBaseUrl + additionalUrl;
+        var data = {};
+        return _post(url, data, Constant.AuthType.NONE, params);
+    }
+
     function _createPosterToGroup(additionalUrl, data) {
         var url = Constant.APIBaseUrl + additionalUrl;
         var params = {};
         return _post(url, data, Constant.AuthType.NONE, params);
     }
+
     function _getGroups(additionalUrl, limit, offset, id) {
         var url = Constant.APIBaseUrl + additionalUrl;
         var params = {
@@ -337,6 +366,7 @@ function NetworkService($http, $q, $log, Constant, ResponseFactory, $mdToast, au
         };
         return _get(url, Constant.AuthType.NONE, params);
     }
+
     function _getGroupPost(additionalUrl, groupId, offset, limit) {
         var url = Constant.APIBaseUrl + additionalUrl;
         var params = {
@@ -364,6 +394,7 @@ function NetworkService($http, $q, $log, Constant, ResponseFactory, $mdToast, au
         var params = {};
         return _get(url, Constant.AuthType.NONE, params);
     }
+
     function _searchTA(text, additionalUrl, limit, offset) {
         var url = Constant.APIBaseUrl + additionalUrl;
         var params = {
@@ -374,8 +405,19 @@ function NetworkService($http, $q, $log, Constant, ResponseFactory, $mdToast, au
         return _get(url, Constant.AuthType.NONE, params);
     }
 
+    function _forgotPass(additionalUrl, email) {
+        var url = Constant.APIBaseUrl + additionalUrl;
+        var params = {
+            email: email
+        };
+        return _get(url, Constant.AuthType.REG, params);
+    }
 
     return {
+        forgotPass: _forgotPass,
+        deleteFromBlackList: _deleteFromBlackList,
+        getBlackList: _getBlackList,
+        addToBlackList: _addToBlackList,
         joinGroup: _joinGroup,
         leaveGroup: _leaveGroup,
         getGroups: _getGroups,

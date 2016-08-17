@@ -1,17 +1,17 @@
 <div id="black-list" ng-controller="BlackListController">
     <div class="ban-panel">
-        <input type="text" placeholder="id to ban"/>
-        <input type="submit" value="add to ban list"/>
+        <input type="text" placeholder="id to ban" data-ng-model="bUserId"/>
+        <input type="submit" value="add to ban list" data-ng-click="addTBL()"/>
     </div>
     <div class="ban-list">
         <div class="user"  ng-repeat="user in users">
             <div class="user-info">
                 <div class="avatar">
-                    <img src="{{user.img}}">
+                    <img src="{{user.avatar}}">
                 </div>
-                <span class="name">{{user.Fname + " " + user.Lname}}</span>
+                <span class="name">{{user.name + " " + user.lastName}}</span>
             </div>
-            <input type="submit" value="unban"/>
+            <input type="submit" value="unban" data-ng-click="deleteFBL($index)"/>
         </div>
     </div>
 </div>

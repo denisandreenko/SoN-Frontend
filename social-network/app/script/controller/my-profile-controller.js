@@ -2,9 +2,9 @@
 
 angular.module('socialNetwork').controller('ProfileController', ProfileController);
 
-ProfileController.$inject = ['$scope', 'NetworkService', 'Constant', 'authFact', 'PostCreationService', '$state'];
+ProfileController.$inject = ['$scope', 'NetworkService', 'Constant', 'authFact', 'PostCreationService', '$state', 'NotifyService', '$timeout'];
 
-function ProfileController($scope, NetworkService, Constant, authFact, PostCreationService, $state) {
+function ProfileController($scope, NetworkService, Constant, authFact, PostCreationService, $state, NotifyService, $timeout) {
     $scope.profileLoaded = false;
 
     var promise = NetworkService.getMyProfile('/users/profile').promise;
@@ -22,6 +22,8 @@ function ProfileController($scope, NetworkService, Constant, authFact, PostCreat
         $scope.userAbout = data.entity.about || 'Not set';
         $scope.userSex = data.entity.sex;
 
+
+        $scope.refreshPosts();
     });
 
     $scope.PostIt = function () {
@@ -29,6 +31,12 @@ function ProfileController($scope, NetworkService, Constant, authFact, PostCreat
         var imgURL = Constant.UploadedImgID;
         PostCreationService.createPostToUser(imgURL || null, $scope.postText, id);
         $scope.postText = "";
-        $state.reload();
-    }
+        $timeout(function () {
+            $scope.refreshPosts();
+        }, 250);
+    };
+
+    $scope.refreshPosts = function () {
+        NotifyService.notify(Constant.Events.REFRESHPOSTS, 'refPosts');
+    };
 }

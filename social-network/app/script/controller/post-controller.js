@@ -2,9 +2,9 @@
 
 angular.module('socialNetwork').controller('MyPostController', MyPostController);
 
-MyPostController.$inject = ['$scope', 'NetworkService', 'authFact', '$state', 'Constant'];
+MyPostController.$inject = ['$scope', 'NetworkService', 'authFact', '$state', 'Constant', 'NotifyService'];
 
-function MyPostController($scope, NetworkService, authFact, $state, Constant) {
+function MyPostController($scope, NetworkService, authFact, $state, Constant, NotifyService) {
     $scope.posts = [];
     $scope.likeImg = "";
     $scope.dislikeImg = "";
@@ -15,16 +15,6 @@ function MyPostController($scope, NetworkService, authFact, $state, Constant) {
     $scope.increaseDisLike = function (index) {
         $scope.posts[index].dislike++;
     };
-
-    var id = authFact.getId();
-    var promise = NetworkService.getPost('/users/posts', id, 0, 40).promise;
-
-    promise.then(function (responce) {
-        var data = responce.getData();
-        $scope.posts = data.entity;
-        // $scope.posts = posts.reverse();
-    });
-
 
     $scope.gotoSender = function (index) {
         var userID = $scope.posts[index].owner.id;
@@ -37,10 +27,25 @@ function MyPostController($scope, NetworkService, authFact, $state, Constant) {
 
         promise.then(function (response) {
             var data = response.getData();
-            var i = 0;
-            $state.reload();
+            NotifyService.notify(Constant.Events.REFRESHPOSTS, 'refPosts');
         })
+    };
+
+    var hendler = NotifyService.subscribe(Constant.Events.REFRESHPOSTS, callback);
+
+    function callback(event, data) {
+        var id = authFact.getId();
+        var promise = NetworkService.getPost('/users/posts', id, 0, 40).promise;
+
+        promise.then(function (responce) {
+            var data = responce.getData();
+            $scope.posts = data.entity;
+        });
     }
+
+    $scope.$on('destroy', function(){
+       hendler();
+    });
 }
 
 
