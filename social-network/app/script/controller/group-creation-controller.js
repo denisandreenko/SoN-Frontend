@@ -11,16 +11,16 @@ function CreateGroupController($scope, NetworkService, Constant, $state) {
     $scope.sendData = function () {
         var data = {
             name: $scope.name,
-            fkImage: 26,//Constant.UploadedImgID || null,
+            urlImage: 'https://www.dropbox.com/s/148w1p25rmvs9lx/2He215sph3g.png?dl=1' || null,
             description: $scope.description
         };
 
-        var promise = NetworkService.createGroup(data, '/groups/add').promise;
+        var promise = NetworkService.createGroup(data, '/groups').promise;
 
         promise.then(function (response) {
             var data = response.getData();
             Constant.UploadedImgID = null;
-            $state.go('menu.group', {groupIdentifier: data.entity.id});
+            $state.go('menu.group', {groupIdentifier: data.entity});
         });
     }
 }

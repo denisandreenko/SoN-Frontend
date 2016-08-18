@@ -1,17 +1,14 @@
 <div id="wrapper">
     <div id="content-home" data-ng-controller="AuthController">
-        <form class="autorization-form md-whiteframe-4dp" >
+        <form class="autorization-form" >
             <!--data-ng-submit="sendData()"-->
             <h1>Login</h1>
             <div id="inputs">
                 <input id="username" type="text" data-ng-model="login" placeholder="Login" autofocus required>
                 <input id="password" type="password" data-ng-model="password" placeholder="Password" required>
             </div>
-            <div id="actions">
-                <div class="submit-enter"></div>
-                <div class="button-registration"><input type="button" id="registration" value="NEW ACCOUNT" ui-sref="registration"></div>
-            </div>
             <input type="submit" id="enter" value="LOGIN" data-ng-click="sendData0()">
+            <input type="button" id="registration" value="NEW ACCOUNT" ui-sref="registration">
 
             <md-button data-ng-click="showAdvanced($event)">
                 Forgot Password?

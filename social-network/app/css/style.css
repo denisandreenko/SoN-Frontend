@@ -1407,6 +1407,11 @@ input[type="submit"]:hover {
     position: relative;
     border: 1px solid orange;
     border-radius: 5px;
+    overflow: hidden;
+}
+
+.place-post .post-container:last-child {
+    margin-bottom: 10px;
 }
 
 .place-post .post-container .close {
@@ -1432,15 +1437,18 @@ input[type="submit"]:hover {
 
 .place-post .post-container .sender-face {
     display: block;
-    width: 13%;
+    width: 11%;
+    min-width: 50px;
     height: auto;
     margin-left: 0;
     float: left;
     border-radius: 50%;
+    padding: 5px;
 }
 
 .place-post .post-container .post-info {
-    margin-left: 15%;
+    margin-left: 13%;
+    margin-right: 2%;
 }
 
 .place-post .post-container .post-info .sender-name {
@@ -1996,5 +2004,16 @@ input[type="submit"]:hover {
     .place-post .post-container .close {
         width: 15px;
         height: 15px;
+    }
+
+
+    .place-post .post-container .post-info {
+        margin-left: 2%;
+        margin-right: 2%;
+    }
+
+
+    .place-post .post-container .post-info .post-text {
+        oveflow:hidden;
     }
 }
