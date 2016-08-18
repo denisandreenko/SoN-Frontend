@@ -2,9 +2,9 @@
 
 angular.module('socialNetwork').controller('MyGroupController', MyGroupController);
 
-MyGroupController.$inject = ['$scope', 'NetworkService', 'authFact'];
+MyGroupController.$inject = ['$scope', 'NetworkService', 'authFact', '$state'];
 
-function MyGroupController($scope, NetworkService, authFact) {
+function MyGroupController($scope, NetworkService, authFact, $state) {
     $scope.groups = [];
 
     $scope.code = "";
@@ -17,4 +17,9 @@ function MyGroupController($scope, NetworkService, authFact) {
         var data = response.getData();
         $scope.groups = data.entity;
     });
+    
+    $scope.gotoGroup = function (index) {
+        var groupId = $scope.groups[index].id;
+        $state.go('menu.group', {'groupIdentifier': groupId});
+    }
 }

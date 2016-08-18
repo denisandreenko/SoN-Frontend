@@ -48,7 +48,7 @@
                 <span>{{group.folowers}} folowers</span>
             </div>
             <div class="prime">
-                <a ui-sref="menu.group"><img src="{{group.imageUrl}}"></a>
+                <a data-ng-click="gotoGroup($index)"><img src="{{group.imageUrl}}"></a>
             </div>
         </div>
     </div>

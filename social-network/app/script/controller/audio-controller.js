@@ -1,10 +1,10 @@
 'use strict';
 
-angular.module('socialNetwork').controller('AudioController', AudioController);
+angular.module('socialNetwork').controller('MyAudioController', MyAudioController);
 
-AudioController.$inject = ['$scope', 'NetworkService', '$sce', '$state', '$mdToast', 'Constant'];
+MyAudioController.$inject = ['$scope', 'NetworkService', '$sce', 'authFact', '$mdToast', 'Constant'];
 
-function AudioController($scope, NetworkService, $sce, $state, $mdToast, Constant) {
+function MyAudioController($scope, NetworkService, $sce, authFact, $mdToast, Constant) {
     $scope.source = "";
     $scope.playList = [];
     $scope.code = "";
@@ -12,12 +12,12 @@ function AudioController($scope, NetworkService, $sce, $state, $mdToast, Constan
     $scope.lastIdPlayed = -1;
     $scope.currentSong = "";
 
-    var promise = NetworkService.getAudioList('http://www.mocky.io/v2/57a85936110000d6121d4504', 123).promise;
+    var promise = NetworkService.getAudioList('/musics', authFact.getId(), 0, 40).promise;
 
     promise.then(function (responce) {
         var data = responce.getData();
 
-        $scope.playList = data.audio;
+        $scope.playList = data.entity;
         $scope.code = data.code;
     });
 
@@ -31,8 +31,8 @@ function AudioController($scope, NetworkService, $sce, $state, $mdToast, Constan
     };
     $scope.setPlayingTrack = function (index) {
         $scope.lastIdPlayed = index;
-        $scope.currentSong = $scope.playList[index].Name;
-        $scope.source = $sce.trustAsResourceUrl($scope.playList[index].Url);
+        $scope.currentSong = $scope.playList[index].name;
+        $scope.source = $sce.trustAsResourceUrl($scope.playList[index].url);
     }
 }
 

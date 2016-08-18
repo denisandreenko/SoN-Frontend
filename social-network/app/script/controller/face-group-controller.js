@@ -9,7 +9,7 @@ function FaceGroupController($scope, NetworkService, authFact, Constant, PostCre
     $scope.groupFolowers = "";
     $scope.groupImg = "";
     $scope.groupAbout = "";
-    $scope.groupId = 1;
+    $scope.groupId = $state.params.groupIdentifier;
 
     var promise = NetworkService.getGroup('/groups/' + $scope.groupId).promise;
 
@@ -21,10 +21,11 @@ function FaceGroupController($scope, NetworkService, authFact, Constant, PostCre
         $scope.groupAbout = data.entity.description;
         $scope.groupFolowers = data.entity.folowers;
         $scope.groupImg = data.entity.image;
+        $scope.isMember = data.entity.isMember;
     });
     
     $scope.join = function () {
-        var joinPromise = NetworkService.joinGroup('/groups', $scope.groupId).promise;
+        var joinPromise = NetworkService.joinGroup('/groups/' + $scope.groupId).promise;
 
         joinPromise.then(function (response) {
             var data = response.getData();
@@ -32,7 +33,7 @@ function FaceGroupController($scope, NetworkService, authFact, Constant, PostCre
     };
 
     $scope.leave = function () {
-        var leavePromise = NetworkService.leaveGroup('/groups', $scope.groupId).promise;
+        var leavePromise = NetworkService.leaveGroup('/groups/' + $scope.groupId).promise;
 
         leavePromise.then(function (response) {
             var data = response.getData();

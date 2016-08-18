@@ -4,10 +4,10 @@
             <img src="{{groupImg}}" width="100%" height="auto">
         </div>
 
-        <div class="join" data-ng-click="join()">
+        <div class="join" data-ng-show="!isMember" data-ng-click="join()">
             <span>Join the Group</span>
         </div>
-        <div class="join" data-ng-click="leave()">
+        <div class="join" data-ng-show="isMember" data-ng-click="leave()">
             <span>Leave the Group</span>
         </div>
     </div>

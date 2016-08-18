@@ -343,9 +343,13 @@ function NetworkService($http, $q, $log, Constant, ResponseFactory, $mdToast, au
         return _get(url, Constant.AuthType.NONE, params);
     }
 
-    function _getAudiolist(additionalUrl, userId) {
-        var url = additionalUrl;
-        var params = {};
+    function _getAudiolist(additionalUrl, userId, offset, limit) {
+        var url = Constant.APIBaseUrl + additionalUrl;
+        var params = {
+            userId: userId,
+            offset: offset,
+            limit: limit
+        };
         return _get(url, Constant.AuthType.NONE, params);
     }
 

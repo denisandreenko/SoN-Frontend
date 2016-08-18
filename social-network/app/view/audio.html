@@ -1,4 +1,4 @@
-<div id="audio" data-ng-controller="AudioController">
+<div id="audio" data-ng-controller="MyAudioController">
     <div class="player md-whiteframe-4dp">
         <span data-ng-show="source">Song name : {{currentSong}}</span>
         <audio data-ng-src="{{source}}" controls data-ng-ended="onPlayEnd()" autoplay preload="auto"></audio>
@@ -7,10 +7,10 @@
     <div id="audio-list" ng-repeat="audio in playList">
         <div class="track md-whiteframe-1dp" ng-click="setPlayingTrack($index)">
             <div class="play-audio">
-                <img src="{{playIconUrl}}" alt="play">
+                <!--<img src="{{playIconUrl}}" alt="play">-->
             </div>
-            <span class="name">{{audio.Name}}</span>
-            <span class="audiotime">{{audio.Time}}</span>
+            <span class="name">{{audio.name}}</span>
+            <!--<span class="audiotime">{{audio.Time}}</span>-->
         </div>
     </div>
 </div>
