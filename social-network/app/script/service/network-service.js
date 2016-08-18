@@ -17,126 +17,126 @@ function NetworkService($http, $q, $log, Constant, ResponseFactory, $mdToast, au
 
     function _get(url, authType, params) {
         // if (authorised) {
-            var deferred = $q.defer();
+        var deferred = $q.defer();
 
-            var cancel = function () {
-                deferred.resolve();
-            };
+        var cancel = function () {
+            deferred.resolve();
+        };
 
-            params = params || {};
-            if (authType != Constant.AuthType.REG)
-                params.access_token = authFact.getAccessToken();
+        params = params || {};
+        if (authType != Constant.AuthType.REG)
+            params.access_token = authFact.getAccessToken();
 
-            $http.get(url, {
-                params: params,
-                headers: _getHeadersByAuthType(authType)
-            }).success(function (data) {
-                deferred.resolve(ResponseFactory.buildResponse(data));
-            }).error(function (xhr, status) {
-                Constant.ToastMsg = "Server error, " + xhr;
-                $mdToast.show({
-                    hideDelay: 3000,
-                    position: 'top right',
-                    controller: 'ToastController',
-                    templateUrl: 'view/toast.html'
-                });
-                $log.error('[NetworkService] ' + url + ': Error request');
-                deferred.reject(status);
+        $http.get(url, {
+            params: params,
+            headers: _getHeadersByAuthType(authType)
+        }).success(function (data) {
+            deferred.resolve(ResponseFactory.buildResponse(data));
+        }).error(function (xhr, status) {
+            Constant.ToastMsg = "Server error, " + xhr;
+            $mdToast.show({
+                hideDelay: 3000,
+                position: 'top right',
+                controller: 'ToastController',
+                templateUrl: 'view/toast.html'
             });
+            $log.error('[NetworkService] ' + url + ': Error request');
+            deferred.reject(status);
+        });
 
-            return {
-                promise: deferred.promise,
-                cancel: cancel
-            };
+        return {
+            promise: deferred.promise,
+            cancel: cancel
+        };
         // }
     }
 
     function _put(url, data, authType, params) {
         // if (authorised) {
-            authType = authType || Constant.AuthType.NONE;
-            var deferred = $q.defer();
+        authType = authType || Constant.AuthType.NONE;
+        var deferred = $q.defer();
 
-            var cancel = function () {
-                deferred.resolve();
-            };
+        var cancel = function () {
+            deferred.resolve();
+        };
 
-            params = params || {};
+        params = params || {};
 
-            if (authType != Constant.AuthType.REG)
-                params.access_token = authFact.getAccessToken();
+        if (authType != Constant.AuthType.REG)
+            params.access_token = authFact.getAccessToken();
 
-            var req = {
-                method: 'PUT',
-                url: url,
-                params: params,
-                headers: _getHeadersByAuthType(authType),
-                data: data
-            };
+        var req = {
+            method: 'PUT',
+            url: url,
+            params: params,
+            headers: _getHeadersByAuthType(authType),
+            data: data
+        };
 
-            $http(req).success(function (data) {
-                deferred.resolve(ResponseFactory.buildResponse(data));
-            }).error(function (xhr, status) {
-                Constant.ToastMsg = "Server error...";
-                $mdToast.show({
-                    hideDelay: 3000,
-                    position: 'top right',
-                    controller: 'ToastController',
-                    templateUrl: 'view/toast.html'
-                });
-                $log.error('[NetworkService] ' + url + ': Error request');
-                deferred.reject(status);
+        $http(req).success(function (data) {
+            deferred.resolve(ResponseFactory.buildResponse(data));
+        }).error(function (xhr, status) {
+            Constant.ToastMsg = "Server error...";
+            $mdToast.show({
+                hideDelay: 3000,
+                position: 'top right',
+                controller: 'ToastController',
+                templateUrl: 'view/toast.html'
             });
+            $log.error('[NetworkService] ' + url + ': Error request');
+            deferred.reject(status);
+        });
 
-            return {
-                promise: deferred.promise,
-                cancel: cancel
-            };
+        return {
+            promise: deferred.promise,
+            cancel: cancel
+        };
         // }
     }
 
     function _post(url, data, authType, params) {
         // if (authorised || authType == Constant.AuthType.AUTH || authType == Constant.AuthType.REG) {
-            authType = authType || Constant.AuthType.NONE;
-            var deferred = $q.defer();
+        authType = authType || Constant.AuthType.NONE;
+        var deferred = $q.defer();
 
-            var cancel = function () {
-                deferred.resolve();
-            };
+        var cancel = function () {
+            deferred.resolve();
+        };
 
-            params = params || {};
+        params = params || {};
 
-            if (authType != Constant.AuthType.REG && authType != Constant.AuthType.AUTH) {
-                params.access_token = authFact.getAccessToken();
-            }
+        if (authType != Constant.AuthType.REG && authType != Constant.AuthType.AUTH) {
+            params.access_token = authFact.getAccessToken();
+        }
 
-            var req = {
-                method: 'POST',
-                url: url,
-                params: params,
-                headers: _getHeadersByAuthType(authType),
-                data: data
-            };
+        var req = {
+            method: 'POST',
+            url: url,
+            params: params,
+            headers: _getHeadersByAuthType(authType),
+            data: data
+        };
 
 
-            $http(req).success(function (data) {
-                deferred.resolve(ResponseFactory.buildResponse(data));
-            }).error(function (xhr, status) {
-                // Constant.ToastMsg = "Server error...";rr
-                // $mdToast.show({
-                //     hideDelay: 3000,
-                //     position: 'top right',
-                //     controller: 'ToastController',
-                //     templateUrl: 'view/toast.html'
-                // });
-                $log.error(xhr);
-                $log.error('[NetworkService] ' + url + ': Error request');
-                deferred.reject(status);
-            });
+        $http(req).success(function (data) {
+            deferred.resolve(ResponseFactory.buildResponse(data));
+        }).error(function (xhr, status) {
+            // Constant.ToastMsg = "Server error...";rr
+            // $mdToast.show({
+            //     hideDelay: 3000,
+            //     position: 'top right',
+            //     controller: 'ToastController',
+            //     templateUrl: 'view/toast.html'
+            // });
+            $log.error(xhr);
+            $log.error('[NetworkService] ' + url + ': Error request');
+            deferred.reject(status);
+        });
 
-            return {
-                promise: deferred.promise,
-                cancel: cancel
-            };
+        return {
+            promise: deferred.promise,
+            cancel: cancel
+        };
         // }
         // else {
         //     Constant.ToastMsg = "Not authorised !";
@@ -151,46 +151,46 @@ function NetworkService($http, $q, $log, Constant, ResponseFactory, $mdToast, au
 
     function _delete(url, data, authType, params) {
         // if (authorised) {/
-            authType = authType || Constant.AuthType.NONE;
-            var deferred = $q.defer();
+        authType = authType || Constant.AuthType.NONE;
+        var deferred = $q.defer();
 
-            var cancel = function () {
-                deferred.resolve();
-            };
+        var cancel = function () {
+            deferred.resolve();
+        };
 
-            params = params || {};
+        params = params || {};
 
-            if (authType != Constant.AuthType.REG && authType != Constant.AuthType.AUTH) {
-                params.access_token = authFact.getAccessToken();
-            }
+        if (authType != Constant.AuthType.REG && authType != Constant.AuthType.AUTH) {
+            params.access_token = authFact.getAccessToken();
+        }
 
-            var req = {
-                method: 'DELETE',
-                url: url,
-                params: params,
-                headers: _getHeadersByAuthType(authType),
-                data: data
-            };
+        var req = {
+            method: 'DELETE',
+            url: url,
+            params: params,
+            headers: _getHeadersByAuthType(authType),
+            data: data
+        };
 
 
-            $http(req).success(function (data) {
-                deferred.resolve(ResponseFactory.buildResponse(data));
-            }).error(function (xhr, status) {
-                Constant.ToastMsg = "Server error...";
-                $mdToast.show({
-                    hideDelay: 3000,
-                    position: 'top right',
-                    controller: 'ToastController',
-                    templateUrl: 'view/toast.html'
-                });
-                $log.error('[NetworkService] ' + url + ': Error request');
-                deferred.reject(status);
+        $http(req).success(function (data) {
+            deferred.resolve(ResponseFactory.buildResponse(data));
+        }).error(function (xhr, status) {
+            Constant.ToastMsg = "Server error...";
+            $mdToast.show({
+                hideDelay: 3000,
+                position: 'top right',
+                controller: 'ToastController',
+                templateUrl: 'view/toast.html'
             });
+            $log.error('[NetworkService] ' + url + ': Error request');
+            deferred.reject(status);
+        });
 
-            return {
-                promise: deferred.promise,
-                cancel: cancel
-            };
+        return {
+            promise: deferred.promise,
+            cancel: cancel
+        };
         // }
     }
 
@@ -220,6 +220,16 @@ function NetworkService($http, $q, $log, Constant, ResponseFactory, $mdToast, au
             //         'Authorization': 'Bearer ' + AuthFactory.getAccessToken()
             //     };
         }
+    }
+
+    function _changePass(additionalUrl, newpass, oldpass) {
+        var url = Constant.APIBaseUrl + additionalUrl;
+        var params = {};
+        var data = {
+            newPassword: newpass,
+            oldPassword: oldpass
+        };
+        return _put(url, data, Constant.AuthType.NONE, params);
     }
 
     function _leaveGroup(additionalUrl, id) {
@@ -423,7 +433,38 @@ function NetworkService($http, $q, $log, Constant, ResponseFactory, $mdToast, au
         return _post(url, data, Constant.AuthType.NONE, params);
     }
 
+    function _likePost(additionalUrl) {
+        var url = Constant.APIBaseUrl + additionalUrl;
+        var params = {};
+        var data = {
+            isLike: 1
+        };
+        return _post(url, data, Constant.AuthType.NONE, params);
+    }
+
+    function _dislikePost(additionalUrl) {
+        var url = Constant.APIBaseUrl + additionalUrl;
+        var params = {};
+        var data = {
+            isLike: -1
+        };
+        return _post(url, data, Constant.AuthType.NONE, params);
+    }
+
+    function _deleteGroup(additionalUrl, groupId) {
+        var url = Constant.APIBaseUrl + additionalUrl;
+        var data = {};
+        var params = {
+            groupId: groupId
+        };
+        return _delete(url, data, Constant.AuthType.NONE, params);
+    }
+
     return {
+        changePass: _changePass,
+        deleteGroup: _deleteGroup,
+        likePost: _likePost,
+        dislikePost: _dislikePost,
         createGroup: _createGroup,
         forgotPass: _forgotPass,
         deleteFromBlackList: _deleteFromBlackList,

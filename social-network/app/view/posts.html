@@ -10,14 +10,14 @@
         <div class="post-text">
             <p>{{poster.text}}</p>
         </div>
-        <div class="post-media">
+        <div class="post-media" data-ng-show="poster.image">
             <img data-ng-src="{{poster.image}}">
         </div>
         <div class="replies">
-            <img ng-src="{{likeImg}}" alt="like" width="25px" data-ng-click='increaseLike($index)'/>
-            <span>{{poster.like}}</span>
-            <img ng-src="{{dislikeImg}}" alt="dislike" width="25px" data-ng-click='increaseDisLike($index)'/>
-            <span>{{poster.dislike}}</span>
+            <!--<img ng-src="{{likeImg}}" alt="like" width="25px" data-ng-click='increaseLike($index)'/>-->
+            <span data-ng-click='increaseLike($index)'>{{poster.like}}</span>
+            <!--<img ng-src="{{dislikeImg}}" alt="dislike" width="25px" data-ng-click='increaseDisLike($index)'/>-->
+            <span data-ng-click='increaseDisLike($index)'>{{poster.dislike}}</span>
         </div>
     </div>
 </div>

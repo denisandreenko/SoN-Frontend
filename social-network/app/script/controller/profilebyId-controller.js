@@ -67,10 +67,20 @@ function PostsByIdController($scope, NetworkService, authFact, $state, NotifySer
     $scope.dislikeImg = "";
 
     $scope.increaseLike = function (index) {
-        $scope.posts[index].like++; //TODO likes/dislikes with serverside work.
+        var promise = NetworkService.likePost('/users/posts/' + $scope.posts[index].id + '/likes').promise;
+
+        promise.then(function(response){
+            var data = response.getData();
+            NotifyService.notify(Constant.Events.REFRESHPOSTS, 'refPosts');
+        });
     };
     $scope.increaseDisLike = function (index) {
-        $scope.posts[index].dislike++;
+        var promise = NetworkService.dislikePost('/users/posts/' + $scope.posts[index].id + '/likes').promise;
+
+        promise.then(function(response){
+            var data = response.getData();
+            NotifyService.notify(Constant.Events.REFRESHPOSTS, 'refPosts');
+        });
     };
 
     $scope.gotoSender = function (index) {

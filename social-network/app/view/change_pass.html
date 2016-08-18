@@ -1,16 +1,16 @@
-<div id="change_pass">
+<div id="change_pass" data-ng-controller="ChangePassController">
         <div class="line">
             <span>Old password</span>
-            <input type="text"/>
+            <input type="text" data-ng-model="oldPassword"/>
         </div>
         <div class="line">
             <span>New password</span>
-            <input type="text"/>
+            <input type="text" data-ng-model="newPassword"/>
         </div>
         <div class="line">
             <span>Confirm password</span>
-            <input type="text"/>
+            <input type="text" data-ng-model="newPasswordConf"/>
         </div>
-        <input type="submit" value="edit"/>
+        <input type="submit" value="edit" data-ng-click="sendData()"/>
 </div>
 

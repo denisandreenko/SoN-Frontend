@@ -32,11 +32,7 @@ function ProfileController($scope, NetworkService, Constant, authFact, PostCreat
         PostCreationService.createPostToUser(imgURL || null, $scope.postText, id);
         $scope.postText = "";
         $timeout(function () {
-            $scope.refreshPosts();
+            NotifyService.notify(Constant.Events.REFRESHPOSTS, 'refPosts');
         }, 250);
-    };
-
-    $scope.refreshPosts = function () {
-        NotifyService.notify(Constant.Events.REFRESHPOSTS, 'refPosts');
     };
 }

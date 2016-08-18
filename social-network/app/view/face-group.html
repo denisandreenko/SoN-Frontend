@@ -3,12 +3,16 @@
         <div class="icon">
             <img src="{{groupImg}}" width="100%" height="auto">
         </div>
-
-        <div class="join" data-ng-show="!isMember" data-ng-click="join()">
-            <span>Join the Group</span>
+        <div class="join" data-ng-show="isOwner" data-ng-click="deleteCommun()">
+            <span>Delete the Group</span>
         </div>
-        <div class="join" data-ng-show="isMember" data-ng-click="leave()">
-            <span>Leave the Group</span>
+        <div data-ng-show="!isOwner">
+            <div class="join" data-ng-show="!isMember" data-ng-click="join()">
+                <span>Join the Group</span>
+            </div>
+            <div class="join" data-ng-show="isMember" data-ng-click="leave()">
+                <span>Leave the Group</span>
+            </div>
         </div>
     </div>
 
@@ -29,6 +33,6 @@
     </div>
 
     <div class="place-post" data-ng-controller="PostGroupController">
-            <posts-addition  data-ng-repeat="poster in posts" class="post-container"></posts-addition>
+        <posts-addition data-ng-repeat="poster in posts" class="post-container"></posts-addition>
     </div>
 </div>

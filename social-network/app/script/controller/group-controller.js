@@ -6,9 +6,7 @@ MyGroupController.$inject = ['$scope', 'NetworkService', 'authFact', '$state'];
 
 function MyGroupController($scope, NetworkService, authFact, $state) {
     $scope.groups = [];
-
     $scope.code = "";
-
     var userId = authFact.getId();
 
     var promise = NetworkService.getGroups('/groups', 20, 0, userId).promise;
