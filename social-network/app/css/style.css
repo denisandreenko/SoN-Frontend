@@ -50,26 +50,26 @@ input[type="submit"]:hover {
 }
 
 #wrapper {
-    
+
     max-width: 900px;
     margin: 0 auto;
-    height: auto;                    
-    background-color: #f7f3f8;          /*bad-white     no-bad-white*/
-    min-height:100vh;  
-    position: relative;  
+    height: auto;
+    background-color: white;          /*bad-white     no-bad-white*/
+    min-height:100vh;
+    position: relative;
 }
 
 #header {
     position: fixed;
     top: 0;
     left: 0;
-    right: 0; 
+    right: 0;
     z-index: 1;
     overflow: hidden;
     max-width: 900px;
-    background-color: #f8773e;
-    border-bottom-left-radius: 5px; 
-    border-bottom-right-radius: 5px; 
+    background-color: #91A1E2;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
     padding-left: 15px;
     margin: 0 auto;
 }
@@ -144,46 +144,46 @@ input[type="submit"]:hover {
 }
 
 .vert-menu li {
-    background-color: #f7f3f8;
+    background-color: white;
     border-bottom: 1px solid #FFFFFF;
     position: relative;
 }
 
-.vert-menu li a { 
-    display: block; 
-    margin-bottom: -1px; 
-    padding: 8px 14px; 
-    text-decoration: none; 
-    color: #91A1E2; 
-    position: relative; 
-    padding-left: 45px; 
-} 
-.vert-menu li a:hover{ 
-    border-radius: 0; 
-} 
+.vert-menu li a {
+    display: block;
+    margin-bottom: -1px;
+    padding: 8px 14px;
+    text-decoration: none;
+    color: #91A1E2;
+    position: relative;
+    padding-left: 45px;
+}
+.vert-menu li a:hover{
+    border-radius: 0;
+}
 
-.vert-menu li a:before{ 
-    width: 30px; 
-    height: 30px; 
-    content: url("../image/material/home.png"); 
-    position: absolute; 
-    top: 8px; 
-    left: 15px; 
-} 
-.vert-menu li:nth-child(2) a::before{ 
-    content: url("../image/material/friends.png"); 
-} 
-.vert-menu li:nth-child(3) a::before{ 
-    content: url("../image/material/message.png"); 
-} 
-.vert-menu li:nth-child(4) a::before{ 
-    content: url("../image/material/groups.png"); 
-} 
-.vert-menu li:nth-child(5) a::before{ 
-    content: url("../image/material/musical-note.png"); 
-} 
-.vert-menu li:last-child a::before{ 
-    content: url("../image/material/video.png"); 
+.vert-menu li a:before{
+    width: 30px;
+    height: 30px;
+    content: url("../image/material/home.png");
+    position: absolute;
+    top: 8px;
+    left: 15px;
+}
+.vert-menu li:nth-child(2) a::before{
+    content: url("../image/material/friends.png");
+}
+.vert-menu li:nth-child(3) a::before{
+    content: url("../image/material/message.png");
+}
+.vert-menu li:nth-child(4) a::before{
+    content: url("../image/material/groups.png");
+}
+.vert-menu li:nth-child(5) a::before{
+    content: url("../image/material/musical-note.png");
+}
+.vert-menu li:last-child a::before{
+    content: url("../image/material/video.png");
 }
 
 .vert-menu-unvis{
@@ -191,28 +191,28 @@ input[type="submit"]:hover {
 }
 
 .vert-menu-mobile {
-  display: block;
-  position: fixed;
-  list-style:none;
-  margin: 0;
-  margin-top: 41px;
-  box-sizing: border-box;
-  width: 200px;
-  background-color: #eee;
-  height: auto;
-  top: 0;
-  left: -200px;
-  transition: left .2s;
-  z-index: 2;
-  -webkit-transform: translateZ(0);
-  -webkit-backface-visibility: hidden;
-  -moz-transform: translateZ(0);
-  -moz-backface-visibility: hidden;
-  -o-transform: translateZ(0);
-  -o-backface-visibility: hidden;
-  transform: translateZ(0);
-  backface-visibility: hidden;
-  background-color: white;
+    display: block;
+    position: fixed;
+    list-style:none;
+    margin: 0;
+    margin-top: 41px;
+    box-sizing: border-box;
+    width: 200px;
+    background-color: #eee;
+    height: auto;
+    top: 0;
+    left: -200px;
+    transition: left .2s;
+    z-index: 2;
+    -webkit-transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+    -moz-transform: translateZ(0);
+    -moz-backface-visibility: hidden;
+    -o-transform: translateZ(0);
+    -o-backface-visibility: hidden;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    background-color: white;
 }
 
 .vert-menu-mobile .hidden {
@@ -262,62 +262,62 @@ input[type="submit"]:hover {
     content: url("../image/material/logout.png");
 }
 .vert-menu-unvis .hidden-menu-ticker {
-  display: none;
+    display: none;
 }
 .vert-menu-unvis .btn-menu {
-  color: #fff;
-  padding: 5px;
-  position: fixed;
-  top: 3px;
-  left: 5px;
-  cursor: pointer;
-  transition: left .23s;
-  z-index: 3;
-  width: 30px;
-  -webkit-transform: translateZ(0);
-  -webkit-backface-visibility: hidden;
-  -moz-transform: translateZ(0);
-  -moz-backface-visibility: hidden;
-  -o-transform: translateZ(0);
-  -o-backface-visibility: hidden;
-  transform: translateZ(0);
-  backface-visibility: hidden;
+    color: #fff;
+    padding: 5px;
+    position: fixed;
+    top: 3px;
+    left: 5px;
+    cursor: pointer;
+    transition: left .23s;
+    z-index: 3;
+    width: 30px;
+    -webkit-transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+    -moz-transform: translateZ(0);
+    -moz-backface-visibility: hidden;
+    -o-transform: translateZ(0);
+    -o-backface-visibility: hidden;
+    transform: translateZ(0);
+    backface-visibility: hidden;
 }
 .vert-menu-unvis .btn-menu span {
-  display: block;
-  height: 5px;
-  background-color: #fff;
-  margin: 5px 0 0;
-  transition: all .1s linear .23s;
-  position: relative;
+    display: block;
+    height: 5px;
+    background-color: #fff;
+    margin: 5px 0 0;
+    transition: all .1s linear .23s;
+    position: relative;
 }
 .vert-menu-unvis .btn-menu span.first {
-  margin-top: 0;
+    margin-top: 0;
 }
 
 .vert-menu-unvis .hidden-menu-ticker:checked ~ .vert-menu-mobile {
-  left: 0;
+    left: 0;
 }
 .vert-menu-unvis .hidden-menu-ticker:checked ~ .btn-menu span.first {
-  -webkit-transform: rotate(45deg);
-  -moz-transform: rotate(-45deg);
-  -o-transform: rotate(-45deg);
-  transform: rotate(-45deg);
-  top: 10px;
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    top: 10px;
 }
 .vert-menu-unvis .hidden-menu-ticker:checked ~ .btn-menu span.second {
-  opacity: 0;
+    opacity: 0;
 }
 .vert-menu-unvis .hidden-menu-ticker:checked ~ .btn-menu span.third {
-  -webkit-transform: rotate(45deg);
-  -moz-transform: rotate(45deg);
-  -o-transform: rotate(45deg);
-  transform: rotate(45deg);
-  top: -10px;
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+    top: -10px;
 }
 
 .content-place {
-    background-color: #f7f3f8;
+    background-color: white;
     overflow: hidden;
     position: relative;
     min-height:93.5vh;
@@ -352,7 +352,7 @@ input[type="submit"]:hover {
 .masonry-place {
     overflow: hidden;
     float: left;
-    width: 98%; 
+    width: 98%;
     margin: 1.5em 0;
     padding: 0 2%;
     column-gap: 1em; /* Common size among columns */
@@ -367,8 +367,8 @@ input[type="submit"]:hover {
     margin: 0 0 1.5em;
     width: 100%;
     box-sizing: border-box; /* Изменения алгоритма расчета ширины и высоты элемента.*/
-    -moz-box-sizing: border-box; /* For Firefox */ 
-    -webkit-box-sizing: border-box; /* For Safari, Chrome, iOS and Android */ 
+    -moz-box-sizing: border-box; /* For Firefox */
+    -webkit-box-sizing: border-box; /* For Safari, Chrome, iOS and Android */
 }
 
 
@@ -378,7 +378,7 @@ input[type="submit"]:hover {
 
 
 #friends .filter {
-    display: none;  
+    display: none;
 }
 
 #friends .filter input {
@@ -427,7 +427,7 @@ input[type="submit"]:hover {
     margin: 0 auto !important;
     width: 25px;
     height: 25px;
-    
+
 }
 
 
@@ -463,7 +463,7 @@ input[type="submit"]:hover {
     background-color: #91A1E2;
     border-radius: 5px;
 }
-    
+
 #groups .filter .create-community a {
     display: block;
     padding: 5px 5px;
@@ -473,7 +473,7 @@ input[type="submit"]:hover {
 
 #groups .hidden-create-group,
 #groups .create-group {
-   display: none;
+    display: none;
 }
 
 #groups .create-group .line-description textarea {
@@ -503,7 +503,7 @@ input[type="submit"]:hover {
 
 #groups .create-group .line input[type="text"], textarea{
     float: right;
-    background: #f1f1f1;
+    background: #f1f1f1 url(http://www.red-team-design.com/wp-content/uploads/2011/09/login-sprite.png) no-repeat;
     padding: 10px 15px 10px 25px;
     width: 180px;
     border: 1px solid #ccc;
@@ -565,7 +565,7 @@ input[type="submit"]:hover {
     width: 85%;
 }
 
- 
+
 /* Элементы в виде плиток с содержанием */
 
 #video .prime img {
@@ -598,84 +598,84 @@ input[type="submit"]:hover {
 
 /* Всплывающее окно */
 .popup-checkbox, .popup {
-  display: none;
+    display: none;
 }
 
 .popup {
-  position: fixed;
-  z-index: 10;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  opacity: 0;
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
 }
 
 .popup:before {
-  display: block;
-  content: ' ';
-  position: absolute;
-  z-index: 1;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  background-color: #000;
-  opacity: .5;
+    display: block;
+    content: ' ';
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: #000;
+    opacity: .5;
 }
 
 .popup-content {
-  width: 550px;
-  height: 300px;
-  position: absolute;
-  z-index: 2;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  margin: auto;
-  background-color: #fff;
-  border: 1px solid #ddd;
-  border-radius: 6px;
-  padding: 20px;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
+    width: 550px;
+    height: 300px;
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 20px;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 .popup-shower {
-  color: #00f;
-  cursor: pointer;
-  text-decoration: underline;
+    color: #00f;
+    cursor: pointer;
+    text-decoration: underline;
 }
 
 .popup-shower:hover {
-  color: #00a;
-  text-decoration: underline;
+    color: #00a;
+    text-decoration: underline;
 }
 
 .popup-closer {
-  position: absolute;
-  top: 5px;
-  right: 5px;
-  color: #999;
-  font-size: 20px;
-  border: 1px solid #999;
-  display: block;
-  width: 20px;
-  height: 20px;
-  line-height: 20px;
-  text-align: center;
-  border-radius: 50%;
-  cursor: pointer;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    color: #999;
+    font-size: 20px;
+    border: 1px solid #999;
+    display: block;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    border-radius: 50%;
+    cursor: pointer;
 }
 
 .popup-closer:hover {
-  background-color: #eee;
+    background-color: #eee;
 }
 
 .popup-checkbox:checked + .popup {
-  opacity: 1;
-  display: block;
+    opacity: 1;
+    display: block;
 }
 
 
@@ -691,15 +691,15 @@ input[type="submit"]:hover {
 
 #content-home .autorization-form {
     background-color: #fff;
-    /*background-image: -ms-linear-gradient(top, #FFFFFF 0%, #91A1E2 40%);*/
-    /*background-image: -moz-linear-gradient(top, #FFFFFF 0%, #91A1E2 40%);*/
-    /*background-image: -o-linear-gradient(top, #FFFFFF 0%, #91A1E2 40%);*/
-    /*background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #FFFFFF), color-stop(40, #91A1E2));*/
-    /*background-image: -webkit-linear-gradient(top, #FFFFFF 0%, #91A1E2 40%);*/
-    /*background-image: linear-gradient(to bottom, #FFFFFF 0%, #91A1E2 40%);  */
+    background-image: -ms-linear-gradient(top, #FFFFFF 0%, #91A1E2 40%);
+    background-image: -moz-linear-gradient(top, #FFFFFF 0%, #91A1E2 40%);
+    background-image: -o-linear-gradient(top, #FFFFFF 0%, #91A1E2 40%);
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #FFFFFF), color-stop(40, #91A1E2));
+    background-image: -webkit-linear-gradient(top, #FFFFFF 0%, #91A1E2 40%);
+    background-image: linear-gradient(to bottom, #FFFFFF 0%, #91A1E2 40%);
     width: 350px;
     padding: 20px;
-    border-radius: 3px;  
+    border-radius: 3px;
     position: absolute;
     top: 10%;
     left: 30%;
@@ -736,7 +736,7 @@ input[type="submit"]:hover {
 }
 
 #content-home .autorization-form #inputs input {
-    background: #f1f1f1;
+    background: #f1f1f1 url(http://www.red-team-design.com/wp-content/uploads/2011/09/login-sprite.png) no-repeat;
     padding: 15px 15px 15px 30px;
     margin: 0 0 10px 0;
     width: 240px;
@@ -759,7 +759,7 @@ input[type="submit"]:hover {
     box-shadow: 0 0 0 1px #e8c291 inset;
 }
 
-#content-home .autorization-form #enter, 
+#content-home .autorization-form #enter,
 #content-home .autorization-form #registration {
     background-color: inherit;
     border: none;
@@ -779,7 +779,7 @@ input[type="submit"]:hover {
     position: relative;
 }
 
-#content-home .autorization-form #actions .submit-enter:before, 
+#content-home .autorization-form #actions .submit-enter:before,
 #content-home .autorization-form #actions .button-registration:before {
     width: 32px;
     height: 32px;
@@ -797,16 +797,16 @@ input[type="submit"]:hover {
 }
 
 #content-home .autorization-form #enter:hover,
-#content-home .autorization-form #registration:hover {       
+#content-home .autorization-form #registration:hover {
     color: white;
-}   
+}
 
 #content-home .autorization-form #enter:active,
-#content-home .autorization-form #registration:active {       
+#content-home .autorization-form #registration:active {
     outline: none;
-     -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5) inset;
-     -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5) inset;
-     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5) inset;        
+    -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5) inset;
+    -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5) inset;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5) inset;
 }
 
 
@@ -835,7 +835,7 @@ input[type="submit"]:hover {
 }
 
 #content-home .popup-content .line input[type="email"] {
-    background: #f1f1f1;
+    background: #f1f1f1 url(http://www.red-team-design.com/wp-content/uploads/2011/09/login-sprite.png) no-repeat;
     padding: 7px 15px 7px 15px;
     width: 280px;
     height: 40px;
@@ -852,13 +852,13 @@ input[type="submit"]:hover {
     background-image: -ms-linear-gradient(top, #fddb6f, #ffb94b);
     background-image: -o-linear-gradient(top, #fddb6f, #ffb94b);
     background-image: linear-gradient(top, #fddb6f, #ffb94b);
-    
+
     -moz-border-radius: 3px;
     -webkit-border-radius: 3px;
     border-radius: 3px;
-    
+
     text-shadow: 0 1px 0 rgba(255,255,255,0.5);
-    
+
     border-width: 1px;
     border-style: solid;
     border-color: #d69e31 #e3a037 #d5982d #e3a037;
@@ -874,7 +874,7 @@ input[type="submit"]:hover {
 
 #content-home .popup-content input
 {
-    background: #f1f1f1;
+    background: #f1f1f1 url(http://www.red-team-design.com/wp-content/uploads/2011/09/login-sprite.png) no-repeat;
     border: 1px solid #ccc;
     border-radius: 5px;
     margin: 8px auto;
@@ -894,7 +894,7 @@ input[type="submit"]:hover {
     outline: none;
     -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5) inset;
     -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5) inset;
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5) inset;  
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5) inset;
 }
 
 #content-home .popup-content input:focus
@@ -919,12 +919,10 @@ input[type="submit"]:hover {
 
 #audio .player {
     overflow: hidden;
-    padding: 2%;
-    margin-bottom: 10px;
 }
 
 #audio .player audio {
-    width: 98%;
+    width: 100%;
     margin-top: 10px;
 }
 
@@ -932,11 +930,10 @@ input[type="submit"]:hover {
     overflow: hidden;
     width: 100%;
     padding: 7px 15px;
-    margin-bottom: 5px;
-    background-color: #fff;
-    /*border-bottom: 1px solid #2F5B8E;*/
-    border-top-right-radius: 5px; 
-    border-bottom-right-radius: 5px; 
+    background-color: #E4F1F6;
+    border-bottom: 1px solid #2F5B8E;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
 }
 
 #audio-list .track .play-audio {
@@ -981,12 +978,12 @@ input[type="submit"]:hover {
     padding: 3px;
     width: 33%;
     min-width: 200px;
-    background-color: #fff;
+    background-color: #949ADB;
     border-radius: 5px;
 }
 
 .place-icon .edit {
-    background-color: rgba(255, 123, 39, 0.58);
+    background-color: #91A1E2;
     border:1px solid #FFFFFF;
     border-radius: 5px;
 }
@@ -1007,7 +1004,7 @@ input[type="submit"]:hover {
 
 .place-info .block {
     padding: 10px;
-    /*border: 3px solid #91A1E2;*/
+    border: 3px solid #91A1E2;
     border-radius: 5px;
     overflow: hidden;
     margin-bottom: 7px;
@@ -1041,7 +1038,7 @@ input[type="submit"]:hover {
 /*Add post*/
 .add-post{
     float: left;
-    background-color: #fff;
+    background-color: #91A1E2;
     padding: 8px 15px;
     margin: 0 5%;
     width: 89.8%;
@@ -1087,7 +1084,7 @@ input[type="submit"]:hover {
     color: red;
 }
 .inputfile + label {
-    cursor: pointer; 
+    cursor: pointer;
 }
 
 
@@ -1095,11 +1092,11 @@ input[type="submit"]:hover {
 
 
 #settings {
-    width: 100%; 
+    width: 100%;
     background-color: #7DD493;
     overflow: hidden;
-    border-top-right-radius: 5px; 
-    border-bottom-right-radius: 5px; 
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
 }
 
 #settings .tab {
@@ -1117,12 +1114,12 @@ input[type="submit"]:hover {
 
 #black-list .ban-panel {
     padding: 6px 15px;
-    width: 100%; 
+    width: 100%;
     background-color: #B8D98C;
     overflow: hidden;
     font-size: 16px;
-    border-top-right-radius: 5px; 
-    border-bottom-right-radius: 5px; 
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
 }
 
 #black-list .ban-panel input[type="text"] {
@@ -1153,12 +1150,12 @@ input[type="submit"]:hover {
     padding: 7px 15px;
     background-color: #E4F1F6;
     border-bottom: 1px solid #2F5B8E;
-    border-top-right-radius: 5px; 
-    border-bottom-right-radius: 5px; 
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
 }
 
 #black-list .ban-list .user .user-info {
-     float: left;
+    float: left;
 }
 
 #black-list .ban-list .user .user-info .avatar{
@@ -1217,7 +1214,7 @@ input[type="submit"]:hover {
     display: block;
     float: right;
     font-size: 17px;
-    background: #f1f1f1;
+    background: #f1f1f1 url(http://www.red-team-design.com/wp-content/uploads/2011/09/login-sprite.png) no-repeat;
     padding: 5px 15px 5px 15px;
     height: 35px;
     border: 1px solid #ccc;
@@ -1290,11 +1287,11 @@ input[type="submit"]:hover {
     display: block;
 }
 
-#content-registration .line input[type="text"], 
-#content-registration .line input[type="password"], 
+#content-registration .line input[type="text"],
+#content-registration .line input[type="password"],
 #content-registration .line input[type="email"]{
     float: right;
-    background: #f1f1f1;
+    background: #f1f1f1 url(http://www.red-team-design.com/wp-content/uploads/2011/09/login-sprite.png) no-repeat;
     padding: 5px 10px 5px 25px;
     width: 220px;
     height: 30px;
@@ -1319,10 +1316,10 @@ input[type="submit"]:hover {
     background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #FFFFFF), color-stop(40, #A1B1F2));
     background-image: -webkit-linear-gradient(top, #FFFFFF 0%, #A1B1F2 40%);
     background-image: linear-gradient(to bottom, #FFFFFF 0%, #A1B1F2 40%);
-    
+
     -moz-border-radius: 3px;
     -webkit-border-radius: 3px;
-    border-radius: 3px;  
+    border-radius: 3px;
 
     height: 35px;
     margin: 15px auto ;
@@ -1339,7 +1336,7 @@ input[type="submit"]:hover {
     display: block;
     float: right;
     font-size: 17px;
-    background: #f1f1f1;
+    background: #f1f1f1 url(http://www.red-team-design.com/wp-content/uploads/2011/09/login-sprite.png) no-repeat;
     padding: 5px 15px 5px 15px;
     height: 35px;
     border: 1px solid #ccc;
@@ -1361,7 +1358,7 @@ input[type="submit"]:hover {
     outline: none;
     -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5) inset;
     -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5) inset;
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5) inset;  
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5) inset;
 }
 
 #content-registration input:focus
@@ -1400,8 +1397,6 @@ input[type="submit"]:hover {
 
 
 .place-post .post-container {
-    background-color: #fff;
-    padding: 2%;
     float: right;
     margin-left: 4%;
     margin-top: 3%;
@@ -1410,7 +1405,7 @@ input[type="submit"]:hover {
     float: left;
     text-align: left;
     position: relative;
-    /*border: 1px solid orange;*/
+    border: 1px solid orange;
     border-radius: 5px;
 }
 
@@ -1454,7 +1449,7 @@ input[type="submit"]:hover {
 }
 
 .place-post .post-container .post-info .post-text {
-    
+
 }
 
 .place-post .post-container .post-info .post-media img {
@@ -1502,7 +1497,7 @@ input[type="submit"]:hover {
     display: block;
     float: right;
     font-size: 17px;
-    background: #f1f1f1;
+    background: #f1f1f1 url(http://www.red-team-design.com/wp-content/uploads/2011/09/login-sprite.png) no-repeat;
     padding: 5px 15px 5px 15px;
     height: 35px;
     border: 1px solid #ccc;
@@ -1512,7 +1507,7 @@ input[type="submit"]:hover {
 
 #edit-profile .datefield {
     float: right;
-    background: #f1f1f1;
+    background: #f1f1f1 url(http://www.red-team-design.com/wp-content/uploads/2011/09/login-sprite.png) no-repeat;
     width: 68px;
     margin-left: 9px;
     height: 30px;
@@ -1636,7 +1631,7 @@ input[type="submit"]:hover {
     width: 35%;
     height: 100vh;
     float: left;
-    border-right: 1px solid #2F5B8E; 
+    border-right: 1px solid #2F5B8E;
     overflow: auto;
 }
 
@@ -1686,13 +1681,13 @@ input[type="submit"]:hover {
 
 
 .masonry-place {
-    -moz-column-count: 3;   
+    -moz-column-count: 3;
     -webkit-column-count: 3;
     column-count: 3;
 }
 
 #friends .masonry-place {
-    -moz-column-count: 4;   
+    -moz-column-count: 4;
     -webkit-column-count: 4;
     column-count: 4;
 }
@@ -1772,7 +1767,7 @@ input[type="submit"]:hover {
 
     /* friends and groups of the user's */
     #friends .masonry-place {
-        -moz-column-count: 3;   
+        -moz-column-count: 3;
         -webkit-column-count: 3;
         column-count: 3;
     }
@@ -1788,10 +1783,10 @@ input[type="submit"]:hover {
     #groups .item .top span{
         font-size: 12px;
     }
-    
+
     #video .item .prime img {
         height: 150px;
-    }            
+    }
     /*___*/
 
     #friends .search-panel {
@@ -1835,7 +1830,7 @@ input[type="submit"]:hover {
 
     #header #search {
         float: right;
-        margin-right: 5%; 
+        margin-right: 5%;
         width: 50%;
     }
 
@@ -1846,7 +1841,7 @@ input[type="submit"]:hover {
     #face-group .place-info {
         float: left;
         width: 90%;
-        margin-left: 5%;    
+        margin-left: 5%;
     }
 
     .place-info {
@@ -1904,16 +1899,16 @@ input[type="submit"]:hover {
 
     #video .item .prime img {
         height: 110px;
-    }  
+    }
 
     .masonry-place {
-        -moz-column-count: 2;   
+        -moz-column-count: 2;
         -webkit-column-count: 2;
         column-count: 2;
     }
 
     #friends .masonry-place {
-        -moz-column-count: 2;   
+        -moz-column-count: 2;
         -webkit-column-count: 2;
         column-count: 2;
     }

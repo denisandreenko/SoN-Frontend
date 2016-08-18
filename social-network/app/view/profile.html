@@ -1,9 +1,9 @@
 <div id="profile" data-ng-controller="ProfileController">
 
-    <div class="place-icon md-whiteframe-4dp">
-            <div class="icon" >
-                <img src="{{userAvatar}}" width="100%" height="auto">
-            </div>
+    <div class="place-icon">
+        <div class="icon">
+            <img src="{{userAvatar}}" width="100%" height="auto">
+        </div>
 
         <div class="edit">
             <span><a ui-sref="menu.edit-profile">Edit Profile</a></span>
@@ -12,55 +12,48 @@
 
 
     <div class="place-info">
-        <md-card class="md-whiteframe-4dp">
-            <div class="block name">{{userName + ' ' + userSubname}}</div>
-        </md-card>
-        <md-card class="md-whiteframe-4dp">
-            <div class="block">
-                <div class="line">
-                    <div class="pre-line">Birthday:</div>
-                    <div class="post-line">{{userBirthday}}</div>
-                </div>
-                <div class="line">
-                    <div class="pre-line">Sex:</div>
-                    <div class="post-line">{{userSex}}</div>
-                </div>
+        <div class="block name">{{userName + ' ' + userSubname}}</div>
+        <div class="block">
+            <div class="line">
+                <div class="pre-line">Birthday:</div>
+                <div class="post-line">{{userBirthday}}</div>
             </div>
-            <hr>
-            <div class="block">
-                <div class="big-line">Contact information</div>
-                <div class="line" data-ng-show="userContacts.mobile">
-                    <div class="pre-line">Mobile:</div>
-                    <div class="post-line"> {{userContacts.mobile}}</div>
-                </div>
-                <div class="line" data-ng-show="userContacts.skype">
-                    <div class="pre-line">Skype:</div>
-                    <div class="post-line"> {{userContacts.skype}}</div>
-                </div>
-                <div class="line" data-ng-show="userContacts.email">
-                    <div class="pre-line">Email:</div>
-                    <div class="post-line"> {{userContacts.email}}</div>
-                </div>
+            <div class="line">
+                <div class="pre-line">Sex:</div>
+                <div class="post-line">{{userSex}}</div>
             </div>
-            <hr>
-            <div class="block">
-                <div class="big-line">Location</div>
-                <div class="line">
-                    <div class="pre-line">City:</div>
-                    <div class="post-line">{{userCity}}</div>
-                </div>
+        </div>
+        <div class="block">
+            <div class="big-line">Contact information</div>
+            <div class="line" data-ng-show="userContacts.mobile">
+                <div class="pre-line">Mobile:</div>
+                <div class="post-line"> {{userContacts.mobile}}</div>
             </div>
-            <hr>
-            <div class="block">
-                <div class="big-line">About me:</div>
-                <div class="line">
-                    <div class="pre-line">{{userAbout}}</div>
-                </div>
+            <div class="line" data-ng-show="userContacts.skype">
+                <div class="pre-line">Skype:</div>
+                <div class="post-line"> {{userContacts.skype}}</div>
             </div>
-        </md-card>
+            <div class="line" data-ng-show="userContacts.email">
+                <div class="pre-line">Email:</div>
+                <div class="post-line"> {{userContacts.email}}</div>
+            </div>
+        </div>
+        <div class="block">
+            <div class="big-line">Location</div>
+            <div class="line">
+                <div class="pre-line">City:</div>
+                <div class="post-line">{{userCity}}</div>
+            </div>
+        </div>
+        <div class="block">
+            <div class="big-line">About me:</div>
+            <div class="line">
+                <div class="pre-line">{{userAbout}}</div>
+            </div>
+        </div>
     </div>
 
-    <div class="add-post md-whiteframe-4dp">
+    <div class="add-post">
         <textarea data-ng-model="postText" placeholder="Add post"></textarea>
         <button data-ng-click="PostIt()">Send</button>
         <input type="file" name="file" id="file" class="inputfile">
@@ -69,7 +62,7 @@
 
     <div data-ng-controller="MyPostController">
         <div class="place-post">
-            <div data-ng-repeat="poster in posts" class="post-container md-whiteframe-4dp">
+            <div data-ng-repeat="poster in posts" class="post-container">
                 <posts-addition></posts-addition>
             </div>
         </div>

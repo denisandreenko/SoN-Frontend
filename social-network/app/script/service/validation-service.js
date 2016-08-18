@@ -7,7 +7,7 @@ ValidationService.$inject = [];
 function ValidationService() {
     function _checkField(word) {
         word.trim();
-        if(word.length >= 3 && word.length <= 20){
+        if(word.length >= 0 && word.length <= 20){
             return 'OK';
         }
         else return 'NOT OK';

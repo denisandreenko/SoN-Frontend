@@ -2,14 +2,14 @@
 
 angular.module('socialNetwork').controller('RegController', RegController);
 
-RegController.$inject = ['$scope', 'NetworkService', '$state', '$mdToast', 'Constant'];
+RegController.$inject = ['$scope', 'NetworkService', '$state', '$mdToast', 'Constant', 'ValidationService'];
 
-function RegController($scope, NetworkService, $state, $mdToast, Constant) {
+function RegController($scope, NetworkService, $state, $mdToast, Constant, ValidationService) {
     $scope.toastMsg = "";
 
     $scope.master = {};
 
-    $scope.name = "";
+    $scope.firstName = "";
     $scope.lastName = "";
     $scope.password = "";
     $scope.login = "";
@@ -17,50 +17,42 @@ function RegController($scope, NetworkService, $state, $mdToast, Constant) {
     $scope.dirthDay = "";
     $scope.email = "";
 
+    $scope.isName = true;
 
-    $scope.update = function (user) {
-        if (user.pass != undefined && user.pass == user.confirmPass && user.birthDate != undefined && user.sex != undefined) {
-            $scope.name = angular.copy(user.name);
-            $scope.lastName = angular.copy(user.lastName);
-            $scope.password = angular.copy(user.pass);
-            $scope.login = angular.copy(user.login);
-            $scope.sex = angular.copy(user.sex);
-            $scope.dirthDay = moment(angular.copy(user.birthDate)).format('DD/MM/YYYY');
-            $scope.email = angular.copy(user.email);
-
-            $scope.master = {
-                "name": $scope.name,
-                "lastName": $scope.lastName,
-                "login": $scope.login,
-                "password": $scope.password,
-                "email": $scope.email,
-                "sex": $scope.sex,
-                "bday": $scope.dirthDay
-            };
-
-            var promise = NetworkService.registration($scope.master, '/users').promise;
-
-            promise.then(function (responce) {
-                var data = responce.getData();
-                Constant.ToastMsg = "Registration successful, now you can authorise !";
-                $mdToast.show({
-                    hideDelay: 3000,
-                    position: 'top right',
-                    controller: 'ToastController',
-                    templateUrl: 'view/toast.html'
-                });
-                $state.go("home");
-            });
+    $scope.validateField = function (event) {
+        var check =  ValidationService.checkField($scope.firstName);
+        if(check == 'NOT OK'){
+            $scope.isName = false;
         }
         else {
-            Constant.ToastMsg = "Wrong data, registration error !";
+            $scope.isName = true;
+        }
+    };
+
+    $scope.update = function () {
+        $scope.master = {
+            "name": $scope.name,
+            "lastName": $scope.lastName,
+            "login": $scope.login,
+            "password": $scope.password,
+            "email": $scope.email,
+            "sex": $scope.sex,
+            "bday": $scope.dirthDay
+        };
+
+        var promise = NetworkService.registration($scope.master, '/users').promise;
+
+        promise.then(function (responce) {
+            var data = responce.getData();
+            Constant.ToastMsg = "Registration successful, now you can authorise !";
             $mdToast.show({
                 hideDelay: 3000,
                 position: 'top right',
                 controller: 'ToastController',
                 templateUrl: 'view/toast.html'
             });
-        }
+            $state.go("home");
+        });
     };
     $scope.myDate = new Date();
     $scope.minDate = new Date(
