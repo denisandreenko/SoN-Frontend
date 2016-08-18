@@ -1,8 +1,8 @@
 <div id="groups" ng-controller="MyGroupController">
 
     <div class="quantity">
-        <p data-ng-show="groups">There are no groups !</p>
-        <!--<p>You are a member of {{groups.length}} communities</p>-->
+        <!--<p data-ng-show="groups">There are no groups !</p>-->
+        <p>You are a member of {{groups.length}} communities</p>
     </div>
     <!--<div data-ng-show="!groups">-->
     <div class="filter">
@@ -11,19 +11,19 @@
         <label class="btn-groups" for="hmd">
             <div class="create-community">create community</div>
         </label>
-    <!--</div>-->
+    </div>
 
     <input type="checkbox" id="hmd" class="hidden-create-group">
 
-    <div class="create-group">
+    <div class="create-group" data-ng-controller="CreateGroupController">
         <div class="line line-name">
             <span>Name</span>
-            <input type="text" name="name">
+            <input type="text" name="name" data-ng-model="name">
         </div>
 
         <div class="line line-description">
             <span>Description</span>
-            <textarea rows="3"></textarea>
+            <textarea rows="3" data-ng-model="description"></textarea>
         </div>
 
         <div class="line line-avatar">
@@ -36,7 +36,7 @@
             </div>
         </div>
 
-        <input type="submit" name="edit" value="Create">
+        <input type="submit" name="edit" value="Create" data-ng-click="sendData()">
     </div>
 
     <div class="masonry-place">

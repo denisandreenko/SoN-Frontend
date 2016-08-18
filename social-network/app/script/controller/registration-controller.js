@@ -42,16 +42,14 @@ function RegController($scope, NetworkService, $state, $mdToast, Constant) {
 
             promise.then(function (responce) {
                 var data = responce.getData();
-                if (data.status == 200) {
-                    Constant.ToastMsg = "Registration successful, now you can authorise !";
-                    $mdToast.show({
-                        hideDelay: 3000,
-                        position: 'top right',
-                        controller: 'ToastController',
-                        templateUrl: 'view/toast.html'
-                    });
-                    $state.go("home");
-                }
+                Constant.ToastMsg = "Registration successful, now you can authorise !";
+                $mdToast.show({
+                    hideDelay: 3000,
+                    position: 'top right',
+                    controller: 'ToastController',
+                    templateUrl: 'view/toast.html'
+                });
+                $state.go("home");
             });
         }
         else {

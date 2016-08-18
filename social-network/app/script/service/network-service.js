@@ -16,7 +16,7 @@ function NetworkService($http, $q, $log, Constant, ResponseFactory, $mdToast, au
     }
 
     function _get(url, authType, params) {
-        if (authorised) {
+        // if (authorised) {
             var deferred = $q.defer();
 
             var cancel = function () {
@@ -48,11 +48,11 @@ function NetworkService($http, $q, $log, Constant, ResponseFactory, $mdToast, au
                 promise: deferred.promise,
                 cancel: cancel
             };
-        }
+        // }
     }
 
     function _put(url, data, authType, params) {
-        if (authorised) {
+        // if (authorised) {
             authType = authType || Constant.AuthType.NONE;
             var deferred = $q.defer();
 
@@ -91,11 +91,11 @@ function NetworkService($http, $q, $log, Constant, ResponseFactory, $mdToast, au
                 promise: deferred.promise,
                 cancel: cancel
             };
-        }
+        // }
     }
 
     function _post(url, data, authType, params) {
-        if (authorised || authType == Constant.AuthType.AUTH || authType == Constant.AuthType.REG) {
+        // if (authorised || authType == Constant.AuthType.AUTH || authType == Constant.AuthType.REG) {
             authType = authType || Constant.AuthType.NONE;
             var deferred = $q.defer();
 
@@ -137,20 +137,20 @@ function NetworkService($http, $q, $log, Constant, ResponseFactory, $mdToast, au
                 promise: deferred.promise,
                 cancel: cancel
             };
-        }
-        else {
-            Constant.ToastMsg = "Not authorised !";
-            $mdToast.show({
-                hideDelay: 3000,
-                position: 'top right',
-                controller: 'ToastController',
-                templateUrl: 'view/toast.html'
-            });
-        }
+        // }
+        // else {
+        //     Constant.ToastMsg = "Not authorised !";
+        //     $mdToast.show({
+        //         hideDelay: 3000,
+        //         position: 'top right',
+        //         controller: 'ToastController',
+        //         templateUrl: 'view/toast.html'
+        //     });
+        // }
     }
 
     function _delete(url, data, authType, params) {
-        if (authorised) {
+        // if (authorised) {/
             authType = authType || Constant.AuthType.NONE;
             var deferred = $q.defer();
 
@@ -191,7 +191,7 @@ function NetworkService($http, $q, $log, Constant, ResponseFactory, $mdToast, au
                 promise: deferred.promise,
                 cancel: cancel
             };
-        }
+        // }
     }
 
     function _getHeadersByAuthType(authType) {
@@ -413,7 +413,14 @@ function NetworkService($http, $q, $log, Constant, ResponseFactory, $mdToast, au
         return _get(url, Constant.AuthType.REG, params);
     }
 
+    function _createGroup(data, additionalUrl) {
+        var url = Constant.APIBaseUrl + additionalUrl;
+        var params = {};
+        return _post(url, data, Constant.AuthType.NONE, params);
+    }
+
     return {
+        createGroup: _createGroup,
         forgotPass: _forgotPass,
         deleteFromBlackList: _deleteFromBlackList,
         getBlackList: _getBlackList,
