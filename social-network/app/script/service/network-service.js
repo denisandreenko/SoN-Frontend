@@ -121,7 +121,7 @@ function NetworkService($http, $q, $log, Constant, ResponseFactory, $mdToast, au
             $http(req).success(function (data) {
                 deferred.resolve(ResponseFactory.buildResponse(data));
             }).error(function (xhr, status) {
-                // Constant.ToastMsg = "Server error...";
+                // Constant.ToastMsg = "Server error...";rr
                 // $mdToast.show({
                 //     hideDelay: 3000,
                 //     position: 'top right',
@@ -244,7 +244,7 @@ function NetworkService($http, $q, $log, Constant, ResponseFactory, $mdToast, au
     function _editProfile(data, additionalUrl) {
         var url = Constant.APIBaseUrl + additionalUrl;
         var params = {};
-        return _put(url, Constant.AuthType.NONE, params);
+        return _put(url, data, Constant.AuthType.NONE, params);
     }
 
     function _addToFriends(id, additionalUrl) {

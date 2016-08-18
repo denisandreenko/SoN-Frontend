@@ -4,7 +4,7 @@ var app = angular.module('socialNetwork', ['ngStomp', 'ngImgCrop', 'ngCookies', 
 
 app.config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
 
-    $urlRouterProvider.otherwise('/test');
+    $urlRouterProvider.otherwise('/authorisation');
 
     $stateProvider
         .state('404', {
