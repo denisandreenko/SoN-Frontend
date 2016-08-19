@@ -646,6 +646,13 @@ body {
     font-size: 15px;
 }
 
+#content-home .autorization-form .login:hover,
+#content-home .autorization-form .registration:hover,
+#content-home .autorization-form .forgot:hover {
+    background-color: #ce8483;
+    color: white;
+}
+
 #content-home .autorization-form .login {
     height: 30px;
     border: none;
