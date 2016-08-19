@@ -6,7 +6,7 @@
     <div class="ban-list">
         <div class="user"  ng-repeat="user in users">
             <div class="user-info">
-                <div class="avatar">
+                <div class="avatar" data-ng-click="gotoUserId($index)">
                     <img src="{{user.avatar}}">
                 </div>
                 <span class="name">{{user.name + " " + user.lastName}}</span>

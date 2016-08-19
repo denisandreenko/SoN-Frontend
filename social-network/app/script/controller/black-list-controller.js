@@ -2,9 +2,9 @@
 
 angular.module('socialNetwork').controller('BlackListController', BlackListController);
 
-BlackListController.$inject = ['$scope', 'authFact', 'NetworkService', 'Constant', 'NotifyService'];
+BlackListController.$inject = ['$scope', 'authFact', 'NetworkService', 'Constant', 'NotifyService', '$state'];
 
-function BlackListController($scope, authFact, NetworkService, Constant, NotifyService) {
+function BlackListController($scope, authFact, NetworkService, Constant, NotifyService, $state) {
     $scope.users = [];
     $scope.code = "";
     $scope.bUserId = '';
@@ -53,6 +53,11 @@ function BlackListController($scope, authFact, NetworkService, Constant, NotifyS
     $scope.$on('destroy', function () {
         hendler();
     });
+
+    $scope.gotoUserId = function (index) {
+        var userID = $scope.users[index].id;
+        $state.go('menu.friend', {'userIdentifier': userID});
+    };
 
     function callback() {
         var userId = authFact.getId();

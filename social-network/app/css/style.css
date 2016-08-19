@@ -1203,6 +1203,7 @@ body {
     float: left;
     margin-left: 10px;
     font-size: 16px;
+    margin-top: 4px;
 }
 
 #black-list .ban-list .user input {
@@ -1212,6 +1213,7 @@ body {
     border: none;
     color: #fff;
     padding: 3px 4px;
+    margin-top: 4px;
 }
 
 #black-list .ban-list .user input[type="submit"]:hover {
@@ -1380,7 +1382,6 @@ body {
     display: block;
     float: right;
     font-size: 17px;
-    background: #f1f1f1 url(http://www.red-team-design.com/wp-content/uploads/2011/09/login-sprite.png) no-repeat;
     padding: 5px 15px 5px 15px;
     height: 35px;
     border: 1px solid #ccc;
@@ -1390,7 +1391,6 @@ body {
 
 #edit-profile .datefield {
     float: right;
-    background: #f1f1f1 url(http://www.red-team-design.com/wp-content/uploads/2011/09/login-sprite.png) no-repeat;
     width: 68px;
     margin-left: 9px;
     height: 30px;
@@ -1434,17 +1434,19 @@ body {
 #face-group .place-icon {
     float: left;
     margin: 15px 10px 10px;
-    padding: 3px;
     width: 33%;
     min-width: 200px;
-    background-color: #949ADB;
     border-radius: 5px;
+}
+
+#face-group .place-icon img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px 5px 0 0;
 }
 
 #face-group .place-icon .join {
     background-color: #91A1E2;
-    border:1px solid #FFFFFF;
-    border-radius: 5px;
     cursor: pointer;
     color: #FFFFFF;
     padding:10px 15px;
