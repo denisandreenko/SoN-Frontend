@@ -105,6 +105,7 @@ body {
 #header .top-menu {
     float: right;
     padding-right: 15px;
+    position:relative;
 }
 
 #header .top-menu li {
@@ -122,6 +123,33 @@ body {
     width: 80%;
     padding: 3px 5px;
     border-radius: 5px;
+}
+
+#header #search input[type="submit"]:focus ~ .search-unvis,
+#header .search-unvis:hover {
+    display: block;
+}
+
+#header .search-unvis {
+    display: none;
+    position: absolute;
+    width: 100px;
+    z-index: 1;
+    background-color: #DAE6EB;
+    top: 0;
+    left: 45%;
+    border-radius: 5px;
+}
+
+#header .search-unvis a {
+    display: block;
+    text-decoration: none;
+    color: #2E5663;
+}
+
+#header .search-unvis a:hover {
+    background-color: #99BBC7;
+    color: white;
 }
 
 .vert-menu {

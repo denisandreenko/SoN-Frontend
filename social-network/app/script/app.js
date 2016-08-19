@@ -90,6 +90,11 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
         .state('menu.group', {
             url: '/groups/:groupIdentifier',
             templateUrl: "view/face-group.html"
+        })
+
+        .state('menu.search-group', {
+            url: '/groups',
+            templateUrl: "view/search-group.html"
         });
 
     $locationProvider.html5Mode(false);

@@ -11,8 +11,15 @@
         
        <form action="#" id="search" class="clearfix" data-ng-controller="MyMenuController">
             <input type="text" placeholder="Search" data-ng-model="searchText" data-ng-keyup="KeyPress()"/>
-            <input type="submit" value="Find" ui-sref="menu.search({searchReq: searchText})"/>
+            <input type="submit" value="Find"/>
+
+           <div class="search-unvis">
+               <div><a ui-sref="menu.search({searchReq: searchText})">Peoples</a></div>
+               <div><a ui-sref="menu.search-group">Groups</a></div>
+           </div>
         </form>
+
+
 
         <ul class="top-menu">
             <li><a ui-sref="menu.settings.change_pass">settings</a></li>

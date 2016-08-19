@@ -1,0 +1,15 @@
+<div id="groups" ng-controller="MyGroupController">
+    <div class="masonry-place">
+        <!-- Адаптивные блоки с содержанием -->
+        <div class="item" ng-repeat="group in groups | filter: searchGroups">
+            <div class="top">
+                <h2>{{group.name}}</h2>
+                <span>{{group.folowers}} folowers</span>
+            </div>
+            <div class="prime">
+                <a data-ng-click="gotoGroup($index)"><img src="{{group.imageUrl}}"></a>
+            </div>
+        </div>
+    </div>
+    <!-- Конец контейнера с адаптивными блоками -->
+</div>
