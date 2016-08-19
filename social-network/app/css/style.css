@@ -495,7 +495,6 @@ body {
 
 #groups .create-group .line input[type="text"], textarea{
     float: right;
-    background: #f1f1f1 url(http://www.red-team-design.com/wp-content/uploads/2011/09/login-sprite.png) no-repeat;
     padding: 10px 15px 10px 25px;
     width: 180px;
     border: 1px solid #ccc;
@@ -616,17 +615,10 @@ body {
     text-transform: uppercase;
     text-align: center;
     color: #B32D2D;
-    margin: 0 0 30px 0;
+    margin: 0 0 25px 0;
     letter-spacing: 4px;
     font: normal 26px/1 Verdana, Helvetica;
     position: relative;
-}
-
-#content-home .autorization-form fieldset {
-    border: 0;
-    padding: 0;
-    margin: 0 0 20px 0;
-    overflow: hidden;
 }
 
 #content-home .autorization-form #inputs input {
@@ -637,14 +629,6 @@ body {
     border-radius: 5px;
 }
 
-#content-home .autorization-form #username {
-    background-position: 5px -2px !important;
-}
-
-#content-home .autorization-form #password {
-    background-position: 5px -52px !important;
-}
-
 #content-home .autorization-form #inputs input:focus {
     background-color: #fff;
     border-color: #e8c291;
@@ -652,17 +636,24 @@ body {
     box-shadow: 0 0 0 1px #e8c291 inset;
 }
 
-#content-home .autorization-form .login {
+
+#content-home .autorization-form .login,
+#content-home .autorization-form .registration,
+#content-home .autorization-form .forgot {
     width: 77%;
+    background-color: #FFFFFF;
+    border-radius: 5px;
+    font-size: 15px;
+}
+
+#content-home .autorization-form .login {
     height: 30px;
     border: none;
-    background-color: #FFFFFF;
+    margin-top: 15px;
 }
 
 #content-home .autorization-form .registration,
 #content-home .autorization-form .forgot{
-    background: #FFFFFF;
-    width: 77%;
     margin: 5px auto;
     padding: 4px;
 }
@@ -697,14 +688,7 @@ body {
 }
 
 .popup-shower {
-    color: #00f;
     cursor: pointer;
-    text-decoration: underline;
-}
-
-.popup-shower:hover {
-    color: #00a;
-    text-decoration: underline;
 }
 
 .popup-closer {
@@ -758,7 +742,10 @@ body {
 }
 
 
-/*Registrtion form*/
+
+/*---------------------------------------------------------------------------REGISTRATION----------------------------------------------------------------------*/
+
+
 #content-registration {
     overflow: hidden;
     min-height: 100vh;
@@ -817,15 +804,6 @@ body {
     margin: 16px 4% 0 10px;
 }
 
-#content-registration input[type="submit"] {
-    height: 35px;
-    margin: 15px auto ;
-    padding: 0;
-    width: 130px;
-    cursor: pointer;
-    font: bold 15px Arial, Helvetica;
-}
-
 #content-registration .line input[type="text"],
 #content-registration .line input[type="password"],
 #content-registration .line input[type="email"] {
@@ -839,24 +817,21 @@ body {
     width: 50%;
 }
 
+#content-registration input[type="submit"] {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    height: 35px;
+    margin: 15px auto ;
+    padding: 0;
+    width: 130px;
+    cursor: pointer;
+    font: bold 15px Arial, Helvetica;
+}
+
 #content-registration input[type="submit"]:hover {
-    background-color: #E8E87D;
+    background-color: #C7C7B1;
 }
 
-#content-registration input[type="submit"]:active {
-    outline: none;
-    -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5) inset;
-    -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5) inset;
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5) inset;
-}
-
-#content-registration input:focus
-{
-    background-color: #fff;
-    border-color: #e8c291;
-    outline: none;
-    box-shadow: 0 0 0 1px #e8c291 inset;
-}
 
 /*Валидация пароля*/
 
@@ -876,6 +851,7 @@ body {
     padding-bottom: 10px;
     color: red;
 }
+
 
 
 
@@ -927,31 +903,8 @@ body {
 }
 
 #content-home .popup-content-forgot input[type="submit"]:hover {
-    background-color: #fddb6f;
-    background-image: -webkit-gradient(linear, left top, left bottom, from(#ffb94b), to(#fddb6f));
-    background-image: -webkit-linear-gradient(top, #ffb94b, #fddb6f);
-    background-image: -moz-linear-gradient(top, #ffb94b, #fddb6f);
-    background-image: -ms-linear-gradient(top, #ffb94b, #fddb6f);
-    background-image: -o-linear-gradient(top, #ffb94b, #fddb6f);
-    background-image: linear-gradient(top, #ffb94b, #fddb6f);
+    background-color: #C7C7B1;
 }
-
-#content-home .popup-content-forgot input[type="submit"]:active {
-    outline: none;
-    -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5) inset;
-    -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5) inset;
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5) inset;
-}
-
-#content-home .popup-content-forgot input:focus
-{
-    background-color: #fff;
-    border-color: #e8c291;
-    outline: none;
-    box-shadow: 0 0 0 1px #e8c291 inset;
-}
-
-
 
 
 
@@ -1260,7 +1213,6 @@ body {
     display: block;
     float: right;
     font-size: 17px;
-    background: #f1f1f1 url(http://www.red-team-design.com/wp-content/uploads/2011/09/login-sprite.png) no-repeat;
     padding: 5px 15px 5px 15px;
     height: 35px;
     border: 1px solid #ccc;
@@ -1280,161 +1232,6 @@ body {
     color: #8f5a0a;
     margin: 30px auto;
 }
-
-
-
-
-
-
-
-
-
-/*---------------------------------------------------------------------------REGISTRATION----------------------------------------------------------------------*/
-
-
-
-
-/*#content-registration {*/
-    /*overflow: hidden;*/
-    /*padding: 20px 0 0 0;*/
-    /*background-color: #CAEEFA;*/
-    /*min-height: 100vh;*/
-/*}*/
-
-/*#content-registration h1 {*/
-    /*font-size: 55px;*/
-    /*font-weight: bold;*/
-/*}*/
-
-/*#content-registration .data {*/
-    /*overflow: hidden;*/
-    /*width: 55%;*/
-    /*margin: 0 auto;*/
-/*}*/
-
-/*#content-registration .line {*/
-    /*overflow: hidden;*/
-    /*margin: 20px 0;*/
-/*}*/
-
-/*#content-registration .line span {*/
-    /*font-size: 25px;*/
-    /*display: block;*/
-    /*margin: 0;*/
-    /*padding: 0;*/
-    /*float: left;*/
-    /*overflow: hidden;*/
-/*}*/
-
-/*#content-registration .line p {*/
-    /*float: right;*/
-    /*color: red;*/
-    /*font-size: 16px;*/
-    /*display: block;*/
-/*}*/
-
-/*#content-registration .line input[type="text"],*/
-/*#content-registration .line input[type="password"],*/
-/*#content-registration .line input[type="email"]{*/
-    /*float: right;*/
-    /*background: #f1f1f1 url(http://www.red-team-design.com/wp-content/uploads/2011/09/login-sprite.png) no-repeat;*/
-    /*padding: 5px 10px 5px 25px;*/
-    /*width: 220px;*/
-    /*height: 30px;*/
-    /*border: 1px solid #ccc;*/
-    /*border-radius: 5px;*/
-/*}*/
-
-/*#content-registration .line .sex {*/
-    /*float: right;*/
-    /*font-size: 18px;*/
-    /*margin-top: 8px;*/
-/*}*/
-/*#content-registration .line input[type="radio"] {*/
-    /*float: right;*/
-    /*margin: 16px 40px 0 10px;*/
-/*}*/
-
-/*#content-registration input[type="submit"] {*/
-    /*background-image: -ms-linear-gradient(top, #FFFFFF 0%, #A1B1F2 40%);*/
-    /*background-image: -moz-linear-gradient(top, #FFFFFF 0%, #A1B1F2 40%);*/
-    /*background-image: -o-linear-gradient(top, #FFFFFF 0%, #A1B1F2 40%);*/
-    /*background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #FFFFFF), color-stop(40, #A1B1F2));*/
-    /*background-image: -webkit-linear-gradient(top, #FFFFFF 0%, #A1B1F2 40%);*/
-    /*background-image: linear-gradient(to bottom, #FFFFFF 0%, #A1B1F2 40%);*/
-
-    /*-moz-border-radius: 3px;*/
-    /*-webkit-border-radius: 3px;*/
-    /*border-radius: 3px;*/
-
-    /*height: 35px;*/
-    /*margin: 15px auto ;*/
-    /*padding: 0;*/
-    /*width: 130px;*/
-    /*cursor: pointer;*/
-    /*font: bold 15px Arial, Helvetica;*/
-/*}*/
-
-/*#content-registration .line input[type="text"],*/
-/*#content-registration .line input[type="password"],*/
-/*#content-registration .line input[type="email"]*/
-/*{*/
-    /*display: block;*/
-    /*float: right;*/
-    /*font-size: 17px;*/
-    /*background: #f1f1f1 url(http://www.red-team-design.com/wp-content/uploads/2011/09/login-sprite.png) no-repeat;*/
-    /*padding: 5px 15px 5px 15px;*/
-    /*height: 35px;*/
-    /*border: 1px solid #ccc;*/
-    /*border-radius: 5px;*/
-    /*width: 50%;*/
-/*}*/
-
-/*#content-registration input[type="submit"]:hover {*/
-    /*background-color: #fddb6f;*/
-    /*background-image: -webkit-gradient(linear, left top, left bottom, from(#ffb94b), to(#fddb6f));*/
-    /*background-image: -webkit-linear-gradient(top, #ffb94b, #fddb6f);*/
-    /*background-image: -moz-linear-gradient(top, #ffb94b, #fddb6f);*/
-    /*background-image: -ms-linear-gradient(top, #ffb94b, #fddb6f);*/
-    /*background-image: -o-linear-gradient(top, #ffb94b, #fddb6f);*/
-    /*background-image: linear-gradient(top, #ffb94b, #fddb6f);*/
-/*}*/
-
-/*#content-registration input[type="submit"]:active {*/
-    /*outline: none;*/
-    /*-moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5) inset;*/
-    /*-webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5) inset;*/
-    /*box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5) inset;*/
-/*}*/
-
-/*#content-registration input:focus*/
-/*{*/
-    /*background-color: #fff;*/
-    /*border-color: #e8c291;*/
-    /*outline: none;*/
-    /*box-shadow: 0 0 0 1px #e8c291 inset;*/
-/*}*/
-
-/*!*Валидация пароля*!*/
-
-/*.ng-invalid {*/
-    /*border-color: red;*/
-    /*outline-color: red;*/
-/*}*/
-
-/*.ng-valid {*/
-    /*border-color: green;*/
-    /*outline-color: green;*/
-/*}*/
-
-/*.messages {*/
-    /*font-size: smaller;*/
-    /*padding-top: 5px;*/
-    /*padding-bottom: 10px;*/
-    /*color: red;*/
-/*}*/
-
-
 
 
 

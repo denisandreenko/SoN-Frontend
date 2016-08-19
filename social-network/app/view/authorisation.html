@@ -1,31 +1,17 @@
 <div id="wrapper">
     <div id="content-home" data-ng-controller="AuthController">
         <form class="autorization-form" >
-            <!--data-ng-submit="sendData()"-->
             <h1>Login</h1>
             <div id="inputs">
                 <input id="username" type="text" data-ng-model="login" placeholder="Login" autofocus required>
                 <input id="password" type="password" data-ng-model="password" placeholder="Password" required>
             </div>
             <input class="login" type="submit" id="enter" value="Login" data-ng-click="sendData0()">
-            <!--<input type="button" id="registration" value="NEW ACCOUNT" ui-sref="registration">-->
 
-            <!--<label for="popupCheckboxTwo" class="popup-shower">Registration</label>-->
             <label for="popupCheckboxTwo" class="popup-shower"><div class="registration">Registration</div></label>
             <label for="popupCheckboxOne" class="popup-shower"><div class="forgot">Forgot Password?</div></label>
         </form>
-            <!--<md-button data-ng-click="showAdvanced($event)">-->
-                <!--Forgot Password?-->
-            <!--</md-button>-->
 
-            <!--<div id="content-home" data-ng-controller="AuthController">-->
-                <!--<form id="autorization-form" data-ng-submit="sendData()">-->
-                    <!--<h1>Login</h1>-->
-                    <!--<div id="inputs">-->
-                        <!--<input id="username" type="text" data-ng-model="login" placeholder="Login" autofocus required>-->
-                        <!--<input id="password" type="password" data-ng-model="password" placeholder="Password" required>-->
-                    <!--</div>-->
-            
         <div class="forgot-pass popup-wrapper" data-ng-controller="ForgotPassController">
             <input type="checkbox" class="popup-checkbox" id="popupCheckboxOne">
             <div class="popup">
