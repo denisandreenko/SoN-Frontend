@@ -56,7 +56,7 @@ body {
     z-index: 1;
     overflow: hidden;
     max-width: 900px;
-    background-color: #91A1E2;
+    background-color: #00ACC1;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
     padding-left: 15px;
@@ -171,7 +171,7 @@ body {
     margin-bottom: -1px;
     padding: 8px 14px;
     text-decoration: none;
-    color: #91A1E2;
+    color: #00ACC1;
     position: relative;
     padding-left: 45px;
 }
@@ -245,7 +245,7 @@ body {
     display: block;
     padding: 8px 14px;
     text-decoration: none;
-    color: #91A1E2;
+    color: #00ACC1;
     padding-left: 50px;
     position: relative;
 }
@@ -346,22 +346,30 @@ body {
 
 /* The number groups and friends of the user's */
 .quantity {
-    background-color: #7DD493;
-    padding: 8px 20px;
+    background-color: #26C6DA;
+    padding: 6px 20px;
     text-align: left;
     font-size: 16px;
     color: #FFFFFF;
-    border-radius: 0 5px 0 0;
+    border-radius: 0 5px 5px 0;
 }
 
 /* Search/filter groups and friends */
 .filter {
-    background-color: #B8D98C;
-    padding: 8px 20px;
+    background-color: #80DEEA;
+    padding: 6px 20px;
     text-align: left;
     font-size: 16px;
-    overflow: hidden;
     border-radius: 0 5px 5px 0;
+}
+
+.filter input {
+    width: 40%;
+    padding: 3px 10px;
+    border: none;
+    height: 28px;
+    color: #848896;
+    border-radius: 3px;
 }
 
 
@@ -392,21 +400,12 @@ body {
 
 /*--------------------------------------------------------------------------------FRIENDS------------------------------------------------------------------------*/
 
-
-
-#friends .filter input {
-    width: 40%;
-    padding: 3px 5px;
-    border: none;
-    height: 30px;
-}
-
 /* ------------- Сontainer with adaptive block ------------- */
 
 #friends .top {
     padding: 2px 5px;
-    background-color: #2E878A;
-    font-size: 100%;
+    background-color: #00ACC1;
+    font-size: 16px;
     color: #FFFFFF;
     line-height: 1;
     white-space: nowrap;
@@ -415,7 +414,7 @@ body {
 #friends .prime img {
     display: block;
     width: 100%;
-    height: 200px;
+    height: 220px;
     cursor: pointer;
 }
 
@@ -424,6 +423,7 @@ body {
     height: 30px;
     border-bottom: 1px solid #91A1E2;
     overflow: hidden;
+    background-color: #E0F7FA;
 }
 
 #friends .control-panel .delete {
@@ -458,19 +458,12 @@ body {
     border-radius: 0 5px 5px 0;
 }
 
-#groups .filter input {
-    width: 40%;
-    padding: 3px 5px;
-    border: none;
-    height: 30px;
-}
-
 #groups .filter .create-community {
     font-size: 14px;
     float: right;
     background-color: #2E538A;
     border-radius: 5px;
-    padding: 5px 10px;
+    padding: 3px 10px;
     color: #FFFFFF;
     cursor: pointer;
 }
@@ -487,27 +480,60 @@ body {
     text-decoration: none;
 }
 
-#groups .hidden-create-group,
-#groups .create-group {
-    display: none;
-}
-
 #groups .create-group .line-description textarea {
     resize: none;
 }
+/*wwwwwwwwwwwwwwwwwww*/
 
-#groups .hidden-create-group:checked ~ .create-group {
+
+#content-registration .line {
+    overflow: hidden;
+    margin: 14px 0;
+}
+
+#content-registration .line span {
+    font-size: 23px;
+    display: block;
+    margin: 0;
+    padding: 0;
+    float: left;
+    overflow: hidden;
+}
+
+#content-registration .line p {
+    float: right;
+    color: red;
+    font-size: 16px;
     display: block;
 }
 
+#content-registration .line input[type="text"],
+#content-registration .line input[type="password"],
+#content-registration .line input[type="email"]{
+    float: right;
+    padding: 5px 10px 5px 25px;
+    width: 220px;
+    height: 30px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+/*wwwwwwwwwwwwwwww*/
+
 #groups .create-group {
-    color: #0B8BB5;
+    overflow: hidden;
+    width: 80%;
+    margin: 0 auto;
+}
+
+#groups .create-group h1 {
+    font-size: 40px;
+    font-weight: bold;
+    margin-bottom: 6%;
 }
 
 #groups .create-group .line {
     overflow: hidden;
-    padding: 0 0;
-    margin: 2.5% 25%;
+    margin: 4% 0;
 }
 
 #groups .create-group .line span {
@@ -544,20 +570,17 @@ body {
 
 #groups .top {
     padding: 2px 5px;
-    background-color: #2E878A;
+    background-color: #00ACC1;
     font-size: 20px;
     color: #FFFFFF;
     line-height: 1;
 }
 
-#groups .top span{
-    font-size: 13px;
-}
 
 #groups .prime img {
     display: block;
     width: 100%;
-    height: 270px;
+    height: 250px;
     cursor: pointer;
 }
 
@@ -752,7 +775,8 @@ body {
 
 
 .popup-content-forgot,
-.popup-content-registration {
+.popup-content-registration,
+.popup-content-createGroup {
     width: 550px;
     position: absolute;
     z-index: 2;
@@ -771,6 +795,10 @@ body {
 
 .popup-content-forgot {
     height: 300px;
+}
+
+.popup-content-createGroup {
+    height: 500px;
 }
 
 .popup-content-registration {
@@ -870,15 +898,15 @@ body {
 
 /*Валидация пароля*/
 
-.ng-invalid {
-    border-color: red;
-    outline-color: red;
-}
+/*.ng-invalid {*/
+    /*border-color: red;*/
+    /*outline-color: red;*/
+/*}*/
 
-.ng-valid {
-    border-color: green;
-    outline-color: green;
-}
+/*.ng-valid {*/
+    /*border-color: green;*/
+    /*outline-color: green;*/
+/*}*/
 
 
 
@@ -1572,9 +1600,9 @@ body {
 }
 
 #friends .masonry-place {
-    -moz-column-count: 4;
-    -webkit-column-count: 4;
-    column-count: 4;
+    -moz-column-count: 3;
+    -webkit-column-count: 3;
+    column-count: 3;
 }
 
 @media (max-width: 768px) {

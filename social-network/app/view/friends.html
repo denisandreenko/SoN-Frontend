@@ -12,8 +12,9 @@
 
         <div id="Search People" class="item md-whiteframe-4dp" ng-repeat="friend in friends | filter: searchFriend">
             <div class="top">
-                <h2>{{friend.name + " " + friend.subname}}</h2>
+                <h2>{{friend.name + ' ' +  friend.lastName}}</h2>
             </div>
+
             <div class="prime" data-ng-click="gotoUserId($index)">
                 <img src="{{friend.avatar}}">
             </div>
