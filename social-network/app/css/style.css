@@ -748,6 +748,10 @@ body {
     height: 300px;
 }
 
+.popup-content-registration {
+    height: 90%;
+}
+
 
 
 /*---------------------------------------------------------------------------REGISTRATION----------------------------------------------------------------------*/
@@ -755,7 +759,6 @@ body {
 
 #content-registration {
     overflow: hidden;
-    min-height: 100vh;
 }
 
 #content-registration h1 {
@@ -771,11 +774,11 @@ body {
 
 #content-registration .line {
     overflow: hidden;
-    margin: 20px 0;
+    margin: 14px 0;
 }
 
 #content-registration .line span {
-    font-size: 25px;
+    font-size: 23px;
     display: block;
     margin: 0;
     padding: 0;
