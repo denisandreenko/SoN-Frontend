@@ -42,7 +42,7 @@ function ProfileEditController($scope, NetworkService, Constant, $state) {
         $scope.lastName = $scope.userSubname;
         $scope.sex = $scope.userSex;
         //Constant.UploadedImgID = $scope.userAvatar;
-        $scope.birthdate = $scope.userBirthday;
+        $scope.birthdate = new Date($scope.userBirthday);
         $scope.city = $scope.userCity;
         $scope.about = $scope.userAbout;
     }

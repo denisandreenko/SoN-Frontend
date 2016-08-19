@@ -40,11 +40,13 @@
 
         <div class="line line-birthday">
             <span>Birthday</span>
-            <input data-time="false" data-date="true" mdc-datetime-picker="" type="text"
-                   placeholder="Birth Date"
-                   data-ng-model="birthdate" data-min-date="minDate" data-max-date="maxDate"
-                   class="md-input"
-                   data-ok-text="Confirm">
+            <input type="date" min="1900-01-01" max="2016-01-01"
+                   data-ng-model="birthdate" value="birthdate">
+            <!--<input data-time="false" data-date="true" mdc-datetime-picker="" type="text"-->
+                   <!--placeholder="Birth Date"-->
+                   <!--data-ng-model="birthdate" data-min-date="minDate" data-max-date="maxDate"-->
+                   <!--class="md-input"-->
+                   <!--data-ok-text="Confirm">-->
         </div>
 
         <div class="line line-city">

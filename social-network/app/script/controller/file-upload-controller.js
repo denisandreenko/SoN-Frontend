@@ -25,13 +25,14 @@ function FileUploadController($scope, Constant, Upload, authFact, $mdMedia, $mdD
         }).then(function (response) {
             $timeout(function () {
                 $scope.result = response.data;
-                if ($scope.result.entity != null)
-                    Constant.UploadedImgID = $scope.result.entity;
+                Constant.UploadedImgID = $scope.result.entity;
+                $scope.isLoading = false;
             });
         }, function (response) {
             if (response.status > 0) $scope.errorMsg = response.status
                 + ': ' + response.data;
         }, function (evt) {
+            $scope.isLoading = true;
             $scope.progress = parseInt(100.0 * evt.loaded / evt.total);
         });
     };
@@ -39,16 +40,15 @@ function FileUploadController($scope, Constant, Upload, authFact, $mdMedia, $mdD
     $scope.showAdvanced = function (ev) {
         var useFullScreen = ($mdMedia('sm') || $mdMedia('xs')) && $scope.customFullscreen;
         $mdDialog.show({
-            controller: AvaDialogController,
             templateUrl: 'view/avatarDialog.html',
             parent: angular.element(document.body),
             targetEvent: ev,
-            clickOutsideToClose: true,
-            fullscreen: useFullScreen
-        })
-            .then(function (answer) {
-            }, function () {
-            });
+            clickOutsideToClose: true
+        }).then(function (answer) {
+
+        }, function () {
+
+        });
         $scope.$watch(function () {
             return $mdMedia('xs') || $mdMedia('sm');
         }, function (wantsFullScreen) {
@@ -56,20 +56,4 @@ function FileUploadController($scope, Constant, Upload, authFact, $mdMedia, $mdD
         });
     };
 
-}
-
-angular.module('socialNetwork').controller('AvaDialogController', AvaDialogController);
-
-AvaDialogController.$inject = ['$scope', '$mdDialog'];
-
-function AvaDialogController($scope, $mdDialog) {
-    $scope.hide = function () {
-        $mdDialog.hide();
-    };
-    $scope.cancel = function () {
-        $mdDialog.cancel();
-    };
-    $scope.answer = function (answer) {
-        $mdDialog.hide(answer);
-    };
 }
