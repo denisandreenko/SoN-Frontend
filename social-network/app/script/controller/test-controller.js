@@ -8,9 +8,9 @@ function TestController($scope, Upload, NetworkService, Constant, $mdToast, Noti
     $scope.fieldToReturn = '';
     $scope.eventText = 'There is no events yet';
 
-    var hendler = NotifyService.subscribe(Constant.Events.UPDATESEARCH, eventHappened);
+    var hendler = NotifyService.subscribe(Constant.Events.UPDATEPSEARCH, eventHappened);
 
-    //NotifyService.notify(Constant.Events.UPDATESEARCH, whenNotify());
+    //NotifyService.notify(Constant.Events.UPDATEPSEARCH, whenNotify());
 
     function eventHappened(event, data) {
         $scope.eventText = data.name + ', ' + data.lastName + '\n' + data.field;

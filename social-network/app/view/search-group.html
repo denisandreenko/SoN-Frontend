@@ -1,4 +1,4 @@
-<div id="groups" ng-controller="MyGroupController">
+<div id="groups" ng-controller="GroupSearchController">
     <div class="masonry-place">
         <!-- Адаптивные блоки с содержанием -->
         <div class="item" ng-repeat="group in groups | filter: searchGroups">
@@ -7,7 +7,7 @@
                 <span>{{group.folowers}} folowers</span>
             </div>
             <div class="prime">
-                <a data-ng-click="gotoGroup($index)"><img src="{{group.imageUrl}}"></a>
+                <a data-ng-click="gotoGroup($index)"><img src="{{group.image}}"></a>
             </div>
         </div>
     </div>

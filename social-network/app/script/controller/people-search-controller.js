@@ -21,7 +21,7 @@ function PeopleSearch($scope, NetworkService, $state, Constant, NotifyService) {
 
         promise.then(function (response) {
             var data = response.getData();
-            NotifyService.notify(Constant.Events.UPDATESEARCH, '');
+            NotifyService.notify(Constant.Events.UPDATEPSEARCH, '');
         });
     };
 
@@ -31,7 +31,7 @@ function PeopleSearch($scope, NetworkService, $state, Constant, NotifyService) {
 
         promise.then(function (response) {
             var data = response.getData();
-            NotifyService.notify(Constant.Events.UPDATESEARCH, '');
+            NotifyService.notify(Constant.Events.UPDATEPSEARCH, '');
         });
     };
 
@@ -40,7 +40,7 @@ function PeopleSearch($scope, NetworkService, $state, Constant, NotifyService) {
         $state.go('menu.friend', {'userIdentifier': id});
     };
 
-    var hendler = NotifyService.subscribe(Constant.Events.UPDATESEARCH, callback);
+    var hendler = NotifyService.subscribe(Constant.Events.UPDATEPSEARCH, callback);
 
     function callback(event, data) {
         text = data;

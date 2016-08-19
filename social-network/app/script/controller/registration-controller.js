@@ -23,7 +23,7 @@ function RegController($scope, NetworkService, $state, $mdToast, Constant) {
         $scope.birthDate = moment($scope.birthDate).format('DD/MM/YYYY');
         if (checkFields()) {
             $scope.master = {
-                "name": $scope.name,
+                "name": $scope.firstName,
                 "lastName": $scope.lastName,
                 "login": $scope.login,
                 "password": $scope.password,
@@ -41,7 +41,7 @@ function RegController($scope, NetworkService, $state, $mdToast, Constant) {
                 $scope.password = "";
                 $scope.login = "";
                 $scope.sex = "";
-                $scope.birthDate = $scope.DD = $scope.MM = $scope.YYYY = "";
+                $scope.birthDate = "";
                 $scope.email = "";
                 $scope.confirmPass = '';
                 Constant.ToastMsg = "Registration successful, now you can authorise !";

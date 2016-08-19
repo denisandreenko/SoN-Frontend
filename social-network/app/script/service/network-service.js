@@ -418,6 +418,15 @@ function NetworkService($http, $q, $log, Constant, ResponseFactory, $mdToast, au
         };
         return _get(url, Constant.AuthType.NONE, params);
     }
+    function _searchG(text, additionalUrl, limit, offset) {
+        var url = Constant.APIBaseUrl + additionalUrl;
+        var params = {
+            name: text,
+            limit: limit,
+            offset: offset
+        };
+        return _get(url, Constant.AuthType.NONE, params);
+    }
 
     function _forgotPass(additionalUrl, email) {
         var url = Constant.APIBaseUrl + additionalUrl;
@@ -490,6 +499,7 @@ function NetworkService($http, $q, $log, Constant, ResponseFactory, $mdToast, au
         authorisation: _authorisation,
         registration: _registration,
         deletePost: _deletePost,
-        searchTA: _searchTA
+        searchTA: _searchTA,
+        searchG: _searchG
     }
 }

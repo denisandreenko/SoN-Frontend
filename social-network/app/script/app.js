@@ -91,9 +91,8 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
             url: '/groups/:groupIdentifier',
             templateUrl: "view/face-group.html"
         })
-
         .state('menu.search-group', {
-            url: '/groups',
+            url: '/groups:searchReq',
             templateUrl: "view/search-group.html"
         });
 

@@ -30,6 +30,8 @@ function ProfileByIdController($scope, NetworkService, Constant, $state, PostCre
         });
     }
 
+    NotifyService.notify(Constant.Events.UPDATEFRIEND, '');
+
      $scope.setSex = function (sex) {
         if (sex == '0') {
             return 'Female';
