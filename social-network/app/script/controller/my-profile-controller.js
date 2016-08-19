@@ -21,8 +21,6 @@ function ProfileController($scope, NetworkService, Constant, authFact, PostCreat
         $scope.userCity = data.entity.city || 'Not set';
         $scope.userAbout = data.entity.about || 'Not set';
         $scope.userSex = $scope.setSex(data.entity.sex);
-        //$scope.userSex = data.entity.sex;
-
 
         NotifyService.notify(Constant.Events.REFRESHPOSTS, 'refPosts');
     });

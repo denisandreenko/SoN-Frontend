@@ -20,11 +20,19 @@ function ProfileByIdController($scope, NetworkService, Constant, $state, PostCre
         $scope.userContacts = data.entity.contactUser || 'Not set';
         $scope.userCity = data.entity.city || 'Not set';
         $scope.userAbout = data.entity.about || 'Not set';
-        $scope.userSex = data.entity.sex;
+        $scope.userSex = $scope.setSex(data.entity.sex);
         $scope.isFriend = data.entity.isFriend;
 
         $scope.refreshPosts();
     });
+
+    $scope.setSex = function (sex) {
+        if (sex == '0') {
+            return 'Female';
+        } else {
+            return 'Male'
+        }
+    };
 
     $scope.deleteFromFriends = function () {
         var promise = NetworkService.deleteFromFriendsns(userId, '/friends').promise;

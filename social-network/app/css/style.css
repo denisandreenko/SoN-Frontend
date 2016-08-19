@@ -394,10 +394,6 @@ body {
 
 
 
-#friends .filter {
-    display: none;
-}
-
 #friends .filter input {
     width: 40%;
     padding: 3px 5px;
@@ -884,13 +880,6 @@ body {
     outline-color: green;
 }
 
-.messages {
-    font-size: smaller;
-    padding-top: 5px;
-    padding-bottom: 10px;
-    color: red;
-}
-
 
 
 
@@ -1013,17 +1002,20 @@ body {
 .place-icon {
     float: left;
     margin: 15px 10px 10px;
-    padding: 3px;
     width: 33%;
     min-width: 200px;
-    background-color: #949ADB;
+    border: 3px solid #949ADB;
     border-radius: 5px;
+}
+
+.place-icon img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px 5px 0 0;
 }
 
 .place-icon .edit {
     background-color: #91A1E2;
-    border:1px solid #FFFFFF;
-    border-radius: 5px;
 }
 
 .place-icon .edit a {
@@ -1078,8 +1070,8 @@ body {
     float: left;
     background-color: #91A1E2;
     padding: 8px 15px;
-    margin: 0 5%;
-    width: 89.8%;
+    margin: 0 4%;
+    width: 90%;
     border-radius: 5px;
     overflow: hidden;
 }
@@ -1326,6 +1318,7 @@ body {
     float: left;
     border-radius: 50%;
     padding: 5px;
+    cursor: pointer;
 }
 
 .place-post .post-container .post-info {
