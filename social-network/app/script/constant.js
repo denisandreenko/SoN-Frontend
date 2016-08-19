@@ -22,7 +22,9 @@ angular.module('socialNetwork')
             REFRESHPOSTS: 'RefreshPosts',
             REFRESHIDPOSTS: 'RefresiIdPosts',
             REFRESHGPOSTS: 'RefreshGPosts',
+            UPDATEFRIEND: 'UpdateFriend',
             UPDATESEARCH: 'UpdateSearch',
+            UPDATEFRIENDS: 'UpdateFriends',
             UPDATEGROUP: 'UpdateGroup'
         }
     });

@@ -20,7 +20,7 @@ function RegController($scope, NetworkService, $state, $mdToast, Constant) {
     $scope.isName = true;
 
     $scope.update = function () {
-        $scope.birthDate = $scope.DD + '/' + $scope.MM + '/' + $scope.YYYY;
+        $scope.birthDate = moment($scope.birthDate).format('DD/MM/YYYY');
         if (checkFields()) {
             $scope.master = {
                 "name": $scope.name,

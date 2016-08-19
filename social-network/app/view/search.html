@@ -16,7 +16,8 @@
             </div>
             <div class="bottom">
                 <div class="control-panel">
-                    <div class="delete"><a href=""><img src="image/add_black.png"></a></div>
+                    <div class="delete" data-ng-click="addToFriends($index)" data-ng-show="!friend.isFriend"><a href=""><img src="image/add_black.png"></a></div>
+                    <div class="delete" data-ng-click="deleteFromFriends($index)" data-ng-show="friend.isFriend"><a href=""><img src="image/block_black.png"></a></div>
                     <div class="mail"><a href=""><img src="image/mail_black.png"></a></div>
                 </div>
             </div>

@@ -15,6 +15,26 @@ function PeopleSearch($scope, NetworkService, $state, Constant, NotifyService) {
         $scope.people = data.entity;
     });
 
+    $scope.addToFriends = function(index){
+        var userId = $scope.people[index].id;
+        var promise = NetworkService.addToFriends(userId, '/friends').promise;
+
+        promise.then(function (response) {
+            var data = response.getData();
+            NotifyService.notify(Constant.Events.UPDATESEARCH, '');
+        });
+    };
+
+    $scope.deleteFromFriends = function (index) {
+        var userId = $scope.people[index].id;
+        var promise = NetworkService.deleteFromFriendsns(userId, '/friends').promise;
+
+        promise.then(function (response) {
+            var data = response.getData();
+            NotifyService.notify(Constant.Events.UPDATESEARCH, '');
+        });
+    };
+
     $scope.gotoUser = function (index) {
         var id = $scope.people[index].id;
         $state.go('menu.friend', {'userIdentifier': id});

@@ -12,7 +12,7 @@ function ForgotPassController($scope, NetworkService) {
 
         promise.then(function (response) {
             var data = response.getData();
-            alert(data.password);
+            alert(data.entity.password);
         });
     };
 }

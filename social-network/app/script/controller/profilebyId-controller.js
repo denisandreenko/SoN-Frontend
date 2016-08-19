@@ -8,38 +8,42 @@ function ProfileByIdController($scope, NetworkService, Constant, $state, PostCre
     var userId = $state.params.userIdentifier;
     $scope.postText = '';
 
-    var promise = NetworkService.getProfileById('/users/' + userId).promise;
+    var hendler = NotifyService.subscribe(Constant.Events.UPDATEFRIEND, callback);
 
-    promise.then(function (responce) {
-        var data = responce.getData();
+    function callback() {
+        var promise = NetworkService.getProfileById('/users/' + userId).promise;
 
-        $scope.userName = data.entity.name || 'Not set';
-        $scope.userSubname = data.entity.lastName || 'Not set';
-        $scope.userBirthday = data.entity.birthday || 'Not set';
-        $scope.userAvatar = data.entity.avatar || null;
-        $scope.userContacts = data.entity.contactUser || 'Not set';
-        $scope.userCity = data.entity.city || 'Not set';
-        $scope.userAbout = data.entity.about || 'Not set';
-        $scope.userSex = $scope.setSex(data.entity.sex);
-        $scope.isFriend = data.entity.isFriend;
+        promise.then(function (responce) {
+            var data = responce.getData();
 
-        $scope.refreshPosts();
-    });
+            $scope.userName = data.entity.name || 'Not set';
+            $scope.userSubname = data.entity.lastName || 'Not set';
+            $scope.userBirthday = data.entity.birthday || 'Not set';
+            $scope.userAvatar = data.entity.avatar || null;
+            $scope.userContacts = data.entity.contactUser || 'Not set';
+            $scope.userCity = data.entity.city || 'Not set';
+            $scope.userAbout = data.entity.about || 'Not set';
+            $scope.userSex = $scope.setSex(data.entity.sex);
+            $scope.isFriend = data.entity.isFriend;
 
-    $scope.setSex = function (sex) {
+            $scope.refreshPosts();
+        });
+    }
+
+     $scope.setSex = function (sex) {
         if (sex == '0') {
             return 'Female';
         } else {
             return 'Male'
         }
     };
-
+    
     $scope.deleteFromFriends = function () {
         var promise = NetworkService.deleteFromFriendsns(userId, '/friends').promise;
 
         promise.then(function (response) {
             var data = response.getData();
-            //TODO add notify service for page
+            NotifyService.notify(Constant.Events.UPDATEFRIEND, '');
         });
     };
 
@@ -48,7 +52,7 @@ function ProfileByIdController($scope, NetworkService, Constant, $state, PostCre
 
         promise.then(function (response) {
             var data = response.getData();
-            $state.reload();
+            NotifyService.notify(Constant.Events.UPDATEFRIEND, '');
         });
     };
 
@@ -61,6 +65,10 @@ function ProfileByIdController($scope, NetworkService, Constant, $state, PostCre
     $scope.refreshPosts = function () {
         NotifyService.notify(Constant.Events.REFRESHIDPOSTS, 'refPosts');
     };
+
+    $scope.$on('destroy', function () {
+        hendler();
+    })
 }
 angular.module('socialNetwork').controller('PostsByIdController', PostsByIdController);
 
@@ -76,7 +84,7 @@ function PostsByIdController($scope, NetworkService, authFact, $state, NotifySer
 
         promise.then(function(response){
             var data = response.getData();
-            NotifyService.notify(Constant.Events.REFRESHPOSTS, 'refPosts');
+            NotifyService.notify(Constant.Events.REFRESHIDPOSTS, 'refPosts');
         });
     };
     $scope.increaseDisLike = function (index) {
@@ -84,7 +92,7 @@ function PostsByIdController($scope, NetworkService, authFact, $state, NotifySer
 
         promise.then(function(response){
             var data = response.getData();
-            NotifyService.notify(Constant.Events.REFRESHPOSTS, 'refPosts');
+            NotifyService.notify(Constant.Events.REFRESHIDPOSTS, 'refPosts');
         });
     };
 
