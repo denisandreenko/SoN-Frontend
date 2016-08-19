@@ -1,15 +1,6 @@
 <md-dialog aria-label="Avatar" ng-cloak>
     <form>
-        <md-toolbar>
-            <div class="md-toolbar-tools">
-                <h2>Avatar</h2>
-                <span flex></span>
-                <md-button class="md-icon-button" ng-click="cancel()">
-                    <span aria-label="Close dialog">X</span>
-                </md-button>
-            </div>
-        </md-toolbar>
-        <md-dialog-content data-ng-controller="FileUploadController">
+        <md-content data-ng-controller="FileUploadController">
             <form name="myForm">
                 <md-button ngf-select ng-model="picFile" accept="image/*">
                     Select Picture
@@ -28,15 +19,15 @@
                 <span ng-show="result">Upload Successful</span>
                 <span class="err" ng-show="errorMsg">{{errorMsg}}</span>
             </form>
-        </md-dialog-content>
-        <md-dialog-actions layout="row">
-            <span flex></span>
-            <md-button ng-click="answer('not confirmed')">
-                Cancel
-            </md-button>
-            <md-button ng-click="answer('confirmed')">
-                Confirm
-            </md-button>
-        </md-dialog-actions>
+        </md-content>
+        <!--<md-dialog-actions layout="row">-->
+            <!--<span flex></span>-->
+            <!--<md-button ng-click="answer('not confirmed')">-->
+                <!--Cancel-->
+            <!--</md-button>-->
+            <!--<md-button ng-click="answer('confirmed')">-->
+                <!--Confirm-->
+            <!--</md-button>-->
+        <!--</md-dialog-actions>-->
     </form>
 </md-dialog>

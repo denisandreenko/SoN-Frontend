@@ -36,7 +36,8 @@ function FaceGroupController($scope, NetworkService, NotifyService, Constant, Po
 
             promise.then(function (response) {
                 var data = response.getData();
-                NotifyService.notify(Constant.Events.UPDATEGROUP, '');
+                $state.go('menu.groups');
+               // NotifyService.notify(Constant.Events.UPDATEGROUP, '');
             });
         }
     };
@@ -66,7 +67,7 @@ function FaceGroupController($scope, NetworkService, NotifyService, Constant, Po
         $scope.postText = "";
         $timeout(function () {
             NotifyService.notify(Constant.Events.REFRESHGPOSTS, '');
-        }, 150);
+        }, 200);
     };
 
     NotifyService.notify(Constant.Events.UPDATEGROUP, '');
@@ -99,7 +100,7 @@ function PostGroupController($scope, NetworkService, Constant, $state, NotifySer
 
 
     $scope.increaseLike = function (index) {
-        var promise = NetworkService.likePost('/users/posts/' + $scope.posts[index].id + '/likes').promise;
+        var promise = NetworkService.likePost('/groups/posts/' + $scope.posts[index].id + '/likes').promise;
 
         promise.then(function (response) {
             var data = response.getData();
@@ -107,7 +108,7 @@ function PostGroupController($scope, NetworkService, Constant, $state, NotifySer
         });
     };
     $scope.increaseDisLike = function (index) {
-        var promise = NetworkService.dislikePost('/users/posts/' + $scope.posts[index].id + '/likes').promise;
+        var promise = NetworkService.dislikePost('/groups/posts/' + $scope.posts[index].id + '/likes').promise;
 
         promise.then(function (response) {
             var data = response.getData();
@@ -121,7 +122,7 @@ function PostGroupController($scope, NetworkService, Constant, $state, NotifySer
     };
     $scope.DeletePost = function (index) {
         var id = $scope.posts[index].id;
-        var promise = NetworkService.deletePost(id, '/users/posts').promise;
+        var promise = NetworkService.deletePost(id, '/groups/posts').promise;
 
         promise.then(function (response) {
             var data = response.getData();
