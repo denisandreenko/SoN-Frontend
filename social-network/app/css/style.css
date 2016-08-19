@@ -410,25 +410,47 @@ input[type="submit"]:hover {
 #friends .control-panel {
     height: 30px;
     border-bottom: 1px solid #91A1E2;
+    overflow: hidden;
 }
 
-#friends .control-panel li {
-    display: inline-block;
-    width: 31%;
+#friends .control-panel .delete {
+    float: left;
+    width: 50%;
+    border-right: 1px solid lightslategrey;
 }
 
-#friends .control-panel li a {
+#friends .control-panel .mail {
+    float: right;
+    width: 49.9%;
+}
+
+#friends .control-panel a {
     display:block;
-    padding:2.5px 5px;
 }
 
-#friends .control-panel li a img {
-    display: block;
-    margin: 0 auto !important;
+#friends .control-panel a img {
+    padding-top: 2px;
     width: 25px;
     height: 25px;
-
 }
+/*#friends .control-panel li {*/
+    /*display: inline-block;*/
+    /*width: 49%;*/
+/*}*/
+
+/*#friends .control-panel li:first-child {*/
+    /*border-right: 1px solid lightslategrey;*/
+/*}*/
+
+/*#friends .control-panel li a {*/
+    /*display:block;*/
+/*}*/
+
+/*#friends .control-panel li a img {*/
+    /*padding-top: 2px;*/
+    /*width: 25px;*/
+    /*height: 25px;*/
+/*}*/
 
 
 
