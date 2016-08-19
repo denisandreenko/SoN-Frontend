@@ -38,17 +38,6 @@ body {
     height: 40px;
 }
 
-
-a:hover {
-    background-color: #E8BEE9;
-    border-radius: 5px;
-}
-
-input[type="submit"]:hover {
-    background-color: #91A1E2;
-    border-radius: 5px;
-}
-
 #wrapper {
 
     max-width: 900px;
@@ -433,25 +422,6 @@ input[type="submit"]:hover {
     width: 25px;
     height: 25px;
 }
-/*#friends .control-panel li {*/
-    /*display: inline-block;*/
-    /*width: 49%;*/
-/*}*/
-
-/*#friends .control-panel li:first-child {*/
-    /*border-right: 1px solid lightslategrey;*/
-/*}*/
-
-/*#friends .control-panel li a {*/
-    /*display:block;*/
-/*}*/
-
-/*#friends .control-panel li a img {*/
-    /*padding-top: 2px;*/
-    /*width: 25px;*/
-    /*height: 25px;*/
-/*}*/
-
 
 
 
@@ -618,6 +588,86 @@ input[type="submit"]:hover {
 
 
 
+/*Authorization form*/
+#content-home .autorization-form {
+    background-color: #E0A565;
+    width: 350px;
+    padding: 20px;
+    border-radius: 3px;
+    position: absolute;
+    top: 10%;
+    left: 30%;
+    z-index: 1;
+}
+
+#content-home .autorization-form:before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    border: 1px dashed #ccc;
+    top: 5px;
+    bottom: 5px;
+    left: 5px;
+    right: 5px;
+}
+
+#content-home .autorization-form h1 {
+    text-shadow: 0 1px 0 rgba(255, 255, 255, .7), 0px 2px 0 rgba(0, 0, 0, .5);
+    text-transform: uppercase;
+    text-align: center;
+    color: #B32D2D;
+    margin: 0 0 30px 0;
+    letter-spacing: 4px;
+    font: normal 26px/1 Verdana, Helvetica;
+    position: relative;
+}
+
+#content-home .autorization-form fieldset {
+    border: 0;
+    padding: 0;
+    margin: 0 0 20px 0;
+    overflow: hidden;
+}
+
+#content-home .autorization-form #inputs input {
+    padding: 15px 15px 15px 30px;
+    margin: 0 0 10px 0;
+    width: 240px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#content-home .autorization-form #username {
+    background-position: 5px -2px !important;
+}
+
+#content-home .autorization-form #password {
+    background-position: 5px -52px !important;
+}
+
+#content-home .autorization-form #inputs input:focus {
+    background-color: #fff;
+    border-color: #e8c291;
+    outline: none;
+    box-shadow: 0 0 0 1px #e8c291 inset;
+}
+
+#content-home .autorization-form .login {
+    width: 77%;
+    height: 30px;
+    border: none;
+    background-color: #FFFFFF;
+}
+
+#content-home .autorization-form .registration,
+#content-home .autorization-form .forgot{
+    background: #FFFFFF;
+    width: 77%;
+    margin: 5px auto;
+    padding: 4px;
+}
+
+
 /* Всплывающее окно */
 .popup-checkbox, .popup {
     display: none;
@@ -644,24 +694,6 @@ input[type="submit"]:hover {
     left: 0;
     background-color: #000;
     opacity: .5;
-}
-
-.popup-content {
-    width: 550px;
-    height: 300px;
-    position: absolute;
-    z-index: 2;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    margin: auto;
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 6px;
-    padding: 20px;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
 }
 
 .popup-shower {
@@ -699,165 +731,176 @@ input[type="submit"]:hover {
     opacity: 1;
     display: block;
 }
+/*_________________*/
 
 
 
-.popup-content h1 {
-    font-size: 16px;
-    color: orange;
-}
-/*_____*/
-
-
-
-
-#content-home .autorization-form {
+.popup-content-forgot,
+.popup-content-registration {
+    width: 550px;
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
     background-color: #fff;
-    background-image: -ms-linear-gradient(top, #FFFFFF 0%, #91A1E2 40%);
-    background-image: -moz-linear-gradient(top, #FFFFFF 0%, #91A1E2 40%);
-    background-image: -o-linear-gradient(top, #FFFFFF 0%, #91A1E2 40%);
-    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #FFFFFF), color-stop(40, #91A1E2));
-    background-image: -webkit-linear-gradient(top, #FFFFFF 0%, #91A1E2 40%);
-    background-image: linear-gradient(to bottom, #FFFFFF 0%, #91A1E2 40%);
-    width: 350px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
     padding: 20px;
-    border-radius: 3px;
-    position: absolute;
-    top: 10%;
-    left: 30%;
-    z-index: 1;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
 }
 
-#content-home .autorization-form:before {
-    content: '';
-    position: absolute;
-    z-index: -1;
-    border: 1px dashed #ccc;
-    top: 5px;
-    bottom: 5px;
-    left: 5px;
-    right: 5px;
+.popup-content-forgot {
+    height: 300px;
 }
 
-#content-home .autorization-form h1 {
-    text-shadow: 0 1px 0 rgba(255, 255, 255, .7), 0px 2px 0 rgba(0, 0, 0, .5);
-    text-transform: uppercase;
-    text-align: center;
-    color: black;
-    margin: 0 0 30px 0;
-    letter-spacing: 4px;
-    font: normal 26px/1 Verdana, Helvetica;
-    position: relative;
+
+/*Registrtion form*/
+#content-registration {
+    overflow: hidden;
+    min-height: 100vh;
 }
 
-#content-home .autorization-form fieldset {
-    border: 0;
+#content-registration h1 {
+    font-size: 45px;
+    font-weight: bold;
+}
+
+#content-registration .data {
+    overflow: hidden;
+    width: 80%;
+    margin: 0 auto;
+}
+
+#content-registration .line {
+    overflow: hidden;
+    margin: 20px 0;
+}
+
+#content-registration .line span {
+    font-size: 25px;
+    display: block;
+    margin: 0;
     padding: 0;
-    margin: 0 0 20px 0;
+    float: left;
     overflow: hidden;
 }
 
-#content-home .autorization-form #inputs input {
-    background: #f1f1f1 url(http://www.red-team-design.com/wp-content/uploads/2011/09/login-sprite.png) no-repeat;
-    padding: 15px 15px 15px 30px;
-    margin: 0 0 10px 0;
-    width: 240px;
+#content-registration .line p {
+    float: right;
+    color: red;
+    font-size: 16px;
+    display: block;
+}
+
+#content-registration .line input[type="text"],
+#content-registration .line input[type="password"],
+#content-registration .line input[type="email"]{
+    float: right;
+    padding: 5px 10px 5px 25px;
+    width: 220px;
+    height: 30px;
     border: 1px solid #ccc;
     border-radius: 5px;
 }
 
-#content-home .autorization-form #username {
-    background-position: 5px -2px !important;
+#content-registration .line .sex {
+    float: right;
+    font-size: 18px;
+    margin-top: 8px;
+}
+#content-registration .line input[type="radio"] {
+    float: right;
+    margin: 16px 4% 0 10px;
 }
 
-#content-home .autorization-form #password {
-    background-position: 5px -52px !important;
-}
-
-#content-home .autorization-form #inputs input:focus {
-    background-color: #fff;
-    border-color: #e8c291;
-    outline: none;
-    box-shadow: 0 0 0 1px #e8c291 inset;
-}
-
-#content-home .autorization-form #enter,
-#content-home .autorization-form #registration {
-    background-color: inherit;
-    border: none;
-    text-align: left;
-    height: 30px;
-    margin:0 auto 10px;
-    padding: 0 10px 0 0;
+#content-registration input[type="submit"] {
+    height: 35px;
+    margin: 15px auto ;
+    padding: 0;
     width: 130px;
     cursor: pointer;
-    font: 15px Arial, Helvetica;
-    color: black;
+    font: bold 15px Arial, Helvetica;
 }
 
-.submit-enter, .button-registration {
-    float: left;
-    margin-left: 105px;
-    position: relative;
-}
-
-#content-home .autorization-form #actions .submit-enter:before,
-#content-home .autorization-form #actions .button-registration:before {
-    width: 32px;
-    height: 32px;
-    content: url("../image/arrow.png");
-    position:absolute;
-    top: 0;
-    left: -45px;
+#content-registration .line input[type="text"],
+#content-registration .line input[type="password"],
+#content-registration .line input[type="email"] {
     display: block;
-    z-index: 10;
+    float: right;
+    font-size: 17px;
+    padding: 5px 15px 5px 15px;
+    height: 35px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 50%;
 }
 
-#content-home .autorization-form #actions .button-registration:before {
-    top: -1px;
-    content: url("../image/star.png");
+#content-registration input[type="submit"]:hover {
+    background-color: #E8E87D;
 }
 
-#content-home .autorization-form #enter:hover,
-#content-home .autorization-form #registration:hover {
-    color: white;
-}
-
-#content-home .autorization-form #enter:active,
-#content-home .autorization-form #registration:active {
+#content-registration input[type="submit"]:active {
     outline: none;
     -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5) inset;
     -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5) inset;
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5) inset;
 }
 
+#content-registration input:focus
+{
+    background-color: #fff;
+    border-color: #e8c291;
+    outline: none;
+    box-shadow: 0 0 0 1px #e8c291 inset;
+}
 
+/*Валидация пароля*/
+
+.ng-invalid {
+    border-color: red;
+    outline-color: red;
+}
+
+.ng-valid {
+    border-color: green;
+    outline-color: green;
+}
+
+.messages {
+    font-size: smaller;
+    padding-top: 5px;
+    padding-bottom: 10px;
+    color: red;
+}
 
 
 
 /*---------------------------------------------------------------------FORGOT_PASSWORD---------------------------------------------------------------------------*/
 
 
-#content-home .popup-content h1 {
+#content-home .popup-content-forgot h1 {
     font-size: 30px;
     font-weight: bold;
     line-height: 1.4;
     margin-top: 10px;
 }
 
-#content-home .popup-content p {
+#content-home .popup-content-forgot p {
     font-size: 20px;
     line-height: 1.4;
 }
 
-#content-home .popup-content .line {
+#content-home .popup-content-forgot .line {
     overflow: hidden;
     padding: 0 0;
     margin: 15px;
 }
 
-#content-home .popup-content .line input[type="email"] {
-    background: #f1f1f1 url(http://www.red-team-design.com/wp-content/uploads/2011/09/login-sprite.png) no-repeat;
+#content-home .popup-content-forgot .line input[type="email"] {
     padding: 7px 15px 7px 15px;
     width: 280px;
     height: 40px;
@@ -866,43 +909,24 @@ input[type="submit"]:hover {
     font-size: 20px;
 }
 
-#content-home .popup-content input[type="submit"] {
-    background-color: #ffb94b;
-    background-image: -webkit-gradient(linear, left top, left bottom, from(#fddb6f), to(#ffb94b));
-    background-image: -webkit-linear-gradient(top, #fddb6f, #ffb94b);
-    background-image: -moz-linear-gradient(top, #fddb6f, #ffb94b);
-    background-image: -ms-linear-gradient(top, #fddb6f, #ffb94b);
-    background-image: -o-linear-gradient(top, #fddb6f, #ffb94b);
-    background-image: linear-gradient(top, #fddb6f, #ffb94b);
 
-    -moz-border-radius: 3px;
-    -webkit-border-radius: 3px;
-    border-radius: 3px;
-
-    text-shadow: 0 1px 0 rgba(255,255,255,0.5);
-
-    border-width: 1px;
-    border-style: solid;
-    border-color: #d69e31 #e3a037 #d5982d #e3a037;
-
-    height: 35px;
-    margin:10px auto;
-    padding: 0;
-    width: 130px;
-    cursor: pointer;
-    font: bold 15px Arial, Helvetica;
-    color: #8f5a0a;
-}
-
-#content-home .popup-content input
+#content-home .popup-content-forgot input
 {
-    background: #f1f1f1 url(http://www.red-team-design.com/wp-content/uploads/2011/09/login-sprite.png) no-repeat;
     border: 1px solid #ccc;
     border-radius: 5px;
     margin: 8px auto;
 }
 
-#content-home .popup-content input[type="submit"]:hover {
+#content-home .popup-content-forgot input[type="submit"] {
+    height: 35px;
+    margin: 15px auto ;
+    padding: 0;
+    width: 130px;
+    cursor: pointer;
+    font: bold 15px Arial, Helvetica;
+}
+
+#content-home .popup-content-forgot input[type="submit"]:hover {
     background-color: #fddb6f;
     background-image: -webkit-gradient(linear, left top, left bottom, from(#ffb94b), to(#fddb6f));
     background-image: -webkit-linear-gradient(top, #ffb94b, #fddb6f);
@@ -912,14 +936,14 @@ input[type="submit"]:hover {
     background-image: linear-gradient(top, #ffb94b, #fddb6f);
 }
 
-#content-home .popup-content input[type="submit"]:active {
+#content-home .popup-content-forgot input[type="submit"]:active {
     outline: none;
     -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5) inset;
     -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5) inset;
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5) inset;
 }
 
-#content-home .popup-content input:focus
+#content-home .popup-content-forgot input:focus
 {
     background-color: #fff;
     border-color: #e8c291;
@@ -1270,145 +1294,145 @@ input[type="submit"]:hover {
 
 
 
-#content-registration {
-    overflow: hidden;
-    padding: 20px 0 0 0;
-    background-color: #CAEEFA;
-    min-height: 100vh;
-}
+/*#content-registration {*/
+    /*overflow: hidden;*/
+    /*padding: 20px 0 0 0;*/
+    /*background-color: #CAEEFA;*/
+    /*min-height: 100vh;*/
+/*}*/
 
-#content-registration h1 {
-    font-size: 55px;
-    font-weight: bold;
-}
+/*#content-registration h1 {*/
+    /*font-size: 55px;*/
+    /*font-weight: bold;*/
+/*}*/
 
-#content-registration .data {
-    overflow: hidden;
-    width: 55%;
-    margin: 0 auto;
-}
+/*#content-registration .data {*/
+    /*overflow: hidden;*/
+    /*width: 55%;*/
+    /*margin: 0 auto;*/
+/*}*/
 
-#content-registration .line {
-    overflow: hidden;
-    margin: 20px 0;
-}
+/*#content-registration .line {*/
+    /*overflow: hidden;*/
+    /*margin: 20px 0;*/
+/*}*/
 
-#content-registration .line span {
-    font-size: 25px;
-    display: block;
-    margin: 0;
-    padding: 0;
-    float: left;
-    overflow: hidden;
-}
+/*#content-registration .line span {*/
+    /*font-size: 25px;*/
+    /*display: block;*/
+    /*margin: 0;*/
+    /*padding: 0;*/
+    /*float: left;*/
+    /*overflow: hidden;*/
+/*}*/
 
-#content-registration .line p {
-    float: right;
-    color: red;
-    font-size: 16px;
-    display: block;
-}
+/*#content-registration .line p {*/
+    /*float: right;*/
+    /*color: red;*/
+    /*font-size: 16px;*/
+    /*display: block;*/
+/*}*/
 
-#content-registration .line input[type="text"],
-#content-registration .line input[type="password"],
-#content-registration .line input[type="email"]{
-    float: right;
-    background: #f1f1f1 url(http://www.red-team-design.com/wp-content/uploads/2011/09/login-sprite.png) no-repeat;
-    padding: 5px 10px 5px 25px;
-    width: 220px;
-    height: 30px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
+/*#content-registration .line input[type="text"],*/
+/*#content-registration .line input[type="password"],*/
+/*#content-registration .line input[type="email"]{*/
+    /*float: right;*/
+    /*background: #f1f1f1 url(http://www.red-team-design.com/wp-content/uploads/2011/09/login-sprite.png) no-repeat;*/
+    /*padding: 5px 10px 5px 25px;*/
+    /*width: 220px;*/
+    /*height: 30px;*/
+    /*border: 1px solid #ccc;*/
+    /*border-radius: 5px;*/
+/*}*/
 
-#content-registration .line .sex {
-    float: right;
-    font-size: 18px;
-    margin-top: 8px;
-}
-#content-registration .line input[type="radio"] {
-    float: right;
-    margin: 16px 40px 0 10px;
-}
+/*#content-registration .line .sex {*/
+    /*float: right;*/
+    /*font-size: 18px;*/
+    /*margin-top: 8px;*/
+/*}*/
+/*#content-registration .line input[type="radio"] {*/
+    /*float: right;*/
+    /*margin: 16px 40px 0 10px;*/
+/*}*/
 
-#content-registration input[type="submit"] {
-    background-image: -ms-linear-gradient(top, #FFFFFF 0%, #A1B1F2 40%);
-    background-image: -moz-linear-gradient(top, #FFFFFF 0%, #A1B1F2 40%);
-    background-image: -o-linear-gradient(top, #FFFFFF 0%, #A1B1F2 40%);
-    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #FFFFFF), color-stop(40, #A1B1F2));
-    background-image: -webkit-linear-gradient(top, #FFFFFF 0%, #A1B1F2 40%);
-    background-image: linear-gradient(to bottom, #FFFFFF 0%, #A1B1F2 40%);
+/*#content-registration input[type="submit"] {*/
+    /*background-image: -ms-linear-gradient(top, #FFFFFF 0%, #A1B1F2 40%);*/
+    /*background-image: -moz-linear-gradient(top, #FFFFFF 0%, #A1B1F2 40%);*/
+    /*background-image: -o-linear-gradient(top, #FFFFFF 0%, #A1B1F2 40%);*/
+    /*background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #FFFFFF), color-stop(40, #A1B1F2));*/
+    /*background-image: -webkit-linear-gradient(top, #FFFFFF 0%, #A1B1F2 40%);*/
+    /*background-image: linear-gradient(to bottom, #FFFFFF 0%, #A1B1F2 40%);*/
 
-    -moz-border-radius: 3px;
-    -webkit-border-radius: 3px;
-    border-radius: 3px;
+    /*-moz-border-radius: 3px;*/
+    /*-webkit-border-radius: 3px;*/
+    /*border-radius: 3px;*/
 
-    height: 35px;
-    margin: 15px auto ;
-    padding: 0;
-    width: 130px;
-    cursor: pointer;
-    font: bold 15px Arial, Helvetica;
-}
+    /*height: 35px;*/
+    /*margin: 15px auto ;*/
+    /*padding: 0;*/
+    /*width: 130px;*/
+    /*cursor: pointer;*/
+    /*font: bold 15px Arial, Helvetica;*/
+/*}*/
 
-#content-registration .line input[type="text"],
-#content-registration .line input[type="password"],
-#content-registration .line input[type="email"]
-{
-    display: block;
-    float: right;
-    font-size: 17px;
-    background: #f1f1f1 url(http://www.red-team-design.com/wp-content/uploads/2011/09/login-sprite.png) no-repeat;
-    padding: 5px 15px 5px 15px;
-    height: 35px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    width: 50%;
-}
+/*#content-registration .line input[type="text"],*/
+/*#content-registration .line input[type="password"],*/
+/*#content-registration .line input[type="email"]*/
+/*{*/
+    /*display: block;*/
+    /*float: right;*/
+    /*font-size: 17px;*/
+    /*background: #f1f1f1 url(http://www.red-team-design.com/wp-content/uploads/2011/09/login-sprite.png) no-repeat;*/
+    /*padding: 5px 15px 5px 15px;*/
+    /*height: 35px;*/
+    /*border: 1px solid #ccc;*/
+    /*border-radius: 5px;*/
+    /*width: 50%;*/
+/*}*/
 
-#content-registration input[type="submit"]:hover {
-    background-color: #fddb6f;
-    background-image: -webkit-gradient(linear, left top, left bottom, from(#ffb94b), to(#fddb6f));
-    background-image: -webkit-linear-gradient(top, #ffb94b, #fddb6f);
-    background-image: -moz-linear-gradient(top, #ffb94b, #fddb6f);
-    background-image: -ms-linear-gradient(top, #ffb94b, #fddb6f);
-    background-image: -o-linear-gradient(top, #ffb94b, #fddb6f);
-    background-image: linear-gradient(top, #ffb94b, #fddb6f);
-}
+/*#content-registration input[type="submit"]:hover {*/
+    /*background-color: #fddb6f;*/
+    /*background-image: -webkit-gradient(linear, left top, left bottom, from(#ffb94b), to(#fddb6f));*/
+    /*background-image: -webkit-linear-gradient(top, #ffb94b, #fddb6f);*/
+    /*background-image: -moz-linear-gradient(top, #ffb94b, #fddb6f);*/
+    /*background-image: -ms-linear-gradient(top, #ffb94b, #fddb6f);*/
+    /*background-image: -o-linear-gradient(top, #ffb94b, #fddb6f);*/
+    /*background-image: linear-gradient(top, #ffb94b, #fddb6f);*/
+/*}*/
 
-#content-registration input[type="submit"]:active {
-    outline: none;
-    -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5) inset;
-    -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5) inset;
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5) inset;
-}
+/*#content-registration input[type="submit"]:active {*/
+    /*outline: none;*/
+    /*-moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5) inset;*/
+    /*-webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5) inset;*/
+    /*box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5) inset;*/
+/*}*/
 
-#content-registration input:focus
-{
-    background-color: #fff;
-    border-color: #e8c291;
-    outline: none;
-    box-shadow: 0 0 0 1px #e8c291 inset;
-}
+/*#content-registration input:focus*/
+/*{*/
+    /*background-color: #fff;*/
+    /*border-color: #e8c291;*/
+    /*outline: none;*/
+    /*box-shadow: 0 0 0 1px #e8c291 inset;*/
+/*}*/
 
-/*Валидация пароля*/
+/*!*Валидация пароля*!*/
 
-.ng-invalid {
-    border-color: red;
-    outline-color: red;
-}
+/*.ng-invalid {*/
+    /*border-color: red;*/
+    /*outline-color: red;*/
+/*}*/
 
-.ng-valid {
-    border-color: green;
-    outline-color: green;
-}
+/*.ng-valid {*/
+    /*border-color: green;*/
+    /*outline-color: green;*/
+/*}*/
 
-.messages {
-    font-size: smaller;
-    padding-top: 5px;
-    padding-bottom: 10px;
-    color: red;
-}
+/*.messages {*/
+    /*font-size: smaller;*/
+    /*padding-top: 5px;*/
+    /*padding-bottom: 10px;*/
+    /*color: red;*/
+/*}*/
 
 
 
