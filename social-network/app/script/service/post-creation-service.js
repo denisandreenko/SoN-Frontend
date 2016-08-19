@@ -2,11 +2,11 @@
 
 angular.module('socialNetwork').service('PostCreationService', PostCreationService);
 
-PostCreationService.$inject = ['NetworkService', 'Constant'];
+PostCreationService.$inject = ['NetworkService', 'Constant', 'NotifyService'];
 
-function PostCreationService(NetworkService, Constant) {
+function PostCreationService(NetworkService, Constant, NotifyService) {
 
-    function _createPostToUser(fileId, postText, userToID) {
+    function _createPostToUser(fileId, postText, userToID, whatToUpdate) {
         var master = {
             idTo: userToID,
             fkImage: fileId,
@@ -17,6 +17,7 @@ function PostCreationService(NetworkService, Constant) {
 
         promise.then(function (responce) {
             var data = responce.getData();
+            NotifyService.notify(whatToUpdate, 'refPosts');
             Constant.UploadedImgID = null;
         });
     }
@@ -31,6 +32,7 @@ function PostCreationService(NetworkService, Constant) {
 
         promise.then(function (responce) {
             var data = responce.getData();
+            NotifyService.notify(Constant.Events.REFRESHGPOSTS, 'refPosts');
             Constant.UploadedImgID = null;
         });
     }

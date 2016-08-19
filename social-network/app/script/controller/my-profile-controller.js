@@ -33,15 +33,12 @@ function ProfileController($scope, NetworkService, Constant, authFact, PostCreat
         } else {
             return 'Male'
         }
-    }
+    };
 
     $scope.PostIt = function () {
         var id = authFact.getId();
         var imgURL = Constant.UploadedImgID;
-        PostCreationService.createPostToUser(imgURL || null, $scope.postText, id);
+        PostCreationService.createPostToUser(imgURL || null, $scope.postText, id, Constant.Events.REFRESHPOSTS);
         $scope.postText = "";
-        $timeout(function () {
-            NotifyService.notify(Constant.Events.REFRESHPOSTS, 'refPosts');
-        }, 250);
     };
 }

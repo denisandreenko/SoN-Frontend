@@ -31,7 +31,7 @@ function ProfileByIdController($scope, NetworkService, Constant, $state, PostCre
 
         promise.then(function (response) {
             var data = response.getData();
-            $state.reload();
+            //TODO add notify service for page
         });
     };
 
@@ -46,11 +46,8 @@ function ProfileByIdController($scope, NetworkService, Constant, $state, PostCre
 
     $scope.PostIt = function () {
         var imgURL = Constant.UploadedImgID;
-        PostCreationService.createPostToUser(imgURL || null, $scope.postText, userId);
+        PostCreationService.createPostToUser(imgURL || null, $scope.postText, userId, Constant.Events.REFRESHIDPOSTS);
         $scope.postText = "";
-        $timeout(function () {
-            $scope.refreshPosts();
-        }, 250);
     };
 
     $scope.refreshPosts = function () {
