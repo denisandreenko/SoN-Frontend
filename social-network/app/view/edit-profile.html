@@ -2,7 +2,7 @@
     <form name="editProfileForm" data-ng-submit="sendData()">
         <div class="line line-avatar">
             <span>Avatar</span>
-            <div data-ng-controller="FileUploadController" layout="row" layout-align="center">
+            <div data-ng-controller="FileUploadController" layout="row" layout-align="end">
                 <md-button class="md-raised" ng-click="showAdvanced($event)">
                     Choose avatar
                 </md-button>
@@ -39,7 +39,7 @@
 
         <div class="line line-birthday">
             <span>Birthday</span>
-            <div layout="row" layout-align="center">
+            <div layout="row" layout-align="end">
                 <input type="date" min="1900-01-01" max="2016-01-01"
                        data-ng-model="birthdate" value="birthdate">
             </div>
