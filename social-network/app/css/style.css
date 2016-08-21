@@ -1,5 +1,4 @@
 /*--------------------------------------------------------------------Common CSS-----------------------------------------------------------------------------*/
-
 @import url(reset.css);
 
 body {
@@ -43,8 +42,8 @@ body {
     max-width: 900px;
     margin: 0 auto;
     height: auto;
-    background-color: white;          /*bad-white     no-bad-white*/
-    min-height:100vh;
+    background-color: white; /*bad-white     no-bad-white*/
+    min-height: 100vh;
     position: relative;
 }
 
@@ -63,14 +62,14 @@ body {
     margin: 0 auto;
 }
 
-#header .logo{
+#header .logo {
     float: left;
     width: 50px;
     height: 30px;
     margin: 5px 0px 5px 5%;
 }
 
-#header .logo img{
+#header .logo img {
     display: block;
     width: 100%;
     height: 100%;
@@ -105,7 +104,7 @@ body {
 #header .top-menu {
     float: right;
     padding-right: 15px;
-    position:relative;
+    position: relative;
 }
 
 #header .top-menu li {
@@ -113,10 +112,10 @@ body {
 }
 
 #header .top-menu li a {
-    display:block;
-    color:#FFFFFF;
-    text-decoration:none;
-    padding:10px 15px;
+    display: block;
+    color: #FFFFFF;
+    text-decoration: none;
+    padding: 10px 15px;
 }
 
 #header .top-menu input {
@@ -175,11 +174,12 @@ body {
     position: relative;
     padding-left: 45px;
 }
-.vert-menu li a:hover{
+
+.vert-menu li a:hover {
     border-radius: 0;
 }
 
-.vert-menu li a:before{
+.vert-menu li a:before {
     width: 30px;
     height: 30px;
     content: url("../image/material/home.png");
@@ -187,30 +187,35 @@ body {
     top: 8px;
     left: 15px;
 }
-.vert-menu li:nth-child(2) a::before{
+
+.vert-menu li:nth-child(2) a::before {
     content: url("../image/material/friends.png");
 }
-.vert-menu li:nth-child(3) a::before{
+
+.vert-menu li:nth-child(3) a::before {
     content: url("../image/material/message.png");
 }
-.vert-menu li:nth-child(4) a::before{
+
+.vert-menu li:nth-child(4) a::before {
     content: url("../image/material/groups.png");
 }
-.vert-menu li:nth-child(5) a::before{
+
+.vert-menu li:nth-child(5) a::before {
     content: url("../image/material/musical-note.png");
 }
-.vert-menu li:last-child a::before{
+
+.vert-menu li:last-child a::before {
     content: url("../image/material/video.png");
 }
 
-.vert-menu-unvis{
+.vert-menu-unvis {
     display: none;
 }
 
 .vert-menu-mobile {
     display: block;
     position: fixed;
-    list-style:none;
+    list-style: none;
     margin: 0;
     margin-top: 41px;
     box-sizing: border-box;
@@ -236,12 +241,13 @@ body {
     display: none;
 }
 
-.vert-menu-mobile li{
+.vert-menu-mobile li {
     border-bottom: 1px solid #91A1E2;
     text-align: center;
     text-align: left;
 }
-.vert-menu-mobile li a{
+
+.vert-menu-mobile li a {
     display: block;
     padding: 8px 14px;
     text-decoration: none;
@@ -249,7 +255,8 @@ body {
     padding-left: 50px;
     position: relative;
 }
-.vert-menu-mobile li a::before{
+
+.vert-menu-mobile li a::before {
     width: 30px;
     height: 30px;
     content: url("../image/material/home.png");
@@ -257,30 +264,39 @@ body {
     top: 10px;
     left: 17px;
 }
-.vert-menu-mobile li:nth-child(2) a::before{
+
+.vert-menu-mobile li:nth-child(2) a::before {
     content: url("../image/material/friends.png");
 }
-.vert-menu-mobile li:nth-child(3) a::before{
+
+.vert-menu-mobile li:nth-child(3) a::before {
     content: url("../image/material/message.png");
 }
-.vert-menu-mobile li:nth-child(4) a::before{
+
+.vert-menu-mobile li:nth-child(4) a::before {
     content: url("../image/material/groups.png");
 }
-.vert-menu-mobile li:nth-child(5) a:before{
+
+.vert-menu-mobile li:nth-child(5) a:before {
     content: url("../image/material/musical-note.png");
 }
-.vert-menu-mobile li:nth-child(6) a::before{
+
+.vert-menu-mobile li:nth-child(6) a::before {
     content: url("../image/material/video.png");
 }
-.vert-menu-mobile li:nth-child(7) a::before{
+
+.vert-menu-mobile li:nth-child(7) a::before {
     content: url("../image/material/settings.png");
 }
-.vert-menu-mobile li:nth-child(8) a::before{
+
+.vert-menu-mobile li:nth-child(8) a::before {
     content: url("../image/material/logout.png");
 }
+
 .vert-menu-unvis .hidden-menu-ticker {
     display: none;
 }
+
 .vert-menu-unvis .btn-menu {
     color: #fff;
     padding: 5px;
@@ -300,6 +316,7 @@ body {
     transform: translateZ(0);
     backface-visibility: hidden;
 }
+
 .vert-menu-unvis .btn-menu span {
     display: block;
     height: 5px;
@@ -308,6 +325,7 @@ body {
     transition: all .1s linear .23s;
     position: relative;
 }
+
 .vert-menu-unvis .btn-menu span.first {
     margin-top: 0;
 }
@@ -315,6 +333,7 @@ body {
 .vert-menu-unvis .hidden-menu-ticker:checked ~ .vert-menu-mobile {
     left: 0;
 }
+
 .vert-menu-unvis .hidden-menu-ticker:checked ~ .btn-menu span.first {
     -webkit-transform: rotate(45deg);
     -moz-transform: rotate(-45deg);
@@ -322,9 +341,11 @@ body {
     transform: rotate(-45deg);
     top: 10px;
 }
+
 .vert-menu-unvis .hidden-menu-ticker:checked ~ .btn-menu span.second {
     opacity: 0;
 }
+
 .vert-menu-unvis .hidden-menu-ticker:checked ~ .btn-menu span.third {
     -webkit-transform: rotate(45deg);
     -moz-transform: rotate(45deg);
@@ -337,12 +358,11 @@ body {
     background-color: white;
     overflow: hidden;
     position: relative;
-    min-height:93.5vh;
+    min-height: 93.5vh;
     border-left: 1px solid #91A1E2;
     margin-left: 160px;
     margin-top: 41px;
 }
-
 
 /* The number groups and friends of the user's */
 .quantity {
@@ -372,7 +392,6 @@ body {
     border-radius: 3px;
 }
 
-
 /* Сontainer with adaptive block */
 .masonry-place {
     overflow: hidden;
@@ -396,8 +415,6 @@ body {
     -webkit-box-sizing: border-box; /* For Safari, Chrome, iOS and Android */
 }
 
-
-
 /*--------------------------------------------------------------------------------FRIENDS------------------------------------------------------------------------*/
 
 /* ------------- Сontainer with adaptive block ------------- */
@@ -418,7 +435,6 @@ body {
     cursor: pointer;
 }
 
-
 #friends .control-panel {
     height: 30px;
     border-bottom: 1px solid #91A1E2;
@@ -438,7 +454,7 @@ body {
 }
 
 #friends .control-panel a {
-    display:block;
+    display: block;
 }
 
 #friends .control-panel a img {
@@ -447,12 +463,7 @@ body {
     height: 25px;
 }
 
-
-
-
 /*--------------------------------------------------------------------------GROUPS------------------------------------------------------------------------------*/
-
-
 
 #groups .quantity {
     border-radius: 0 5px 5px 0;
@@ -483,8 +494,8 @@ body {
 #groups .create-group .line-description textarea {
     resize: none;
 }
-/*wwwwwwwwwwwwwwwwwww*/
 
+/*wwwwwwwwwwwwwwwwwww*/
 
 #content-registration .line {
     overflow: hidden;
@@ -509,7 +520,7 @@ body {
 
 #content-registration .line input[type="text"],
 #content-registration .line input[type="password"],
-#content-registration .line input[type="email"]{
+#content-registration .line input[type="email"] {
     float: right;
     padding: 5px 10px 5px 25px;
     width: 220px;
@@ -517,6 +528,7 @@ body {
     border: 1px solid #ccc;
     border-radius: 5px;
 }
+
 /*wwwwwwwwwwwwwwww*/
 
 #groups .create-group {
@@ -539,11 +551,11 @@ body {
 #groups .create-group .line span {
     margin: 0;
     padding: 0;
-    font-size:20px;
+    font-size: 20px;
     float: left;
 }
 
-#groups .create-group .line input[type="text"], textarea{
+#groups .create-group .line input[type="text"], textarea {
     float: right;
     padding: 10px 15px 10px 25px;
     width: 180px;
@@ -564,8 +576,6 @@ body {
     color: #8f5a0a;
 }
 
-
-
 /* ------------- Контейнер с адаптивными блоками------------- */
 
 #groups .top {
@@ -576,7 +586,6 @@ body {
     line-height: 1;
 }
 
-
 #groups .prime img {
     display: block;
     width: 100%;
@@ -584,12 +593,7 @@ body {
     cursor: pointer;
 }
 
-
-
-
-
 /*----------------------------------------------------------------------------------------VIDEO-----------------------------------------------------------------------------------------*/
-
 
 #video {
     overflow: hidden;
@@ -603,7 +607,6 @@ body {
 #video video {
     width: 85%;
 }
-
 
 /* Элементы в виде плиток с содержанием */
 
@@ -621,19 +624,11 @@ body {
     line-height: 1;
 }
 
-#video .bottom span{
+#video .bottom span {
     font-size: 120%;
 }
 
-
-
-
-
-
-
 /*--------------------------------------------------------------------------HOME--------------------------------------------------------------------------------*/
-
-
 
 /*Authorization form*/
 #content-home .autorization-form {
@@ -684,7 +679,6 @@ body {
     box-shadow: 0 0 0 1px #e8c291 inset;
 }
 
-
 #content-home .autorization-form .login,
 #content-home .autorization-form .registration,
 #content-home .autorization-form .forgot {
@@ -708,11 +702,10 @@ body {
 }
 
 #content-home .autorization-form .registration,
-#content-home .autorization-form .forgot{
+#content-home .autorization-form .forgot {
     margin: 5px auto;
     padding: 4px;
 }
-
 
 /* Всплывающее окно */
 .popup-checkbox, .popup {
@@ -770,9 +763,8 @@ body {
     opacity: 1;
     display: block;
 }
+
 /*_________________*/
-
-
 
 .popup-content-forgot,
 .popup-content-registration,
@@ -805,10 +797,7 @@ body {
     height: 90%;
 }
 
-
-
 /*---------------------------------------------------------------------------REGISTRATION----------------------------------------------------------------------*/
-
 
 #content-registration {
     overflow: hidden;
@@ -848,7 +837,7 @@ body {
 
 #content-registration .line input[type="text"],
 #content-registration .line input[type="password"],
-#content-registration .line input[type="email"]{
+#content-registration .line input[type="email"] {
     float: right;
     padding: 5px 10px 5px 25px;
     width: 220px;
@@ -862,6 +851,7 @@ body {
     font-size: 18px;
     margin-top: 8px;
 }
+
 #content-registration .line input[type="radio"] {
     float: right;
     margin: 16px 4% 0 10px;
@@ -884,7 +874,7 @@ body {
     border: 1px solid #ccc;
     border-radius: 5px;
     height: 35px;
-    margin: 15px auto ;
+    margin: 15px auto;
     padding: 0;
     width: 130px;
     cursor: pointer;
@@ -895,24 +885,19 @@ body {
     background-color: #C7C7B1;
 }
 
-
 /*Валидация пароля*/
 
 /*.ng-invalid {*/
-    /*border-color: red;*/
-    /*outline-color: red;*/
+/*border-color: red;*/
+/*outline-color: red;*/
 /*}*/
 
 /*.ng-valid {*/
-    /*border-color: green;*/
-    /*outline-color: green;*/
+/*border-color: green;*/
+/*outline-color: green;*/
 /*}*/
 
-
-
-
 /*---------------------------------------------------------------------FORGOT_PASSWORD---------------------------------------------------------------------------*/
-
 
 #content-home .popup-content-forgot h1 {
     font-size: 30px;
@@ -941,9 +926,7 @@ body {
     font-size: 20px;
 }
 
-
-#content-home .popup-content-forgot input
-{
+#content-home .popup-content-forgot input {
     border: 1px solid #ccc;
     border-radius: 5px;
     margin: 8px auto;
@@ -951,7 +934,7 @@ body {
 
 #content-home .popup-content-forgot input[type="submit"] {
     height: 35px;
-    margin: 15px auto ;
+    margin: 15px auto;
     padding: 0;
     width: 130px;
     cursor: pointer;
@@ -962,15 +945,7 @@ body {
     background-color: #C7C7B1;
 }
 
-
-
-
-
-
 /*-----------------------------------------------------------------------------------------AUDIO------------------------------------------------------------------------------------------*/
-
-
-
 
 #audio .player {
     overflow: hidden;
@@ -998,7 +973,7 @@ body {
     height: 15px;
 }
 
-#audio-list .track .play-audio img{
+#audio-list .track .play-audio img {
     width: 100%;
     height: 100%;
     vertical-align: middle;
@@ -1016,14 +991,9 @@ body {
     font-size: 16px;
 }
 
-
-
-
-
 /*--------------------------------------------------------------------------------PROFILE------------------------------------------------------------------------*/
 
-
-#profile{
+#profile {
     overflow: hidden;
 }
 
@@ -1047,10 +1017,10 @@ body {
 }
 
 .place-icon .edit a {
-    display:block;
+    display: block;
     color: #FFFFFF;
-    text-decoration:none;
-    padding:10px 15px;
+    text-decoration: none;
+    padding: 10px 15px;
 }
 
 .place-info {
@@ -1092,9 +1062,8 @@ body {
     min-width: 70px;
 }
 
-
 /*Add post*/
-.add-post{
+.add-post {
     float: left;
     background-color: #91A1E2;
     padding: 8px 15px;
@@ -1112,7 +1081,7 @@ body {
     resize: none;
 }
 
-.add-post button{
+.add-post button {
     border-radius: 5px;
     width: 80px;
     background-color: #2E538A;
@@ -1131,23 +1100,24 @@ body {
     position: absolute;
     z-index: -1;
 }
+
 .inputfile + label {
     color: white;
     display: inline-block;
     float: right;
     margin-right: 5%;
 }
+
 .inputfile:focus + label,
 .inputfile + label:hover {
     color: red;
 }
+
 .inputfile + label {
     cursor: pointer;
 }
 
-
 /*--------------------------------------------------------------------------------------SETTINGS-------------------------------------------------------------------------------------- */
-
 
 #settings {
     width: 100%;
@@ -1184,7 +1154,7 @@ body {
     float: left;
     width: 40%;
     padding: 4px 5px;
-    border:none;
+    border: none;
     min-width: 130px;
 }
 
@@ -1216,7 +1186,7 @@ body {
     float: left;
 }
 
-#black-list .ban-list .user .user-info .avatar{
+#black-list .ban-list .user .user-info .avatar {
     float: left;
     width: 30px;
     height: 30px;
@@ -1251,7 +1221,7 @@ body {
 
 #change_pass {
     text-align: left;
-    font-size:22px;
+    font-size: 22px;
     width: 65%;
     margin: 10px 5% 0 15%;
     overflow: hidden;
@@ -1294,11 +1264,7 @@ body {
     margin: 30px auto;
 }
 
-
-
 /*----------------------------------------------------POSTS---------------------------------------------*/
-
-
 
 .place-post .post-container {
     float: right;
@@ -1324,7 +1290,7 @@ body {
     cursor: pointer;
     top: 0;
     right: 0;
-    margin-top:5px;
+    margin-top: 5px;
     margin-right: 5px;
     width: 20px;
     height: 20px;
@@ -1375,17 +1341,11 @@ body {
     margin-right: 10px;
 }
 
-
-
-
-
-
 /*--------------------------------------------------------------------------------EDIT_PROFILE------------------------------------------------------------------------------------------*/
-
 
 #edit-profile {
     text-align: left;
-    font-size:22px;
+    font-size: 22px;
     width: 65%;
     margin: 10px 5% 0 15%;
     overflow: hidden;
@@ -1450,14 +1410,7 @@ body {
     margin: 30px auto;
 }
 
-
-
-
-
-
 /*------------------------------------------------------------------------------FACE-GROUP----------------------------------------------------------------------------------------------*/
-
-
 
 #face-group .place-icon {
     float: left;
@@ -1477,7 +1430,7 @@ body {
     background-color: #91A1E2;
     cursor: pointer;
     color: #FFFFFF;
-    padding:10px 15px;
+    padding: 10px 15px;
 }
 
 #face-group .place-info {
@@ -1530,15 +1483,7 @@ body {
     min-width: 70px;
 }
 
-
-
-
-
-
 /*------------------------------------------------------------------------------MESSAGES----------------------------------------------------------------------------------------------*/
-
-
-
 
 #messages-content .control {
     width: 35%;
@@ -1588,11 +1533,6 @@ body {
     border-radius: 50%;
 }
 
-
-
-
-
-
 .masonry-place {
     -moz-column-count: 3;
     -webkit-column-count: 3;
@@ -1632,17 +1572,17 @@ body {
         background-size: contain;
     }
 
-    .vert-menu{
+    .vert-menu {
         display: none;
     }
 
-    .vert-menu-unvis{
+    .vert-menu-unvis {
         display: block;
     }
 
     .content-place {
         margin-left: 0;
-        border:none;
+        border: none;
     }
 
     #face-group .place-icon {
@@ -1654,7 +1594,6 @@ body {
         width: 30%;
         min-width: 165px;
     }
-
 
     /* filter panel */
     .quantity,
@@ -1677,7 +1616,6 @@ body {
         display: none;
     }
 
-
     /* friends and groups of the user's */
     #friends .masonry-place {
         -moz-column-count: 3;
@@ -1693,15 +1631,15 @@ body {
         font-size: 18px;
     }
 
-    #groups .item .top span{
+    #groups .item .top span {
         font-size: 12px;
     }
 
     #video .item .prime img {
         height: 150px;
     }
-    /*___*/
 
+    /*___*/
     #friends .search-panel {
         display: none;
     }
@@ -1711,12 +1649,12 @@ body {
     }
 
     #change_pass {
-        font-size:20px;
+        font-size: 20px;
         width: 75%;
     }
 
     #edit-profile {
-        font-size:20px;
+        font-size: 20px;
         width: 75%;
     }
 
@@ -1773,7 +1711,6 @@ body {
         margin-left: 15%;
     }
 
-
     /* filter panel */
     .quantity,
     .filter {
@@ -1792,9 +1729,8 @@ body {
         display: block;
     }
 
-
     /* friends and groups of the user's */
-    #friends .item .prime img{
+    #friends .item .prime img {
         height: 160px;
     }
 
@@ -1806,7 +1742,7 @@ body {
         font-size: 16px;
     }
 
-    #groups .item .top span{
+    #groups .item .top span {
         font-size: 11px;
     }
 
@@ -1825,8 +1761,8 @@ body {
         -webkit-column-count: 2;
         column-count: 2;
     }
-    /*____*/
 
+    /*____*/
     #edit-profile {
         font-size: 18px;
         width: 65%;
@@ -1902,7 +1838,7 @@ body {
         overflow: hidden;
     }
 
-    #video .bottom span{
+    #video .bottom span {
         font-size: 100%;
     }
 
@@ -1911,14 +1847,32 @@ body {
         height: 15px;
     }
 
-
     .place-post .post-container .post-info {
         margin-left: 2%;
         margin-right: 2%;
     }
 
-
     .place-post .post-container .post-info .post-text {
-        oveflow:hidden;
+        oveflow: hidden;
     }
+}
+
+/*--------------------------------------------------FILE UPLOAD----------------------------------------*/
+
+#uploadImg {
+    margin-top: -2%;
+    margin-bottom : 5%;
+    margin-right: -0.5%;
+    /*position: absolute;*/
+    /*top: 50%;*/
+    /*left: 50%;*/
+    /*max-width: 250px;*/
+    /*max-height: 250px;*/
+    /*margin: -15% 0 0 -25%;*/
+
+    line-height: 200px;
+    /*margin-right: -1.5%;*/
+    /*position: absolute;*/
+    /*max-height: 250px;*/
+    /*max-width: 250px;*/
 }

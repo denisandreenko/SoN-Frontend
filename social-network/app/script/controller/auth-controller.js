@@ -5,16 +5,6 @@ angular.module('socialNetwork').controller('AuthController', AuthController);
 AuthController.$inject = ['$scope', 'NetworkService', '$state', 'authFact', '$mdMedia', '$mdDialog'];
 
 function AuthController($scope, NetworkService, $state, authFact, $mdMedia, $mdDialog) {
-    // $scope.email = 'Ola@mail.ru';
-    //
-    // var promise = NetworkService.forgotPass('/users/changePassword', $scope.email).promise;
-    //
-    // promise.then(function (response) {
-    //     var data = response.getData();
-    // });
-
-
-
     $scope.password = "";
     $scope.login = "";
 

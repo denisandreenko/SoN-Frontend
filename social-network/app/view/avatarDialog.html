@@ -1,28 +1,33 @@
-<md-dialog aria-label="Avatar" ng-cloak>
-    <form>
-        <md-content data-ng-controller="FileUploadController">
-            <form name="myForm">
-                <input class="ng-hide" id="input-file-id" type="file" accept="image/*" />
-                <label for="input-file-id" class="md-button md-raised md-primary">Choose Files</label>
-                <br>
-                <div data-ng-show="pickFile">
-                    <img ng-src="pickFile"/>
-                </div>
-                <md-progress-circular data-ng-show="isLoading" md-mode="indeterminate"></md-progress-circular>
-                <md-button data-ng-click="upload(picFile.name)">Submit</md-button>
+<md-dialog ng-cloak data-ng-controller="FileUploadController">
+    <md-content>
+        <input class="ng-hide" type="file" id="input-file-id" ng-model="picFile"
+               ngf-accept="'image/*'" ngf-select="" ngf-validate="{size: {max: '1MB', min: '10B'}">
 
-                <span ng-show="result">Upload Successful</span>
-                <span class="err" ng-show="errorMsg">{{errorMsg}}</span>
-            </form>
-        </md-content>
-        <!--<md-dialog-actions layout="row">-->
-            <!--<span flex></span>-->
-            <!--<md-button ng-click="answer('not confirmed')">-->
-                <!--Cancel-->
-            <!--</md-button>-->
-            <!--<md-button ng-click="answer('confirmed')">-->
-                <!--Confirm-->
-            <!--</md-button>-->
-        <!--</md-dialog-actions>-->
-    </form>
+        <br>
+        <img id="uploadImg" ngf-src="picFile" data-ng-show="picFile">
+        <!--<img id="uploadImg" ng-show="picFile" ngf-src="picFile"/>-->
+        <br>
+        <div layout="row" layout-align="center">
+            <md-progress-circular data-ng-show="isLoading" md-mode='indeterminate'></md-progress-circular>
+        </div>
+        <p>
+            <span ng-show="result">Upload Successful</span>
+        </p>
+    </md-content>
+    <md-dialog-actions layout="row">
+        <label for="input-file-id" class="md-button md-raised md-warn">Choose File</label>
+        <md-button data-ng-click="upload(picFile.name)">
+            UPLOAD
+        </md-button>
+    </md-dialog-actions>
 </md-dialog>
+
+
+<!--<input class="ng-hide" type="file" id="input-file-id" ng-model="picFile"-->
+<!--ngf-accept="'image/*'">-->
+<!--<label for="input-file-id" class="md-button md-raised md-warn">Choose File</label>-->
+<!--<br>-->
+<!--<img id="uploadImg" class="md-raised" ng-show="picFile" ngf-src="picFile">-->
+<!--<br>-->
+<!--<md-progress-circular data-ng-show="isLoading" md-mode='indeterminate'></md-progress-circular>-->
+<!--<span ng-show="result">Upload Successful</span>-->

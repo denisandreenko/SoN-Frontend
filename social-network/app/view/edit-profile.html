@@ -1,10 +1,9 @@
 <div id="edit-profile" data-ng-controller="ProfileEditController">
     <form name="editProfileForm" data-ng-submit="sendData()">
-        <div class="line">
+        <div class="line line-avatar">
             <span>Avatar</span>
-            <div data-ng-controller="FileUploadController" class="dialog-demo-content" layout="row" layout-wrap
-                 layout-margin layout-align="center">
-                <md-button class="md-primary md-raised" ng-click="showAdvanced($event)">
+            <div data-ng-controller="FileUploadController" layout="row" layout-align="center">
+                <md-button class="md-raised" ng-click="showAdvanced($event)">
                     Choose avatar
                 </md-button>
             </div>
@@ -30,23 +29,20 @@
             <span>Sex</span>
             <label>
                 <input type="radio" name="sex" value=1 ng-model="sex">
-                <span class="sex">Man</span>
+                <span class="sex">Male</span>
             </label>
             <label>
                 <input type="radio" name="sex" value=0 ng-model="sex">
-                <span class="sex">Woman</span>
+                <span class="sex">Female</span>
             </label>
         </div>
 
         <div class="line line-birthday">
             <span>Birthday</span>
-            <input type="date" min="1900-01-01" max="2016-01-01"
-                   data-ng-model="birthdate" value="birthdate">
-            <!--<input data-time="false" data-date="true" mdc-datetime-picker="" type="text"-->
-                   <!--placeholder="Birth Date"-->
-                   <!--data-ng-model="birthdate" data-min-date="minDate" data-max-date="maxDate"-->
-                   <!--class="md-input"-->
-                   <!--data-ok-text="Confirm">-->
+            <div layout="row" layout-align="center">
+                <input type="date" min="1900-01-01" max="2016-01-01"
+                       data-ng-model="birthdate" value="birthdate">
+            </div>
         </div>
 
         <div class="line line-city">
@@ -59,11 +55,8 @@
 
         <div class="line line-mobile-number">
             <span>Mobile number</span>
-            <input type="text" name="mobile-number" ng-model="mobile" maxlength="12" minlength="12" onkeypress='return event.charCode >= 48 && event.charCode <= 57'>
-            <!--<input type="text"    ng-pattern="/^[1-9][0-9]*$/">-->
-
-            <!--<p ng-show="editProfileForm.mobile-number.$error.minLength && registrationForm.mobile-number.$pristine != true">-->
-            <!--May contain only numbers</p>-->
+            <input type="text" name="mobile-number" ng-model="mobile" maxlength="12" minlength="12"
+                   onkeypress='return event.charCode >= 48 && event.charCode <= 57'>
         </div>
 
         <div class="line line-skype">
@@ -87,8 +80,7 @@
             <input type="text" name="about" ng-model="about">
         </div>
 
-        <md-input-container>
-            <input type="submit" value="Edit">
-        </md-input-container>
+
+        <input type="submit" value="Edit">
     </form>
 </div>

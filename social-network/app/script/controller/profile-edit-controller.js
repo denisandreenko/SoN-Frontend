@@ -55,7 +55,7 @@ function ProfileEditController($scope, NetworkService, Constant, $state) {
             mobile: $scope.mobile || 0,
             lastName: $scope.lastName,
             sex: parseInt($scope.sex),
-            avatarId: Constant.UploadedImgID || null,
+            avatarUrl: Constant.UploadedImgID || null,
             birthdate: moment($scope.birthdate).format('L'),
             city: $scope.city,
             about: $scope.about
