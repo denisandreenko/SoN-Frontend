@@ -1,15 +1,20 @@
 <div id="audio" data-ng-controller="MyAudioController">
     <div class="player md-whiteframe-4dp">
+        <div layout="row" layout-align="end" data-ng-controller="FileUploadController" data-ng-click="showAdvanced($event)">
+            <span>Upload new file</span>
+            <img width="20px" height="20px" src="image/add_black.png" />
+        </div>
         <span data-ng-show="source">Song name : {{currentSong}}</span>
         <audio data-ng-src="{{source}}" controls data-ng-ended="onPlayEnd()" autoplay preload="auto"></audio>
     </div>
 
     <div id="audio-list" ng-repeat="audio in playList">
-        <div class="track md-whiteframe-1dp" ng-click="setPlayingTrack($index)">
-            <div class="play-audio">
+        <div class="track md-whiteframe-1dp" ng-click="setPlayingTrack($index)" layout="row">
+            <!--<div class="play-audio">-->
                 <!--<img src="{{playIconUrl}}" alt="play">-->
-            </div>
-            <span class="name">{{audio.name}}</span>
+            <!--</div>-->
+            <span class="name" layout-align="start">{{audio.name}}</span>
+            <md-button layout-align="end" data-ng-click="delete($index)">Delete</md-button>
             <!--<span class="audiotime">{{audio.Time}}</span>-->
         </div>
     </div>

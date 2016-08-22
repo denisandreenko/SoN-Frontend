@@ -1,81 +1,22 @@
-<!--<div data-ng-controller="FriendListController">-->
-<!--<md-content class="md-padding" layout-xs="column" layout="row">-->
-<!--<div flex-xs flex-gt-xs="50" layout="column">-->
-<!--<md-card data-ng-repeat="friend in friends | filter: searchFriend">-->
-<!--<md-card-title>-->
-<!--<md-card-title-text>-->
-<!--<span class="md-headline">{{friend.name + ' ' + friend.lastName}}</span>-->
-<!--</md-card-title-text>-->
-<!--</md-card-title>-->
-<!--<div class="prime" data-ng-click="gotoUserId($index)">-->
-<!--<img src="{{friend.avatar}}">-->
-<!--</div>-->
-<!--<md-card-actions layout="row" layout-align="end center">-->
-<!--<md-button data-ng-click="deleteFromFriends($index)">Delete<img src="image/block_black.png">-->
-<!--</md-button>-->
-<!--<md-button>Message<img src="image/mail_black.png"></md-button>-->
-<!--</md-card-actions>-->
-<!--</md-card>-->
-<!--</div>-->
-<!--</md-content>-->
-<!--</div>-->
+<div>
+    <link rel="stylesheet" href="css/chatStyle.css">
 
-<md-content data-ng-controller="FriendListController" class="md-whiteframe-4px">
-    <div layout="colomn">
-        <md-card data-ng-repeat="friend in friends" data-ng-click="gotoUserId($index)" flex>
-            <img style="height: 50%" ng-src="{{friend.avatar}}" class="md-card-image" alt="No image">
-            <md-card-content>
-                <span class="md-headline">{{friend.name + ' ' + friend.lastName}}</span>
-            </md-card-content>
-            <md-card-actions layout="row" layout-align="end center">
-                <md-button aria-label="delete">
-                    Delete
-                    <!--<md-icon data-ng-src="image/block_black.png"></md-icon>-->
-                </md-button>
-                <md-button aria-label="message">
-                    Message
-                    <!--<md-icon data-ng-src="image/mail_black.png"></md-icon>-->
-                </md-button>
-            </md-card-actions>
-        </md-card>
+    <div ng-controller="Ctrl" class="container">
+        <!--<input type="text" data-ng-model="userID"/>-->
+        <form ng-submit="sendM()" name="messageForm">
+            <input type="text" placeholder="Compose a new message..." ng-model="message"/>
+            <div class="info">
+                <span class="count" ng-bind="max - message.length" ng-class="{danger: message.length > max}">140</span>
+                <button ng-disabled="message.length > max || message.length === 0">Send</button>
+            </div>
+        </form>
+        <hr/>
+        <p ng-repeat="message in messages | orderBy:'time':true" class="message">
+            <time>{{message.time | date:'HH:mm'}}</time>
+            <span ng-class="{self: message.self}">{{message}}</span>
+        </p>
     </div>
-</md-content>
-
-<!--<div data-ng-model="eventText">-->
-<!--<span>{{eventText}}</span>-->
-<!--</div>-->
-<!--<div>-->
-<!--<md-input>-->
-<!--<input type="text" data-ng-model="fieldToReturn"/>-->
-<!--</md-input>-->
-<!--</div>-->
-<!--<md-button class="md-raised md-warn" data-ng-click="subscribe()">-->
-<!--SUBSCRIBE ON EVENTS-->
-<!--</md-button>-->
-<!--<md-button class="md-raised md-warn" data-ng-click="notify()">-->
-<!--NOTIFY EVENT-->
-<!--</md-button>-->
 </div>
-
-
-<!--<div>-->
-<!--<link rel="stylesheet" href="css/chatStyle.css">-->
-
-<!--<div ng-controller="Ctrl" class="container">-->
-<!--<form ng-submit="sendM()" name="messageForm">-->
-<!--<input type="text" placeholder="Compose a new message..." ng-model="message" />-->
-<!--<div class="info">-->
-<!--<span class="count" ng-bind="max - message.length" ng-class="{danger: message.length > max}">140</span>-->
-<!--<button ng-disabled="message.length > max || message.length === 0">Send</button>-->
-<!--</div>-->
-<!--</form>-->
-<!--<hr />-->
-<!--<p ng-repeat="message in messages | orderBy:'time':true" class="message">-->
-<!--<time>{{message.time | date:'HH:mm'}}</time>-->
-<!--<span ng-class="{self: message.self}">{{message}}</span>-->
-<!--</p>-->
-<!--</div>-->
-<!--</div>-->
 
 
 <!--<form ng-controller="FileUploadController" name="form">-->

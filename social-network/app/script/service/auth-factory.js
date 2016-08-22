@@ -12,6 +12,7 @@ function authFact($cookies) {
     }
 
     function _getUserId () {
+        var i = $cookies.get('userId');
         return $cookies.get('userId');
     }
 
@@ -32,6 +33,19 @@ function authFact($cookies) {
         $cookies.remove('accessToken');
     }
 
+    function _setResreshToken(refreshToken) {
+        $cookies.put('refreshToken', refreshToken);
+    }
+
+    function _getRefreshToken() {
+        var refreshToken = $cookies.get('refreshToken');
+        return refreshToken;
+    }
+
+    function _clearRefreshToken() {
+        $cookies.remove('refreshToken');
+    }
+
     return {
         authFact: authFact,
         getId: _getUserId,
@@ -39,6 +53,9 @@ function authFact($cookies) {
         clearId: _clearId,
         setAccessToken: _setAccessToken,
         getAccessToken: _getAccessToken,
-        clearAccessToken: _clearAccessToken
+        clearAccessToken: _clearAccessToken,
+        setRefreshToken: _setResreshToken,
+        getRefreshToken: _getRefreshToken,
+        clearRefreshToken: _clearRefreshToken
     };
 }

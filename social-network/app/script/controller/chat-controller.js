@@ -22,9 +22,9 @@ function Ctrl($stomp, $log, authFact, $scope) {
     // Send message
     $scope.sendM = function () {
         $stomp.send('/app/hello', {
-            name: $scope.message// name is Message (true nameconvention on serverside!)
+            text: $scope.message// name is Message (true nameconvention on serverside!)
         }, {
-            user: authFact.getAccessToken()
+            access_token: authFact.getAccessToken()
         });
     };
 
@@ -32,7 +32,7 @@ function Ctrl($stomp, $log, authFact, $scope) {
         .connect('http://192.168.7.121:8080/hello', {access_token: authFact.getAccessToken()})
         // frame = CONNECTED headers
         .then(function (frame) {
-            var subscription = $stomp.subscribe('/topic/message', function (payload, headers, res) {
+            var subscription = $stomp.subscribe('/user/queue/hello', function (payload, headers, res) {
                 $scope.payload = payload;
                 var o = payload.content;
                 $scope.messages.push(o);

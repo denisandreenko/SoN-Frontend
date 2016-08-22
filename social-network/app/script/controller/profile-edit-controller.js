@@ -15,7 +15,7 @@ function ProfileEditController($scope, NetworkService, Constant, $state, NotifyS
     $scope.birthdate = '';
     $scope.city = '';
     $scope.about = '';
-    NotifyService.notify(Constant.Events.FILEUPLOAD, 'image/*');
+    Constant.AcceptFiles = 'image/*';
 
     var promise = NetworkService.getMyProfile('/users/profile').promise;
 
@@ -41,7 +41,6 @@ function ProfileEditController($scope, NetworkService, Constant, $state, NotifyS
         $scope.mobile = $scope.userContacts.mobile;
         $scope.lastName = $scope.userSubname;
         $scope.sex = $scope.userSex;
-        //Constant.UploadedFileUrl = $scope.userAvatar;
         $scope.birthdate = new Date($scope.userBirthday);
         $scope.city = $scope.userCity;
         $scope.about = $scope.userAbout;

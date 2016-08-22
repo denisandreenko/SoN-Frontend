@@ -4,19 +4,9 @@ angular.module('socialNetwork').controller('FileUploadController', FileUploadCon
 
 FileUploadController.inject = ['$scope', 'Upload', 'Constant', 'authFact', '$mdMedia', '$mdDialog', '$timeout', 'NotifyService'];
 
-function FileUploadController($scope, Constant, Upload, authFact, $mdMedia, $mdDialog, $timeout, NotifyService) {
+function FileUploadController($scope, Upload, Constant, authFact, $mdMedia, $mdDialog, $timeout, NotifyService) {
     $scope.picFile = '';
-    $scope.acceptFiles = 'image/*';
-
-    var hendler = NotifyService.subscribe(Constant.Events.FILEUPLOAD, callback);
-
-    function callback(event, data){
-        $scope.acceptFiles = data;
-    }
-
-    $scope.$on('destroy', function () {
-       hendler();
-    });
+    $scope.acceptFiles = Constant.AcceptFiles;
 
     $scope.upload = function (name) {
         if ($scope.picFile == '' || $scope.picFile == null || $scope.picFile == undefined) {
@@ -28,13 +18,13 @@ function FileUploadController($scope, Constant, Upload, authFact, $mdMedia, $mdD
 
             var token = authFact.getAccessToken();
             $scope.params = {
+                name: name,
                 access_token: token
             };
 
             Upload.upload({
                 url: Constant.APIBaseUrl + '/files',
                 data: {
-                    name: $scope.fileName,
                     file: $scope.picFile
                 },
                 params: $scope.params
@@ -43,6 +33,12 @@ function FileUploadController($scope, Constant, Upload, authFact, $mdMedia, $mdD
                     $scope.result = response.data;
                     Constant.UploadedFileUrl = $scope.result.entity;
                     $scope.isLoading = false;
+                    if ($scope.acceptFiles == 'audio/*') {
+                        NotifyService.notify(Constant.Events.AUDIOUPDATE, '');
+                    }
+                    else if ($scope.acceptFiles == 'video/*'){
+                        NotifyService.notify(Constant.Events.VIDEOUPDATE, '');
+                    }
                 });
             }, function (response) {
                 if (response.status > 0)

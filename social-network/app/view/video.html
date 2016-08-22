@@ -1,4 +1,9 @@
    <div id="video" ng-controller="VideoController">
+       <div layout="row" layout-align="end" data-ng-controller="FileUploadController" data-ng-click="showAdvanced($event)">
+           <span>Upload new file</span>
+           <img width="20px" height="20px" src="image/add_black.png" />
+       </div>
+       <hr>
        <video data-ng-src="{{source}}" controls preload="auto"></video>
       <div class="masonry-place">
           <!-- Адаптивные блоки с содержанием -->

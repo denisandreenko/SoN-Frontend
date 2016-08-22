@@ -2,24 +2,36 @@
 
 angular.module('socialNetwork').controller('VideoController', VideoController);
 
-VideoController.$inject = ['$scope', 'NetworkService', '$sce', '$state', '$mdToast', 'Constant'];
+VideoController.$inject = ['$scope', 'NetworkService', '$sce', 'NotifyService', 'Constant', 'authFact'];
 
-function VideoController($scope, NetworkService, $sce, $state, $mdToast, Constant) {
+function VideoController($scope, NetworkService, $sce, NotifyService, Constant, authFact) {
     $scope.video = [];
-    $scope.code = "";
+    $scope.currentVideo = "";
     $scope.source = "";
+    Constant.AcceptFiles = 'video/*';
 
-    var promise = NetworkService.getAudioList('http://www.mocky.io/v2/57a873c11100005b161d452d', 123).promise;
+    var hendler = NotifyService.subscribe(Constant.Events.VIDEOUPDATE, callback);
 
-    promise.then(function (responce) {
-        var data = responce.getData();
+    function callback(event, data) {
+        var promise = NetworkService.getVideoList('/videos', authFact.getId(), 0, 40).promise;
 
-        $scope.video = data.video;
-        $scope.code = data.code;
-        $scope.source = $sce.trustAsResourceUrl(data.video[0].url);
+        promise.then(function (responce) {
+            var data = responce.getData().entity;
+
+            $scope.video = data;
+            // $scope.source = $sce.trustAsResourceUrl(data.video[0].url);
+        });
+    }
+
+    $scope.$on('destroy', function () {
+        hendler();
     });
 
+    NotifyService.notify(Constant.Events.VIDEOUPDATE, '');
+
+
     $scope.setPlayingTrack = function (index) {
+        $scope.currentVideo = $scope.video[index].name;
         $scope.source = $sce.trustAsResourceUrl($scope.video[index].url);
     }
-};
+}

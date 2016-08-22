@@ -8,6 +8,7 @@ function AuthController($scope, NetworkService, $state, authFact, $mdMedia, $mdD
     $scope.password = "";
     $scope.login = "";
 
+    authFact.clearRefreshToken();
     authFact.clearAccessToken();
     authFact.clearId();
 
@@ -16,6 +17,7 @@ function AuthController($scope, NetworkService, $state, authFact, $mdMedia, $mdD
         var promise = NetworkService.authorisation($scope.data, "/oauth/token").promise;
         promise.then(function (response) {
             var data = response.getData();
+            authFact.setRefreshToken(data.refresh_token);
             authFact.setAccessToken(data.access_token);
             $state.go('menu.profile');
         });

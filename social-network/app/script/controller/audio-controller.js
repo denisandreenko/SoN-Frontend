@@ -2,24 +2,32 @@
 
 angular.module('socialNetwork').controller('MyAudioController', MyAudioController);
 
-MyAudioController.$inject = ['$scope', 'NetworkService', '$sce', 'authFact', '$mdToast', 'Constant'];
+MyAudioController.$inject = ['$scope', 'NetworkService', '$sce', 'authFact', 'Constant', 'NotifyService'];
 
-function MyAudioController($scope, NetworkService, $sce, authFact, $mdToast, Constant) {
+function MyAudioController($scope, NetworkService, $sce, authFact, Constant, NotifyService) {
     $scope.source = "";
     $scope.playList = [];
     $scope.code = "";
-    $scope.playIconUrl = "";
     $scope.lastIdPlayed = -1;
     $scope.currentSong = "";
+    Constant.AcceptFiles = 'audio/*';
 
-    var promise = NetworkService.getAudioList('/musics', authFact.getId(), 0, 40).promise;
+    var hendler = NotifyService.subscribe(Constant.Events.AUDIOUPDATE, callback);
 
-    promise.then(function (responce) {
-        var data = responce.getData();
+    function callback(event, data) {
+        var promise = NetworkService.getAudioList('/musics', authFact.getId(), 0, 40).promise;
 
-        $scope.playList = data.entity;
-        $scope.code = data.code;
+        promise.then(function (responce) {
+            var data = responce.getData();
+
+            $scope.playList = data.entity;
+            $scope.code = data.code;
+        });
+    }
+    $scope.$on('destroy', function () {
+        hendler();
     });
+    NotifyService.notify(Constant.Events.AUDIOUPDATE, '');
 
     $scope.onPlayEnd = function () {
         if ($scope.playList.length > 0) {
@@ -29,34 +37,20 @@ function MyAudioController($scope, NetworkService, $sce, authFact, $mdToast, Con
                 $scope.setPlayingTrack(0)
         }
     };
+
     $scope.setPlayingTrack = function (index) {
         $scope.lastIdPlayed = index;
         $scope.currentSong = $scope.playList[index].name;
         $scope.source = $sce.trustAsResourceUrl($scope.playList[index].url);
+    };
+
+    $scope.delete = function (index) {
+        var id = $scope.playList[index].id;
+        var promise = NetworkService.deleteSong('/musics/' + id).promise;
+
+        promise.then(function(response){
+            var data = response.getData();
+            NotifyService.notify(Constant.Events.AUDIOUPDATE, '');
+        });
     }
 }
-
-angular.module('socialNetwork').filter('trusted', AudioFilter);
-
-AudioFilter.$inject = ['$sce'];
-
-function AudioFilter($sce) {
-    return function (url) {
-        return $sce.trustAsResourceUrl(url);
-    };
-}
-
-// angular.module('socialNetwork').directive('playList', playList);
-//
-// function playList() {
-//     return {
-//         replace: true,
-//         scope: {
-//             audio: '=',
-//             // url: '@',
-//             name: '@'
-//             // playIcon: '@'
-//         },
-//         templateUrl: 'view/playlist.html'
-//     };
-// }

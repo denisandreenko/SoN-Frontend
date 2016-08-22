@@ -335,6 +335,12 @@ function NetworkService($http, $q, $log, Constant, ResponseFactory, $mdToast, au
         return _post(url, data, Constant.AuthType.AUTH, params);
     }
 
+    function _refreshAuth(additionalUrl, data) {
+        var url = Constant.APIBaseUrl + additionalUrl;
+        var params = {};
+        return _post(url, data, Constant.AuthType.AUTH, params);
+    }
+
     function _postingData(data, additionalUrl) {
         var url = Constant.APIBaseUrl + additionalUrl;//Constant.APIBaseUrl;
         var params = {};
@@ -353,6 +359,16 @@ function NetworkService($http, $q, $log, Constant, ResponseFactory, $mdToast, au
         return _get(url, Constant.AuthType.NONE, params);
     }
 
+    function _getVideoList(additionalUrl, userId, offset, limit) {
+        var url = Constant.APIBaseUrl + additionalUrl;
+        var params = {
+            userId: userId,
+            offset: offset,
+            limit: limit
+        };
+        return _get(url, Constant.AuthType.NONE, params);
+    }
+
     function _getAudiolist(additionalUrl, userId, offset, limit) {
         var url = Constant.APIBaseUrl + additionalUrl;
         var params = {
@@ -361,6 +377,13 @@ function NetworkService($http, $q, $log, Constant, ResponseFactory, $mdToast, au
             limit: limit
         };
         return _get(url, Constant.AuthType.NONE, params);
+    }
+
+    function _deleteSong(additionalUrl) {
+        var url = Constant.APIBaseUrl + additionalUrl;
+        var params = {};
+        var data = {};
+        return _delete(url, data, Constant.AuthType.NONE, params);
     }
 
     function _postImage(data, additionalUrl, name) {
@@ -470,6 +493,7 @@ function NetworkService($http, $q, $log, Constant, ResponseFactory, $mdToast, au
     }
 
     return {
+        deleteSong: _deleteSong,
         changePass: _changePass,
         deleteGroup: _deleteGroup,
         likePost: _likePost,
@@ -495,8 +519,10 @@ function NetworkService($http, $q, $log, Constant, ResponseFactory, $mdToast, au
         createPosterToGroup: _createPosterToGroup,
         getMyProfile: _getMyProfile,
         getProfileById: _getProfileById,
+        getVideoList: _getVideoList,
         getAudioList: _getAudiolist,
         authorisation: _authorisation,
+        refreshAuth: _refreshAuth,
         registration: _registration,
         deletePost: _deletePost,
         searchTA: _searchTA,
