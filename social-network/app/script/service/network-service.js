@@ -5,20 +5,41 @@ angular.module('socialNetwork').service('NetworkService', NetworkService);
 NetworkService.$inject = ['$http', '$q', '$log', 'Constant', 'ResponseFactory', '$mdToast', 'authFact'];
 
 function NetworkService($http, $q, $log, Constant, ResponseFactory, $mdToast, authFact) {
-
-
-    //TODO check if authError then refresh token.
     $http.defaults.useXDomain = true;
     $http.defaults.withCredentials = false;
     delete $http.defaults.headers.common['X-Requested-With'];
 
-    function authorised() {
-        var token = authFact.getAccessToken();
-        return token;
+    function refreshToken() {
+
+        //TODO fix this shit
+        // var url = Constant.APIBaseUrl + '/oauth/token';
+        // var data = 'client_id=passwordClient&grant_type=refresh_token&refresh_token=' + authFact.getRefreshToken();
+        // var authType = Constant.AuthType.AUTH;
+        //
+        // var params = {};
+        //
+        // var req = {
+        //     method: 'POST',
+        //     url: url,
+        //     params: params,
+        //     headers: _getHeadersByAuthType(authType),
+        //     data: data
+        // };
+        //
+        // $http(req).success(function (data) {
+        //     authFact.setAccessToken(data.access_token);
+        //     authFact.setRefreshToken(data.refresh_token);
+        // }).error(function (xhr, status) {
+        //     $log.error(xhr);
+        //     $log.error('[NetworkService] ' + url + ': Error request');
+        // });
     }
 
+
     function _get(url, authType, params) {
-        // if (authorised) {
+        if(authType != Constant.AuthType.REG && authType != Constant.AuthType.AUTH)
+            refreshToken();
+        var authToken = authFact.getAccessToken();
         var deferred = $q.defer();
 
         var cancel = function () {
@@ -50,11 +71,11 @@ function NetworkService($http, $q, $log, Constant, ResponseFactory, $mdToast, au
             promise: deferred.promise,
             cancel: cancel
         };
-        // }
     }
 
     function _put(url, data, authType, params) {
-        // if (authorised) {
+        if(authType != Constant.AuthType.REG && authType != Constant.AuthType.AUTH)
+            refreshToken();
         authType = authType || Constant.AuthType.NONE;
         var deferred = $q.defer();
 
@@ -93,11 +114,11 @@ function NetworkService($http, $q, $log, Constant, ResponseFactory, $mdToast, au
             promise: deferred.promise,
             cancel: cancel
         };
-        // }
     }
 
     function _post(url, data, authType, params) {
-        // if (authorised || authType == Constant.AuthType.AUTH || authType == Constant.AuthType.REG) {
+        if(authType != Constant.AuthType.REG && authType != Constant.AuthType.AUTH)
+            refreshToken();
         authType = authType || Constant.AuthType.NONE;
         var deferred = $q.defer();
 
@@ -123,13 +144,6 @@ function NetworkService($http, $q, $log, Constant, ResponseFactory, $mdToast, au
         $http(req).success(function (data) {
             deferred.resolve(ResponseFactory.buildResponse(data));
         }).error(function (xhr, status) {
-            // Constant.ToastMsg = "Server error...";rr
-            // $mdToast.show({
-            //     hideDelay: 3000,
-            //     position: 'top right',
-            //     controller: 'ToastController',
-            //     templateUrl: 'view/toast.html'
-            // });
             $log.error(xhr);
             $log.error('[NetworkService] ' + url + ': Error request');
             deferred.reject(status);
@@ -139,20 +153,11 @@ function NetworkService($http, $q, $log, Constant, ResponseFactory, $mdToast, au
             promise: deferred.promise,
             cancel: cancel
         };
-        // }
-        // else {
-        //     Constant.ToastMsg = "Not authorised !";
-        //     $mdToast.show({
-        //         hideDelay: 3000,
-        //         position: 'top right',
-        //         controller: 'ToastController',
-        //         templateUrl: 'view/toast.html'
-        //     });
-        // }
     }
 
     function _delete(url, data, authType, params) {
-        // if (authorised) {/
+        if(authType != Constant.AuthType.REG && authType != Constant.AuthType.AUTH)
+            refreshToken();
         authType = authType || Constant.AuthType.NONE;
         var deferred = $q.defer();
 
@@ -193,11 +198,9 @@ function NetworkService($http, $q, $log, Constant, ResponseFactory, $mdToast, au
             promise: deferred.promise,
             cancel: cancel
         };
-        // }
     }
 
     function _getHeadersByAuthType(authType) {
-
         switch (authType) {
             case Constant.AuthType.NONE:
                 return {

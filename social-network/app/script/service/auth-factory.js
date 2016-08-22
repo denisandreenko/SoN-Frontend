@@ -7,6 +7,15 @@ authFact.$inject = ['$cookies'];
 function authFact($cookies) {
     var authFact = {};
 
+    function _setCurrentTime() {
+        var date = moment(new Date()).add(40, 'seconds');
+        $cookies.put('currentTime', date)
+    }
+
+    function _getCurrentTime() {
+        return $cookies.get('currentTime');
+    }
+
     function _setUserId(id) {
         $cookies.put('userId', id);
     }
@@ -48,6 +57,8 @@ function authFact($cookies) {
 
     return {
         authFact: authFact,
+        getCurrentTime: _getCurrentTime,
+        setCurrentTime: _setCurrentTime,
         getId: _getUserId,
         setId: _setUserId,
         clearId: _clearId,

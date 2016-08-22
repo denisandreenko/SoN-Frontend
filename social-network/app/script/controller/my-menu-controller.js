@@ -6,6 +6,8 @@ MyMenuController.$inject = ['$state', '$scope', 'Constant', 'NotifyService', '$i
 
 function MyMenuController($state, $scope, Constant, NotifyService, $interval, authFact, NetworkService) {
     $scope.searchText = '';
+    authFact.setCurrentTime();
+
 
     $scope.KeyPress = function () {
         var p = $state.current;
@@ -17,15 +19,20 @@ function MyMenuController($state, $scope, Constant, NotifyService, $interval, au
 
 
     $interval(function () {
-        var data = 'client_id=passwordClient&grant_type=refresh_token&refresh_token=' + authFact.getRefreshToken();
-        var promise = NetworkService.refreshAuth('/oauth/token', data).promise;
+        var current = moment();
+        var setted = moment(authFact.getCurrentTime());
+        if(setted <= current) {
+            var data = 'client_id=passwordClient&grant_type=refresh_token&refresh_token=' + authFact.getRefreshToken();
+            var promise = NetworkService.refreshAuth('/oauth/token', data).promise;
 
-        promise.then(function (response) {
-            var data = response.getData();
+            promise.then(function (response) {
+                var data = response.getData();
 
-            authFact.setAccessToken(data.access_token);
-            authFact.setRefreshToken(data.refresh_token);
-        });
-    }, 290000);
+                authFact.setAccessToken(data.access_token);
+                authFact.setRefreshToken(data.refresh_token);
+                authFact.setCurrentTime();
+            });
+        }
+    }, 35000);
 
 }
