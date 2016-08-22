@@ -15,7 +15,8 @@ function MyAudioController($scope, NetworkService, $sce, authFact, Constant, Not
     var hendler = NotifyService.subscribe(Constant.Events.AUDIOUPDATE, callback);
 
     function callback(event, data) {
-        var promise = NetworkService.getAudioList('/musics', authFact.getId(), 0, 40).promise;
+        var id = authFact.getId();
+        var promise = NetworkService.getAudioList('/musics', id, 0, 40).promise;
 
         promise.then(function (responce) {
             var data = responce.getData();

@@ -7,11 +7,13 @@ CreateGroupController.$inject = ['$scope', 'NetworkService', 'Constant', '$state
 function CreateGroupController($scope, NetworkService, Constant, $state) {
     $scope.name = '';
     $scope.description = '';
+    Constant.AcceptFiles = 'image/*';
+
 
     $scope.sendDataGroup = function () {
         var data = {
             name: $scope.name,
-            urlImage: 'https://www.dropbox.com/s/148w1p25rmvs9lx/2He215sph3g.png?dl=1' || null,
+            urlImage: Constant.UploadedFileUrl || null,
             description: $scope.description
         };
 

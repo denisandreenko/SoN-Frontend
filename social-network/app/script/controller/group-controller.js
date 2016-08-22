@@ -23,8 +23,8 @@ function FaceGroupController($scope, NetworkService, NotifyService, Constant, Po
             $scope.groupAbout = data.entity.description;
             $scope.groupFolowers = data.entity.folowers;
             $scope.groupImg = data.entity.image;
-            $scope.isMember = data.entity.isMember;
-            $scope.isOwner = data.entity.isOwner;
+            $scope.isMember = data.entity.member;
+            $scope.isOwner = data.entity.owner;
 
             NotifyService.notify(Constant.Events.REFRESHGPOSTS, '');
         });

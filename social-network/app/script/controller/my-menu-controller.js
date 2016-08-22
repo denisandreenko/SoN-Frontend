@@ -2,9 +2,9 @@
 
 angular.module('socialNetwork').controller('MyMenuController', MyMenuController);
 
-MyMenuController.$inject = ['$state', '$scope', 'Constant', 'NotifyService', '$timeout', 'authFact', 'NetworkService'];
+MyMenuController.$inject = ['$state', '$scope', 'Constant', 'NotifyService', '$interval', 'authFact', 'NetworkService'];
 
-function MyMenuController($state, $scope, Constant, NotifyService, $timeout, authFact, NetworkService) {
+function MyMenuController($state, $scope, Constant, NotifyService, $interval, authFact, NetworkService) {
     $scope.searchText = '';
 
     $scope.KeyPress = function () {
@@ -16,7 +16,7 @@ function MyMenuController($state, $scope, Constant, NotifyService, $timeout, aut
     };
 
 
-    $timeout(function () {
+    $interval(function () {
         var data = 'client_id=passwordClient&grant_type=refresh_token&refresh_token=' + authFact.getRefreshToken();
         var promise = NetworkService.refreshAuth('/oauth/token', data).promise;
 
@@ -25,8 +25,7 @@ function MyMenuController($state, $scope, Constant, NotifyService, $timeout, aut
 
             authFact.setAccessToken(data.access_token);
             authFact.setRefreshToken(data.refresh_token);
-            authFact.setId(data.id);
         });
-    }, 240000);
+    }, 290000);
 
 }
