@@ -5,9 +5,8 @@ angular.module('socialNetwork')
         MyId: '',
         SearchReqText: '',
         ToastMsg: '',
-        UploadedFileUrl: null,
-        AcceptFiles: '',
-        APIBaseUrl: 'https://sjc2016vs6.fwd.wf',//'https://scntw.herokuapp.com',////'https://scntw.herokuapp.com',//'http://192.168.7.121:8080',//'https://mighty-inlet-90070.herokuapp.com',//'https://damp-meadow-52783.herokuapp.com',////////////// //http://localhost:8080/SocialNetwork',// // 'https://kkq-social.fwd.wf',//'https://social.fwd.wf', //http://www.mocky.io/v2/578e18f50f00006f19aebc38',// 'https://sjc2016vs3.fwd.wf/',
+        UploadedImgID: null,
+        APIBaseUrl: 'https://sjc2016vs6.fwd.wf',//'http://192.168.7.121:8080',//'https://scntw.herokuapp.com',//'https://scntw.herokuapp.com',//'https://mighty-inlet-90070.herokuapp.com',//'https://damp-meadow-52783.herokuapp.com',////'https://sjc2016vs6.fwd.wf',////////// //http://localhost:8080/SocialNetwork',// // 'https://kkq-social.fwd.wf',//'https://social.fwd.wf', //http://www.mocky.io/v2/578e18f50f00006f19aebc38',// 'https://sjc2016vs3.fwd.wf/',
         Auth: {
             clientHash: "cGFzc3dvcmRDbGllbnQ6MG00NWJ4cDRyMg=="
         },
@@ -19,8 +18,6 @@ angular.module('socialNetwork')
             OAUTH: 'Oauth'
         },
         Events: {
-            VIDEOUPDATE: 'VideoUpdate',
-            AUDIOUPDATE: 'AudioUpdate',
             REFRESHBLIST: 'RefreshBList',
             REFRESHPOSTS: 'RefreshPosts',
             REFRESHIDPOSTS: 'RefresiIdPosts',
@@ -29,7 +26,6 @@ angular.module('socialNetwork')
             UPDATEPSEARCH: 'UpdatePSearch',
             UPDATEFRIENDS: 'UpdateFriends',
             UPDATEGROUP: 'UpdateGroup',
-            UPDATEGSEARCH: 'UpdateGSearch',
-            FILEUPLOAD: 'FileUpload'
+            UPDATEGSEARCH: 'UpdateGSearch'
         }
     });

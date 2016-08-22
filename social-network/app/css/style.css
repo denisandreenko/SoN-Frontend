@@ -93,6 +93,7 @@ body {
 #header #search input[type="text"] {
     width: 75%;
     margin-right: 3%;
+    border-radius: 5px;
 }
 
 #header #search input[type="submit"] {
@@ -103,7 +104,6 @@ body {
 
 #header .top-menu {
     float: right;
-    padding-right: 15px;
     position: relative;
 }
 
@@ -115,7 +115,12 @@ body {
     display: block;
     color: #FFFFFF;
     text-decoration: none;
-    padding: 10px 15px;
+    padding: 10px 21px;
+}
+
+#header .top-menu li a:hover {
+    background-color: #FF7A00;
+    border-radius: 5px;
 }
 
 #header .top-menu input {
@@ -176,36 +181,38 @@ body {
 }
 
 .vert-menu li a:hover {
-    border-radius: 0;
+    border-radius: 3px;
+    background-color: #FFBB7C;
+    color: #FFFFFF;
 }
 
 .vert-menu li a:before {
     width: 30px;
     height: 30px;
-    content: url("../image/material/home.png");
+    content: url("../image/nMaterial/home.png");
     position: absolute;
     top: 8px;
     left: 15px;
 }
 
 .vert-menu li:nth-child(2) a::before {
-    content: url("../image/material/friends.png");
+    content: url("../image/nMaterial/friends.png");
 }
 
 .vert-menu li:nth-child(3) a::before {
-    content: url("../image/material/message.png");
+    content: url("../image/nMaterial/message.png");
 }
 
 .vert-menu li:nth-child(4) a::before {
-    content: url("../image/material/groups.png");
+    content: url("../image/nMaterial/groups.png");
 }
 
 .vert-menu li:nth-child(5) a::before {
-    content: url("../image/material/musical-note.png");
+    content: url("../image/nMaterial/musical-note.png");
 }
 
 .vert-menu li:last-child a::before {
-    content: url("../image/material/video.png");
+    content: url("../image/nMaterial/video.png");
 }
 
 .vert-menu-unvis {
@@ -259,30 +266,30 @@ body {
 .vert-menu-mobile li a::before {
     width: 30px;
     height: 30px;
-    content: url("../image/material/home.png");
+    content: url("../image/nMaterial/home.png");
     position: absolute;
     top: 10px;
     left: 17px;
 }
 
 .vert-menu-mobile li:nth-child(2) a::before {
-    content: url("../image/material/friends.png");
+    content: url("../image/nMaterial/friends.png");
 }
 
 .vert-menu-mobile li:nth-child(3) a::before {
-    content: url("../image/material/message.png");
+    content: url("../image/nMaterial/message.png");
 }
 
 .vert-menu-mobile li:nth-child(4) a::before {
-    content: url("../image/material/groups.png");
+    content: url("../image/nMaterial/groups.png");
 }
 
 .vert-menu-mobile li:nth-child(5) a:before {
-    content: url("../image/material/musical-note.png");
+    content: url("../image/nMaterial/musical-note.png");
 }
 
 .vert-menu-mobile li:nth-child(6) a::before {
-    content: url("../image/material/video.png");
+    content: url("../image/nMaterial/video.png");
 }
 
 .vert-menu-mobile li:nth-child(7) a::before {
@@ -472,7 +479,7 @@ body {
 #groups .filter .create-community {
     font-size: 14px;
     float: right;
-    background-color: #2E538A;
+    background-color: #FFD089;
     border-radius: 5px;
     padding: 3px 10px;
     color: #FFFFFF;
@@ -480,7 +487,7 @@ body {
 }
 
 #groups .filter .create-community:hover {
-    background-color: #91A1E2;
+    background-color: #FFAE89;
     border-radius: 5px;
 }
 
@@ -533,7 +540,7 @@ body {
 
 #groups .create-group {
     overflow: hidden;
-    width: 80%;
+    width: 70%;
     margin: 0 auto;
 }
 
@@ -545,35 +552,40 @@ body {
 
 #groups .create-group .line {
     overflow: hidden;
-    margin: 4% 0;
+    margin: 5% 0;
 }
 
 #groups .create-group .line span {
     margin: 0;
     padding: 0;
-    font-size: 20px;
+    font-size: 22px;
     float: left;
 }
 
-#groups .create-group .line input[type="text"], textarea {
+#groups .create-group .line input[type="text"],
+#groups .create-group .line textarea,
+#groups .create-group .line .choose {
     float: right;
-    padding: 10px 15px 10px 25px;
+    padding: 8px 13px;
     width: 180px;
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 16px;
 }
 
-#groups .create-group input[type="submit"] {
-    margin: 3% auto;
-    background-color: #ffb94b;
-    border-radius: 3px;
-    border-style: solid;
-    border-color: #d69e31 #e3a037 #d5982d #e3a037;
+#groups .create-group .line .choose {
+    background-color: #F2F6F7;
+}
+
+#groups .create-group .submit {
+    border: 1px solid #ccc;
+    border-radius: 5px;
     height: 35px;
+    margin: 15px auto;
+    padding: 0;
     width: 130px;
+    cursor: pointer;
     font: bold 15px Arial, Helvetica;
-    color: #8f5a0a;
 }
 
 /* ------------- Контейнер с адаптивными блоками------------- */
@@ -790,7 +802,7 @@ body {
 }
 
 .popup-content-createGroup {
-    height: 500px;
+    height: 410px;
 }
 
 .popup-content-registration {
@@ -1002,18 +1014,15 @@ body {
     margin: 15px 10px 10px;
     width: 33%;
     min-width: 200px;
-    border: 3px solid #949ADB;
+    border: 3px solid #26C6DA;
     border-radius: 5px;
 }
 
 .place-icon img {
+    display: block;
     width: 100%;
     height: auto;
     border-radius: 5px 5px 0 0;
-}
-
-.place-icon .edit {
-    background-color: #91A1E2;
 }
 
 .place-icon .edit a {
@@ -1021,6 +1030,12 @@ body {
     color: #FFFFFF;
     text-decoration: none;
     padding: 10px 15px;
+    background-color: #26C6DA;
+}
+
+.place-icon .edit a:hover {
+    background-color: #FF8F29;
+    border-radius: 3px;
 }
 
 .place-info {
@@ -1032,7 +1047,7 @@ body {
 
 .place-info .block {
     padding: 10px;
-    border: 3px solid #91A1E2;
+    border: 3px solid #26C6DA;
     border-radius: 5px;
     overflow: hidden;
     margin-bottom: 7px;
@@ -1065,7 +1080,7 @@ body {
 /*Add post*/
 .add-post {
     float: left;
-    background-color: #91A1E2;
+    background-color: #26C6DA;
     padding: 8px 15px;
     margin: 0 4%;
     width: 90%;
@@ -1079,17 +1094,21 @@ body {
     border-radius: 3px;
     margin-bottom: 5px;
     resize: none;
+    padding: 8px 13px;
 }
 
 .add-post button {
     border-radius: 5px;
-    width: 80px;
-    background-color: #2E538A;
+    background-color: #FFA929;
     border: none;
     color: white;
-    padding: 3px;
+    padding: 5px 25px;
     float: left;
-    margin-left: 5%;
+    margin-left: 4%;
+}
+
+.add-post button:hover {
+    background-color: #FF6B29;
 }
 
 .add-post .inputfile {
@@ -1105,12 +1124,13 @@ body {
     color: white;
     display: inline-block;
     float: right;
-    margin-right: 5%;
+    margin-right: 4%;
+    margin-top: 2px;
 }
 
 .inputfile:focus + label,
 .inputfile + label:hover {
-    color: red;
+    color: #FF8F29;
 }
 
 .inputfile + label {
@@ -1121,7 +1141,7 @@ body {
 
 #settings {
     width: 100%;
-    background-color: #7DD493;
+    background-color: #26C6DA;
     overflow: hidden;
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
@@ -1140,10 +1160,14 @@ body {
     color: #FFFFFF;
 }
 
+#settings .tab a:hover {
+    background-color: #FFC289;
+}
+
 #black-list .ban-panel {
     padding: 6px 15px;
     width: 100%;
-    background-color: #B8D98C;
+    background-color: #80DEEA;
     overflow: hidden;
     font-size: 16px;
     border-top-right-radius: 5px;
@@ -1153,22 +1177,25 @@ body {
 #black-list .ban-panel input[type="text"] {
     float: left;
     width: 40%;
-    padding: 4px 5px;
+    padding: 5px 8px;
     border: none;
     min-width: 130px;
+    border-radius: 3px;
 }
 
 #black-list .ban-panel input[type="submit"] {
+    font-size: 14px;
     float: right;
-    background-color: #2E538A;
-    color: #FFFFFF;
-    border: none;
-    padding: 3px 4px;
+    background-color: #FFD089;
     border-radius: 5px;
+    padding: 6px 12px;
+    color: #FFFFFF;
+    cursor: pointer;
+    border: none;
 }
 
 #black-list .ban-panel input[type="submit"]:hover {
-    background-color: #91A1E2;
+    background-color: #FFAE89;
     border-radius: 5px;
 }
 
@@ -1264,7 +1291,7 @@ body {
     margin: 30px auto;
 }
 
-/*----------------------------------------------------POSTS---------------------------------------------*/
+/*-----------------------------------------------------------POSTS-----------------------------------------------------*/
 
 .place-post .post-container {
     float: right;
@@ -1275,7 +1302,7 @@ body {
     float: left;
     text-align: left;
     position: relative;
-    border: 1px solid orange;
+    border: 1px solid #26C4DA;
     border-radius: 5px;
     overflow: hidden;
 }
@@ -1341,6 +1368,12 @@ body {
     margin-right: 10px;
 }
 
+.place-post .post-container .post-info .replies img {
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+
 /*--------------------------------------------------------------------------------EDIT_PROFILE------------------------------------------------------------------------------------------*/
 
 #edit-profile {
@@ -1366,7 +1399,9 @@ body {
 
 #edit-profile .line input[type="text"],
 #edit-profile .line input[type="password"],
-#edit-profile .line input[type="email"] {
+#edit-profile .line input[type="email"],
+#edit-profile .line input[type="date"],
+#edit-profile .line .choose {
     display: block;
     float: right;
     font-size: 17px;
@@ -1375,6 +1410,10 @@ body {
     border: 1px solid #ccc;
     border-radius: 5px;
     width: 50%;
+}
+
+#edit-profile .line .choose {
+    background-color: #F2F6F7;
 }
 
 #edit-profile .datefield {
@@ -1397,17 +1436,16 @@ body {
     margin-top: 8px;
 }
 
-#edit-profile input[type="submit"] {
+#edit-profile .submit {
     display: block;
-    background-color: #ffb94b;
-    border-radius: 3px;
-    border-style: solid;
-    border-color: #d69e31 #e3a037 #d5982d #e3a037;
+    border: 1px solid #ccc;
+    border-radius: 5px;
     height: 35px;
+    margin: 15px auto;
+    padding: 0;
     width: 130px;
+    cursor: pointer;
     font: bold 15px Arial, Helvetica;
-    color: #8f5a0a;
-    margin: 30px auto;
 }
 
 /*------------------------------------------------------------------------------FACE-GROUP----------------------------------------------------------------------------------------------*/
@@ -1431,6 +1469,12 @@ body {
     cursor: pointer;
     color: #FFFFFF;
     padding: 10px 15px;
+    background-color: #26C6DA;
+}
+
+#face-group .place-icon .join:hover {
+    background-color: #FF8F29;
+    border-radius: 3px;
 }
 
 #face-group .place-info {
@@ -1442,7 +1486,7 @@ body {
 
 #face-group .place-info .block {
     padding: 10px;
-    border: 3px solid #91A1E2;
+    border: 3px solid #26C6DA;
     border-radius: 5px;
     overflow: hidden;
     margin-bottom: 7px;

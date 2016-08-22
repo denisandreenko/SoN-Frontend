@@ -4,7 +4,6 @@
         <div class="item" ng-repeat="group in groups | filter: searchGroups">
             <div class="top">
                 <h2>{{group.name}}</h2>
-                <span>{{group.folowers}} folowers</span>
             </div>
             <div class="prime">
                 <a data-ng-click="gotoGroup($index)"><img src="{{group.image}}"></a>

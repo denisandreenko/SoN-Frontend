@@ -1,15 +1,12 @@
 <div id="profile" data-ng-controller="ProfileController">
 
     <div class="place-icon">
-        <div class="icon">
-            <img src="{{userAvatar}}">
-        </div>
+        <img src="{{userAvatar}}">
 
         <div class="edit">
             <span><a ui-sref="menu.edit-profile">Edit Profile</a></span>
         </div>
     </div>
-
 
     <div class="place-info">
         <div class="block name">{{userName + ' ' + userSubname}}</div>

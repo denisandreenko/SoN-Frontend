@@ -34,50 +34,16 @@
 
                     <div class="line line-avatar">
                     <span>Avatar</span>
-                    <div data-ng-controller="FileUploadController" class="dialog-demo-content" layout="row" layout-wrap
-                    layout-margin layout-align="center">
-                    <md-button class="md-primary md-raised" ng-click="showAdvanced($event)">
-                        Choose avatar
-                    </md-button>
-                    </div>
+                        <div data-ng-controller="FileUploadController" class="dialog-demo-content">
+                            <input class="choose" type="submit" value="Choose avatar" ng-click="showAdvanced($event)"/>
+                        </div>
                     </div>
 
-                    <input type="submit" name="edit" value="Create" data-ng-click="sendDataGroup()">
+                    <input class="submit" type="submit" name="edit" value="Create" data-ng-click="sendDataGroup()">
                 </div>
             </div>
         </div>
     </div>
-
-    <!--<div class="create-group popup-wrapper" data-ng-controller="CreateGroupController">-->
-        <!--<input type="checkbox" class="popup-checkbox" id="popupCheckboxOne">-->
-        <!--<div class="popup">-->
-            <!--<div class="popup-content-createGroup">-->
-                <!--<label for="popupCheckboxThree" class="popup-closer">&#215;</label>-->
-
-                <!--<div class="line line-name">-->
-                    <!--<span>Name</span>-->
-                    <!--<input type="text" name="name" data-ng-model="name">-->
-                <!--</div>-->
-
-                <!--<div class="line line-description">-->
-                    <!--<span>Description</span>-->
-                    <!--<textarea rows="3" data-ng-model="description"></textarea>-->
-                <!--</div>-->
-
-                <!--<div class="line line-avatar">-->
-                    <!--<span>Avatar</span>-->
-                    <!--<div data-ng-controller="FileUploadController" class="dialog-demo-content" layout="row" layout-wrap-->
-                         <!--layout-margin layout-align="center">-->
-                        <!--<md-button class="md-primary md-raised" ng-click="showAdvanced($event)">-->
-                            <!--Choose avatar-->
-                        <!--</md-button>-->
-                    <!--</div>-->
-                <!--</div>-->
-
-                <!--<input type="submit" name="edit" value="Create" data-ng-click="sendDataGroup()">-->
-            <!--</div>-->
-        <!--</div>-->
-    <!--</div>-->
 
     <div class="masonry-place">
         <!-- Адаптивные блоки с содержанием -->
