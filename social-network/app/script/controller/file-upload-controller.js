@@ -2,10 +2,21 @@
 
 angular.module('socialNetwork').controller('FileUploadController', FileUploadController);
 
-FileUploadController.inject = ['$scope', 'Upload', 'Constant', 'authFact', '$mdMedia', '$mdDialog', '$timeout'];
+FileUploadController.inject = ['$scope', 'Upload', 'Constant', 'authFact', '$mdMedia', '$mdDialog', '$timeout', 'NotifyService'];
 
-function FileUploadController($scope, Constant, Upload, authFact, $mdMedia, $mdDialog, $timeout) {
+function FileUploadController($scope, Constant, Upload, authFact, $mdMedia, $mdDialog, $timeout, NotifyService) {
     $scope.picFile = '';
+    $scope.acceptFiles = 'image/*';
+
+    var hendler = NotifyService.subscribe(Constant.Events.FILEUPLOAD, callback);
+
+    function callback(event, data){
+        $scope.acceptFiles = data;
+    }
+
+    $scope.$on('destroy', function () {
+       hendler();
+    });
 
     $scope.upload = function (name) {
         if ($scope.picFile == '' || $scope.picFile == null || $scope.picFile == undefined) {
@@ -30,7 +41,7 @@ function FileUploadController($scope, Constant, Upload, authFact, $mdMedia, $mdD
             }).then(function (response) {
                 $timeout(function () {
                     $scope.result = response.data;
-                    Constant.UploadedImgID = $scope.result.entity;
+                    Constant.UploadedFileUrl = $scope.result.entity;
                     $scope.isLoading = false;
                 });
             }, function (response) {
@@ -46,7 +57,7 @@ function FileUploadController($scope, Constant, Upload, authFact, $mdMedia, $mdD
     $scope.showAdvanced = function (ev) {
         var useFullScreen = ($mdMedia('sm') || $mdMedia('xs')) && $scope.customFullscreen;
         $mdDialog.show({
-            templateUrl: 'view/avatarDialog.html',
+            templateUrl: 'view/fileDialog.html',
             parent: angular.element(document.body),
             targetEvent: ev,
             clickOutsideToClose: true

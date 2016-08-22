@@ -18,7 +18,7 @@ function PostCreationService(NetworkService, Constant, NotifyService) {
         promise.then(function (responce) {
             var data = responce.getData();
             NotifyService.notify(whatToUpdate, 'refPosts');
-            Constant.UploadedImgID = null;
+            Constant.UploadedFileUrl = null;
         });
     }
     function _createPostToGroup(fileId, postText, groupToId) {
@@ -33,7 +33,7 @@ function PostCreationService(NetworkService, Constant, NotifyService) {
         promise.then(function (responce) {
             var data = responce.getData();
             NotifyService.notify(Constant.Events.REFRESHGPOSTS, 'refPosts');
-            Constant.UploadedImgID = null;
+            Constant.UploadedFileUrl = null;
         });
     }
     return{

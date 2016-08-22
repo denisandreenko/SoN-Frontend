@@ -35,7 +35,7 @@ function ProfileController($scope, NetworkService, Constant, authFact, PostCreat
 
     $scope.PostIt = function () {
         var id = authFact.getId();
-        var imgURL = Constant.UploadedImgID;
+        var imgURL = Constant.UploadedFileUrl;
         PostCreationService.createPostToUser(imgURL || null, $scope.postText, id, Constant.Events.REFRESHPOSTS);
         $scope.postText = "";
     };

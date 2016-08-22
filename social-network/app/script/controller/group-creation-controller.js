@@ -19,7 +19,7 @@ function CreateGroupController($scope, NetworkService, Constant, $state) {
 
         promise.then(function (response) {
             var data = response.getData();
-            Constant.UploadedImgID = null;
+            Constant.UploadedFileUrl = null;
             $state.go('menu.group', {groupIdentifier: data.entity});
         });
     }

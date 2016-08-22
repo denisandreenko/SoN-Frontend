@@ -59,7 +59,7 @@ function ProfileByIdController($scope, NetworkService, Constant, $state, PostCre
     };
 
     $scope.PostIt = function () {
-        var imgURL = Constant.UploadedImgID;
+        var imgURL = Constant.UploadedFileUrl;
         PostCreationService.createPostToUser(imgURL || null, $scope.postText, userId, Constant.Events.REFRESHIDPOSTS);
         $scope.postText = "";
     };

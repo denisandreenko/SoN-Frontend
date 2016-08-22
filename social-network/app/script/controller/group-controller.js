@@ -62,7 +62,7 @@ function FaceGroupController($scope, NetworkService, NotifyService, Constant, Po
 
     $scope.PostIt = function () {
         var id = $scope.groupId;
-        var imgURL = Constant.UploadedImgID;
+        var imgURL = Constant.UploadedFileUrl;
         PostCreationService.createPostToGroup(imgURL || null, $scope.postText, id);
         $scope.postText = "";
     };

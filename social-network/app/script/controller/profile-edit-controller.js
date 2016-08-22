@@ -2,20 +2,20 @@
 
 angular.module('socialNetwork').controller('ProfileEditController', ProfileEditController);
 
-ProfileEditController.$inject = ['$scope', 'NetworkService', 'Constant', '$state'];
+ProfileEditController.$inject = ['$scope', 'NetworkService', 'Constant', '$state', 'NotifyService'];
 
-function ProfileEditController($scope, NetworkService, Constant, $state) {
+function ProfileEditController($scope, NetworkService, Constant, $state, NotifyService) {
     $scope.name = '';
     $scope.email = '';
     $scope.skype = '';
     $scope.mobile = 0;
     $scope.lastName = '';
     $scope.sex = 0;
-    Constant.UploadedImgID = '';
+    Constant.UploadedFileUrl = '';
     $scope.birthdate = '';
     $scope.city = '';
     $scope.about = '';
-
+    NotifyService.notify(Constant.Events.FILEUPLOAD, 'image/*');
 
     var promise = NetworkService.getMyProfile('/users/profile').promise;
 
@@ -41,7 +41,7 @@ function ProfileEditController($scope, NetworkService, Constant, $state) {
         $scope.mobile = $scope.userContacts.mobile;
         $scope.lastName = $scope.userSubname;
         $scope.sex = $scope.userSex;
-        //Constant.UploadedImgID = $scope.userAvatar;
+        //Constant.UploadedFileUrl = $scope.userAvatar;
         $scope.birthdate = new Date($scope.userBirthday);
         $scope.city = $scope.userCity;
         $scope.about = $scope.userAbout;
@@ -55,7 +55,7 @@ function ProfileEditController($scope, NetworkService, Constant, $state) {
             mobile: $scope.mobile || 0,
             lastName: $scope.lastName,
             sex: parseInt($scope.sex),
-            avatarUrl: Constant.UploadedImgID || null,
+            avatarUrl: Constant.UploadedFileUrl || null,
             birthdate: moment($scope.birthdate).format('L'),
             city: $scope.city,
             about: $scope.about
@@ -65,7 +65,7 @@ function ProfileEditController($scope, NetworkService, Constant, $state) {
 
         promise.then(function (response) {
             var data = response.getData();
-            Constant.UploadedImgID = null;
+            Constant.UploadedFileUrl = null;
             $state.go('menu.profile');
         });
     }

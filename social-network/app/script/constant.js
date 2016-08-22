@@ -5,7 +5,7 @@ angular.module('socialNetwork')
         MyId: '',
         SearchReqText: '',
         ToastMsg: '',
-        UploadedImgID: null,
+        UploadedFileUrl: null,
         APIBaseUrl: 'https://scntw.herokuapp.com',//'https://sjc2016vs6.fwd.wf',//'https://scntw.herokuapp.com',//'http://192.168.7.121:8080',//'https://mighty-inlet-90070.herokuapp.com',//'https://damp-meadow-52783.herokuapp.com',////'https://sjc2016vs6.fwd.wf',////////// //http://localhost:8080/SocialNetwork',// // 'https://kkq-social.fwd.wf',//'https://social.fwd.wf', //http://www.mocky.io/v2/578e18f50f00006f19aebc38',// 'https://sjc2016vs3.fwd.wf/',
         Auth: {
             clientHash: "cGFzc3dvcmRDbGllbnQ6MG00NWJ4cDRyMg=="
@@ -26,6 +26,7 @@ angular.module('socialNetwork')
             UPDATEPSEARCH: 'UpdatePSearch',
             UPDATEFRIENDS: 'UpdateFriends',
             UPDATEGROUP: 'UpdateGroup',
-            UPDATEGSEARCH: 'UpdateGSearch'
+            UPDATEGSEARCH: 'UpdateGSearch',
+            FILEUPLOAD: 'FileUpload'
         }
     });
