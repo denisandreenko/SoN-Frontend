@@ -6,6 +6,8 @@ NetworkService.$inject = ['$http', '$q', '$log', 'Constant', 'ResponseFactory', 
 
 function NetworkService($http, $q, $log, Constant, ResponseFactory, $mdToast, authFact) {
 
+
+    //TODO check if authError then refresh token.
     $http.defaults.useXDomain = true;
     $http.defaults.withCredentials = false;
     delete $http.defaults.headers.common['X-Requested-With'];
