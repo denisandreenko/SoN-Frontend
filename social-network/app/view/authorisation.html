@@ -51,11 +51,24 @@
                                     <input type="text" name="name" required ng-model="firstName" maxlength="20"
                                            data-ng-keyup="validateField($event)"/>
                                 </div>
+                                <!--<div class="line line-lastname">-->
+                                    <!--<span>Last Name</span>-->
+                                    <!--<input type="text" name="lastname" required ng-model="lastName" maxlength="20"-->
+                                           <!--ng-pattern="/^[A-Za-z]*$/"/>-->
+
+                                    <!--<p ng-show="registrationForm.lastname.$error.required && registrationForm.lastname.$pristine != true">-->
+                                        <!--You don't input field!</p>-->
+                                    <!--<p ng-show="registrationForm.lastname.$error.pattern && registrationForm.lastname.$pristine != true">-->
+                                        <!--May contain only latin symbols</p>-->
+                                <!--</div>-->
+
                                 <div class="line line-lastname">
                                     <span>Last Name</span>
-                                    <input type="text" name="lastname" required ng-model="lastName" maxlength="20"
+                                    <!--ng-show="registrationForm.lastname.$error.required && registrationForm.lastname.$pristine != true"-->
+                                    <div id="i-have-a-tooltip" data-description="I'm a tooltip!">
+                                        <input type="text" name="lastname" required ng-model="lastName" maxlength="20"
                                            ng-pattern="/^[A-Za-z]*$/"/>
-
+                                    </div>
                                     <p ng-show="registrationForm.lastname.$error.required && registrationForm.lastname.$pristine != true">
                                         You don't input field!</p>
                                     <p ng-show="registrationForm.lastname.$error.pattern && registrationForm.lastname.$pristine != true">
@@ -123,8 +136,6 @@
                                     <div>
                                         <input type="date" min="1900-01-01" max="2016-01-01"
                                                data-ng-model="birthDate">
-                                        <!--<input time="false" date="true" mdc-datetime-picker="" type="text" ng-model="dirthDay"-->
-                                        <!--min-date="minDate" max-date="maxDate" class="md-input" format="DD/MM/YYYY"/>-->
                                     </div>
                                 </div>
                                 <input type="submit" name="signup" value="Send" ng-click="update()">

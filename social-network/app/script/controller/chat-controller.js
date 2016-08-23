@@ -21,7 +21,7 @@ function Ctrl($stomp, $log, authFact, $scope) {
 
     // Send message
     $scope.sendM = function () {
-        $stomp.send('/app/hello', {
+        $stomp.send('/app/chat', {
             text: $scope.message// name is Message (true nameconvention on serverside!)
         }, {
             access_token: authFact.getAccessToken()

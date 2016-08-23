@@ -195,24 +195,48 @@ body {
     left: 15px;
 }
 
+.vert-menu li a:hover::before {
+    content: url("../image/nMaterial/homeW.png");
+}
+
 .vert-menu li:nth-child(2) a::before {
     content: url("../image/nMaterial/friends.png");
+}
+
+.vert-menu li:nth-child(2) a:hover::before {
+    content: url("../image/nMaterial/friendsW.png");
 }
 
 .vert-menu li:nth-child(3) a::before {
     content: url("../image/nMaterial/message.png");
 }
 
+.vert-menu li:nth-child(3) a:hover::before {
+    content: url("../image/nMaterial/messageW.png");
+}
+
 .vert-menu li:nth-child(4) a::before {
     content: url("../image/nMaterial/groups.png");
+}
+
+.vert-menu li:nth-child(4) a:hover::before {
+    content: url("../image/nMaterial/groupsW.png");
 }
 
 .vert-menu li:nth-child(5) a::before {
     content: url("../image/nMaterial/musical-note.png");
 }
 
+.vert-menu li:nth-child(5) a:hover::before {
+    content: url("../image/nMaterial/musical-noteW.png");
+}
+
 .vert-menu li:last-child a::before {
     content: url("../image/nMaterial/video.png");
+}
+
+.vert-menu li:last-child a:hover::before {
+    content: url("../image/nMaterial/videoW.png");
 }
 
 .vert-menu-unvis {
@@ -293,11 +317,11 @@ body {
 }
 
 .vert-menu-mobile li:nth-child(7) a::before {
-    content: url("../image/material/settings.png");
+    content: url("../image/nMaterial/settings.png");
 }
 
 .vert-menu-mobile li:nth-child(8) a::before {
-    content: url("../image/material/logout.png");
+    content: url("../image/nMaterial/logout.png");
 }
 
 .vert-menu-unvis .hidden-menu-ticker {
@@ -421,6 +445,8 @@ body {
     -moz-box-sizing: border-box; /* For Firefox */
     -webkit-box-sizing: border-box; /* For Safari, Chrome, iOS and Android */
 }
+
+
 
 /*--------------------------------------------------------------------------------FRIENDS------------------------------------------------------------------------*/
 
@@ -806,14 +832,63 @@ body {
 }
 
 .popup-content-registration {
-    height: 90%;
+    height: 570px;
 }
 
 /*---------------------------------------------------------------------------REGISTRATION----------------------------------------------------------------------*/
 
-#content-registration {
-    overflow: hidden;
+
+#i-have-a-tooltip {
+    position:relative;
 }
+
+#i-have-a-tooltip:before {
+    content:attr(data-description);
+    box-sizing:border-box;
+    display:block;
+    background:rgba(0,0,0,.7);
+    color:white;
+    padding:20px;
+    position:absolute;
+    left:50%;
+    top:-30px;
+    margin-left:-100px;
+    width:200px;
+    height:65px;
+    line-height:25px;
+    border-radius:5px;
+    opacity:0;
+    transition:.25s ease-in-out;
+}
+
+#i-have-a-tooltip:after {
+    content:'';
+    display:block;
+    position:absolute;
+    top:35px;
+    left:50%;
+    margin-left:-8px;
+    height:0;
+    width:0;
+    border-left:8px solid transparent;
+    border-right:8px solid transparent;
+    border-top:8px solid rgba(0,0,0,.7);
+    transition:.25s ease-in-out;
+    opacity:0;
+}
+
+#i-have-a-tooltip:hover:before {
+    opacity:1;
+    top:-50px;
+}
+
+#i-have-a-tooltip:hover:after {
+    opacity:1;
+    top:15px;
+}
+
+
+
 
 #content-registration h1 {
     font-size: 45px;
@@ -821,13 +896,11 @@ body {
 }
 
 #content-registration .data {
-    overflow: hidden;
     width: 80%;
     margin: 0 auto;
 }
 
 #content-registration .line {
-    overflow: hidden;
     margin: 14px 0;
 }
 
@@ -837,7 +910,6 @@ body {
     margin: 0;
     padding: 0;
     float: left;
-    overflow: hidden;
 }
 
 #content-registration .line p {
@@ -849,13 +921,15 @@ body {
 
 #content-registration .line input[type="text"],
 #content-registration .line input[type="password"],
-#content-registration .line input[type="email"] {
+#content-registration .line input[type="email"],
+#content-registration .line input[type="date"] {
     float: right;
-    padding: 5px 10px 5px 25px;
-    width: 220px;
-    height: 30px;
+    font-size: 17px;
+    padding: 5px 15px 5px 15px;
+    height: 35px;
     border: 1px solid #ccc;
     border-radius: 5px;
+    width: 50%;
 }
 
 #content-registration .line .sex {
@@ -867,19 +941,6 @@ body {
 #content-registration .line input[type="radio"] {
     float: right;
     margin: 16px 4% 0 10px;
-}
-
-#content-registration .line input[type="text"],
-#content-registration .line input[type="password"],
-#content-registration .line input[type="email"] {
-    display: block;
-    float: right;
-    font-size: 17px;
-    padding: 5px 15px 5px 15px;
-    height: 35px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    width: 50%;
 }
 
 #content-registration input[type="submit"] {
@@ -961,46 +1022,80 @@ body {
 
 #audio .player {
     overflow: hidden;
+    background-color: #80DEEA;
+}
+
+#audio .player .upload {
+    float: right;
+    width: 10%;
+    height: 31px;
+    background-color: #FFD089;
+    overflow: hidden;
+    border-radius: 5px;
+    margin: 10px 3% 10px 0;
+    cursor: pointer;
+}
+
+#audio .player .upload:hover {
+    background-color: #FFAE89;
+}
+
+#audio .player .song-name {
+    float: left;
+    width: 76%;
+    background-color: #9E9E9E;
+    border-radius: 0 0 5px 5px;
+    margin: 0 0 10px 5%;
+}
+
+#audio .player .upload img {
+    vertical-align: middle;
+    width: 30px;
+    height: 30px;
 }
 
 #audio .player audio {
-    width: 100%;
-    margin-top: 10px;
+    width: 80%;
+    float: left;
+    margin: 10px 0 0 3%;
 }
 
-#audio-list .track {
+#audio-list .song {
     overflow: hidden;
     width: 100%;
-    padding: 7px 15px;
-    background-color: #E4F1F6;
-    border-bottom: 1px solid #2F5B8E;
-    border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px;
+    padding: 7px 3%;
+    background-color: #E0F7FA;
+    border-bottom: 1px solid #FFCCBC;
+    cursor: pointer;
+    position: relative;
 }
 
-#audio-list .track .play-audio {
+#audio-list .song:hover {
+    background-color: #FFE0B2;
+}
+
+#audio-list .song:hover .song-delete {
+    display: block;
+}
+
+#audio-list .song .song-name {
     float: left;
-    margin-left: 2%;
-    width: 15px;
-    height: 15px;
+    cursor: pointer;
 }
 
-#audio-list .track .play-audio img {
+
+#audio-list .song .song-delete {
+    margin-top: 2px;
+    float: right;
+    cursor: pointer;
+    display: none;
+}
+
+#audio-list .song .song-delete img {
+    display: block;
     width: 100%;
     height: 100%;
     vertical-align: middle;
-}
-
-#audio-list .track .name {
-    float: left;
-    margin-left: 5%;
-    font-size: 16px;
-}
-
-#audio-list .track .audiotime {
-    float: right;
-    margin-right: 5%;
-    font-size: 16px;
 }
 
 /*--------------------------------------------------------------------------------PROFILE------------------------------------------------------------------------*/
