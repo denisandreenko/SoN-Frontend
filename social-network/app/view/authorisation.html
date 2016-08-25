@@ -43,82 +43,75 @@
 
                     <div id="content-registration">
                         <h1>Sign Up</h1>
+
                         <form name="registrationForm" ng-controller="RegController">
                             <div class="data">
                                 <div class="line line-name">
-                                    <p data-ng-show="!isName">Wrong data, please check.</p>
                                     <span>First Name</span> <!-- ng-pattern="/^[A-Za-z]*$/" -->
                                     <input type="text" name="name" required ng-model="firstName" maxlength="20"
-                                           data-ng-keyup="validateField($event)"/>
+                                           ng-pattern="/^[A-Za-z]*$/" />
                                 </div>
-                                <!--<div class="line line-lastname">-->
-                                    <!--<span>Last Name</span>-->
-                                    <!--<input type="text" name="lastname" required ng-model="lastName" maxlength="20"-->
-                                           <!--ng-pattern="/^[A-Za-z]*$/"/>-->
 
-                                    <!--<p ng-show="registrationForm.lastname.$error.required && registrationForm.lastname.$pristine != true">-->
-                                        <!--You don't input field!</p>-->
-                                    <!--<p ng-show="registrationForm.lastname.$error.pattern && registrationForm.lastname.$pristine != true">-->
-                                        <!--May contain only latin symbols</p>-->
-                                <!--</div>-->
+                                <div class="invalid" ng-show="registrationForm.name.$error.required && registrationForm.name.$pristine != true">
+                                    you don't input field</div>
+                                <div class="invalid" ng-show="registrationForm.name.$error.pattern && registrationForm.name.$pristine != true">
+                                    may contain only latin symbols</div>
 
                                 <div class="line line-lastname">
                                     <span>Last Name</span>
-                                    <!--ng-show="registrationForm.lastname.$error.required && registrationForm.lastname.$pristine != true"-->
-                                    <div id="i-have-a-tooltip" data-description="I'm a tooltip!">
-                                        <input type="text" name="lastname" required ng-model="lastName" maxlength="20"
-                                           ng-pattern="/^[A-Za-z]*$/"/>
-                                    </div>
-                                    <p ng-show="registrationForm.lastname.$error.required && registrationForm.lastname.$pristine != true">
-                                        You don't input field!</p>
-                                    <p ng-show="registrationForm.lastname.$error.pattern && registrationForm.lastname.$pristine != true">
-                                        May contain only latin symbols</p>
+                                    <input type="text" name="lastname" required ng-model="lastName" maxlength="20"
+                                           ng-pattern="/^[A-Za-z]*$/" />
                                 </div>
+
+                                <div class="invalid" ng-show="registrationForm.lastname.$error.required && registrationForm.lastname.$pristine != true">
+                                    you don't input field</div>
+                                <div class="invalid" ng-show="registrationForm.lastname.$error.pattern && registrationForm.lastname.$pristine != true">
+                                    may contain only latin symbols</div>
 
                                 <div class="line line-login">
                                     <span>Login</span>
                                     <input type="text" name="login" required ng-model="login" maxlength="20"
                                            ng-pattern="/^[A-Za-z][A-Za-z0-9]*$/"/>
-
-                                    <p ng-show="registrationForm.login.$error.required && registrationForm.login.$pristine != true">
-                                        You don't input field!</p>
-                                    <p ng-show="registrationForm.login.$error.pattern && registrationForm.login.$pristine != true">
-                                        May contain only latin symbols and numbers</p>
                                 </div>
+
+                                <div class="invalid" ng-show="registrationForm.login.$error.required && registrationForm.login.$pristine != true">
+                                    you don't input field</div>
+                                <div class="invalid" ng-show="registrationForm.login.$error.pattern && registrationForm.login.$pristine != true">
+                                    may contain only latin symbols and numbers</div>
 
                                 <div class="line line-password">
                                     <span>Password</span>
                                     <input type="password" name="password" required ng-model="password" maxlength="20"
                                            ng-pattern="/^[A-Za-z0-9]*$/"/>
-
-                                    <p ng-show="registrationForm.password.$error.required && registrationForm.password.$pristine != true">
-                                        You don't input field!</p>
-                                    <p ng-show="registrationForm.password.$error.pattern && registrationForm.password.$pristine != true">
-                                        May contain only latin symbols and numbers</p>
                                 </div>
+
+                                <div class="invalid" ng-show="registrationForm.password.$error.required && registrationForm.password.$pristine != true">
+                                    you don't input field</div>
+                                <div class="invalid" ng-show="registrationForm.password.$error.pattern && registrationForm.password.$pristine != true">
+                                    may contain only latin symbols and numbers</div>
 
                                 <div class="line line-confirmpassword">
                                     <span>Confirm Pass</span>
                                     <input type="password" name="confirmPassword" required ng-model="confirmPass"
                                            maxlength="20"
                                            ng-pattern="/^[A-Za-z0-9]*$/"/>
-
-                                    <p ng-show="registrationForm.confirmPassword.$error.required && registrationForm.confirmPassword.$pristine != true">
-                                        You don't input field!</p>
-                                    <p ng-show="registrationForm.confirmPassword.$error.pattern && registrationForm.confirmPassword.$pristine != true">
-                                        May contain only latin symbols and numbers</p>
                                 </div>
+
+                                <!--<div ng-show="registrationForm.confirmPassword.$error.required && registrationForm.confirmPassword.$pristine != true">-->
+                                    <!--You don't input field!</div>-->
+                                <!--<div ng-show="registrationForm.confirmPassword.$error.pattern && registrationForm.confirmPassword.$pristine != true">-->
+                                    <!--May contain only latin symbols and numbers</div>-->
 
                                 <div class="line line-email">
                                     <span>Email</span>
                                     <input type="email" name="email" required ng-model="email" maxlength="20"
                                            ng-pattern="/^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/"/>
-
-                                    <p ng-show="registrationForm.email.$error.required && registrationForm.email.$pristine != true">
-                                        You don't input field! Realy!</p>
-                                    <p ng-show="registrationForm.email.$error.pattern && registrationForm.email.$pristine != true">
-                                        You have incorrect input! Realy!</p>
                                 </div>
+
+                                <div class="invalid" ng-show="registrationForm.email.$error.required && registrationForm.email.$pristine != true">
+                                    you don't input field</div>
+                                <div class="invalid" ng-show="registrationForm.email.$error.pattern && registrationForm.email.$pristine != true">
+                                    you have incorrect input</div>
 
                                 <div class="line line-sex">
                                     <span>Sex</span>
@@ -133,7 +126,7 @@
                                 </div>
                                 <div class="line line-birthday">
                                     <span>Birthday</span>
-                                    <div>
+                                    <div class="birthday-container">
                                         <input type="date" min="1900-01-01" max="2016-01-01"
                                                data-ng-model="birthDate">
                                     </div>
